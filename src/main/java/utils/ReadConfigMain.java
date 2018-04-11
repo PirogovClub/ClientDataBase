@@ -9,27 +9,40 @@ import java.util.Properties;
 
 public class ReadConfigMain {
 	
-  public static String GetUrlFromProperties() {
-	String UrlProperty = null;
+	private static String currentPropName= null;
+	private static final String propFileDirectory = "src/main/resources/config.properties";
+	
+	public void SetCurrentParamName (String SetValue) {
+		currentPropName=SetValue;
+	}
+	
+  public String GetParamFromProperties() {
+	String OutProperty = null;
 	Properties prop = new Properties();
 	InputStream input = null;
 	
 	try {
-		
-		input = new FileInputStream("src/main/resources/config.properties");
+		//Check if we know what to get from config File
+		if (currentPropName == null) {
+			
+			throw new NullPointerException("No property To get from Param File, set property with SetCurrentParamName first");
+		}
+		input = new FileInputStream(propFileDirectory);
 
 		// load a properties file
 		prop.load(input);
 
 		// get the property value and print it out
-		UrlProperty = prop.getProperty("openurl");
+		OutProperty = prop.getProperty(currentPropName);
 		System.out.println("Read Succesfully");
-		System.out.println(UrlProperty);
+		System.out.println(OutProperty);
 		
 		
 	} catch (IOException ex) {
 		ex.printStackTrace();
-	} finally {
+	} catch (NullPointerException ex) {
+		System.out.println(ex);
+  	} finally {
 		if (input != null) {
 			try {
 				input.close();
@@ -39,7 +52,7 @@ public class ReadConfigMain {
 		}
 	}
 	
-	return UrlProperty;
+	return OutProperty;
 	
 
   }
