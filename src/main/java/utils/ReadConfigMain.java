@@ -12,11 +12,11 @@ public class ReadConfigMain {
 	private static String currentPropName= null;
 	private static final String propFileDirectory = "src/main/resources/config.properties";
 	
-	public void SetCurrentParamName (String SetValue) {
+	public static void SetCurrentParamName (String SetValue) {
 		currentPropName=SetValue;
 	}
 	
-  public String GetParamFromProperties() {
+  public static String GetParamFromProperties() {
 	String OutProperty = null;
 	Properties prop = new Properties();
 	InputStream input = null;

@@ -9,29 +9,28 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import utils.ReadConfigMain;
 
 public class OpenFF {
 	
 	private static WebDriver driver;
-	private static ReadConfigMain config;
+	
 
 	@Before
 	public void setUp() {
 		System.setProperty("webdriver.gecko.driver","C:\\SeleniumDrivers\\geckodriver.exe");
 		driver = new FirefoxDriver();
-		config = new ReadConfigMain();
+		
 	}
 	
 	@Test
 	public void test() {
-		config.SetCurrentParamName("openurl");
-		driver.get(config.GetParamFromProperties());
+		utils.ReadConfigMain.SetCurrentParamName("openurl");
+		driver.get(utils.ReadConfigMain.GetParamFromProperties());
 	}
 	
 	@After
 	
-	public static void tearDownClass(){
+	public void tearDownClass(){
 		driver.quit();
 	}
 	
