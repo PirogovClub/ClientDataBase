@@ -1,6 +1,8 @@
 package tests;
 
 
+import java.io.IOException;
+
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
@@ -17,15 +19,18 @@ public class OpenFF {
 
 	@Before
 	public void setUp() {
-		System.setProperty("webdriver.gecko.driver","C:\\SeleniumDrivers\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver","src/main/java/resources/geckodriver.exe");
 		driver = new FirefoxDriver();
 		
 	}
 	
 	@Test
 	public void test() {
-		utils.ReadConfigMain.SetCurrentParamName("openurl");
-		driver.get(utils.ReadConfigMain.GetParamFromProperties());
+		try {
+			utils.ReadConfigMain.getValueFromProperty("openurl");
+		} catch (IOException e) { 
+	          System.out.println("caught" + e); 
+		} 
 	}
 	
 	@After

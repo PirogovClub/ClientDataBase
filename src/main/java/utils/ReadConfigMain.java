@@ -16,43 +16,20 @@ public class ReadConfigMain {
 		currentPropName=SetValue;
 	}
 	
-  public static String GetParamFromProperties() {
+  public static String getValueFromProperty(String key) throws IOException {
 	String OutProperty = null;
 	Properties prop = new Properties();
 	InputStream input = null;
-	
-	try {
-		//Check if we know what to get from config File
-		if (currentPropName == null) {
-			
-			throw new NullPointerException("No property To get from Param File, set property with SetCurrentParamName first");
-		}
-		input = new FileInputStream(propFileDirectory);
+	input = new FileInputStream(propFileDirectory);
 
-		// load a properties file
-		prop.load(input);
+	// load a properties file
+	prop.load(input);
 
-		// get the property value and print it out
-		OutProperty = prop.getProperty(currentPropName);
-		System.out.println("Read Succesfully");
-		System.out.println(OutProperty);
+	// closing ImportStream
+	input.close();
+	return prop.getProperty(key);
 		
-		
-	} catch (IOException ex) {
-		ex.printStackTrace();
-	} catch (NullPointerException ex) {
-		System.out.println(ex);
-  	} finally {
-		if (input != null) {
-			try {
-				input.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
 	
-	return OutProperty;
 	
 
   }
