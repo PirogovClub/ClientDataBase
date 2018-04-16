@@ -26,7 +26,8 @@ public class OpenFF {
 	
 	@Test
 	public void test() {
-		try {
+		try { 
+			//comment on this
 			utils.ReadConfigMain.getValueFromProperty("openurl");
 		} catch (IOException e) { 
 	          System.out.println("caught" + e); 
