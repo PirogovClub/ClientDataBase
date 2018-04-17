@@ -28,7 +28,7 @@ public class OpenFF {
 	public void test() {
 		try { 
 			//comment on this
-			utils.ReadConfigMain.getValueFromProperty("openurl");
+			driver.get(utils.ReadConfigMain.getValueFromProperty("openurl"));
 		} catch (IOException e) { 
 	          System.out.println("caught" + e); 
 		} 

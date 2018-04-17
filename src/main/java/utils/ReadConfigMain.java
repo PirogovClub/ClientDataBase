@@ -17,7 +17,6 @@ public class ReadConfigMain {
 	}
 	
   public static String getValueFromProperty(String key) throws IOException {
-	String OutProperty = null;
 	Properties prop = new Properties();
 	InputStream input = null;
 	input = new FileInputStream(propFileDirectory);
