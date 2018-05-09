@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class Consultancies {
@@ -12,6 +13,7 @@ public class Consultancies {
 	By PagenatorInfo=By.xpath("//span[@class='pagination-info']");
 	By ConsultancyName=By.xpath("//th[@data-field='name']");
 	By ConsultancyWorkload=By.xpath("//th[@data-field='workload']");
+	By RefreshButton=By.xpath("//button[@title='Обновить']");
 	
 	
 	public Consultancies(WebDriver driver) {
@@ -30,9 +32,25 @@ public class Consultancies {
 	public String GetPagenatorInfoValue(int rowNumber) {
 		return this.driver.findElement(PagenatorInfo).getText();
 	}
-	public Consultancies GetToPage(String url) {
+	public void GetToPage(String url) {
 		this.driver.get(url);
-		return this;
+		System.out.println("Get To employees, wating for load");
+		WaitForLoad();
+		System.out.println("loaded");
+	}
+	
+	private boolean FindNotConsultancyElement() {
+		try {
+			driver.findElement(RefreshButton);
+			return false;
+		} catch (NoSuchElementException e ) {
+			return true;
+		}
+			
+	}
+	
+	public void WaitForLoad() {
+		while (FindNotConsultancyElement());
 	}
 	
 	
