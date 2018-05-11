@@ -13,9 +13,7 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 	
-	
-	
-	
+		
 	By loginFormLocator=By.xpath(".//form[@id='login-form']");
 	By userNameFldLocator=By.xpath("//input[@id='username']");
 	By paswFldLocator=By.xpath("//input[@id='password']");
@@ -23,17 +21,24 @@ public class LoginPage {
 	By submitForm = By.xpath("//form[@id='login-form']");
 	By sideBarMenu= By.xpath("//ul[@class='sidebar-menu']");
 	
+	private String pageUrl;// describe what is address for this page
+	
 	boolean thisIsLoginPage = false;
 	
 	private WebDriver driver;
 	
-	public LoginPage (WebDriver driver){
+	
+	
+	public LoginPage (WebDriver driver, String PageUrl){
 		this.driver = driver;
+		setPageUrl(PageUrl);
+		openPageUrl();
 		this.thisIsLoginPage = this.NeedToLogin();
 		if (!this.thisIsLoginPage) {
 			throw new IllegalStateException("This is not the login page");
 		}
 	}
+	
 	
 	public boolean isThisIsLoginPage() {
 		return thisIsLoginPage;
@@ -53,15 +58,15 @@ public class LoginPage {
 	}
 
 	// PressSubmit
-	public Consultancies pressSubmitButton() {
+	public LoginPage pressSubmitButton() {
 		driver.findElement(paswFldLocator).sendKeys(Keys.RETURN);
 		WaitForLoad();
-		return new Consultancies(driver);
+		return this;
 	}
 	
 	//LoginAs
 	
-	public Consultancies loginAs(String strUserName, String strUserPassword) {
+	public LoginPage loginAs(String strUserName, String strUserPassword) {
 		typeUserName(strUserName);
 		typePassword(strUserPassword);
 		
@@ -94,6 +99,24 @@ public class LoginPage {
 			return true;
 		}
 
+	}
+
+	/**
+	 * @return the pageUrl
+	 */
+	public String getPageUrl() {
+		return pageUrl;
+	}
+
+	/**
+	 * @param pageUrl the pageUrl to set
+	 */
+	public void setPageUrl(String pageUrl) {
+		this.pageUrl = pageUrl;
+	}
+	
+	private void openPageUrl () {
+		this.driver.get(pageUrl);
 	}
 	
 

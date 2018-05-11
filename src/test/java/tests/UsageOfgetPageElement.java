@@ -20,16 +20,9 @@ import pageObjects.LoginPage;
 public class UsageOfgetPageElement {
 	
 private static WebDriver driver;
-private Consultancies page;
-	
-public Consultancies getPage() {
-	return page;
-}
 
-public void setPage(Consultancies page) {
-	this.page = page;
-	System.out.println("Page loaded");
-}
+private String consultancyUrl;
+	
 
 	@Before
 	public void setUp() {
@@ -42,15 +35,26 @@ public void setPage(Consultancies page) {
 	public void test() {
 		try { 
 			//open page
-			driver.get(utils.ReadConfigMain.getValueFromProperty("openurl"));
-			LoginPage loginPage = new LoginPage(driver);
-			setPage(loginPage.loginAs("admin", "admin"));
-			page.GetToPage(utils.ReadConfigMain.getValueFromProperty("openurl"));
+			setConsultancyUrl(utils.ReadConfigMain.getValueFromProperty("consultancyUrl"));
+			
+			//Check if this is login page, by default we should get to login page
+			LoginPage loginPage = new LoginPage(driver,this.consultancyUrl);
+			
+			//Check if we need to login
+			if (loginPage.isThisIsLoginPage()) {
+				//if this is login page login and get to Dashboard
+				loginPage.loginAs("admin", "admin");
+			}
+			//after login page we as left on dashboard
+			//Now lets go to needed page
+			Consultancies consultancies = new Consultancies(driver); 			
+			consultancies.GetToPage(this.consultancyUrl);
+			
 			System.out.println("==End tracing====");
 			System.out.println("==Printing task==");
-			System.out.println(page.GetPagenatorInfoValue(0));
-			System.out.println(page.GetConsultancyWorkloadValue(0));
-			System.out.println(page.GetConsultancyNameValue(0));
+			System.out.println(consultancies.GetPagenatorInfoValue(0));
+			System.out.println(consultancies.GetConsultancyWorkloadValue(0));
+			System.out.println(consultancies.GetConsultancyNameValue(0));
 			
 		} catch (Throwable e) { 
 	          System.out.println("caught:\r\n" + e);
@@ -62,6 +66,20 @@ public void setPage(Consultancies page) {
 	 
 	public void tearDownClass(){
 		driver.quit();
+	}
+
+	/**
+	 * @return the openUrl
+	 */
+	public String getConsultancyUrl() {
+		return consultancyUrl;
+	}
+
+	/**
+	 * @param openUrl the openUrl to set
+	 */
+	public void setConsultancyUrl(String openUrl) {
+		this.consultancyUrl = openUrl;
 	}
 
 	
