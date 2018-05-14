@@ -3,6 +3,7 @@ package tests;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.*;
@@ -47,14 +48,23 @@ private String consultancyUrl;
 			}
 			//after login page we as left on dashboard
 			//Now lets go to needed page
-			Consultancies consultancies = new Consultancies(driver); 			
+			Consultancies consultancies = new Consultancies(driver); 
+			//go to needed url, just to be sure after login page
 			consultancies.GetToPage(this.consultancyUrl);
+			//Get all text in column Name
+			ArrayList<String> NameList = consultancies.returnListFromColumn("name");
+			//Get all text in column Name
+			for (String listElement : NameList) {
+				System.out.println(listElement);
+			}
+			//Get all text in column Workload
+			NameList = consultancies.returnListFromColumn("workload");
+			for (String listElement : NameList) {
+				System.out.println(listElement);
+			}
 			
-			System.out.println("==End tracing====");
-			System.out.println("==Printing task==");
-			System.out.println(consultancies.GetPagenatorInfoValue(0));
-			System.out.println(consultancies.GetConsultancyWorkloadValue(0));
-			System.out.println(consultancies.GetConsultancyNameValue(0));
+			//Get Total number of pages
+			System.out.println("Total Pages="+consultancies.getTotalPagesValue());
 			
 		} catch (Throwable e) { 
 	          System.out.println("caught:\r\n" + e);
