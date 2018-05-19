@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -27,9 +28,11 @@ public class Consultancies {
 		
 	}
 	
-	public ArrayList<String> returnListFromColumn(String columnName){
+	public List<String> returnListFromColumn(String columnName){
 		
-		By lookAt = null ;		
+		By lookAt = null ;	
+		ArrayList<String> ListFromColumn = new ArrayList<String>();
+		//choose what column to get
 		switch (columnName.toLowerCase()) {
 		case "name":
 			lookAt = consultancyNameRows;
@@ -39,15 +42,13 @@ public class Consultancies {
 			break;
 		}
 		
-		ArrayList<String> newStrings = new ArrayList<String>();
-		ArrayList<WebElement> newList = (ArrayList<WebElement>) this.driver.findElements(lookAt);
+		List<WebElement> myList = driver.findElements(lookAt);
 				
-		for (WebElement listElement : newList) {
-			newStrings.add(listElement.getText());
+		for (WebElement cell : myList) {
+			ListFromColumn.add(cell.getText());
 		}
-		 
 		
-		return newStrings;
+		return ListFromColumn;
 		
 	}
 	
