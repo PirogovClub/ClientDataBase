@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -118,9 +119,8 @@ public Consultancies clickYesOnDeleteModalButton() {
 
 	private boolean findVisiblePageElement() {
 		try {
-			driver.findElement(toBeVisiablePageElement);
-			return false;
-		} catch (NoSuchElementException e) {
+			return !driver.findElement(toBeVisiablePageElement).isDisplayed();
+		} catch (ElementNotVisibleException e) {
 			return true;
 		}
 
