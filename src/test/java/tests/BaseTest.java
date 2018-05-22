@@ -3,6 +3,8 @@ package tests;
 
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,15 +15,63 @@ import pageObjects.LoginPage;
 public class BaseTest {
 
 	protected static WebDriver driver;
+	protected By existingPageElement;
+	protected String targetPageUrl;
+	protected String targetPageNameToTrace;
+	
+	public By getExistingPageElement() {
+		return existingPageElement;
+	}
+
+	public void setExistingPageElement(By existingPageElement) {
+		this.existingPageElement = existingPageElement;
+	}
+
+	public String getTargetPageUrl() {
+		return targetPageUrl;
+	}
+
+	public void setTargetPageUrl(String targetPageUrl) {
+		this.targetPageUrl = targetPageUrl;
+	}
+
+	public String getTargetPageNameToTrace() {
+		return targetPageNameToTrace;
+	}
+
+	public void setTargetPageNameToTrace(String targetPageNameToTrace) {
+		this.targetPageNameToTrace = targetPageNameToTrace;
+	}
 	
 
 	protected static void openUrl(String pageUrl) {
 		driver.get(pageUrl);
 	}
 	
+	public void GetToPage() {
+		driver.get(targetPageUrl);
+		System.out.println("Get To "+targetPageNameToTrace+", wating for load");
+		WaitForLoad();
+		System.out.println("loaded");
+	}
+	
+	private boolean FindPageElement() {
+		try {
+			driver.findElement(existingPageElement);
+			return false;
+		} catch (NoSuchElementException e ) {
+			return true;
+		}
+			
+	}
+	
+	public void WaitForLoad() {
+		while (FindPageElement());
+	}
+	
 
 	@Before
-	//We will open broweser and pass login page to be able to switch to any page we need
+	//We will open browser and pass login page to be able to switch to any page we need
 	public void startBrowser() throws Exception{
 		String Browser=utils.ReadConfigMain.getValueFromProperty("browserToTest");
 		String TestLoginUrl=utils.ReadConfigMain.getValueFromProperty("TestLoginUrl");
