@@ -15,17 +15,20 @@ import pageObjects.LoginPage;
 public class BaseTest {
 
 	protected static WebDriver driver;
-	protected By existingPageElement;
+	
 	protected String targetPageUrl;
 	protected String targetPageNameToTrace;
+	protected By targetExistingPageElement;
 	
-	public By getExistingPageElement() {
-		return existingPageElement;
+	public By getTargetExistingPageElement() {
+		return targetExistingPageElement;
 	}
 
-	public void setExistingPageElement(By existingPageElement) {
-		this.existingPageElement = existingPageElement;
+	public void setTargetExistingPageElement(By targetExistingPageElement) {
+		this.targetExistingPageElement = targetExistingPageElement;
 	}
+
+	
 
 	public String getTargetPageUrl() {
 		return targetPageUrl;
@@ -48,7 +51,7 @@ public class BaseTest {
 		driver.get(pageUrl);
 	}
 	
-	public void GetToPage() {
+	public void GetToPage(String targetPageUrl) {
 		driver.get(targetPageUrl);
 		System.out.println("Get To "+targetPageNameToTrace+", wating for load");
 		WaitForLoad();
@@ -57,7 +60,7 @@ public class BaseTest {
 	
 	private boolean FindPageElement() {
 		try {
-			driver.findElement(existingPageElement);
+			driver.findElement(targetExistingPageElement);
 			return false;
 		} catch (NoSuchElementException e ) {
 			return true;

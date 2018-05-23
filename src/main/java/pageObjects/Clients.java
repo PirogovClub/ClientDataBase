@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +15,12 @@ public class Clients {
 	By createClientFirstNameField = By.xpath("//input[@id='firstName']");
 	By createClientLastNameField = By.xpath("//input[@id='lastName']");
 	By saveNewClientName = By.xpath(".//button[@type='submit'][contains(text(),'save')]");
+	private By targetExistingPageElement = By.xpath(".//button[@type='submit'][contains(text(),'save')]");
 	
+	public By getTargetExistingPageElement() {
+		return targetExistingPageElement;
+	}
+
 	public Clients(WebDriver driver) {
 		this.driver = driver;
 		
@@ -27,6 +34,15 @@ public class Clients {
 	
 	public Clients saveNewClientNameClick() {
 		driver.findElement(saveNewClientName).click();
+		
+		return this;
+	}
+	
+	public Clients createNewClient(Map<String,String> newClientMap) {
+		createClientButtonClick();
+		typeNewClientName(newClientMap.get("clientsTestFirstName"));
+		typeNewClientLastName(newClientMap.get("clientsTestSecondName"));
+		saveNewClientNameClick();
 		
 		return this;
 	}
