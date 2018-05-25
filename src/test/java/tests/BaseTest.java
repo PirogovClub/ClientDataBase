@@ -27,6 +27,7 @@ public class BaseTest {
 	public void setTargetExistingPageElement(By targetExistingPageElement) {
 		this.targetExistingPageElement = targetExistingPageElement;
 	}
+	
 
 	
 
@@ -66,6 +67,11 @@ public class BaseTest {
 			return true;
 		}
 			
+	}
+	
+	public void WaitForLoad(By targetExistingPageElement) {
+		setTargetExistingPageElement(targetExistingPageElement);
+		while (FindPageElement());
 	}
 	
 	public void WaitForLoad() {

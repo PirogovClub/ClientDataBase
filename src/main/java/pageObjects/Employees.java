@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,12 @@ public class Employees {
 	By EmployeeNameHead=By.xpath("//th[@data-field='name']");
 	By EmployeeWorkloadHead=By.xpath("//th[@data-field='workload']");
 	By pagenatorInfo=By.xpath("//span[@class='pagination-info']");
+	
+	private By targetExistingPageElement = By.xpath(".//button[@type='button'][contains(text(),'Employee')]");
+	
+	public By getTargetExistingPageElement() {
+		return targetExistingPageElement;
+	}
 	
 	public Employees(WebDriver driver) {
 		this.driver = driver;
@@ -68,6 +75,17 @@ public class Employees {
 			System.out.println("Last Name field is not displayed");
 		}
 		
+		return this;
+	}
+	
+	public Employees createNewEmployee(Map<String,String> newEmplMap) {
+		
+		typeNewEmployeeName(newEmplMap.get("employeesTestFirstName"));
+		typeNewEmployeeLastName(newEmplMap.get("employeesTestSecondName"));
+		typeNewEmployeeMaxLoad(newEmplMap.get("employeesTestMaxLoad"));
+		System.out.println("Entered values");
+		saveNewEmployeeClick();
+		System.out.println("pushed save");
 		return this;
 	}
 	

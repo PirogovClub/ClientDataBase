@@ -2,6 +2,8 @@ package pageObjects;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
@@ -18,6 +20,7 @@ public class Consultancies {
 	By pagenatorInfo=By.xpath("//span[@class='pagination-info']");
 	By RefreshButton=By.xpath("//button[@title='Обновить']");
 	By ConsultancyTitle = By.xpath(".//input[@id='name']");
+	
 	By ConsultancyDescription = By.xpath(".//textarea[@id='description']");
 	By typePriceUAH = By.xpath(".//input[@id='prices[0].amount']");
 	By PriceEUR = By.xpath(".//input[@id='prices[1].amount']");
@@ -28,6 +31,21 @@ public class Consultancies {
 	By yesOnDeleteButton= By.xpath(".//button[@type='submit'][contains(text(),'Yes')]");
 	
 	private By toBeVisiablePageElement;
+	private By targetExistingPageElement = By.xpath("//a[@class='btn btn-primary'][contains(text(),'consultancy')]");
+	
+	public By getConsultancyTitle() {
+		return ConsultancyTitle;
+	}
+	
+	private void setTargetExistingPageElement(By targetExistingPageElement) {
+		this.targetExistingPageElement = targetExistingPageElement;
+	}
+
+
+
+	public By getTargetExistingPageElement() {
+		return targetExistingPageElement;
+	}
 	
 	
 
@@ -92,7 +110,7 @@ public class Consultancies {
 		return this;
 	}
 	
-	public Consultancies clickHref(String hrefToClink) {
+	public Consultancies clickHrefWithText(String hrefToClink) {
 		By hrefToClinkOn = By.xpath(".//a[contains(text(),'"+hrefToClink+"')]");
 		WebElement webElement = driver.findElement(hrefToClinkOn);
 		webElement.click();		
@@ -104,12 +122,35 @@ public class Consultancies {
 		webElement.click();		
 		return this;
 	}
-public Consultancies clickYesOnDeleteModalButton() {
+	public Consultancies clickYesOnDeleteModalButton() {
 		
 		WebElement webElement = driver.findElement(yesOnDeleteButton);
 		webElement.click();		
 		return this;
 	}
+	
+	public Consultancies createNewConsultancy(Map<String, String> newConsultancyMap) {
+		
+		
+		typeConsultancyTitle(newConsultancyMap.get("consultanciesTitle"));
+		typeConsultancyDescription(newConsultancyMap.get("consultanciesDescription"));
+		typePriceUAH(newConsultancyMap.get("consultanciesPriceUAH"));
+		typePriceEUR(newConsultancyMap.get("consultanciesPriceEUR"));
+		typePriceUSD(newConsultancyMap.get("consultanciesUSD"));
+		typeEmployeeRate(newConsultancyMap.get("consultanciesEmployeeRate"));
+		submitSaveButton();
+				
+		return this;
+	}
+	
+	public Consultancies deleteConsultancyRecord() {
+		clickdeleteButton();
+		waitModalDelete();
+		clickYesOnDeleteModalButton();
+		return this;
+	}
+	
+	
 
 	public Consultancies waitModalDelete() {
 		setToBeVisiablePageElement(yesOnDeleteButton);

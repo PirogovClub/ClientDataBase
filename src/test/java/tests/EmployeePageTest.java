@@ -3,7 +3,10 @@ package tests;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import pageObjects.Employees;
@@ -19,23 +22,38 @@ public class EmployeePageTest extends BaseTest {
 			System.out.println(listElement);
 		}
 	}
+	
+	private Map<String, String> newEmplMap = new HashMap<String, String>();
+	
+	private void setParam() {
+		try {
+			
+			//this.setExistingPageElement(existingPageElement);
+			// nextInt is normally exclusive of the top value,
+			// so add 1 to make it inclusive
+			int randomNum = ThreadLocalRandom.current().nextInt(1, 20 + 1);
+			
+			newEmplMap.put("employeesTestFirstName", utils.ReadConfigMain.getValueFromProperty("employeesTestFirstName")+randomNum);
+			newEmplMap.put("employeesTestSecondName", utils.ReadConfigMain.getValueFromProperty("employeesTestSecondName")+randomNum);
+			newEmplMap.put("employeesTestMaxLoad", utils.ReadConfigMain.getValueFromProperty("employeesTestMaxLoad")+randomNum);
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	@Test
 	public void testClients() {
 		try { 
-			try {
-				this.setTargetPageUrl(utils.ReadConfigMain.getValueFromProperty("employeesUrl"));
-				this.setTargetPageNameToTrace("Employees");
-				this.setExistingPageElement(existingPageElement);
-				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			GetToPage();
-			
 			Employees employees = new Employees(driver);
+			setParam();
+			this.setTargetExistingPageElement(employees.getTargetExistingPageElement());
+			this.setTargetPageNameToTrace("Employees");
+			this.setTargetPageUrl(utils.ReadConfigMain.getValueFromProperty("employeesUrl"));
 			
+			GetToPage(targetPageUrl);
 			printList(employees.returnListFromColumn("name"));
 			//Get all text in column workload
 			printList(employees.returnListFromColumn("workload"));
@@ -45,10 +63,10 @@ public class EmployeePageTest extends BaseTest {
 			int randomNum = ThreadLocalRandom.current().nextInt(1, 20 + 1);
 			
 			employees.createEmployeeButtonClick();
-			employees.typeNewEmployeeName(utils.ReadConfigMain.getValueFromProperty("employeesTestFirstName")+randomNum);
-			employees.typeNewEmployeeLastName(utils.ReadConfigMain.getValueFromProperty("employeesTestSecondName")+randomNum);
-			employees.typeNewEmployeeMaxLoad(utils.ReadConfigMain.getValueFromProperty("employeesTestMaxLoad")+randomNum);
-			employees.saveNewEmployeeClick();
+			System.out.println("pushed createEmployeeButtonClick");
+			employees.createNewEmployee(newEmplMap);
+			
+			
 			
 		} catch (Throwable e) { 
 	          System.out.println("caught:\r\n" + e);
