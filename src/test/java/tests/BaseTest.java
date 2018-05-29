@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import pageObjects.LoginPage;
 
 
+
 public class BaseTest {
 
 	protected static WebDriver driver;
@@ -28,9 +29,6 @@ public class BaseTest {
 		this.targetExistingPageElement = targetExistingPageElement;
 	}
 	
-
-	
-
 	public String getTargetPageUrl() {
 		return targetPageUrl;
 	}

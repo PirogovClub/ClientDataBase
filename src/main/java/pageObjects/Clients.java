@@ -5,17 +5,20 @@ import java.util.Map;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pageObjects.WebCommonActions;
+
 
 public class Clients {
 	WebDriver driver;
 	
-	By createClientButton = By.xpath(".//button[@type='button'][contains(text(),'Create Client')]");
+	By createClientButton = By.xpath(".//button[contains(text(),'Create Client')]");
 	By FindBtn=By.xpath(".//input[@placeholder='Поиск']");
-	By RefreshBtn=By.xpath(".//i[@class='glyphicon glyphicon-refresh icon-refresh']");
+	By RefreshBtn=By.name("refresh");
 	By createClientFirstNameField = By.xpath("//input[@id='firstName']");
 	By createClientLastNameField = By.xpath("//input[@id='lastName']");
 	By saveNewClientName = By.xpath(".//button[@type='submit'][contains(text(),'save')]");
 	private By targetExistingPageElement = By.xpath(".//button[@type='submit'][contains(text(),'save')]");
+	private WebCommonActions webCommonActions= new WebCommonActions();
 	
 	public By getTargetExistingPageElement() {
 		return targetExistingPageElement;
@@ -40,32 +43,9 @@ public class Clients {
 	
 	public Clients createNewClient(Map<String,String> newClientMap) {
 		createClientButtonClick();
-		typeNewClientName(newClientMap.get("clientsTestFirstName"));
-		typeNewClientLastName(newClientMap.get("clientsTestSecondName"));
+		webCommonActions.setTextToTestField(driver, createClientFirstNameField, newClientMap.get("clientsTestFirstName"), "First Name");
+		webCommonActions.setTextToTestField(driver, createClientLastNameField, newClientMap.get("clientsTestSecondName"), "Last Name");
 		saveNewClientNameClick();
-		
-		return this;
-	}
-	
-	public Clients typeNewClientName(String newClientName) {
-		WebElement webElement = driver.findElement(createClientFirstNameField);
-		if (webElement.isDisplayed()) {
-			webElement.sendKeys(newClientName);
-		} else {
-			System.out.println("First Name field is not displayed");
-		}
-		
-		return this;
-	}
-	
-	public Clients typeNewClientLastName(String newClientName) {
-		WebElement webElement = driver.findElement(createClientLastNameField);
-		if (webElement.isDisplayed()) {
-			webElement.sendKeys(newClientName);
-		} else {
-			System.out.println("Last Name field is not displayed");
-		}
-		
 		return this;
 	}
 	

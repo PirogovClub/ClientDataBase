@@ -15,7 +15,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class ClientsPageTest extends BaseTest {
 	
-	By existingPageElement = By.xpath("//button[@title='Обновить']");
+	
 	private Map<String,String> newClientMap = new HashMap<String,String>();
 		
 	private void printList(List<String> NameList) {
