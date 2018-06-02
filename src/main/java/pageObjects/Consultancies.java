@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
@@ -32,6 +33,8 @@ public class Consultancies {
 	
 	private By toBeVisiablePageElement;
 	private By targetExistingPageElement = By.xpath("//a[@class='btn btn-primary'][contains(text(),'consultancy')]");
+	
+	private Map<String, String> newConsultancyMap = new HashMap<String, String>();
 	
 	public By getConsultancyTitle() {
 		return ConsultancyTitle;
@@ -129,15 +132,15 @@ public class Consultancies {
 		return this;
 	}
 	
-	public Consultancies createNewConsultancy(Map<String, String> newConsultancyMap) {
+	public Consultancies createNewConsultancy() {
 		
 		
-		typeConsultancyTitle(newConsultancyMap.get("consultanciesTitle"));
-		typeConsultancyDescription(newConsultancyMap.get("consultanciesDescription"));
-		typePriceUAH(newConsultancyMap.get("consultanciesPriceUAH"));
-		typePriceEUR(newConsultancyMap.get("consultanciesPriceEUR"));
-		typePriceUSD(newConsultancyMap.get("consultanciesUSD"));
-		typeEmployeeRate(newConsultancyMap.get("consultanciesEmployeeRate"));
+		typeConsultancyTitle(newConsultancyMap.get("Title"));
+		typeConsultancyDescription(newConsultancyMap.get("Description"));
+		typePriceUAH(newConsultancyMap.get("PriceUAH"));
+		typePriceEUR(newConsultancyMap.get("PriceEUR"));
+		typePriceUSD(newConsultancyMap.get("USD"));
+		typeEmployeeRate(newConsultancyMap.get("EmployeeRate"));
 		submitSaveButton();
 				
 		return this;
@@ -172,8 +175,20 @@ public class Consultancies {
 	}
 	
 	
-	
-	
+	public void setNewConsultancyParamiters(String Title, String Description, String PriceUAH, String PriceEUR, String USD, String EmployeeRate) {
+		newConsultancyMap.put("Title", Title);
+		newConsultancyMap.put("Description", Description);
+		newConsultancyMap.put("PriceUAH", PriceUAH);
+		newConsultancyMap.put("PriceEUR", PriceEUR);
+		newConsultancyMap.put("USD", USD);
+		newConsultancyMap.put("EmployeeRate", EmployeeRate);
+	}
+
+	public void clickTitleHref() {
+		// TODO Auto-generated method stub
+		clickHrefWithText(newConsultancyMap.get("Title"));
+		
+	}
 	
 	
 	

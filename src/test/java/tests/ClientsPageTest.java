@@ -10,13 +10,15 @@ import java.util.Map;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import pageObjects.Clients;
+import utils.RandomData;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 
 public class ClientsPageTest extends BaseTest {
 	
 	
-	private Map<String,String> newClientMap = new HashMap<String,String>();
+	
 		
 	private void printList(List<String> NameList) {
 		for (String listElement : NameList) {
@@ -33,13 +35,30 @@ public class ClientsPageTest extends BaseTest {
 			this.setTargetPageUrl(utils.ReadConfigMain.getValueFromProperty("clientsUrl"));
 			// nextInt is normally exclusive of the top value,
 			// so add 1 to make it inclusive
-			int randomNum = ThreadLocalRandom.current().nextInt(1, 10000 + 1);
-			newClientMap.put("clientsTestFirstName",
-					utils.ReadConfigMain.getValueFromProperty("clientsTestFirstName") + randomNum);
-			newClientMap.put("clientsTestSecondName",
-					utils.ReadConfigMain.getValueFromProperty("clientsTestSecondName") + randomNum);
+			RandomData RandomData = new RandomData();
+			RandomData.LanguageSets LanguageSets = null;
+			clients.setNewClientParamiters(
+					utils.ReadConfigMain.getValueFromProperty("clientsTestFirstName")	+RandomData.getRandomInt(0, 10)+RandomData.getRandomString(2, LanguageSets.RUSSIAN),
+					utils.ReadConfigMain.getValueFromProperty("clientsTestSecondName") 	+RandomData.getRandomInt(0, 10)+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
+					"",
+					"",
+					"",
+					"",
+					"");
+			
 			GetToPage(targetPageUrl);
-			clients.createNewClient(newClientMap);
+			clients.createNewClient();
+			
+			clients.setNewClientParamiters(
+					utils.ReadConfigMain.getValueFromProperty("clientsTestFirstName")	+RandomData.getRandomInt(0, 10)+RandomData.getRandomString(5, LanguageSets.RUSSIAN),
+					utils.ReadConfigMain.getValueFromProperty("clientsTestSecondName") 	+RandomData.getRandomInt(0, 10)+RandomData.getRandomString(5, LanguageSets.ENGLISH_HIGH),
+					"",
+					"",
+					"",
+					"",
+					"");
+			GetToPage(targetPageUrl);
+			clients.createNewClient();
 		
 		} catch (Throwable e) { 
 	          System.out.println("caught:\r\n" + e);

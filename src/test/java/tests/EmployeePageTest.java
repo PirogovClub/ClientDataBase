@@ -10,6 +10,8 @@ import java.util.Map;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import pageObjects.Employees;
+import utils.RandomData;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -23,32 +25,20 @@ public class EmployeePageTest extends BaseTest {
 		}
 	}
 	
-	private Map<String, String> newEmplMap = new HashMap<String, String>();
 	
-	private void setParam() {
-		try {
-			
-			//this.setExistingPageElement(existingPageElement);
-			// nextInt is normally exclusive of the top value,
-			// so add 1 to make it inclusive
-			int randomNum = ThreadLocalRandom.current().nextInt(1, 20 + 1);
-			
-			newEmplMap.put("employeesTestFirstName", utils.ReadConfigMain.getValueFromProperty("employeesTestFirstName")+randomNum);
-			newEmplMap.put("employeesTestSecondName", utils.ReadConfigMain.getValueFromProperty("employeesTestSecondName")+randomNum);
-			newEmplMap.put("employeesTestMaxLoad", utils.ReadConfigMain.getValueFromProperty("employeesTestMaxLoad")+randomNum);
-			
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
 	@Test
 	public void testClients() {
 		try { 
 			Employees employees = new Employees(driver);
-			setParam();
+			
+			RandomData RandomData = new RandomData();
+			RandomData.LanguageSets LanguageSets = null;
+			
+			employees.setNewConsultancyParamiters(
+					 utils.ReadConfigMain.getValueFromProperty("employeesTestFirstName")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
+					 utils.ReadConfigMain.getValueFromProperty("employeesTestSecondName")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
+					 utils.ReadConfigMain.getValueFromProperty("employeesTestMaxLoad")+RandomData.getRandomInt(10, 200)
+					);
 			this.setTargetExistingPageElement(employees.getTargetExistingPageElement());
 			this.setTargetPageNameToTrace("Employees");
 			this.setTargetPageUrl(utils.ReadConfigMain.getValueFromProperty("employeesUrl"));
@@ -64,7 +54,7 @@ public class EmployeePageTest extends BaseTest {
 			
 			employees.createEmployeeButtonClick();
 			System.out.println("pushed createEmployeeButtonClick");
-			employees.createNewEmployee(newEmplMap);
+			employees.createNewEmployee();
 			
 			
 			

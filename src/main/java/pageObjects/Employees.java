@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +24,7 @@ public class Employees {
 	By pagenatorInfo=By.xpath("//span[@class='pagination-info']");
 	
 	private By targetExistingPageElement = By.xpath(".//button[@type='button'][contains(text(),'Employee')]");
+	private Map<String, String> newEmplMap = new HashMap<String, String>();
 	
 	public By getTargetExistingPageElement() {
 		return targetExistingPageElement;
@@ -78,11 +80,11 @@ public class Employees {
 		return this;
 	}
 	
-	public Employees createNewEmployee(Map<String,String> newEmplMap) {
+	public Employees createNewEmployee() {
 		
-		typeNewEmployeeName(newEmplMap.get("employeesTestFirstName"));
-		typeNewEmployeeLastName(newEmplMap.get("employeesTestSecondName"));
-		typeNewEmployeeMaxLoad(newEmplMap.get("employeesTestMaxLoad"));
+		typeNewEmployeeName(newEmplMap.get("FirstName"));
+		typeNewEmployeeLastName(newEmplMap.get("SecondName"));
+		typeNewEmployeeMaxLoad(newEmplMap.get("MaxLoad"));
 		System.out.println("Entered values");
 		saveNewEmployeeClick();
 		System.out.println("pushed save");
@@ -125,6 +127,14 @@ public List<String> returnListFromColumn(String columnName){
 		String wholeText = this.driver.findElement(pagenatorInfo).getText();
 		String[] arrText = wholeText.split(" ");
 		return arrText[arrText.length-1];
+	}
+
+	public void setNewConsultancyParamiters(String FirstName, String SecondName, String MaxLoad) {
+		// TODO Auto-generated method stub
+		newEmplMap.put("FirstName", FirstName);
+		newEmplMap.put("SecondName", SecondName);
+		newEmplMap.put("MaxLoad", MaxLoad);
+		
 	}
 	
 

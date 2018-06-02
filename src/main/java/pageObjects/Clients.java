@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.By;
@@ -19,6 +20,8 @@ public class Clients {
 	By saveNewClientName = By.xpath(".//button[@type='submit'][contains(text(),'save')]");
 	private By targetExistingPageElement = By.xpath(".//button[@type='submit'][contains(text(),'save')]");
 	private WebCommonActions webCommonActions= new WebCommonActions();
+	
+	private Map<String,String> newClientMap = new HashMap<String,String>();
 	
 	public By getTargetExistingPageElement() {
 		return targetExistingPageElement;
@@ -41,10 +44,20 @@ public class Clients {
 		return this;
 	}
 	
-	public Clients createNewClient(Map<String,String> newClientMap) {
+	public void setNewClientParamiters(String firstName, String lastName, String email, String country, String city, String phone, String skype) {
+		newClientMap.put("FirstName",firstName);
+		newClientMap.put("lastName",lastName);
+		newClientMap.put("email",email);
+		newClientMap.put("country",country);
+		newClientMap.put("city",city);
+		newClientMap.put("phone",phone);
+		newClientMap.put("skype",skype);
+	}
+	
+	public Clients createNewClient() {
 		createClientButtonClick();
-		webCommonActions.setTextToTestField(driver, createClientFirstNameField, newClientMap.get("clientsTestFirstName"), "First Name");
-		webCommonActions.setTextToTestField(driver, createClientLastNameField, newClientMap.get("clientsTestSecondName"), "Last Name");
+		webCommonActions.setTextToTestField(driver, createClientFirstNameField, newClientMap.get("FirstName"), "First Name");
+		webCommonActions.setTextToTestField(driver, createClientLastNameField, newClientMap.get("lastName"), "Last Name");
 		saveNewClientNameClick();
 		return this;
 	}
