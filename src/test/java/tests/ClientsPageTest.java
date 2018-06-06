@@ -62,17 +62,10 @@ public class ClientsPageTest extends BaseTest {
 			clients.findNewClientAndOpen();
 			WaitForLoad(clientProperties.getTargetExistingPageElement());
 			//read paramiters
-			clientProperties.readClientParamiters(true,"fake");
+			clientProperties.readClientParamiters(false,"fake");
+			//make comparation
 			
-			clientProperties.makeAssert("FirstName");
-			clientProperties.makeAssert("lastName");
-			clientProperties.makeAssert("email");
-			clientProperties.makeAssert( "country");
-			clientProperties.makeAssert("city");
-			clientProperties.makeAssert("phone");
-			clientProperties.makeAssert("skype");
-			
-			
+			printOutMap(clientProperties.compareClientParamiters());
 		
 		} catch (Throwable e) { 
 	          System.out.println("caught:\r\n" + e);

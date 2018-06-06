@@ -51,6 +51,18 @@ public class ClientProperties  extends BasePOM{
 		}
 	}
 	
+	public Map<String, String> compareClientParamiters(){
+		Map<String, String> resultMap = new HashMap<String,String>();
+		resultMap.put("FirstName",makeAssert("FirstName"));
+		resultMap.put("lastName",makeAssert("lastName"));
+		resultMap.put("email",makeAssert("email"));
+		resultMap.put("country",makeAssert( "country"));
+		resultMap.put("city",makeAssert("city"));
+		resultMap.put("phone",makeAssert("phone"));
+		resultMap.put("skype",makeAssert("skype"));
+		return resultMap;
+	}
+	
 	public void setNewClientMap(String firstName, String lastName, String email, String country, String city, String phone, String skype) {
 		newClientMap.put("FirstName",firstName);
 		newClientMap.put("lastName",lastName);
@@ -71,14 +83,13 @@ public class ClientProperties  extends BasePOM{
 		readClientMap.put("skype",driver.findElement(clientSkype).getAttribute("value"));
 	}
 	
-	public Boolean makeAssert(String paramiter) {
+	public String makeAssert(String paramiter) {
 		try {
 			assertEquals(paramiter,getParamiterValue("created",paramiter),getParamiterValue("readed",paramiter));
-			return true;
+			return "OK";
 		}
 		catch (Throwable e) {
-			System.out.println("Report Error" + e);
-			return false;
+			return("Report Error" + e);
 		}
 		
 		

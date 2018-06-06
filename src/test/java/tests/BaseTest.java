@@ -1,6 +1,8 @@
 package tests;
 
 
+import java.util.Map;
+
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
@@ -110,5 +112,15 @@ public class BaseTest {
 	@After
 	public void quitBrowser(){
 		driver.quit();
+	}
+	
+	protected void printOutMap(Map<String, String> resultMap) {
+		for(Map.Entry<String, String> entry : resultMap.entrySet()) {
+		    String key = entry.getKey();
+		    String value = entry.getValue();
+		    System.out.println("For key "+ key +" result is "+ value);
+		    // do what you have to do here
+		    // In your case, another loop.
+		}
 	}
 }
