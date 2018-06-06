@@ -12,9 +12,9 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Consultancies {
+public class Consultancies extends BasePOM {
 	
-	private  WebDriver driver;
+	
 	
 	By NewConsultancy=By.xpath(".//a[@href='/admin/consultancies/new']");
 	By Find=By.xpath(".//input[@placeholder='Поиск']");
@@ -31,7 +31,7 @@ public class Consultancies {
 	By deleteButton= By.xpath(".//button[@type='button'][contains(text(),'Delete')]");
 	By yesOnDeleteButton= By.xpath(".//button[@type='submit'][contains(text(),'Yes')]");
 	
-	private By toBeVisiablePageElement;
+	
 	private By targetExistingPageElement = By.xpath("//a[@class='btn btn-primary'][contains(text(),'consultancy')]");
 	
 	private Map<String, String> newConsultancyMap = new HashMap<String, String>();
@@ -40,26 +40,10 @@ public class Consultancies {
 		return ConsultancyTitle;
 	}
 	
-	private void setTargetExistingPageElement(By targetExistingPageElement) {
-		this.targetExistingPageElement = targetExistingPageElement;
-	}
-
-
-
 	public By getTargetExistingPageElement() {
 		return targetExistingPageElement;
 	}
 	
-	
-
-	public By getToBeVisiablePageElement() {
-		return toBeVisiablePageElement;
-	}
-
-	public void setToBeVisiablePageElement(By toBeVisiablePageElement) {
-		this.toBeVisiablePageElement = toBeVisiablePageElement;
-	}
-
 	private Boolean TypeIntoTextInput(WebElement webElement, String textToType, String traceText) {
 		if (webElement.isDisplayed()) {
 			webElement.sendKeys(textToType);
@@ -71,7 +55,8 @@ public class Consultancies {
 	}
 	
 	public Consultancies(WebDriver driver) {
-		this.driver = driver;
+		setDriver(driver);
+		setTargetExistingPageElement(targetExistingPageElement);
 		
 	}
 	
@@ -113,12 +98,7 @@ public class Consultancies {
 		return this;
 	}
 	
-	public Consultancies clickHrefWithText(String hrefToClink) {
-		By hrefToClinkOn = By.xpath(".//a[contains(text(),'"+hrefToClink+"')]");
-		WebElement webElement = driver.findElement(hrefToClinkOn);
-		webElement.click();		
-		return this;
-	}
+	
 	public Consultancies clickdeleteButton() {
 		
 		WebElement webElement = driver.findElement(deleteButton);
@@ -148,32 +128,10 @@ public class Consultancies {
 	
 	public Consultancies deleteConsultancyRecord() {
 		clickdeleteButton();
-		waitModalDelete();
+		waitModalWindow(yesOnDeleteButton);
 		clickYesOnDeleteModalButton();
 		return this;
 	}
-	
-	
-
-	public Consultancies waitModalDelete() {
-		setToBeVisiablePageElement(yesOnDeleteButton);
-		WaitForModalOpen();
-		return this;
-	}
-
-	private boolean findVisiblePageElement() {
-		try {
-			return !driver.findElement(toBeVisiablePageElement).isDisplayed();
-		} catch (ElementNotVisibleException e) {
-			return true;
-		}
-
-	}
-
-	private void WaitForModalOpen() {
-		while (findVisiblePageElement());
-	}
-	
 	
 	public void setNewConsultancyParamiters(String Title, String Description, String PriceUAH, String PriceEUR, String USD, String EmployeeRate) {
 		newConsultancyMap.put("Title", Title);

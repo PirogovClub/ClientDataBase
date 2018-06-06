@@ -11,12 +11,16 @@ public class RandomData {
 	private String UsAlphabetLettersLowReg = "abcdefghijklmnopqrstuvwxyz";
 	private String UsAlphabetLettersHighReg = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private String RussianAlphabetLetters="éöóêåíãøùçõúôûâàïğîëäæıÿ÷ñìèòüáşÉÖÓÊÅÍÃØÙÇÕÚÔÛÂÀÏĞÎËÄÆİß×ÑÌÈÒÜÁŞ¸¨";
+	private String ArabicNumbers="0123456789";
+	private String UsAlphabetLettersAndArabicNumbers=UsAlphabetLetters+ArabicNumbers;
 	private Random random = new Random();
 	static public enum LanguageSets{
 		RUSSIAN,
 		ENGLISH,
 		ENGLISH_LOW,
-		ENGLISH_HIGH
+		ENGLISH_HIGH,
+		NUMBERS,
+		ENGLISH_AND_NUMBERS
 	}
 	
 	
@@ -36,6 +40,12 @@ public class RandomData {
 				break;
 			case  ENGLISH_HIGH:
 				alphabet=UsAlphabetLettersHighReg;
+				break;
+			case  NUMBERS:
+				alphabet=ArabicNumbers;
+				break;
+			case ENGLISH_AND_NUMBERS:
+				alphabet=UsAlphabetLettersAndArabicNumbers;
 				break;
 			default:
 				alphabet=UsAlphabetLetters;
