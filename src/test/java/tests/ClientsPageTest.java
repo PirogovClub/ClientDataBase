@@ -14,6 +14,7 @@ import org.openqa.selenium.By;
 
 import pageObjects.ClientProperties;
 import pageObjects.Clients;
+import pageObjects.MainNavigation;
 import utils.RandomData;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -21,6 +22,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class ClientsPageTest extends BaseTest {
 	
+	private Map<String,String> ClientMap = new HashMap<String,String>();
 		
 	private void printList(List<String> NameList) {
 		for (String listElement : NameList) {
@@ -31,41 +33,41 @@ public class ClientsPageTest extends BaseTest {
 	
 	@Test
 	public void testClients() {
-		try { 
+		try {
+			
+			//Setup Objects
+			
 			Clients clients = new Clients(driver);
-			this.setTargetExistingPageElement(clients.getTargetExistingPageElement());
-			this.setTargetPageNameToTrace("Clients");
-			this.setTargetPageUrl(utils.ReadConfigMain.getValueFromProperty("clientsUrl"));
-			// nextInt is normally exclusive of the top value,
-			// so add 1 to make it inclusive
+			MainNavigation mainNavigation = new MainNavigation(driver);
+			ClientProperties clientProperties = new ClientProperties(driver);
+			
+			//Setup data
 			RandomData RandomData = new RandomData();
 			RandomData.LanguageSets LanguageSets = null;
-			clients.setNewClientParamiters(
-					utils.ReadConfigMain.getValueFromProperty("clientsTestFirstName")	+RandomData.getRandomInt(0, 10),
-					utils.ReadConfigMain.getValueFromProperty("clientsTestSecondName") 	+RandomData.getRandomInt(0, 10),
-					RandomData.getRandomString(5, LanguageSets.ENGLISH)+"@"+RandomData.getRandomString(5, LanguageSets.ENGLISH)+".com",
-					RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW),
-					RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW),
-					RandomData.getRandomString(10, LanguageSets.NUMBERS),
-					RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_AND_NUMBERS));
 			
-			GetToPage(targetPageUrl);
-			//Creating new client
+			ClientMap.put("firstName",utils.ReadConfigMain.getValueFromProperty("clientsTestFirstName")	+RandomData.getRandomInt(0, 10));
+			ClientMap.put("lastName",utils.ReadConfigMain.getValueFromProperty("clientsTestSecondName") 	+RandomData.getRandomInt(0, 10));
+			ClientMap.put("email",RandomData.getRandomString(5, LanguageSets.ENGLISH)+"@"+RandomData.getRandomString(5, LanguageSets.ENGLISH)+".com");
+			ClientMap.put("country",RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW));
+			ClientMap.put("city",RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW));
+			ClientMap.put("phone",RandomData.getRandomString(10, LanguageSets.NUMBERS));
+			ClientMap.put("skype",RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_AND_NUMBERS));
+			
+			clients.setNewClientMap(ClientMap);
+			clientProperties.setNewClientMap(ClientMap);
+			
+			//Run actions
+			
+			mainNavigation.clickClient();
 			clients.createNewClient();
-			//Fill all paramiters for new client
-			ClientProperties clientProperties = new ClientProperties(driver);
-			clientProperties.setNewClientMap(clients.getNewClientMap());
-			WaitForLoad(clientProperties.getTargetExistingPageElement());
 			clientProperties.setSecondaryFieldsAndSave();
-			WaitForLoad(clients.getTargetExistingPageElement());
-			//find client and open properties
 			clients.findNewClientAndOpen();
-			WaitForLoad(clientProperties.getTargetExistingPageElement());
-			//read paramiters
 			clientProperties.readClientParamiters(false,"fake");
-			//make comparation
+			clientProperties.compareClientParamiters();
 			
-			printOutMap(clientProperties.compareClientParamiters());
+			
+			//Print comparation result
+			//printOutMap(clientProperties.compareClientParamiters());
 		
 		} catch (Throwable e) { 
 	          System.out.println("caught:\r\n" + e);

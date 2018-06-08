@@ -46,20 +46,14 @@ public class Clients extends BasePOM{
 		return this;
 	}
 	
-	public void setNewClientParamiters(String firstName, String lastName, String email, String country, String city, String phone, String skype) {
-		newClientMap.put("FirstName",firstName);
-		newClientMap.put("lastName",lastName);
-		newClientMap.put("email",email);
-		newClientMap.put("country",country);
-		newClientMap.put("city",city);
-		newClientMap.put("phone",phone);
-		newClientMap.put("skype",skype);
+	public void setNewClientMap(Map<String, String> ClientMap) {
+		this.newClientMap = ClientMap;
 	}
 	
 	public Clients createNewClient() {
 		createClientButtonClick();
 		waitModalWindow(getTargetExistingPageElement());
-		setTextToTestField( createClientFirstNameField, newClientMap.get("FirstName"), "First Name");
+		setTextToTestField( createClientFirstNameField, newClientMap.get("firstName"), "First Name");
 		setTextToTestField( createClientLastNameField, newClientMap.get("lastName"), "Last Name");
 		saveNewClientNameClick();
 		
@@ -72,14 +66,15 @@ public class Clients extends BasePOM{
 
 	public void searchForNewClient() {
 		// TODO Auto-generated method stub
-		typeInSearchBox(newClientMap.get("FirstName")+" "+newClientMap.get("lastName"));
+		typeInSearchBox(newClientMap.get("firstName")+" "+newClientMap.get("lastName"));
 		waitForElementToHide(showWhileDataTableIsLoading);
 		
 	}
 	
 	public void findNewClientAndOpen() {
+		WaitForLoad(this.getTargetExistingPageElement());
 		searchForNewClient();
-		clickHrefWithText(newClientMap.get("FirstName")+" "+newClientMap.get("lastName"));
+		clickHrefWithText(newClientMap.get("firstName")+" "+newClientMap.get("lastName"));
 	}
 	
 

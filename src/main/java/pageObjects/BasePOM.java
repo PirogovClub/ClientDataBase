@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.NoSuchElementException;
@@ -27,7 +29,6 @@ public class BasePOM {
 		this.driver = driver;
 	}
 
-	
 	
 	public By getToBeVisiablePageElement() {
 		return toBeVisiablePageElement;

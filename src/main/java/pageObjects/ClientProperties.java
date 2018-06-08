@@ -31,13 +31,19 @@ public class ClientProperties  extends BasePOM{
 	private Map<String,String> newClientMap = new HashMap<String,String>();
 	private Map<String,String> readClientMap = new HashMap<String,String>();
 	
+	public ClientProperties(WebDriver driver) {
+		this.driver = driver;
+		setTargetExistingPageElement(By.xpath(".//button[@type='button'][contains(text(),'Go back')]"));
+		
+	}
+	
 	
 	public Map<String, String> getNewClientMap() {
 		return newClientMap;
 	}
 
-	public void setNewClientMap(Map<String, String> newClientMap) {
-		this.newClientMap = newClientMap;
+	public void setNewClientMap(Map<String, String> ClientMap) {
+		this.newClientMap = ClientMap;
 	}
 	
 	public String getParamiterValue(String chooseObject, String paramiter) {
@@ -53,7 +59,7 @@ public class ClientProperties  extends BasePOM{
 	
 	public Map<String, String> compareClientParamiters(){
 		Map<String, String> resultMap = new HashMap<String,String>();
-		resultMap.put("FirstName",makeAssert("FirstName"));
+		resultMap.put("firstName",makeAssert("firstName"));
 		resultMap.put("lastName",makeAssert("lastName"));
 		resultMap.put("email",makeAssert("email"));
 		resultMap.put("country",makeAssert( "country"));
@@ -63,18 +69,10 @@ public class ClientProperties  extends BasePOM{
 		return resultMap;
 	}
 	
-	public void setNewClientMap(String firstName, String lastName, String email, String country, String city, String phone, String skype) {
-		newClientMap.put("FirstName",firstName);
-		newClientMap.put("lastName",lastName);
-		newClientMap.put("email",email);
-		newClientMap.put("country",country);
-		newClientMap.put("city",city);
-		newClientMap.put("phone",phone);
-		newClientMap.put("skype",skype);
-	}
+	
 	
 	public void readClientParamiters() {
-		readClientMap.put("FirstName",driver.findElement(clientFirstName).getAttribute("value"));
+		readClientMap.put("firstName",driver.findElement(clientFirstName).getAttribute("value"));
 		readClientMap.put("lastName",driver.findElement(clientLastName).getAttribute("value"));
 		readClientMap.put("email",driver.findElement(clientEmail).getAttribute("value"));
 		readClientMap.put("country",driver.findElement(clientCountry).getAttribute("value"));
@@ -96,8 +94,9 @@ public class ClientProperties  extends BasePOM{
 	}
 	
 	public void readClientParamiters(Boolean withErrors, String stringToAdd) {
+		WaitForLoad(this.getTargetExistingPageElement());
 		if (withErrors) {
-			readClientMap.put("FirstName", driver.findElement(clientFirstName).getAttribute("value")+stringToAdd);
+			readClientMap.put("firstName", driver.findElement(clientFirstName).getAttribute("value")+stringToAdd);
 			readClientMap.put("lastName", driver.findElement(clientLastName).getAttribute("value")+stringToAdd);
 			readClientMap.put("email", driver.findElement(clientEmail).getAttribute("value")+stringToAdd);
 			readClientMap.put("country", driver.findElement(clientCountry).getAttribute("value")+stringToAdd);
@@ -109,10 +108,7 @@ public class ClientProperties  extends BasePOM{
 		}
 	}
 
-	public ClientProperties(WebDriver driver) {
-		this.driver = driver;
-		setTargetExistingPageElement(By.xpath(".//button[@type='button'][contains(text(),'Go back')]"));
-	}
+	
 
 	public void setSecondaryFields() {
 		
@@ -130,6 +126,7 @@ public class ClientProperties  extends BasePOM{
 	}
 	
 	public void setSecondaryFieldsAndSave() {
+		WaitForLoad(this.getTargetExistingPageElement());
 		setSecondaryFields();
 		clickSaveButton();
 	}
