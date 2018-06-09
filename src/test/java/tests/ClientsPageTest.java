@@ -1,13 +1,10 @@
 package tests;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -30,7 +27,22 @@ public class ClientsPageTest extends BaseTest {
 		}
 	}
 	
+	public void setClientMap(String firstName, String lastName, String email, String country, String  city, String phone, String skype) {
+		ClientMap.put("firstName",firstName);
+		ClientMap.put("lastName",lastName);
+		ClientMap.put("email",email);
+		ClientMap.put("country",country);
+		ClientMap.put("city",city);
+		ClientMap.put("phone",phone);
+		ClientMap.put("skype",skype);
+	}
 	
+	
+	
+	protected Map<String, String> getClientMap() {
+		return ClientMap;
+	}
+
 	@Test
 	public void testClients() {
 		try {
@@ -45,26 +57,34 @@ public class ClientsPageTest extends BaseTest {
 			RandomData RandomData = new RandomData();
 			RandomData.LanguageSets LanguageSets = null;
 			
-			ClientMap.put("firstName",utils.ReadConfigMain.getValueFromProperty("clientsTestFirstName")	+RandomData.getRandomInt(0, 10));
-			ClientMap.put("lastName",utils.ReadConfigMain.getValueFromProperty("clientsTestSecondName") 	+RandomData.getRandomInt(0, 10));
-			ClientMap.put("email",RandomData.getRandomString(5, LanguageSets.ENGLISH)+"@"+RandomData.getRandomString(5, LanguageSets.ENGLISH)+".com");
-			ClientMap.put("country",RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW));
-			ClientMap.put("city",RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW));
-			ClientMap.put("phone",RandomData.getRandomString(10, LanguageSets.NUMBERS));
-			ClientMap.put("skype",RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_AND_NUMBERS));
+			String firstName	= utils.ReadConfigMain.getValueFromProperty("clientsTestFirstName")	+RandomData.getRandomInt(0, 10);
+			String lastName		= utils.ReadConfigMain.getValueFromProperty("clientsTestSecondName") 	+RandomData.getRandomInt(0, 10);
+			String email		= RandomData.getRandomString(5, LanguageSets.ENGLISH)+"@"+RandomData.getRandomString(5, LanguageSets.ENGLISH)+".com";
+			String country		= RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW);
+			String city			= RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW);
+			String phone		= RandomData.getRandomString(10, LanguageSets.NUMBERS);
+			String skype		= RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_AND_NUMBERS);
 			
-			clients.setNewClientMap(ClientMap);
-			clientProperties.setNewClientMap(ClientMap);
+			
+			clients.setNewClientMap(firstName,lastName,email,country,city,phone,skype);
+			clientProperties.setNewClientMap(firstName,lastName,email,country,city,phone,skype);
+			this.setClientMap(firstName,lastName,email,country,city,phone,skype);
 			
 			//Run actions
 			
 			mainNavigation.clickClient();
 			clients.createNewClient();
 			clientProperties.setSecondaryFieldsAndSave();
-			clients.findNewClientAndOpen();
-			clientProperties.readClientParamiters(false,"fake");
-			clientProperties.compareClientParamiters();
-			
+			clients.searchForClient(firstName+" "+lastName);
+			clients.clickHrefWithText(firstName+" "+lastName);
+			//clientProperties.readClientParamiters(false,"fake");
+			//clientProperties.compareClientParamiters();
+			try {
+				assertEquals(getClientMap(),clientProperties.readClientParamiters());
+			}
+			catch (Throwable e) {
+				System.out.println("Report Error" + e);
+			}
 			
 			//Print comparation result
 			//printOutMap(clientProperties.compareClientParamiters());

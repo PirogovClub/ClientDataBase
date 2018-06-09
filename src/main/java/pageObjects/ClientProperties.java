@@ -46,6 +46,16 @@ public class ClientProperties  extends BasePOM{
 		this.newClientMap = ClientMap;
 	}
 	
+	public void setNewClientMap(String firstName, String lastName, String email, String country, String  city, String phone, String skype) {
+		newClientMap.put("firstName",firstName);
+		newClientMap.put("lastName",lastName);
+		newClientMap.put("email",email);
+		newClientMap.put("country",country);
+		newClientMap.put("city",city);
+		newClientMap.put("phone",phone);
+		newClientMap.put("skype",skype);
+	}
+	
 	public String getParamiterValue(String chooseObject, String paramiter) {
 		switch (chooseObject){
 		case "readed":
@@ -71,7 +81,7 @@ public class ClientProperties  extends BasePOM{
 	
 	
 	
-	public void readClientParamiters() {
+	public Map<String, String> readClientParamiters() {
 		readClientMap.put("firstName",driver.findElement(clientFirstName).getAttribute("value"));
 		readClientMap.put("lastName",driver.findElement(clientLastName).getAttribute("value"));
 		readClientMap.put("email",driver.findElement(clientEmail).getAttribute("value"));
@@ -79,6 +89,7 @@ public class ClientProperties  extends BasePOM{
 		readClientMap.put("city",driver.findElement(clientCity).getAttribute("value"));
 		readClientMap.put("phone",driver.findElement(clientPhoneNumber).getAttribute("value"));
 		readClientMap.put("skype",driver.findElement(clientSkype).getAttribute("value"));
+		return readClientMap;
 	}
 	
 	public String makeAssert(String paramiter) {
@@ -93,7 +104,7 @@ public class ClientProperties  extends BasePOM{
 		
 	}
 	
-	public void readClientParamiters(Boolean withErrors, String stringToAdd) {
+	public  Map<String, String> readClientParamiters(Boolean withErrors, String stringToAdd) {
 		WaitForLoad(this.getTargetExistingPageElement());
 		if (withErrors) {
 			readClientMap.put("firstName", driver.findElement(clientFirstName).getAttribute("value")+stringToAdd);
@@ -103,8 +114,9 @@ public class ClientProperties  extends BasePOM{
 			readClientMap.put("city", driver.findElement(clientCity).getAttribute("value")+stringToAdd);
 			readClientMap.put("phone", driver.findElement(clientPhoneNumber).getAttribute("value")+stringToAdd);
 			readClientMap.put("skype", driver.findElement(clientSkype).getAttribute("value")+stringToAdd);
+			return readClientMap;
 		} else {
-			readClientParamiters();
+			return readClientParamiters();
 		}
 	}
 

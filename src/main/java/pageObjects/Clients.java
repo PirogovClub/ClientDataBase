@@ -50,6 +50,16 @@ public class Clients extends BasePOM{
 		this.newClientMap = ClientMap;
 	}
 	
+	public void setNewClientMap(String firstName, String lastName, String email, String country, String  city, String phone, String skype) {
+		newClientMap.put("firstName",firstName);
+		newClientMap.put("lastName",lastName);
+		newClientMap.put("email",email);
+		newClientMap.put("country",country);
+		newClientMap.put("city",city);
+		newClientMap.put("phone",phone);
+		newClientMap.put("skype",skype);
+	}
+	
 	public Clients createNewClient() {
 		createClientButtonClick();
 		waitModalWindow(getTargetExistingPageElement());
@@ -64,18 +74,15 @@ public class Clients extends BasePOM{
 		setTextToTestField(searchInput,stringToType,"Search Input");
 	}
 
-	public void searchForNewClient() {
+	public void searchForClient(String searchString) {
 		// TODO Auto-generated method stub
-		typeInSearchBox(newClientMap.get("firstName")+" "+newClientMap.get("lastName"));
+		WaitForLoad(this.getTargetExistingPageElement());
+		typeInSearchBox(searchString);
 		waitForElementToHide(showWhileDataTableIsLoading);
 		
 	}
 	
-	public void findNewClientAndOpen() {
-		WaitForLoad(this.getTargetExistingPageElement());
-		searchForNewClient();
-		clickHrefWithText(newClientMap.get("firstName")+" "+newClientMap.get("lastName"));
-	}
+	
 	
 
 }
