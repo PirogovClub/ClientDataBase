@@ -8,6 +8,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DataBase {
 	 //  Database credentials
@@ -68,7 +72,7 @@ public class DataBase {
 		}
 	}
 	
-	public String executeQuery(String SQLquery) {
+	public String executeQueryToString(String SQLquery) {
 		String resultString = "";
 		if (connection != null) {
 			try {
@@ -95,6 +99,61 @@ public class DataBase {
 		return resultString;
 	}
 	
+	public List<String> executeQueryToList(String SQLquery) {
+		List<String> resultList = new ArrayList<String>();
+		String resultString="";
+		if (connection != null) {
+			try {
+				Statement st;
+				st = connection.createStatement();
+				// Statement позволяет отправлять запросы базе данных
+				st.executeQuery(SQLquery);
+				ResultSet rs = st.getResultSet();
+				
+				int x = rs.getMetaData().getColumnCount();
+				// Resultset.getMetaData() получаем информацию
+				// результирующей таблице
+				while (rs.next()) {
+					resultString="";
+					for (int i = 1; i <= x; i++) {
+						resultString=resultString+rs.getString(i) + "\t";
+					}
+					resultList.add(resultString);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return resultList;
+	}
+	
+	public Map<String,String> executeQueryToMap(String SQLquery) {
+		Map<String,String> resultMap = new HashMap<String,String>();
+		
+		if (connection != null) {
+			try {
+				Statement st;
+				st = connection.createStatement();
+				// Statement позволяет отправлять запросы базе данных
+				st.executeQuery(SQLquery);
+				ResultSet rs = st.getResultSet();
+				
+				int x = rs.getMetaData().getColumnCount();
+				// Resultset.getMetaData() получаем информацию
+				// результирующей таблице
+				while (rs.next()) {
+					for (int i = 1; i <= x; i++) {
+						resultMap.put(rs.getMetaData().getColumnName(i),rs.getString(i));
+					}
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return resultMap;
+	}
 	
 	
 }

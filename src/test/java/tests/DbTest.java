@@ -1,5 +1,10 @@
 package tests;
 
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.junit.Test;
 
 import utils.DataBase;
@@ -9,6 +14,7 @@ public class DbTest {
 	@Test
 	public void CheckString() {
 		DataBase db = new DataBase();
+		
 		db.connectToDb();
 		String SQLquery = "";
 		SQLquery = "Select \r\n" + 
@@ -19,7 +25,7 @@ public class DbTest {
 				"Where \r\n" + 
 				"        deal.status = 'ACTIVE'\r\n" + 
 				"Order By random() limit 1;"; 
-		System.out.println(db.executeQuery(SQLquery));
+		System.out.println(db.executeQueryToString(SQLquery));
 		
 		SQLquery = "Select \r\n" + 
 				"       CONCAT(employee.first_name, ' ', employee.last_name) as \"Mentor\",\r\n" + 
@@ -31,7 +37,7 @@ public class DbTest {
 				"Order By random() limit 1;"; 
 		
 		
-		System.out.println(db.executeQuery(SQLquery));
+		System.out.println(db.executeQueryToString(SQLquery));
 		SQLquery = "select " + 
 				"        " + 
 				"        contract.contract_date as \"Contract Date\"," + 
@@ -48,7 +54,74 @@ public class DbTest {
 				"Order by random() limit 1;"; 
 		
 		
-		System.out.println(db.executeQuery(SQLquery));
+		System.out.println(db.executeQueryToString(SQLquery));
+		
+		SQLquery = "SELECT " + 
+				"    deal.id, " + 
+				"    CONCAT(client.last_name, ' ' , client.first_name) AS \"ClientName\", " + 
+				"    consultancy.name                                  AS \"Consultancy\", " + 
+				"    deal.status                                       AS \"Deal Status\", " + 
+				"    CONCAT(deal.open_date, ' - ', deal.close_date " + 
+				")    AS \"Start date - Close date\" " + 
+				"FROM " + 
+				"    consultancy " + 
+				"INNER JOIN " + 
+				"    ( client " + 
+				"INNER JOIN " + 
+				"    deal " + 
+				"ON " + 
+				"    deal.client_id = client.id ) " + 
+				"ON " + 
+				"    deal.consultancy_id = consultancy.id " + 
+				"GROUP BY " + 
+				"    deal.id, " + 
+				"    client.last_name, " + 
+				"    client.first_name, " + 
+				"    consultancy.name " + 
+				"HAVING " + 
+				"    ( " + 
+				"        LOWER(CONCAT(client.last_name, ' ' , client.first_name)) LIKE LOWER('%rasp%')) " + 
+				"";
+		
+		/*List<String> testList = new ArrayList<String>();
+		testList = db.executeQueryToList(SQLquery);
+		for(String s:testList){  
+			System.out.println(s);  
+			}
+		*/
+		
+		SQLquery = "SELECT\r\n" + 
+				"    deal.id,\r\n" + 
+				"    CONCAT(client.last_name, ' ' , client.first_name) AS \"ClientName\",\r\n" + 
+				"    consultancy.name                                  AS \"Consultancy\",\r\n" + 
+				"    deal.status                                       AS \"Deal Status\",\r\n" + 
+				"    CONCAT(deal.open_date, ' - ', deal.close_date)    AS \"Start date - Close date\"\r\n" + 
+				"FROM\r\n" + 
+				"    consultancy\r\n" + 
+				"INNER JOIN\r\n" + 
+				"    ( client\r\n" + 
+				"INNER JOIN\r\n" + 
+				"    deal\r\n" + 
+				"ON\r\n" + 
+				"    deal.client_id = client.id )\r\n" + 
+				"ON\r\n" + 
+				"    deal.consultancy_id = consultancy.id\r\n" + 
+				"WHERE\r\n" + 
+				"    deal.id > 0\r\n" + 
+				"GROUP BY\r\n" + 
+				"    deal.id,\r\n" + 
+				"    client.last_name,\r\n" + 
+				"    client.first_name,\r\n" + 
+				"    consultancy.name\r\n" + 
+				"HAVING\r\n" + 
+				"        LOWER(CONCAT(deal.open_date, ' - ', deal.close_date)) LIKE LOWER('%2018%')\r\n" + 
+				"Limit 1\r\n" + 
+				"";
+		
+		Map<String,String> testMap = new HashMap<String,String>();
+		testMap = db.executeQueryToMap(SQLquery);
+		System.out.println(testMap.get("ClientName") + ":"+testMap.get("Deal Status"));  
+		
 		
 		db.closeConnection();
 	}
