@@ -40,6 +40,7 @@ public class BasePOM {
 
 	public void waitModalWindow(By waitForElement) {
 		setToBeVisiablePageElement(waitForElement);
+		System.out.println("Wait for" + waitForElement);
 		waitForModalOpen();
 		
 	}
@@ -62,9 +63,17 @@ public class BasePOM {
 		while (!findVisiblePageElement());
 	}
 	
-	public void setTextToTestField(By fieldLocator, String textToSet, String fildShortNameToTrace)  {
+	public void setTextToTestField(By fieldLocator, String textToSet, String fildShortNameToTrace) {
+		setTextToTestField(fieldLocator,textToSet, fildShortNameToTrace, true );
+	}
+	
+	public void setTextToTestField(By fieldLocator, String textToSet, String fildShortNameToTrace, boolean Overwrite  )  {
 		
 		if (driver.findElement(fieldLocator).isDisplayed()) {
+			
+			if (Overwrite) {
+				driver.findElement(fieldLocator).clear();
+			}
 			driver.findElement(fieldLocator).sendKeys(textToSet);
 		} else {
 			System.out.println(fildShortNameToTrace+" field is not displayed");
@@ -99,6 +108,7 @@ public class BasePOM {
 	}
 	
 	protected void WaitForLoad(By targetExistingPageElement) {
+		System.out.println("Wait For " + targetExistingPageElement );
 		setTargetExistingPageElement(targetExistingPageElement);
 		while (FindPageElement());
 	}

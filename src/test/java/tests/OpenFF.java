@@ -11,10 +11,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.WorkWithMainConfig;
+
 
 public class OpenFF {
 	
 	private static WebDriver driver;
+	private WorkWithMainConfig config = new WorkWithMainConfig();
 	
 
 	@Before
@@ -28,8 +31,8 @@ public class OpenFF {
 	public void test() {
 		try { 
 			//comment on this
-			driver.get(utils.ReadConfigMain.getValueFromProperty("openurl")); 
-		} catch (IOException e) { 
+			driver.get(config.getConfigProp("openurl")); 
+		} catch (Throwable e) { 
 	          System.out.println("caught" + e); 
 		} 
 	}

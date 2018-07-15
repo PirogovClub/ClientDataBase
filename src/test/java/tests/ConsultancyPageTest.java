@@ -25,7 +25,7 @@ public class ConsultancyPageTest extends BaseTest {
 		try {
 			Consultancies consultancies = new Consultancies(driver);
 			
-			this.setTargetPageUrl(utils.ReadConfigMain.getValueFromProperty("consultanciesUrl"));
+			this.setTargetPageUrl(config.getConfigProp("consultanciesUrl"));
 			this.setTargetPageNameToTrace("Consltancies");
 			this.setTargetExistingPageElement(consultancies.getTargetExistingPageElement());
 			
@@ -33,12 +33,12 @@ public class ConsultancyPageTest extends BaseTest {
 			RandomData.LanguageSets LanguageSets = null;
 			
 			consultancies.setNewConsultancyParamiters(
-					utils.ReadConfigMain.getValueFromProperty("consultanciesTitle")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
-					 utils.ReadConfigMain.getValueFromProperty("consultanciesDescription")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
-					 utils.ReadConfigMain.getValueFromProperty("consultanciesPriceUAH")+RandomData.getRandomInt(10, 200),
-					 utils.ReadConfigMain.getValueFromProperty("consultanciesPriceEUR")+RandomData.getRandomInt(10, 200),
-					 utils.ReadConfigMain.getValueFromProperty("consultanciesUSD")+RandomData.getRandomInt(10, 200),
-					 utils.ReadConfigMain.getValueFromProperty("consultanciesEmployeeRate")+RandomData.getRandomInt(10, 200)
+					config.getConfigProp("consultanciesTitle")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
+					 config.getConfigProp("consultanciesDescription")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
+					 config.getConfigProp("consultanciesPriceUAH")+RandomData.getRandomInt(10, 200),
+					 config.getConfigProp("consultanciesPriceEUR")+RandomData.getRandomInt(10, 200),
+					 config.getConfigProp("consultanciesUSD")+RandomData.getRandomInt(10, 200),
+					 config.getConfigProp("consultanciesEmployeeRate")+RandomData.getRandomInt(10, 200)
 					);
 			
 			//Goto Consultancies page

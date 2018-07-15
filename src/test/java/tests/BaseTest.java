@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.LoginPage;
+import utils.WorkWithMainConfig;
 
 
 
@@ -22,6 +23,7 @@ public class BaseTest {
 	protected String targetPageUrl;
 	protected String targetPageNameToTrace;
 	protected By targetExistingPageElement;
+	protected WorkWithMainConfig config = new WorkWithMainConfig();
 	
 	public By getTargetExistingPageElement() {
 		return targetExistingPageElement;
@@ -82,10 +84,11 @@ public class BaseTest {
 	@Before
 	//We will open browser and pass login page to be able to switch to any page we need
 	public void startBrowser() throws Exception{
-		String Browser=utils.ReadConfigMain.getValueFromProperty("browserToTest");
-		String TestLoginUrl=utils.ReadConfigMain.getValueFromProperty("TestLoginUrl");
-		String SiteLogin=utils.ReadConfigMain.getValueFromProperty("SiteLogin");
-		String SitePass=utils.ReadConfigMain.getValueFromProperty("SitePass");
+		
+		String Browser=config.getConfigProp("browserToTest");
+		String TestLoginUrl=config.getConfigProp("TestLoginUrl");
+		String SiteLogin=config.getConfigProp("SiteLogin");
+		String SitePass=config.getConfigProp("SitePass");
 		switch (Browser) {
 		case "Chrome":
 			System.setProperty("webdriver.gecko.driver","src/main/java/resources/chromedriver.exe");
@@ -112,6 +115,11 @@ public class BaseTest {
 	@After
 	public void quitBrowser(){
 		driver.quit();
+	}
+	
+	protected void printOutMap(Map<String, String> resultMap, String CommentString) {
+		System.out.println("Printing Map with comment:"+ CommentString);
+		printOutMap(resultMap);
 	}
 	
 	protected void printOutMap(Map<String, String> resultMap) {

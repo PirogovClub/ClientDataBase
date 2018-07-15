@@ -16,7 +16,7 @@ public class MainNavigation extends BasePOM {
 	public MainNavigation(WebDriver driver){
 		setDriver( driver);
 		try {
-			lookForElementOnLoad = utils.ReadConfigMain.getValueFromProperty("clientPageLookForElement");
+			lookForElementOnLoad = ".//button[contains(text(),'Create Client')]";
 			clientPageLookForElement = By.xpath(lookForElementOnLoad);
 		} catch (Throwable e) {  
 	          System.out.println("caught:\r\n" + e);
@@ -25,8 +25,10 @@ public class MainNavigation extends BasePOM {
 	}
 	
 	public void clickClient() {
+		System.out.println("click Client begin");
 		driver.findElement(clientLink).click();
 		WaitForLoad(clientPageLookForElement);
+		System.out.println("click Client end");
 	}
 
 }

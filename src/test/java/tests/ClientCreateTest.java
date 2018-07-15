@@ -13,11 +13,12 @@ import pageObjects.ClientProperties;
 import pageObjects.Clients;
 import pageObjects.MainNavigation;
 import utils.RandomData;
+import utils.WorkWithMainConfig;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public class ClientsPageTest extends BaseTest {
+public class ClientCreateTest extends BaseTest {
 	
 	private Map<String,String> ClientMap = new HashMap<String,String>();
 		
@@ -44,21 +45,23 @@ public class ClientsPageTest extends BaseTest {
 	}
 
 	@Test
-	public void testClients() {
+	public void createClient() {
 		try {
 			
 			//Setup Objects
+			Map<String,String> resultMap = new HashMap<String,String>();
 			
 			Clients clients = new Clients(driver);
 			MainNavigation mainNavigation = new MainNavigation(driver);
 			ClientProperties clientProperties = new ClientProperties(driver);
 			
+			
 			//Setup data
 			RandomData RandomData = new RandomData();
 			RandomData.LanguageSets LanguageSets = null;
 			
-			String firstName	= utils.ReadConfigMain.getValueFromProperty("clientsTestFirstName")	+RandomData.getRandomInt(0, 10);
-			String lastName		= utils.ReadConfigMain.getValueFromProperty("clientsTestSecondName") 	+RandomData.getRandomInt(0, 10);
+			String firstName	= config.getTestDataProp("clientsTestFirstName")	+RandomData.getRandomInt(0, 10);
+			String lastName		= config.getTestDataProp("clientsTestSecondName") 	+RandomData.getRandomInt(0, 10);
 			String email		= RandomData.getRandomString(5, LanguageSets.ENGLISH)+"@"+RandomData.getRandomString(5, LanguageSets.ENGLISH)+".com";
 			String country		= RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW);
 			String city			= RandomData.getRandomString(1, LanguageSets.ENGLISH_HIGH)+RandomData.getRandomString(RandomData.getRandomInt(1, 49), LanguageSets.ENGLISH_LOW);
@@ -77,17 +80,23 @@ public class ClientsPageTest extends BaseTest {
 			clientProperties.setSecondaryFieldsAndSave();
 			clients.searchForClient(firstName+" "+lastName);
 			clients.clickHrefWithText(firstName+" "+lastName);
-			//clientProperties.readClientParamiters(false,"fake");
-			//clientProperties.compareClientParamiters();
-			try {
-				assertEquals(getClientMap(),clientProperties.readClientParamiters());
-			}
-			catch (Throwable e) {
-				System.out.println("Report Error" + e);
-			}
+			clientProperties.readClientParamitersFromPage(false,"fake");
+			clientProperties.readClientParamitersFromDb();
+			//Compare with what find on page, can throw TestFail here
+			resultMap= clientProperties.compareClientParamitersWithPage();
+			//Trace result of compare
+			printOutMap(resultMap,"Comapre With Page");
+			//Compare with Db, can throw TestFail here
+			resultMap= clientProperties.compareClientParamitersWithDb();
+			//Trace result of compare
+			printOutMap(resultMap,"Comapre With Db");
 			
-			//Print comparation result
-			//printOutMap(clientProperties.compareClientParamiters());
+			//Save Set FirstName and SecondName to propfile
+			config.setTestDataProp("clientsTestFirstName",firstName);
+			config.setTestDataProp("clientsTestSecondName",lastName);
+			config.saveTestDataPropToFile();
+			
+			
 		
 		} catch (Throwable e) { 
 	          System.out.println("caught:\r\n" + e);

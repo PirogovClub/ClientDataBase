@@ -35,13 +35,13 @@ public class EmployeePageTest extends BaseTest {
 			RandomData.LanguageSets LanguageSets = null;
 			
 			employees.setNewConsultancyParamiters(
-					 utils.ReadConfigMain.getValueFromProperty("employeesTestFirstName")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
-					 utils.ReadConfigMain.getValueFromProperty("employeesTestSecondName")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
-					 utils.ReadConfigMain.getValueFromProperty("employeesTestMaxLoad")+RandomData.getRandomInt(10, 200)
+					config.getConfigProp("employeesTestFirstName")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
+					config.getConfigProp("employeesTestSecondName")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
+					config.getConfigProp("employeesTestMaxLoad")+RandomData.getRandomInt(10, 200)
 					);
 			this.setTargetExistingPageElement(employees.getTargetExistingPageElement());
 			this.setTargetPageNameToTrace("Employees");
-			this.setTargetPageUrl(utils.ReadConfigMain.getValueFromProperty("employeesUrl"));
+			this.setTargetPageUrl(config.getConfigProp("employeesUrl"));
 			
 			GetToPage(targetPageUrl);
 			printList(employees.returnListFromColumn("name"));

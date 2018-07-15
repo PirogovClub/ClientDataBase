@@ -76,7 +76,8 @@ public class Clients extends BasePOM{
 
 	public void searchForClient(String searchString) {
 		// TODO Auto-generated method stub
-		WaitForLoad(this.getTargetExistingPageElement());
+		System.out.println("looking for " +searchString+" \r\n" );
+		WaitForLoad(createClientButton);
 		typeInSearchBox(searchString);
 		waitForElementToHide(showWhileDataTableIsLoading);
 		

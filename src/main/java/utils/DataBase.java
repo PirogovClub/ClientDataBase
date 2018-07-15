@@ -18,6 +18,8 @@ public class DataBase {
 	
 	  
 	private Connection connection = null;
+	private Statement st;
+	private WorkWithMainConfig config = new WorkWithMainConfig();
 	
 	public void connectToDb() {
 
@@ -36,19 +38,23 @@ public class DataBase {
 		try {
 			System.out.println();
 			connection = DriverManager.getConnection(
-					"jdbc:postgresql://" + utils.ReadConfigMain.getValueFromProperty("dbAddress") + ":"
-							+ utils.ReadConfigMain.getValueFromProperty("dbPort") + "/"
-							+ utils.ReadConfigMain.getValueFromProperty("dbName"),
-					utils.ReadConfigMain.getValueFromProperty("dbUserName"),
-					utils.ReadConfigMain.getValueFromProperty("dbUserPass"));
+							"jdbc:postgresql://" 
+							+ config.getDbDataProp("dbAddress") 
+							+ ":" 
+							+ config.getDbDataProp("dbPort")
+							+ "/" 
+							+ config.getDbDataProp("dbName"),
+					config.getDbDataProp("dbUserName"), config.getDbDataProp("dbUserPass"));
 
 		} catch (SQLException e) {
 			System.out.println("Connection Failed");
 			e.printStackTrace();
+			fail("Test Failed");
 			return;
-		} catch (IOException e) {
+		} catch (Throwable e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("caught:\r\n" + e);
+	        fail("Test Failed");
 		}
 
 		if (connection != null) {
@@ -76,7 +82,7 @@ public class DataBase {
 		String resultString = "";
 		if (connection != null) {
 			try {
-				Statement st;
+				
 				st = connection.createStatement();
 				// Statement позволяет отправлять запросы базе данных
 				st.executeQuery(SQLquery);
@@ -104,7 +110,7 @@ public class DataBase {
 		String resultString="";
 		if (connection != null) {
 			try {
-				Statement st;
+				
 				st = connection.createStatement();
 				// Statement позволяет отправлять запросы базе данных
 				st.executeQuery(SQLquery);
@@ -133,7 +139,7 @@ public class DataBase {
 		
 		if (connection != null) {
 			try {
-				Statement st;
+				
 				st = connection.createStatement();
 				// Statement позволяет отправлять запросы базе данных
 				st.executeQuery(SQLquery);
