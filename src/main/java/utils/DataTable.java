@@ -38,6 +38,9 @@ public class DataTable {
 			for (Map.Entry<String, String> entry : tblRow.entrySet()) {
 				String key = (String) entry.getKey();
 			    String value = (String) entry.getValue();
+			    PrintOuts.doString("key:"+key);
+			    PrintOuts.doString("value:"+value);
+			    PrintOuts.doString(other.tableBody.get(index).get(key));
 			    if (!value.equals((String) other.tableBody.get(index).get(key))) {
 			    	System.out.println("Original");
 			    	System.out.println("For key "+ key +" result is "+ value);
@@ -62,12 +65,43 @@ public class DataTable {
 
 	public void setTableBody(List<Map<String, String>> tableBody) {
 		this.tableBody = tableBody;
+		for (Map<String, String> tblRow : tableBody) {
+			for (Map.Entry<String, String> entry : tblRow.entrySet()) {
+				if (entry.getValue() == null) {
+					entry.setValue("not specified");
+				}
+			}
+		}
 	}
+
 	
 	public void printTable() {
-		PrintOuts printOut = new PrintOuts();
-		printOut.doListOfMap(tableBody);
 		
+		PrintOuts.doListOfMap(tableBody);
+	}
+	
+	public void renameKeys(String fromColName, String toColName) {
+		PrintOuts.doString("Enter rename from:" + fromColName + " to:" + toColName);
+		for (Map<String, String> row : tableBody) {
+			if (row.containsKey(fromColName)) {
+				// PrintOuts.doString("Before Rename");
+				// PrintOuts.doMap(tableHeaderBaseOnValue);
+				// PrintOuts.doMap(tableHeaderBaseOnCol);
+				row.put(toColName, row.get(fromColName));
+				row.remove(fromColName);
+				// PrintOuts.doString("After Rename");
+				// PrintOuts.doMap(tableHeaderBaseOnValue);
+				// PrintOuts.doMap(tableHeaderBaseOnCol);
+			}
+		}
+	}
+	
+	public void removeCol(String ColName) {
+		for (Map<String, String> row : tableBody) {
+			if (row.containsKey(ColName)) {
+				row.remove(ColName);
+			}
+		}
 	}
 	
 }

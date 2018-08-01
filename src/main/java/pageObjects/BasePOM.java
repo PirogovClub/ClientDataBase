@@ -122,7 +122,19 @@ public class BasePOM {
 		}
 	}
 	
-	protected void WaitForLoad(By targetExistingPageElement) {
+	public void clickHrefWithLink(String hrefToClink) {
+		By hrefToClinkOn = By.xpath(".//a[@href='"+hrefToClink+"']");
+		System.out.println("Wait For " + hrefToClinkOn );
+		WaitForLoad(hrefToClinkOn);
+		if (driver.findElement(hrefToClinkOn).isDisplayed()) {
+			driver.findElement(hrefToClinkOn).click();
+		} else {
+			System.out.println(hrefToClinkOn+" field is not displayed");
+		}
+	}
+	
+	
+	public void WaitForLoad(By targetExistingPageElement) {
 		System.out.println("Wait For " + targetExistingPageElement );
 		setTargetExistingPageElement(targetExistingPageElement);
 		while (FindPageElement());
