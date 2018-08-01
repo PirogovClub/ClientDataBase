@@ -10,7 +10,7 @@ public class TestFilterMentor extends ContractsAllTestBase {
 	
 	@Test
 	public void runFilterTest() {
-		
+		 
 		Boolean comparationResult = runTestForField("Mentor");
 		printTableToTerminal(comparationResult);
 		
