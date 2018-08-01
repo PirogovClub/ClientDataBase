@@ -2,7 +2,6 @@ package utils;
 
 import static org.junit.Assert.fail;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -84,13 +83,13 @@ public class DataBase {
 			try {
 				
 				st = connection.createStatement();
-				// Statement позволяет отправлять запросы базе данных
+				
 				st.executeQuery(SQLquery);
 				ResultSet rs = st.getResultSet();
 				
 				int x = rs.getMetaData().getColumnCount();
-				// Resultset.getMetaData() получаем информацию
-				// результирующей таблице
+				// Resultset.getMetaData() пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+				// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 				while (rs.next()) {
 					for (int i = 1; i <= x; i++) {
 						resultString=resultString+rs.getString(i) + "\t";
@@ -112,13 +111,12 @@ public class DataBase {
 			try {
 				
 				st = connection.createStatement();
-				// Statement позволяет отправлять запросы базе данных
+				
 				st.executeQuery(SQLquery);
 				ResultSet rs = st.getResultSet();
 				
 				int x = rs.getMetaData().getColumnCount();
-				// Resultset.getMetaData() получаем информацию
-				// результирующей таблице
+				
 				while (rs.next()) {
 					resultString="";
 					for (int i = 1; i <= x; i++) {
@@ -141,13 +139,11 @@ public class DataBase {
 			try {
 				
 				st = connection.createStatement();
-				// Statement позволяет отправлять запросы базе данных
 				st.executeQuery(SQLquery);
 				ResultSet rs = st.getResultSet();
 				
 				int x = rs.getMetaData().getColumnCount();
-				// Resultset.getMetaData() получаем информацию
-				// результирующей таблице
+				
 				while (rs.next()) {
 					for (int i = 1; i <= x; i++) {
 						resultMap.put(rs.getMetaData().getColumnName(i),rs.getString(i));
@@ -160,6 +156,40 @@ public class DataBase {
 		}
 		return resultMap;
 	}
+	
+	public List<Map<String,String>> executeQueryToListOfMap(String SQLquery) {
+		List<Map<String,String>> resultList = new ArrayList<Map<String,String>>();
+		Map<String,String> rowMap = new HashMap<String,String>();
+		
+		if (connection != null) {
+			try {
+				
+				st = connection.createStatement();
+				
+				st.executeQuery(SQLquery);
+				ResultSet rs = st.getResultSet();
+				
+				int x = rs.getMetaData().getColumnCount();
+				
+				while (rs.next()) {
+					rowMap.clear();
+					for (int i = 1; i <= x; i++) {
+						rowMap.put(rs.getMetaData().getColumnName(i),rs.getString(i));
+						//System.out.print(rs.getMetaData().getColumnName(i)+":"+rs.getString(i)+"|");
+					}
+					//System.out.println("");
+					resultList.add(new HashMap<String,String>(rowMap));
+				}
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return resultList;
+	}
+	
 	
 	
 }

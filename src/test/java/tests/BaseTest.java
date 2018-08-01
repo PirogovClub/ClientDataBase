@@ -1,6 +1,7 @@
 package tests;
 
 
+import java.util.List;
 import java.util.Map;
 
 import org.junit.After;
@@ -114,21 +115,7 @@ public class BaseTest {
 	
 	@After
 	public void quitBrowser(){
-		driver.quit();
+		//driver.quit();
 	}
 	
-	protected void printOutMap(Map<String, String> resultMap, String CommentString) {
-		System.out.println("Printing Map with comment:"+ CommentString);
-		printOutMap(resultMap);
-	}
-	
-	protected void printOutMap(Map<String, String> resultMap) {
-		for(Map.Entry<String, String> entry : resultMap.entrySet()) {
-		    String key = entry.getKey();
-		    String value = entry.getValue();
-		    System.out.println("For key "+ key +" result is "+ value);
-		    // do what you have to do here
-		    // In your case, another loop.
-		}
-	}
 }

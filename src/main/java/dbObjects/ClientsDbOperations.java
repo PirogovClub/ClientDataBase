@@ -1,27 +1,14 @@
 package dbObjects;
 
-import java.util.HashMap;
+
 import java.util.Map;
 
-import utils.DataBase;
-
-public class ClientsDbOperations {
-	
-	private DataBase db = new DataBase();
-	
-	
-	public ClientsDbOperations() {
-		db.connectToDb();
-	}
-	
-	public void closeDbConnection(){
-		db.closeConnection();
-	}
+public class ClientsDbOperations extends BaseDbOperations {
 	
 	public Map<String,String> getClientDataForCreatePage(String ClientId){
-		Map<String,String> resultMap = new HashMap<String,String>();
 		
-		String SQLString="SELECT\r\n" + 
+		
+		SQLString="SELECT\r\n" + 
 				"    client.id as \"Id\",\r\n" + 
 				"    client.last_name as \"lastName\",\r\n" + 
 				"    client.first_name as \"firstName\",\r\n" + 
@@ -35,15 +22,11 @@ public class ClientsDbOperations {
 				"WHERE\r\n" + 
 				"    client.id = " + ClientId;
 		resultMap = db.executeQueryToMap(SQLString);
-		System.out.println("Get from Db");
-		System.out.println(resultMap.get("lastName") + " "+resultMap.get("firstName"));
 		return resultMap;
 	}
 	
 	public Map<String,String> getClientDataForCreatePage(String ClientFirstName, String ClientLastName){
-		Map<String,String> resultMap = new HashMap<String,String>();
-		
-		String SQLString="SELECT\r\n" + 
+		SQLString="SELECT\r\n" + 
 				"    client.id as \"Id\",\r\n" + 
 				"    client.last_name as \"LastName\",\r\n" + 
 				"    client.first_name as \"FirstName\",\r\n" + 

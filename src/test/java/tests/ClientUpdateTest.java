@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import pageObjects.ClientProperties;
 import pageObjects.Clients;
 import pageObjects.MainNavigation;
+import utils.PrintOuts;
 import utils.RandomData;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -96,7 +97,8 @@ public class ClientUpdateTest extends BaseTest {
 			//Compare with Db, can throw TestFail here
 			resultMap= clientProperties.compareClientParamitersWithDb();
 			//Trace result of compare
-			printOutMap(resultMap,"Comapre With Db");
+			PrintOuts printOut = new PrintOuts();
+			printOut.doMap(resultMap,"Comapre With Db");
 			
 			//Save Set FirstName and SecondName to propfile
 			config.setTestDataProp("clientsTestFirstName",firstName);

@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import pageObjects.ClientProperties;
 import pageObjects.Clients;
 import pageObjects.MainNavigation;
+import utils.PrintOuts;
 import utils.RandomData;
 import utils.WorkWithMainConfig;
 
@@ -84,12 +85,13 @@ public class ClientCreateTest extends BaseTest {
 			clientProperties.readClientParamitersFromDb();
 			//Compare with what find on page, can throw TestFail here
 			resultMap= clientProperties.compareClientParamitersWithPage();
+			PrintOuts printOut = new PrintOuts();
 			//Trace result of compare
-			printOutMap(resultMap,"Comapre With Page");
+			printOut.doMap(resultMap,"Comapre With Page");
 			//Compare with Db, can throw TestFail here
 			resultMap= clientProperties.compareClientParamitersWithDb();
 			//Trace result of compare
-			printOutMap(resultMap,"Comapre With Db");
+			printOut.doMap(resultMap,"Comapre With Db");
 			
 			//Save Set FirstName and SecondName to propfile
 			config.setTestDataProp("clientsTestFirstName",firstName);

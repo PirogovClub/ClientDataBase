@@ -4,9 +4,14 @@ import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import utils.JSWaiter;
 
 public class BasePOM {
 	protected  WebDriver driver;
@@ -64,19 +69,29 @@ public class BasePOM {
 	}
 	
 	public void setTextToTestField(By fieldLocator, String textToSet, String fildShortNameToTrace) {
-		setTextToTestField(fieldLocator,textToSet, fildShortNameToTrace, true );
+		setTextToTestField(fieldLocator,textToSet, fildShortNameToTrace, true,0 );
 	}
 	
-	public void setTextToTestField(By fieldLocator, String textToSet, String fildShortNameToTrace, boolean Overwrite  )  {
-		
+	public void setTextToTestFieldAndWait(By fieldLocator, String textToSet, String fildShortNameToTrace, Integer waitForSecAfterInput) {
+		setTextToTestField(fieldLocator,textToSet, fildShortNameToTrace, true, waitForSecAfterInput*1000 );
+	}
+	
+	public void setTextToTestField(By fieldLocator, String textToSet, String fildShortNameToTrace, boolean Overwrite, Integer waitForMiliSecAfterInput  )  {
+		System.out.println("waitForSecAfterInput:"+waitForMiliSecAfterInput);
 		if (driver.findElement(fieldLocator).isDisplayed()) {
 			
 			if (Overwrite) {
 				driver.findElement(fieldLocator).clear();
 			}
 			driver.findElement(fieldLocator).sendKeys(textToSet);
+			JSWaiter.setDriver(driver);
+			JSWaiter.waitJQueryAngular();
 		} else {
 			System.out.println(fildShortNameToTrace+" field is not displayed");
+		}
+		
+		if (waitForMiliSecAfterInput>0) {
+			JSWaiter.sleep(waitForMiliSecAfterInput);
 		}
 		
 	}
@@ -126,6 +141,10 @@ public class BasePOM {
 		}
 			
 	}
+	
+	
+	
+	
 	
 
 }
