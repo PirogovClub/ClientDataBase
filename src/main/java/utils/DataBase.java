@@ -186,6 +186,8 @@ public class DataBase {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		} else {
+			System.out.println("no connection, can't run query DB");
 		}
 		return resultList;
 	}

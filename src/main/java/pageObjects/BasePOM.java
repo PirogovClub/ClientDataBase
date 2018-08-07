@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
@@ -32,6 +33,7 @@ public class BasePOM {
 
 	protected void setDriver(WebDriver driver) {
 		this.driver = driver;
+		
 	}
 
 	

@@ -1,6 +1,8 @@
 package pageObjects;
 
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,6 +18,7 @@ public class ContractsMain extends BasePOM {
 	
 	public ContractsMain (WebDriver driver){
 		this.driver = driver;
+		
 	}
 	
 	public HtmlTable readTableWithContracts() {

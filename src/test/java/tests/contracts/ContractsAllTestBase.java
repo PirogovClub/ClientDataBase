@@ -151,21 +151,44 @@ public class ContractsAllTestBase extends BaseTest {
 		return comparationResult;
 	}
 	
+	public void selectRandomRecord() {
+		// Select initial record to test
+				updateSqlStringWithSearch();
+				testListOfMap.clear();
+				testListOfMap = db.executeQueryToListOfMap(SQLquery);
+				
+				System.out.println("Initials selected contract from DB");
+				PrintOuts.doListOfMap(testListOfMap);
+				System.out.println("Initials selected contract from 2");
+		
+	}
 	
-	@Before
+	public String selectNeededRecord(String filteringField) {
+		
+		// Search for all records with current filtered value in DB
+		updateSqlStringWithSearch(filteringField, testListOfMap.get(0).get(filteringField));
+		// Format what retrieved from DB to Map
+		filteredListOfContractsFromDB.setTableBody(db.executeQueryToListOfMap(SQLquery));
+		return testListOfMap.get(0).get(filteringField);
+	}
+	
+	public boolean compareFilteredAndDB() {
+		// Get table from page
+		filteredContracts = contractsMain.readTableWithContracts();
+		// Rename columns correct date format for comparation
+		prepareTable();
+		// check id sets are the same
+		filteredListOfContractsFromPage.setTableBody(filteredContracts.getNamedTableBody());
+
+		return filteredListOfContractsFromDB.equals(filteredListOfContractsFromPage);
+	}
+	
+	
 	
 	public void initAllTestBase() {
 		
 		db.connectToDb();
 
-		// Select initial record to test
-		updateSqlStringWithSearch();
-		testListOfMap.clear();
-		testListOfMap = db.executeQueryToListOfMap(SQLquery);
-		System.out.println("Initials selected contract from DB");
-		
-		
-		PrintOuts.doListOfMap(testListOfMap);
 		
 		contractsMain = new ContractsMain(driver);
 		mainNavigation = new MainNavigation(driver);

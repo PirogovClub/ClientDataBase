@@ -3,6 +3,7 @@ package tests;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
@@ -100,6 +101,7 @@ public class BaseTest {
 			driver = new FirefoxDriver();
 			break;
 		}
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		//Check if this is login page, by default we should get to login page
 		LoginPage loginPage = new LoginPage(driver,TestLoginUrl);
