@@ -1,5 +1,7 @@
 package utils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -10,6 +12,7 @@ public class JSWaiter {
     private static WebDriver jsWaitDriver;
     private static WebDriverWait jsWait;
     private static JavascriptExecutor jsExec;
+    protected static Logger logger = LogManager.getLogger();
  
     //Get the driver 
     public static void setDriver (WebDriver driver) {
@@ -33,11 +36,11 @@ public class JSWaiter {
  
         //Wait JQuery until it is Ready!
         if(!jqueryReady) {
-            System.out.println("JQuery is NOT Ready!");
+        	 logger.debug("JQuery is NOT Ready!");
             //Wait for jQuery to load
             jsWait.until(jQueryLoad);
         } else {
-            System.out.println("JQuery is Ready!");
+        	 logger.debug("JQuery is Ready!");
         }
     }
  
@@ -58,11 +61,11 @@ public class JSWaiter {
  
         //Wait ANGULAR until it is Ready!
         if(!angularReady) {
-            System.out.println("ANGULAR is NOT Ready!");
+        	 logger.debug("ANGULAR is NOT Ready!");
             //Wait for Angular to load
             wait.until(angularLoad);
         } else {
-            System.out.println("ANGULAR is Ready!");
+        	 logger.debug("ANGULAR is Ready!");
         }
     }
  
@@ -80,11 +83,11 @@ public class JSWaiter {
  
         //Wait Javascript until it is Ready!
         if(!jsReady) {
-            System.out.println("JS in NOT Ready!");
+        	 logger.debug("JS in NOT Ready!");
             //Wait for Javascript to load
             wait.until(jsLoad);
         } else {
-            System.out.println("JS is Ready!");
+        	 logger.debug("JS is Ready!");
         }
     }
  
@@ -107,7 +110,7 @@ public class JSWaiter {
             //Post Wait for stability (Optional)
             sleep(20);
         }  else {
-            System.out.println("jQuery is not defined on this site!");
+            logger.debug("jQuery is not defined on this site!");
         }
     }
  
@@ -132,10 +135,10 @@ public class JSWaiter {
                 //Post Wait for stability (Optional)
                 sleep(20);
             } else {
-                System.out.println("Angular injector is not defined on this site!");
+            	 logger.debug("Angular injector is not defined on this site!");
             }
         }  else {
-            System.out.println("Angular is not defined on this site!");
+        	 logger.debug("Angular is not defined on this site!");
         }
     }
  
@@ -147,13 +150,13 @@ public class JSWaiter {
  
     public static void sleep (Integer seconds) {
         long secondsLong = (long) seconds;
-        System.out.println("Going to sleep for :"+seconds);
+        logger.debug("Going to sleep for :"+seconds);
         try {
             Thread.sleep(secondsLong);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("wakeup from sleep for :"+seconds);
+        logger.debug("wakeup from sleep for :"+seconds);
     }
     
     //Other implementation

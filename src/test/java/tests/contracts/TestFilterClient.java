@@ -1,6 +1,8 @@
 package tests.contracts;
 
 import static org.junit.Assert.fail;
+
+
 import org.junit.Test;
 
 public class TestFilterClient extends ContractsAllTestBase {
@@ -10,7 +12,7 @@ public class TestFilterClient extends ContractsAllTestBase {
 	
 	@Test
 	public void runFilterTest() {
-		
+		logger.info("Run into Test" + this.getClass().getName());
 		initAllTestBase();
 		selectRandomRecord();
 		String forFilter = selectNeededRecord("ClientName");

@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class DataBase {
 	 //  Database credentials
 	
@@ -19,47 +22,44 @@ public class DataBase {
 	private Connection connection = null;
 	private Statement st;
 	private WorkWithMainConfig config = new WorkWithMainConfig();
+	protected static Logger logger = LogManager.getLogger();
 	
 	public void connectToDb() {
 
-		System.out.println("open connection to PostgreSQL JDBC");
+		logger.trace("open connection to PostgreSQL JDBC");
 
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
-			System.out.println("PostgreSQL JDBC Driver is not found. Include it in your library path ");
+			logger.error("PostgreSQL JDBC Driver is not found. Include it in your library path ");
 			e.printStackTrace();
 			return;
 		}
 
-		System.out.println("PostgreSQL JDBC Driver successfully connected");
-		
+		logger.info("PostgreSQL JDBC Driver successfully connected");
+		String connectionString = "jdbc:postgresql://" + config.getDbDataProp("dbAddress") + ":"
+				+ config.getDbDataProp("dbPort") + "/" + config.getDbDataProp("dbName");
 		try {
-			System.out.println();
-			connection = DriverManager.getConnection(
-							"jdbc:postgresql://" 
-							+ config.getDbDataProp("dbAddress") 
-							+ ":" 
-							+ config.getDbDataProp("dbPort")
-							+ "/" 
-							+ config.getDbDataProp("dbName"),
-					config.getDbDataProp("dbUserName"), config.getDbDataProp("dbUserPass"));
+
+			connection = DriverManager.getConnection(connectionString, config.getDbDataProp("dbUserName"),
+					config.getDbDataProp("dbUserPass"));
 
 		} catch (SQLException e) {
-			System.out.println("Connection Failed");
-			e.printStackTrace();
+			logger.fatal("Connection Failed");
+			logger.trace(e);
 			fail("Test Failed");
 			return;
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
-			System.out.println("caught:\r\n" + e);
+			logger.fatal("Get error while connection");
+			logger.trace("caught:\r\n" + e);
 	        fail("Test Failed");
 		}
 
 		if (connection != null) {
-			System.out.println("You successfully connected to database now");
+			logger.info("You successfully connected to database now");
 		} else {
-			System.out.println("Failed to make connection to database");
+			logger.error("Failed to make connection to database");
 		}
 
 	}
@@ -71,9 +71,9 @@ public class DataBase {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("Connection close");
+			logger.info("DB Connection close");
 		} else {
-			System.out.println("Failed to Connection close");
+			logger.error("Failed to DB Connection close");
 		}
 	}
 	
@@ -88,8 +88,7 @@ public class DataBase {
 				ResultSet rs = st.getResultSet();
 				
 				int x = rs.getMetaData().getColumnCount();
-				// Resultset.getMetaData() �������� ����������
-				// �������������� �������
+				
 				while (rs.next()) {
 					for (int i = 1; i <= x; i++) {
 						resultString=resultString+rs.getString(i) + "\t";
@@ -187,7 +186,7 @@ public class DataBase {
 				e.printStackTrace();
 			}
 		} else {
-			System.out.println("no connection, can't run query DB");
+			logger.error("no connection, can't run query DB");
 		}
 		return resultList;
 	}

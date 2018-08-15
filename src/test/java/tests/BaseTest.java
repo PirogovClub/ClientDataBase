@@ -1,10 +1,10 @@
 package tests;
 
 
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
@@ -21,7 +21,7 @@ import utils.WorkWithMainConfig;
 public class BaseTest {
 
 	protected static WebDriver driver;
-	
+	protected static Logger logger = LogManager.getLogger();
 	protected String targetPageUrl;
 	protected String targetPageNameToTrace;
 	protected By targetExistingPageElement;
@@ -58,7 +58,7 @@ public class BaseTest {
 	
 	public void GetToPage(String targetPageUrl) {
 		driver.get(targetPageUrl);
-		System.out.println("Get To "+targetPageNameToTrace+", wating for load");
+		logger.trace("Get To "+targetPageNameToTrace+", wating for load");
 		WaitForLoad();
 		System.out.println("loaded");
 	}
@@ -86,6 +86,7 @@ public class BaseTest {
 	@Before
 	//We will open browser and pass login page to be able to switch to any page we need
 	public void startBrowser() throws Exception{
+		System.setProperty("log4j2.debug","INFO");
 		
 		String Browser=config.getConfigProp("browserToTest");
 		String TestLoginUrl=config.getConfigProp("TestLoginUrl");

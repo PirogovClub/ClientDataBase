@@ -2,8 +2,11 @@ package pageObjects;
 
 import static org.junit.Assert.fail;
 
+import org.apache.logging.log4j.message.Message;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import utils.TraceHelper;
 
 public class MainNavigation extends BasePOM {
 	
@@ -21,34 +24,47 @@ public class MainNavigation extends BasePOM {
 			lookForElementOnLoad = ".//button[contains(text(),'Create Client')]";
 			clientPageLookForElement = By.xpath(lookForElementOnLoad);
 		} catch (Throwable e) {  
-	          System.out.println("caught:\r\n" + e);
+			  logger.fatal("caught:\r\n" + e);
 	          fail("Test Failed");
 		} 
 	}
 	
 	
 	public void clickContractsMenu() {
-		System.out.println("click ContractsMenu begin");
+		String methodName = new Object() {
+		}.getClass().getEnclosingMethod().getName();
+		Message m = logger.traceEntry(methodName);
+		// ------------- body-----------
+
 		driver.findElement(contractsMenu).click();
 		WaitForLoad(contractsMenuLookForElement);
-		System.out.println("click ContractsMenu end");
+
+		// ------------ exit-----------
+		logger.traceExit(methodName);
 	}
-	
+
 	public void clickContractsAllMenu() {
-		System.out.println("click ContractsMenuAll begin");
+		String methodName = new Object() {
+		}.getClass().getEnclosingMethod().getName();
+		Message m = logger.traceEntry(methodName);
+		// ------------- body-----------
+
 		clickContractsMenu();
-		
 		driver.findElement(contractsMenuLookForElement).click();
 		WaitForLoad(contractsAllLookForElement);
-		System.out.println("click ContractsMenuAll end");
+		
+		// ------------ exit-----------
+		logger.traceExit(methodName);
 	}
 	
 	
 	public void clickClient() {
-		System.out.println("click Client begin");
+		Message m = logger.traceEntry("clickClient");
+
 		driver.findElement(clientLink).click();
 		WaitForLoad(clientPageLookForElement);
-		System.out.println("click Client end");
+		logger.traceExit(m);
+		
 	}
 	
 

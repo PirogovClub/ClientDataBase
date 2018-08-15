@@ -112,7 +112,7 @@ public class ContractsAllTestBase extends BaseTest {
 				"deal.status\r\n"+
 				havingStatment+orderByStatment + limitStatment
 				;
-		System.out.println("SQLquery:"+SQLquery);
+		logger.debug("\n\rSQLquery:"+SQLquery);
 		
 	}
 	
@@ -124,10 +124,10 @@ public class ContractsAllTestBase extends BaseTest {
 	}
 	
 	protected void printTableToTerminal(Boolean comparationResult) {
-		System.out.println("Comparation:"+comparationResult);
-		System.out.println("FromDB");
+		logger.debug("Comparation:"+comparationResult);
+		logger.debug("FromDB");
 		filteredListOfContractsFromDB.printTable();
-		System.out.println("FromPage");
+		logger.debug("FromPage");
 		filteredListOfContractsFromPage.printTable();
 	}
 	
@@ -157,9 +157,9 @@ public class ContractsAllTestBase extends BaseTest {
 				testListOfMap.clear();
 				testListOfMap = db.executeQueryToListOfMap(SQLquery);
 				
-				System.out.println("Initials selected contract from DB");
-				PrintOuts.doListOfMap(testListOfMap);
-				System.out.println("Initials selected contract from 2");
+				logger.trace("Initials selected contract from DB");
+				logger.trace(PrintOuts.getListOfMap(testListOfMap));
+				
 		
 	}
 	

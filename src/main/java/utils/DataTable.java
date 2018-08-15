@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class DataTable {
 	
 	protected List<Map<String,String>> tableBody = new ArrayList<Map<String,String>>();
+	protected static Logger logger = LogManager.getLogger();
 	
 	@Override
 	public int hashCode() {
@@ -42,10 +46,10 @@ public class DataTable {
 			    PrintOuts.doString("value:"+value);
 			    PrintOuts.doString(other.tableBody.get(index).get(key));
 			    if (!value.equals((String) other.tableBody.get(index).get(key))) {
-			    	System.out.println("Original");
-			    	System.out.println("For key "+ key +" result is "+ value);
-			    	System.out.println("Equal to");
-			    	System.out.println("For key "+ key +" result is "+ other.tableBody.get(index).get(key));
+			    	logger.debug("Original");
+			    	logger.debug("For key "+ key +" result is "+ value);
+			    	logger.debug("Equal to");
+			    	logger.debug("For key "+ key +" result is "+ other.tableBody.get(index).get(key));
 			    	
 			    	return false;
 			    }

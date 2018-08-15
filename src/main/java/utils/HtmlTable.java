@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +29,7 @@ public class HtmlTable {
 	protected Map<String,String> tableHeaderBaseOnValue = new HashMap<String,String>();
 	protected Map<String,String> tableRow = new HashMap<String,String>();
 	protected List<Map<String,String>> tableBody = new ArrayList<Map<String,String>>();
+	protected static Logger logger = LogManager.getLogger();
 	 
 	
 	public List<Map<String,String>> getNamedTableBody() {
@@ -99,7 +102,7 @@ public class HtmlTable {
             //System.out.println(getRowString(row_num));
             row_num++;
         } 
-        System.out.println("Read table "+tablesToParse.toString());
+        logger.debug("Read table "+tablesToParse.toString());
 	}
 	
 	public int getRows() {

@@ -10,11 +10,15 @@ import java.time.format.DateTimeParseException;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ConverDates {
 	
 	private static LocalDate localDate;
 	private static String formatted;
 	private static String outputImproper;
+	protected static Logger logger = LogManager.getLogger();
 	
 	public static LocalDate getLocalDate() {
 		return localDate;
@@ -68,7 +72,7 @@ public class ConverDates {
 		Boolean success =  ! ( localDate.equals ( LocalDate.MIN ) );
 		formatted = formatter.format ( localDate );;
 		outputImproper = formatted.replace ( "." , "" );  // Drop any period (FULL STOP).
-		System.out.println ( "success: " + success + ". input: " + input + " → localDate: " + localDate + " → formatted: " + formatted + " → outputImproper: " + outputImproper );
+		logger.debug("success: " + success + ". input: " + input + " → localDate: " + localDate + " → formatted: " + formatted + " → outputImproper: " + outputImproper );
 		return localDate;
 
 		
@@ -77,7 +81,7 @@ public class ConverDates {
 	public static String readDateFromNonRULocaleToString(String input, String toPattern, Locale locale) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( toPattern ).withLocale ( locale );
 		String output = formatter.format(readDateFromNonRULocale(input));
-		System.out.println ("Send converted date "+output);
+		logger.debug ("Send converted date "+output);
 		return output;
 		
 	}

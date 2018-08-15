@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="basePath">logs</Property>
+		<Property name="LOG_PATTERN">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] (%F:%L) - %m%n</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="fileDebug" fileName="${basePath}/debug.log"
+			filePattern="${basePath}/debug.%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+			<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="filePrintDebug" fileName="${basePath}/Printdebug.log"
+			filePattern="${basePath}/Printdebug.%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+			
+		</RollingFile>
+		<RollingFile name="fileInfo" fileName="${basePath}/info.log"
+			filePattern="${basePath}/debug.%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="fileError" fileName="${basePath}/error.log"
+			filePattern="${basePath}/error.%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+
+		</RollingFile>
+
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout>
+<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="fileDebug" level="DEBUG" />
+			<AppenderRef ref="fileInfo" level="INFO" />
+			<AppenderRef ref="fileError" level="ERROR" />
+			<AppenderRef ref="STDOUT" level="INFO" />
+		</Root>
+		<Logger name="club.pirogov.tfw.taf.utils" level="debug" additivity="true">
+			<AppenderRef ref="filePrintDebug" level="debug" />
+		</Logger>
+
+	</Loggers>
+</Configuration>

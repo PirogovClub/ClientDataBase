@@ -25,5 +25,15 @@
    		<artifactId>postgresql</artifactId>
    		<version>9.3-1102-jdbc41</version>
 	</dependency>
+	<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>2.11.1</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.11.1</version>
+  </dependency>
   </dependencies>
 </project>

@@ -1,17 +1,15 @@
 package pageObjects;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class LoginPage {
+public class LoginPage extends BasePOM {
 	
 		
 	By loginFormLocator=By.xpath(".//form[@id='login-form']");
@@ -92,10 +90,10 @@ public class LoginPage {
 
 		List<WebElement> elems = driver.findElements(loginFormLocator);
 		if (0 == elems.size()) {
-			System.out.println("No login window on page");
+			logger.error("No login window on page");
 			return false;
 		} else {
-			System.out.println("Found login form on the page, need to login");
+			logger.info("Found login form on the page, need to login");
 			return true;
 		}
 

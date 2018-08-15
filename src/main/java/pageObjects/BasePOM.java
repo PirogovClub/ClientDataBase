@@ -3,6 +3,8 @@ package pageObjects;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,6 +18,7 @@ import utils.JSWaiter;
 
 public class BasePOM {
 	protected  WebDriver driver;
+	protected static Logger logger = LogManager.getLogger();
 	private By toBeVisiablePageElement;
 	private By targetExistingPageElement;
 	
@@ -47,7 +50,7 @@ public class BasePOM {
 
 	public void waitModalWindow(By waitForElement) {
 		setToBeVisiablePageElement(waitForElement);
-		System.out.println("Wait for" + waitForElement);
+		logger.trace("Wait for" + waitForElement);
 		waitForModalOpen();
 		
 	}
@@ -79,7 +82,7 @@ public class BasePOM {
 	}
 	
 	public void setTextToTestField(By fieldLocator, String textToSet, String fildShortNameToTrace, boolean Overwrite, Integer waitForMiliSecAfterInput  )  {
-		System.out.println("waitForSecAfterInput:"+waitForMiliSecAfterInput);
+		logger.trace("waitForSecAfterInput:"+waitForMiliSecAfterInput);
 		if (driver.findElement(fieldLocator).isDisplayed()) {
 			
 			if (Overwrite) {
@@ -115,29 +118,29 @@ public class BasePOM {
 	
 	public void clickHrefWithText(String hrefToClink) {
 		By hrefToClinkOn = By.xpath(".//a[contains(text(),'"+hrefToClink+"')]");
-		System.out.println("Wait For " + hrefToClinkOn );
+		logger.info("Wait For " + hrefToClinkOn );
 		WaitForLoad(hrefToClinkOn);
 		if (driver.findElement(hrefToClinkOn).isDisplayed()) {
 			driver.findElement(hrefToClinkOn).click();
 		} else {
-			System.out.println(hrefToClinkOn+" field is not displayed");
+			logger.debug(hrefToClinkOn+" field is not displayed");
 		}
 	}
 	
 	public void clickHrefWithLink(String hrefToClink) {
 		By hrefToClinkOn = By.xpath(".//a[@href='"+hrefToClink+"']");
-		System.out.println("Wait For " + hrefToClinkOn );
+		logger.info("Wait For " + hrefToClinkOn );
 		WaitForLoad(hrefToClinkOn);
 		if (driver.findElement(hrefToClinkOn).isDisplayed()) {
 			driver.findElement(hrefToClinkOn).click();
 		} else {
-			System.out.println(hrefToClinkOn+" field is not displayed");
+			logger.debug(hrefToClinkOn+" field is not displayed");
 		}
 	}
 	
 	
 	public void WaitForLoad(By targetExistingPageElement) {
-		System.out.println("Wait For " + targetExistingPageElement );
+		logger.info("Wait For " + targetExistingPageElement );
 		setTargetExistingPageElement(targetExistingPageElement);
 		while (FindPageElement());
 	}

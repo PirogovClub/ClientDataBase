@@ -29,13 +29,13 @@ public class ContractsMain extends BasePOM {
 	}
 	
 	public void typeInSearchBox(String stringToType) {
-		System.out.println("typing" );
+		logger.info("Typing "+stringToType );
 		setTextToTestFieldAndWait(searchInput,stringToType,"Search Input",1);
 	}
 	
 	public void searchForString(String searchString) {
 		// TODO Auto-generated method stub
-		System.out.println("looking for " +searchString+" \r\n" );
+		logger.trace("looking for " +searchString+" \r\n" );
 		WaitForLoad(waitForElement);
 		typeInSearchBox(searchString);
 		
