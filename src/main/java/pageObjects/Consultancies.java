@@ -17,9 +17,9 @@ public class Consultancies extends BasePOM {
 	
 	
 	By NewConsultancy=By.xpath(".//a[@href='/admin/consultancies/new']");
-	By Find=By.xpath(".//input[@placeholder='Поиск']");
+	By Find=By.xpath(".//input[@placeholder='пїЅпїЅпїЅпїЅпїЅ']");
 	By pagenatorInfo=By.xpath("//span[@class='pagination-info']");
-	By RefreshButton=By.xpath("//button[@title='Обновить']");
+	By RefreshButton=By.xpath("//button[@title='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ']");
 	By ConsultancyTitle = By.xpath(".//input[@id='name']");
 	
 	By ConsultancyDescription = By.xpath(".//textarea[@id='description']");
@@ -46,10 +46,11 @@ public class Consultancies extends BasePOM {
 	
 	private Boolean TypeIntoTextInput(WebElement webElement, String textToType, String traceText) {
 		if (webElement.isDisplayed()) {
+			logger.info("Typing into "+ traceText +" field:"+textToType);
 			webElement.sendKeys(textToType);
-			System.out.println("Typed into "+ traceText +" field:"+textToType);
+			
 		} else {
-			System.out.println(traceText+" field is not displayed");
+			logger.error(traceText+" field is not displayed");
 		}
 		return true;
 	}

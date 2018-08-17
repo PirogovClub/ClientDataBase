@@ -47,7 +47,7 @@ public class ClientUpdateTest extends BaseTest {
 	@Test
 	public void testClients() {
 		try {
-			
+			logger.info("Get into Test" + this.getClass().getName());
 			//Setup Objects
 			Map<String,String> resultMap = new HashMap<String,String>();
 			Map<String,String> existingClientMap = new HashMap<String,String>();
@@ -107,7 +107,7 @@ public class ClientUpdateTest extends BaseTest {
 			
 		
 		} catch (Throwable e) { 
-	          System.out.println("caught:\r\n" + e);
+			logger.error("in "+this.getClass().getName()+" caught:\r\n" + e);
 	          fail("Test Failed");
 		} 
 	}

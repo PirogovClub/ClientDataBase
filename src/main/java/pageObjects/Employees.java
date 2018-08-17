@@ -9,8 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Employees {
-	WebDriver driver;
+public class Employees extends BasePOM {
+	
 
 	By createEmployeeButton = By.xpath(".//button[@type='button'][contains(text(),'Employee')]");
 	By createEmployeeFirstNameField = By.xpath("//input[@id='firstName']");
@@ -52,7 +52,7 @@ public class Employees {
 		if (webElement.isDisplayed()) {
 			webElement.sendKeys(newEmployeeName);
 		} else {
-			System.out.println("First Name field is not displayed");
+			logger.error("First Name field is not displayed");
 		}
 		
 		return this;
@@ -63,7 +63,7 @@ public class Employees {
 		if (webElement.isDisplayed()) {
 			webElement.sendKeys(newEmployeeLastName);
 		} else {
-			System.out.println("Last Name field is not displayed");
+			logger.error("Last Name field is not displayed");
 		}
 		
 		return this;
@@ -74,20 +74,20 @@ public class Employees {
 		if (webElement.isDisplayed()) {
 			webElement.sendKeys(employeeMaxLoad);
 		} else {
-			System.out.println("Last Name field is not displayed");
+			logger.error("Last Name field is not displayed");
 		}
 		
 		return this;
 	}
 	
 	public Employees createNewEmployee() {
-		
+		logger.info("Typing FirstName:"+newEmplMap.get("FirstName")+" LastName:"+newEmplMap.get("SecondName")+" Max Load:"+newEmplMap.get("MaxLoad"));
 		typeNewEmployeeName(newEmplMap.get("FirstName"));
 		typeNewEmployeeLastName(newEmplMap.get("SecondName"));
 		typeNewEmployeeMaxLoad(newEmplMap.get("MaxLoad"));
-		System.out.println("Entered values");
+		logger.info("pushing save");
 		saveNewEmployeeClick();
-		System.out.println("pushed save");
+		
 		return this;
 	}
 	

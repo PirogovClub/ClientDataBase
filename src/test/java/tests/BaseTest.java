@@ -57,10 +57,10 @@ public class BaseTest {
 	}
 	
 	public void GetToPage(String targetPageUrl) {
+		logger.trace("Go To "+targetPageNameToTrace+", wating for load");
 		driver.get(targetPageUrl);
-		logger.trace("Get To "+targetPageNameToTrace+", wating for load");
 		WaitForLoad();
-		System.out.println("loaded");
+		
 	}
 	
 	private boolean FindPageElement() {
@@ -86,12 +86,14 @@ public class BaseTest {
 	@Before
 	//We will open browser and pass login page to be able to switch to any page we need
 	public void startBrowser() throws Exception{
+		
 		System.setProperty("log4j2.debug","INFO");
 		
 		String Browser=config.getConfigProp("browserToTest");
 		String TestLoginUrl=config.getConfigProp("TestLoginUrl");
 		String SiteLogin=config.getConfigProp("SiteLogin");
 		String SitePass=config.getConfigProp("SitePass");
+		logger.info("Starting browser");
 		switch (Browser) {
 		case "Chrome":
 			System.setProperty("webdriver.gecko.driver","src/main/java/resources/chromedriver.exe");

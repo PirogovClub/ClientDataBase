@@ -10,13 +10,28 @@ public class TestFilterMentor extends ContractsAllTestBase {
 	
 	@Test
 	public void runFilterTest() {
-		 
-		Boolean comparationResult = runTestForField("Mentor");
-		printTableToTerminal(comparationResult);
+String checkFieldName = "Mentor";
 		
+		logger.info("Get into Test" + this.getClass().getName());
+		logger.info("Checking filter for " + checkFieldName + " field");
+		initAllTestBase();
+		selectRandomRecord();
+		
+		String forFilter = selectNeededRecord(checkFieldName);
+		
+		
+		// Type in searchBar
+		contractsMain.searchForString(forFilter);
+		
+		
+		Boolean comparationResult = compareFilteredAndDB();
+		logger.info("Tables equals? : "+ comparationResult);
+		printTableToTerminal(comparationResult);
+
 		if (!comparationResult) {
-			fail("Data is not equal");
+			logger.fatal("Data is not equal");
 		}
+		
 		
 	}
 	

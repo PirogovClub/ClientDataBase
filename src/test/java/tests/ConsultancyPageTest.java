@@ -23,6 +23,7 @@ public class ConsultancyPageTest extends BaseTest {
 	@Test
 	public void testConsultancy() {
 		try {
+			logger.info("Get into Test" + this.getClass().getName());
 			Consultancies consultancies = new Consultancies(driver);
 			
 			this.setTargetPageUrl(config.getConfigProp("consultanciesUrl"));
@@ -59,7 +60,7 @@ public class ConsultancyPageTest extends BaseTest {
 			
 			
 		} catch (Throwable e) {
-			System.out.println("caught:\r\n" + e);
+			logger.error("in "+this.getClass().getName()+" caught:\r\n" + e);
 			fail("Test Failed");
 		}
 	}

@@ -24,7 +24,7 @@ public class MainNavigation extends BasePOM {
 			lookForElementOnLoad = ".//button[contains(text(),'Create Client')]";
 			clientPageLookForElement = By.xpath(lookForElementOnLoad);
 		} catch (Throwable e) {  
-			  logger.fatal("caught:\r\n" + e);
+			logger.error("in "+this.getClass().getName()+" caught:\r\n" + e);
 	          fail("Test Failed");
 		} 
 	}
@@ -35,7 +35,7 @@ public class MainNavigation extends BasePOM {
 		}.getClass().getEnclosingMethod().getName();
 		Message m = logger.traceEntry(methodName);
 		// ------------- body-----------
-
+		logger.info("Clicking on to " + contractsMenu);
 		driver.findElement(contractsMenu).click();
 		WaitForLoad(contractsMenuLookForElement);
 
@@ -47,6 +47,8 @@ public class MainNavigation extends BasePOM {
 		String methodName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
 		Message m = logger.traceEntry(methodName);
+		
+		logger.info("Clicking on to " + contractsMenuLookForElement);
 		// ------------- body-----------
 
 		clickContractsMenu();
@@ -59,11 +61,11 @@ public class MainNavigation extends BasePOM {
 	
 	
 	public void clickClient() {
-		Message m = logger.traceEntry("clickClient");
-
+		
+		logger.info("Clicking on to " + contractsMenu);
 		driver.findElement(clientLink).click();
 		WaitForLoad(clientPageLookForElement);
-		logger.traceExit(m);
+		
 		
 	}
 	

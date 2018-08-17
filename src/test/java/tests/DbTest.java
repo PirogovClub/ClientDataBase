@@ -5,11 +5,14 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 import utils.DataBase;
 
 public class DbTest {
+	protected static Logger logger = LogManager.getLogger();
 	
 	@Test
 	public void CheckString() {
@@ -25,7 +28,7 @@ public class DbTest {
 				"Where \r\n" + 
 				"        deal.status = 'ACTIVE'\r\n" + 
 				"Order By random() limit 1;"; 
-		System.out.println(db.executeQueryToString(SQLquery));
+		logger.debug(db.executeQueryToString(SQLquery));
 		
 		SQLquery = "Select \r\n" + 
 				"       CONCAT(employee.first_name, ' ', employee.last_name) as \"Mentor\",\r\n" + 
@@ -37,7 +40,7 @@ public class DbTest {
 				"Order By random() limit 1;"; 
 		
 		
-		System.out.println(db.executeQueryToString(SQLquery));
+		logger.debug(db.executeQueryToString(SQLquery));
 		SQLquery = "select " + 
 				"        " + 
 				"        contract.contract_date as \"Contract Date\"," + 
@@ -54,7 +57,7 @@ public class DbTest {
 				"Order by random() limit 1;"; 
 		
 		
-		System.out.println(db.executeQueryToString(SQLquery));
+		logger.debug(db.executeQueryToString(SQLquery));
 		
 		SQLquery = "SELECT " + 
 				"    deal.id, " + 
@@ -120,7 +123,7 @@ public class DbTest {
 		
 		Map<String,String> testMap = new HashMap<String,String>();
 		testMap = db.executeQueryToMap(SQLquery);
-		System.out.println(testMap.get("ClientName") + ":"+testMap.get("Deal Status"));  
+		logger.debug(testMap.get("ClientName") + ":"+testMap.get("Deal Status"));  
 		
 		
 		db.closeConnection();

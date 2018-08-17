@@ -10,6 +10,9 @@ import java.io.InputStream;
 import java.nio.file.*;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class WorkWithMainConfig {
 	
 	private  String currentPropName= null;
@@ -19,6 +22,7 @@ public class WorkWithMainConfig {
 	private  Properties configProp = new Properties();
 	private  Properties testDataProp = new Properties();
 	private  Properties dbDataProp = new Properties();
+	protected static Logger logger = LogManager.getLogger();
 	
 	public WorkWithMainConfig(){
 		try {
@@ -37,7 +41,7 @@ public class WorkWithMainConfig {
 				
 
 		} catch (Throwable e) {
-			System.out.println("caught:\r\n" + e);
+			logger.error("in "+this.getClass().getName()+" caught:\r\n" + e);
 			fail("Test Failed");
 		}
 	}

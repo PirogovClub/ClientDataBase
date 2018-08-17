@@ -23,6 +23,7 @@ public class DataTable {
 	@Override
 	public boolean equals(Object obj) {
 		//Sorting is SIGNIFICANT taken into account
+		logger.info("Checking tables for equality");
 		if (this == obj)
 			return true;
 		if (obj == null)

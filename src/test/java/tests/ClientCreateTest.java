@@ -25,7 +25,7 @@ public class ClientCreateTest extends BaseTest {
 		
 	private void printList(List<String> NameList) {
 		for (String listElement : NameList) {
-			System.out.println(listElement);
+			logger.debug(listElement);
 		}
 	}
 	
@@ -48,7 +48,7 @@ public class ClientCreateTest extends BaseTest {
 	@Test
 	public void createClient() {
 		try {
-			
+			logger.info("Get into Test" + this.getClass().getName());
 			//Setup Objects
 			Map<String,String> resultMap = new HashMap<String,String>();
 			
@@ -101,7 +101,7 @@ public class ClientCreateTest extends BaseTest {
 			
 		
 		} catch (Throwable e) { 
-	          System.out.println("caught:\r\n" + e);
+			logger.error("in "+this.getClass().getName()+" caught:\r\n" + e);
 	          fail("Test Failed");
 		} 
 	}

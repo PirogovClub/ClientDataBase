@@ -36,7 +36,7 @@ public class DataBase {
 			return;
 		}
 
-		logger.info("PostgreSQL JDBC Driver successfully connected");
+		logger.debug("PostgreSQL JDBC Driver successfully connected");
 		String connectionString = "jdbc:postgresql://" + config.getDbDataProp("dbAddress") + ":"
 				+ config.getDbDataProp("dbPort") + "/" + config.getDbDataProp("dbName");
 		try {
@@ -52,12 +52,12 @@ public class DataBase {
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			logger.fatal("Get error while connection");
-			logger.trace("caught:\r\n" + e);
+			logger.error("in "+this.getClass().getName()+" caught:\r\n" + e);
 	        fail("Test Failed");
 		}
 
 		if (connection != null) {
-			logger.info("You successfully connected to database now");
+			logger.debug("You successfully connected to database now");
 		} else {
 			logger.error("Failed to make connection to database");
 		}
@@ -174,9 +174,9 @@ public class DataBase {
 					rowMap.clear();
 					for (int i = 1; i <= x; i++) {
 						rowMap.put(rs.getMetaData().getColumnName(i),rs.getString(i));
-						//System.out.print(rs.getMetaData().getColumnName(i)+":"+rs.getString(i)+"|");
+						
 					}
-					//System.out.println("");
+					
 					resultList.add(new HashMap<String,String>(rowMap));
 				}
 				

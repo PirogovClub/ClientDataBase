@@ -12,21 +12,26 @@ public class TestFilterClient extends ContractsAllTestBase {
 	
 	@Test
 	public void runFilterTest() {
-		logger.info("Run into Test" + this.getClass().getName());
+		
+		String checkFieldName = "ClientName";
+		
+		logger.info("Get into Test" + this.getClass().getName());
+		logger.info("Checking filter for " + checkFieldName + " field");
+		
 		initAllTestBase();
 		selectRandomRecord();
-		String forFilter = selectNeededRecord("ClientName");
+		String forFilter = selectNeededRecord(checkFieldName);
 		
 		// Type in searchBar
 		contractsMain.searchForString(forFilter);
 		
 		
 		Boolean comparationResult = compareFilteredAndDB();
-		
+		logger.info("Tables equals? : "+ comparationResult);
 		printTableToTerminal(comparationResult);
 
 		if (!comparationResult) {
-			fail("Data is not equal");
+			logger.fatal("Data is not equal");
 		}
 		
 	}

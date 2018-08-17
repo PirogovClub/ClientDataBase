@@ -58,6 +58,7 @@ public class LoginPage extends BasePOM {
 	// PressSubmit
 	public LoginPage pressSubmitButton() {
 		driver.findElement(paswFldLocator).sendKeys(Keys.RETURN);
+		logger.info("pressed Submit");
 		WaitForLoad();
 		return this;
 	}
@@ -65,6 +66,7 @@ public class LoginPage extends BasePOM {
 	//LoginAs
 	
 	public LoginPage loginAs(String strUserName, String strUserPassword) {
+		logger.info("logining as " + strUserName + "");
 		typeUserName(strUserName);
 		typePassword(strUserPassword);
 		

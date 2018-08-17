@@ -13,12 +13,12 @@ public class Clients extends BasePOM{
 	
 	
 	By createClientButton = By.xpath(".//button[contains(text(),'Create Client')]");
-	By FindBtn=By.xpath(".//input[@placeholder='Поиск']");
+	By FindBtn=By.xpath(".//input[@placeholder='пїЅпїЅпїЅпїЅпїЅ']");
 	By RefreshBtn=By.name("refresh");
 	By createClientFirstNameField = By.xpath("//input[@id='firstName']");
 	By createClientLastNameField = By.xpath("//input[@id='lastName']");
 	By saveNewClientName = By.xpath(".//button[@type='submit'][contains(text(),'save')]");
-	By searchInput = By.xpath(".//input[@placeholder='Поиск']");
+	By searchInput = By.xpath(".//input[@placeholder='пїЅпїЅпїЅпїЅпїЅ']");
 	By showWhileDataTableIsLoading= By.xpath("//div[@class='fixed-table-loading']");
 	
 	
@@ -76,7 +76,7 @@ public class Clients extends BasePOM{
 
 	public void searchForClient(String searchString) {
 		// TODO Auto-generated method stub
-		System.out.println("looking for " +searchString+" \r\n" );
+		
 		WaitForLoad(createClientButton);
 		typeInSearchBox(searchString);
 		waitForElementToHide(showWhileDataTableIsLoading);

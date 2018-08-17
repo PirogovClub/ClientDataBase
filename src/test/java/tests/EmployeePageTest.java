@@ -17,11 +17,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class EmployeePageTest extends BaseTest {
 	
-	By existingPageElement = By.xpath("//button[@title='Обновить']");
+	By existingPageElement = By.xpath("//button[@title='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ']");
 		
 	private void printList(List<String> NameList) {
 		for (String listElement : NameList) {
-			System.out.println(listElement);
+			logger.debug(listElement);
 		}
 	}
 	
@@ -29,6 +29,7 @@ public class EmployeePageTest extends BaseTest {
 	@Test
 	public void testClients() {
 		try { 
+			logger.info("Get into Test" + this.getClass().getName());
 			Employees employees = new Employees(driver);
 			
 			RandomData RandomData = new RandomData();
@@ -51,15 +52,16 @@ public class EmployeePageTest extends BaseTest {
 			// nextInt is normally exclusive of the top value,
 			// so add 1 to make it inclusive
 			int randomNum = ThreadLocalRandom.current().nextInt(1, 20 + 1);
-			
+			logger.info("pushing createEmployeeButton");
 			employees.createEmployeeButtonClick();
-			System.out.println("pushed createEmployeeButtonClick");
+			
 			employees.createNewEmployee();
 			
 			
 			
 		} catch (Throwable e) { 
-	          System.out.println("caught:\r\n" + e);
+			logger.error("in "+this.getClass().getName()+" caught:\\r\\n\" + e");
+	         
 	          fail("Test Failed");
 		} 
 	}

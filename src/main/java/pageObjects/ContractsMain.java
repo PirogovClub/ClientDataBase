@@ -23,13 +23,14 @@ public class ContractsMain extends BasePOM {
 	
 	public HtmlTable readTableWithContracts() {
 		WaitForLoad(waitForElement);
+		logger.info("Reading table from page");
 		this.tableWithContracts = new  HtmlTable(tableWithContractsBy,driver);
 		
 		return tableWithContracts;
 	}
 	
 	public void typeInSearchBox(String stringToType) {
-		logger.info("Typing "+stringToType );
+		//logger.info("Typing "+stringToType + " into " + searchInput);
 		setTextToTestFieldAndWait(searchInput,stringToType,"Search Input",1);
 	}
 	

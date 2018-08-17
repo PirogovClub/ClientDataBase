@@ -69,7 +69,7 @@ public class ContractsDetail  extends BasePOM{
 				"        on (money_client.id = contract.price_id)\r\n" + 
 				"Where\r\n" + 
 				"        contract.id="+value;
-		System.out.println("SQLquery:"+SQLquery);
+		
 		
 	}
 

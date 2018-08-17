@@ -3,6 +3,8 @@ package tests;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +20,7 @@ public class OpenFF {
 	
 	private static WebDriver driver;
 	private WorkWithMainConfig config = new WorkWithMainConfig();
-	
+	protected static Logger logger = LogManager.getLogger();
 
 	@Before
 	public void setUp() {
@@ -33,7 +35,7 @@ public class OpenFF {
 			//comment on this
 			driver.get(config.getConfigProp("openurl")); 
 		} catch (Throwable e) { 
-	          System.out.println("caught" + e); 
+			logger.error("in "+this.getClass().getName()+" caught" + e); 
 		} 
 	}
 	

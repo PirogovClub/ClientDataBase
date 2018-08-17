@@ -2,18 +2,21 @@ package tests;
 
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import utils.RandomData;
 
 public class TestRandomUtil {
-	
+	protected static Logger logger = LogManager.getLogger();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		RandomData RandomGenerator = new RandomData();
 		RandomData.LanguageSets LanguageSets = null;
-		System.out.println(RandomGenerator.getRandomString(10, LanguageSets.ENGLISH_HIGH));
-		System.out.println(RandomGenerator.getRandomInt(-1000, 10));
-		System.out.println(RandomGenerator.getRandomBoolean());
-		System.out.println(RandomGenerator.getRandomFloat(2, 10, 2));
+		logger.debug(RandomGenerator.getRandomString(10, LanguageSets.ENGLISH_HIGH));
+		logger.debug(RandomGenerator.getRandomInt(-1000, 10));
+		logger.debug(RandomGenerator.getRandomBoolean());
+		logger.debug(RandomGenerator.getRandomFloat(2, 10, 2));
 	}
 
 }

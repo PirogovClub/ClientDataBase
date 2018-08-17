@@ -181,16 +181,17 @@ public class ClientProperties  extends BasePOM{
 
 	public void clickSaveButton() {
 		// TODO Auto-generated method stub
-		System.out.println("Clicking Save");
+		logger.info("Clicking Save");
 		driver.findElement(saveClientParam).click();
-		System.out.println("Clicked Save");
+		
 	}
 	
 	public void setSecondaryFieldsAndSave() {
 		WaitForLoad(this.getTargetExistingPageElement());
+		logger.error("Typing fields");
 		setSecondaryFields();
 		clickSaveButton();
-		System.out.println("Entered Fields");
+		
 	}
 	
 	public String getClientIdFromCurrentURL() {
