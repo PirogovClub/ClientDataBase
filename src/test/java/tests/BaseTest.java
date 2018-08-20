@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.LoginPage;
+import utils.ScreenShots;
 import utils.WorkWithMainConfig;
 
 
@@ -120,7 +121,9 @@ public class BaseTest {
 	
 	@After
 	public void quitBrowser(){
-		//driver.quit();
+		ScreenShots screenShot = new ScreenShots();
+		screenShot.makeSimpleShot(driver, "currentTest");
+		driver.quit();
 	}
 	
 }
