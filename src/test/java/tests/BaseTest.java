@@ -123,6 +123,7 @@ public class BaseTest {
 	public void quitBrowser(){
 		ScreenShots screenShot = new ScreenShots();
 		screenShot.makeSimpleShot(driver, "currentTest");
+		logger.info("Closing browser");
 		driver.quit();
 	}
 	
