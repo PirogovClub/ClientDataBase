@@ -26,7 +26,16 @@ public class BaseTest {
 	protected String targetPageUrl;
 	protected String targetPageNameToTrace;
 	protected By targetExistingPageElement;
+	protected String chieldTestModuleName = "";
 	protected WorkWithMainConfig config = new WorkWithMainConfig();
+	
+	public String getChieldTestModuleName() {
+		return chieldTestModuleName;
+	}
+
+	public void setChieldTestModuleName(String chieldTestModuleName) {
+		this.chieldTestModuleName = chieldTestModuleName;
+	}
 	
 	public By getTargetExistingPageElement() {
 		return targetExistingPageElement;
@@ -122,7 +131,7 @@ public class BaseTest {
 	@After
 	public void quitBrowser(){
 		ScreenShots screenShot = new ScreenShots();
-		screenShot.makeSimpleShot(driver, "currentTest");
+		screenShot.makeSimpleShot(driver, getChieldTestModuleName());
 		logger.info("Closing browser");
 		driver.quit();
 	}

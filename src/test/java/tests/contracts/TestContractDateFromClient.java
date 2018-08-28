@@ -18,7 +18,9 @@ public class TestContractDateFromClient extends ContractsAllTestBase {
 	@Test
 	public void runTest() {
 
-		String filteringField = "ClientName";
+		String filteringField = "ContractsDate";
+		setChieldTestModuleName(this.getClass().getName());
+		logger.info("Get into Test" + this.getClass().getName());
 
 		// Search for all records with current filtered value in DB
 		updateSqlStringWithSearch(filteringField, testListOfMap.get(0).get(filteringField));

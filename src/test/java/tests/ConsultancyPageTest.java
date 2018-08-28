@@ -23,6 +23,7 @@ public class ConsultancyPageTest extends BaseTest {
 	@Test
 	public void testConsultancy() {
 		try {
+			setChieldTestModuleName(this.getClass().getName());
 			logger.info("Get into Test" + this.getClass().getName());
 			Consultancies consultancies = new Consultancies(driver);
 			

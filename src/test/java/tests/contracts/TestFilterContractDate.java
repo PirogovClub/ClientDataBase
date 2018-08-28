@@ -12,6 +12,7 @@ public class TestFilterContractDate extends ContractsAllTestBase {
 	
 	@Test
 	public void runFilterTest() {
+		setChieldTestModuleName(this.getClass().getName());
 		logger.info("Get into Test" + this.getClass().getName());
 		String filteringField = "ContractDate";
 		

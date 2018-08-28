@@ -47,6 +47,7 @@ public class ClientUpdateTest extends BaseTest {
 	@Test
 	public void testClients() {
 		try {
+			setChieldTestModuleName(this.getClass().getName());
 			logger.info("Get into Test" + this.getClass().getName());
 			//Setup Objects
 			Map<String,String> resultMap = new HashMap<String,String>();

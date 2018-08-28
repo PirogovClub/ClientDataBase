@@ -48,6 +48,7 @@ public class ClientCreateTest extends BaseTest {
 	@Test
 	public void createClient() {
 		try {
+			setChieldTestModuleName(this.getClass().getName());
 			logger.info("Get into Test" + this.getClass().getName());
 			//Setup Objects
 			Map<String,String> resultMap = new HashMap<String,String>();

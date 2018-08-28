@@ -10,6 +10,7 @@ public class TestFilterConsultancy extends ContractsAllTestBase {
 		
 		String checkFieldName = "Consultancy";
 		
+		setChieldTestModuleName(this.getClass().getName());
 		logger.info("Get into Test" + this.getClass().getName());
 		logger.info("Checking filter for " + checkFieldName + " field");
 		initAllTestBase();
