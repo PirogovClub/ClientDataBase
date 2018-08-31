@@ -15,8 +15,12 @@ public class MainNavigation extends BasePOM {
 	
 	By clientLink = By.xpath(".//a[@href='/admin/clients']");
 	By contractsMenu = By.xpath(".//span[contains(text(),'Договора')]");
+	By invoicesMenu = By.xpath(".//span[contains(text(),'Счета')]");
+	By invoicesAllMenu = By.xpath(".//a[@href='/admin/invoices']");
+	
 	By contractsMenuLookForElement = By.xpath(".//a[@href='/admin/contracts']");
 	By contractsAllLookForElement = By.xpath(".//table[@class='table table-hover']");
+	
 			
 	public MainNavigation(WebDriver driver){
 		setDriver( driver);
@@ -58,6 +62,29 @@ public class MainNavigation extends BasePOM {
 		// ------------ exit-----------
 		logger.traceExit(methodName);
 	}
+	
+	public void clickInvoicesMenu() {
+		
+		// ------------- body-----------
+		logger.info("Clicking on to " + invoicesMenu);
+		driver.findElement(invoicesMenu).click();
+		WaitForLoad(invoicesAllMenu);
+				// ------------ exit-----------
+		
+	}
+	
+	public void clickInvoicesAllMenu() {
+		
+		// ------------- body-----------
+		logger.info("Clicking on to " + invoicesAllMenu);
+		clickInvoicesMenu();
+		driver.findElement(invoicesAllMenu).click();
+
+		// ------------ exit-----------
+		
+	}
+	
+	
 	
 	
 	public void clickClient() {

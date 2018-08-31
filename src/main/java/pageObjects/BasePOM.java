@@ -9,10 +9,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utils.JSWaiter;
@@ -73,6 +75,20 @@ public class BasePOM {
 		while (!findVisiblePageElement())
 			;
 	}
+	
+	 public static boolean waitForElement(By webElement, WebDriver driver) {
+			logger.debug("Wait For " + webElement);
+			try {
+				(new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(webElement));
+
+				return true;
+			} catch (TimeoutException e) {
+				logger.error("Miss element "+e);
+				return false;
+			} 
+			
+		}
+	
 
 	public void setTextToTestField(By fieldLocator, String textToSet, String fildShortNameToTrace) {
 		setTextToTestField(fieldLocator, textToSet, fildShortNameToTrace, true, 0);
@@ -123,7 +139,7 @@ public class BasePOM {
 	public void clickHrefWithText(String hrefToClink) {
 		By hrefToClinkOn = By.xpath(".//a[contains(text(),'" + hrefToClink + "')]");
 		logger.info("Wait For " + hrefToClinkOn);
-		WaitForLoad(hrefToClinkOn);
+		waitForElement(hrefToClinkOn,driver);
 		if (driver.findElement(hrefToClinkOn).isDisplayed()) {
 			driver.findElement(hrefToClinkOn).click();
 		} else {

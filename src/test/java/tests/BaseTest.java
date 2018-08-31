@@ -96,7 +96,7 @@ public class BaseTest {
 	@Before
 	//We will open browser and pass login page to be able to switch to any page we need
 	public void startBrowser() throws Exception{
-		
+		logger.info("--------------------Strarting Test------------");
 		System.setProperty("log4j2.debug","INFO");
 		
 		String Browser=config.getConfigProp("browserToTest");

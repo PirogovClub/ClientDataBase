@@ -155,5 +155,18 @@ public class HtmlTable {
 			PrintOuts.doString("Converted date:" + tableRow.get(tableHeaderBaseOnValue.get(colName)));
 		}
 	}
+	
+	public void convertStub(String colName, String fromStub, String toStub) {
+		printTable();
+		for (Map<String, String> tableRow : tableBody) {
+			PrintOuts.doString("Check :" + tableRow.get(tableHeaderBaseOnValue.get(colName))+" on Stub:"+fromStub);
+			if (tableRow.get(tableHeaderBaseOnValue.get(colName)).equals(fromStub))
+			tableRow.put(tableHeaderBaseOnValue.get(colName), toStub);
+			PrintOuts.doString("After check :" + tableRow.get(tableHeaderBaseOnValue.get(colName)));
+			
+		}
+	}
+
+	
 
 }

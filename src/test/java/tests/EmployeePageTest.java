@@ -29,6 +29,7 @@ public class EmployeePageTest extends BaseTest {
 	@Test
 	public void testClients() {
 		try { 
+			setChieldTestModuleName(this.getClass().getName());
 			logger.info("Get into Test" + this.getClass().getName());
 			Employees employees = new Employees(driver);
 			

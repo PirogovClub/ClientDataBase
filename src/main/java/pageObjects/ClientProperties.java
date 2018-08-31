@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import dbObjects.ClientsDbOperations;
+import utils.HtmlTable;
 
 
 
@@ -29,10 +30,12 @@ public class ClientProperties  extends BasePOM{
 	By clientCity=By.id("city");
 	By clientCountry=By.id("country");
 	By saveClientParam=By.xpath(".//button[@type='submit'][contains(text(),'Save')]");
+	By tableWithDealsBy=By.xpath(".//div[@class='display-grid']//table[@class='table table-hover']");
 	
 	private Map<String,String> newClientMap = new HashMap<String,String>();
 	private Map<String,String> readClientMapFromPage = new HashMap<String,String>();
 	private Map<String,String> readClientMapFromDb = new HashMap<String,String>();
+	private HtmlTable tableWithDeals;
 	
 	public ClientProperties(WebDriver driver) {
 		this.driver = driver;
@@ -199,6 +202,17 @@ public class ClientProperties  extends BasePOM{
 		strToReturn = driver.getCurrentUrl();
 		strToReturn = strToReturn.substring(strToReturn.lastIndexOf('/') + 1);
 		return strToReturn;
+	}
+
+
+	public HtmlTable readClientDeals() {
+		// TODO Auto-generated method stub
+		waitForElement(tableWithDealsBy,driver);
+		logger.info("Reading table with Deals from page");
+		this.tableWithDeals = new  HtmlTable(tableWithDealsBy,driver);
+		logger.info("Done Reading table with Deals from page");
+		return tableWithDeals;
+		
 	}
 	
 	
