@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import utils.DataTable;
 import utils.HtmlTable;
 
 public class InvoicesMain extends BasePOM{
@@ -41,7 +42,9 @@ public class InvoicesMain extends BasePOM{
 		waitForElementToHide(showWhileDataTableIsLoading);
 		
 		
-		
+	
 	}
+	
+	
 
 }

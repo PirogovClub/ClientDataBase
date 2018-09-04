@@ -6,10 +6,11 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import pageObjects.ClientProperties;
+import utils.AssertWarp;
 import utils.DataTable;
 import utils.HtmlTable;
 
-public class TestInvocesClientDataDbVsUI extends InvocesTestBase {
+public class TestInvocesClientDataDbVsUI extends InvoicesTestBase {
 	
 	public void searchForString(String forFilter) {
 		// TODO Auto-generated method stub
@@ -47,16 +48,11 @@ public class TestInvocesClientDataDbVsUI extends InvocesTestBase {
 		filteredListOfInvoceFromPage.setTableBody(filteredInvoices.getNamedTableBody());
 		
 		prepareInvocesDBTable();
+		invoceMain.checkPageTableDbAndUI(getFilteredListOfInvoceFromDB(), filteredListOfInvoceFromPage);
 		
-		try {
-			assertEquals(getFilteredListOfInvoceFromDB(), filteredListOfInvoceFromPage);
-			logger.info("Tables are equals");
-		} catch (AssertionError e) {
-			fail("Tables are not equal on step Checking Invoce");
-			logger.fatal("Tables are not equal on step Checking Invoce");
-		
-		}
-		
+		boolean isTestPassed = true;
+		isTestPassed = isTestPassed & invoceMain.checkPageTableDbAndUI(getFilteredListOfInvoceFromDB(), filteredListOfInvoceFromPage);
+		AssertWarp.assertToLog(isTestPassed);
 		
 		
 	}

@@ -23,7 +23,7 @@ import utils.PrintOuts;
 
 
 
-public class InvocesTestBase extends BaseTest {
+public class InvoicesTestBase extends BaseTest {
 	
 	protected List<Map<String,String>> testListOfMap = new ArrayList<Map<String,String>>();
 	private DataTable filteredListOfInvoceFromDB = new DataTable();

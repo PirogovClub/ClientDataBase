@@ -1,5 +1,8 @@
 package pageObjects;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -17,6 +20,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.AssertWarp;
+import utils.DataTable;
 import utils.JSWaiter;
 
 public class BasePOM {
@@ -222,6 +227,12 @@ public class BasePOM {
 		} else {
 			return false;
 		}
+	}
+	
+	public boolean checkPageTableDbAndUI(DataTable DbTable, DataTable UITable) {
+		
+		return DbTable.equals(UITable);
+		
 	}
 
 }
