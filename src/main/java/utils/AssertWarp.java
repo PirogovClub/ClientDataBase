@@ -7,14 +7,18 @@ import org.junit.Assert;
 public class AssertWarp {
 	protected static Logger logger = LogManager.getLogger();
 
-	public static void assertToLog(boolean isTestPassed) {
+	public static void assertToLog(boolean isTestPassed, String showMsg) {
 		if (!isTestPassed) {
-			logger.error("TEST FAILED");
+			logger.error("TEST FAILED "+showMsg);
 			Assert.fail();
 		}
 		logger.info("TEST SUCCESSFULLY COMPLETED");
 		// return isTestPassed;
 
+	}
+	
+	public static void assertToLog(boolean isTestPassed) {
+		assertToLog(isTestPassed, "");
 	}
 
 }

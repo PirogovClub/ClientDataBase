@@ -35,8 +35,8 @@ public class ConsultancyPageTest extends BaseTest {
 			RandomData.LanguageSets LanguageSets = null;
 			
 			consultancies.setNewConsultancyParamiters(
-					config.getConfigProp("consultanciesTitle")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
-					 config.getConfigProp("consultanciesDescription")+RandomData.getRandomString(2, LanguageSets.ENGLISH_HIGH),
+					config.getConfigProp("consultanciesTitle")+RandomData.getRandomString(50, LanguageSets.ENGLISH_HIGH),
+					 "",
 					 config.getConfigProp("consultanciesPriceUAH")+RandomData.getRandomInt(10, 200),
 					 config.getConfigProp("consultanciesPriceEUR")+RandomData.getRandomInt(10, 200),
 					 config.getConfigProp("consultanciesUSD")+RandomData.getRandomInt(10, 200),

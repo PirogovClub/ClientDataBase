@@ -43,11 +43,26 @@ public class ConverDates {
 		outputImproper = formatted.replace ( "." , "" );
 		
 	}
+	
+	public static String convertFieldsInLocale(String localdate, String fromFormat, String toFormat, Locale fromLocale, Locale toLocale) {
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( fromFormat ).withLocale ( fromLocale );
+		logger.info("Get localdate:"+localdate);
+		localDate = LocalDate.parse ( localdate , formatter );
+		formatter = DateTimeFormatter.ofPattern ( toFormat ).withLocale ( toLocale);
+		formatted = formatter.format ( localDate );
+		//outputImproper = formatted.replace ( "." , "" );
+		return formatted;
+		
+	}
 
 	public static LocalDate readDateFromNonRULocale(String input) {
+		return readDateFromNonRULocale(input, Locale.forLanguageTag("RU"));
+	}
+	public static LocalDate readDateFromNonRULocale(String input, Locale locale) {
 		// Read date with month without dot like окт.
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( "dd-MMM-yyyy" ).withLocale ( Locale.forLanguageTag("RU") );
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( "dd-MMM-yyyy" ).withLocale ( locale );
 		localDate = LocalDate.MIN; // Some folks prefer a bogus default value as a success/failure flag rather than using a NULL.
 		try {
 		    localDate = LocalDate.parse ( input , formatter );
@@ -78,12 +93,22 @@ public class ConverDates {
 		
 	}
 	
-	public static String readDateFromNonRULocaleToString(String input, String toPattern, Locale locale) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( toPattern ).withLocale ( locale );
+	public static String readDateFromNonRULocaleToString(String input, String toPattern, Locale toLocale) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( toPattern ).withLocale ( toLocale );
 		String output = formatter.format(readDateFromNonRULocale(input));
 		logger.debug ("Send converted date "+output);
 		return output;
 		
 	}
+	
+	public static String readDateFromNonRULocaleToString(String input, String toPattern, Locale toLocale, Locale fromLocale) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( toPattern ).withLocale ( toLocale );
+		String output = formatter.format(readDateFromNonRULocale(input,fromLocale));
+		logger.debug ("Send converted date "+output);
+		return output;
+		
+	}
+	
+	
 
 }

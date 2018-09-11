@@ -145,6 +145,10 @@ public class HtmlTable {
 	}
 
 	public void convertDateCol(String colName, String toFormat) {
+		convertDateCol(colName,toFormat,Locale.forLanguageTag("RU"));
+	}
+	
+	public void convertDateCol(String colName, String toFormat, Locale fromLocale) {
 		printTable();
 		for (Map<String, String> tableRow : tableBody) {
 			PrintOuts.doString(
@@ -154,6 +158,21 @@ public class HtmlTable {
 			tableRow.put(tableHeaderBaseOnValue.get(colName), newDate);
 			PrintOuts.doString("Converted date:" + tableRow.get(tableHeaderBaseOnValue.get(colName)));
 		}
+	}
+	
+	public void convertDateColEng2Eng(String colName, String fromFormat, String toFormat) {
+		printTable();
+		for (Map<String, String> tableRow : tableBody) {
+			PrintOuts.doString(
+					"Convert date from " + colName + ": " + tableRow.get(tableHeaderBaseOnValue.get(colName)));
+			String newDate = ConverDates.convertFieldsInLocale(
+					tableRow.get(tableHeaderBaseOnValue.get(colName)),
+						fromFormat, toFormat, Locale.US, Locale.US);
+			
+			tableRow.put(tableHeaderBaseOnValue.get(colName), newDate);
+			PrintOuts.doString("Converted date:" + tableRow.get(tableHeaderBaseOnValue.get(colName)));
+		}
+		
 	}
 	
 	public void convertStub(String colName, String fromStub, String toStub) {

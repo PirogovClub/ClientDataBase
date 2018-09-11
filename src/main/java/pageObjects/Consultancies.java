@@ -20,9 +20,10 @@ public class Consultancies extends BasePOM {
 	By Find=By.xpath(".//input[@placeholder='�����']");
 	By pagenatorInfo=By.xpath("//span[@class='pagination-info']");
 	By RefreshButton=By.xpath("//button[@title='��������']");
-	By ConsultancyTitle = By.xpath(".//input[@id='name']");
-	
-	By ConsultancyDescription = By.xpath(".//textarea[@id='description']");
+	String consultancyId = "input[@id='name']";
+	By ConsultancyTitle = By.xpath(".//"+consultancyId);
+	String consultancyDescriptionId = "textarea[@id='description']";
+	By ConsultancyDescription = By.xpath(".//"+consultancyDescriptionId);
 	By typePriceUAH = By.xpath(".//input[@id='prices[0].amount']");
 	By PriceEUR = By.xpath(".//input[@id='prices[1].amount']");
 	By PriceUSD = By.xpath(".//input[@id='prices[2].amount']");
@@ -148,6 +149,35 @@ public class Consultancies extends BasePOM {
 		clickHrefWithText(newConsultancyMap.get("Title"));
 		
 	}
+
+	public boolean checkErrorTitleMessage(String string) {
+		// TODO Auto-generated method stub
+		return checkOutPutErrorMessage(string,consultancyId);
+		
+	}
+	
+	public boolean checkErrorDescriptionMessage(String string) {
+		// TODO Auto-generated method stub
+		return checkOutPutErrorMessage(string,consultancyDescriptionId);
+		
+	}
+
+	public boolean checkOutPutErrorMessage(String string, String precedingBy) {
+		// TODO Auto-generated method stub
+		//размер должен быть между 2 и 50
+		By outputText = By.xpath(".//output[contains(text(),'"+string+"') and preceding::"+precedingBy+"]");
+		logger.info("Looking for Error Message:"+string+" in "+outputText);
+		try {
+			driver.findElement(outputText);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+		
+		
+	}
+
+	
 	
 	
 	

@@ -133,7 +133,7 @@ public class BaseTest {
 		ScreenShots screenShot = new ScreenShots();
 		screenShot.makeSimpleShot(driver, getChieldTestModuleName());
 		logger.info("Closing browser");
-		driver.quit();
+		//driver.quit();
 	}
 	
 }

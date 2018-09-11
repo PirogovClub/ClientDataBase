@@ -24,6 +24,22 @@ public class ContractsAllTestBase extends BaseTest {
 	protected List<Map<String,String>> testListOfMap = new ArrayList<Map<String,String>>();
 	protected DataTable filteredListOfContractsFromDB = new DataTable();
 	protected DataTable filteredListOfContractsFromPage = new DataTable();
+	public DataTable getFilteredListOfContractsFromDB() {
+		return filteredListOfContractsFromDB;
+	}
+
+	public void setFilteredListOfContractsFromDB(DataTable filteredListOfContractsFromDB) {
+		this.filteredListOfContractsFromDB = filteredListOfContractsFromDB;
+	}
+
+	public DataTable getFilteredListOfContractsFromPage() {
+		return filteredListOfContractsFromPage;
+	}
+
+	public void setFilteredListOfContractsFromPage(DataTable filteredListOfContractsFromPage) {
+		this.filteredListOfContractsFromPage = filteredListOfContractsFromPage;
+	}
+
 	protected DataBase db = new DataBase();
 	protected String SQLquery = "";
 	protected ContractsMain contractsMain;
@@ -172,7 +188,7 @@ public class ContractsAllTestBase extends BaseTest {
 		return testListOfMap.get(0).get(filteringField);
 	}
 	
-	public boolean compareFilteredAndDB() {
+	public void prepareFilteredAndDB() {
 		// Get table from page
 		filteredContracts = contractsMain.readTableWithContracts();
 		// Rename columns correct date format for comparation
@@ -180,7 +196,7 @@ public class ContractsAllTestBase extends BaseTest {
 		// check id sets are the same
 		filteredListOfContractsFromPage.setTableBody(filteredContracts.getNamedTableBody());
 
-		return filteredListOfContractsFromDB.equals(filteredListOfContractsFromPage);
+		
 	}
 	
 	

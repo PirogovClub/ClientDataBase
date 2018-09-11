@@ -209,6 +209,7 @@ public class ClientProperties  extends BasePOM{
 		// TODO Auto-generated method stub
 		waitForElement(tableWithDealsBy,driver);
 		logger.info("Reading table with Deals from page");
+		scrollToElement(tableWithDealsBy);
 		this.tableWithDeals = new  HtmlTable(tableWithDealsBy,driver);
 		logger.info("Done Reading table with Deals from page");
 		return tableWithDeals;

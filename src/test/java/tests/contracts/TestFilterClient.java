@@ -5,6 +5,8 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
+import utils.AssertWarp;
+
 public class TestFilterClient extends ContractsAllTestBase {
 	
 	
@@ -25,15 +27,12 @@ public class TestFilterClient extends ContractsAllTestBase {
 		
 		// Type in searchBar
 		contractsMain.searchForString(forFilter);
+		prepareFilteredAndDB();
 		
+		boolean isTestPassed = true;
+		isTestPassed = isTestPassed & contractsMain.checkPageTableDbAndUI(getFilteredListOfContractsFromDB(), getFilteredListOfContractsFromPage());
+		AssertWarp.assertToLog(isTestPassed);
 		
-		Boolean comparationResult = compareFilteredAndDB();
-		logger.info("Tables equals? : "+ comparationResult);
-		printTableToTerminal(comparationResult);
-
-		if (!comparationResult) {
-			logger.fatal("Data is not equal");
-		}
 		
 	}
 	

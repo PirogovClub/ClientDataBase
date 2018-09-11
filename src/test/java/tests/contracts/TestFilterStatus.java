@@ -3,6 +3,8 @@ package tests.contracts;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 
+import utils.AssertWarp;
+
 public class TestFilterStatus extends ContractsAllTestBase {
 
 	@Test
@@ -21,13 +23,11 @@ public class TestFilterStatus extends ContractsAllTestBase {
 		// Type in searchBar
 		contractsMain.searchForString(forFilter);
 
-		Boolean comparationResult = compareFilteredAndDB();
-		logger.info("Tables equals? : " + comparationResult);
-		printTableToTerminal(comparationResult);
-
-		if (!comparationResult) {
-			logger.fatal("Data is not equal");
-		}
+prepareFilteredAndDB();
+		
+		boolean isTestPassed = true;
+		isTestPassed = isTestPassed & contractsMain.checkPageTableDbAndUI(getFilteredListOfContractsFromDB(), getFilteredListOfContractsFromPage());
+		AssertWarp.assertToLog(isTestPassed);
 
 	}
 

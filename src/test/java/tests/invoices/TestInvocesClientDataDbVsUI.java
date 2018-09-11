@@ -48,7 +48,6 @@ public class TestInvocesClientDataDbVsUI extends InvoicesTestBase {
 		filteredListOfInvoceFromPage.setTableBody(filteredInvoices.getNamedTableBody());
 		
 		prepareInvocesDBTable();
-		invoceMain.checkPageTableDbAndUI(getFilteredListOfInvoceFromDB(), filteredListOfInvoceFromPage);
 		
 		boolean isTestPassed = true;
 		isTestPassed = isTestPassed & invoceMain.checkPageTableDbAndUI(getFilteredListOfInvoceFromDB(), filteredListOfInvoceFromPage);

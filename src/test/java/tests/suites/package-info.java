@@ -5,4 +5,4 @@
  * @author pirog
  *
  */
-package tests.mixed;
+package tests.suites;
