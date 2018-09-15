@@ -21,7 +21,7 @@ public class InvoicesMain extends BasePOM{
 	}
 	
 	public HtmlTable readTableWithInvoces() {
-		WaitForLoad(waitForElement);
+		waitForElement2BeVisible(waitForElement);
 		logger.info("Reading table from page");
 		this.tableWithContracts = new  HtmlTable(tableWithInvoicesBy,driver);
 		
@@ -36,7 +36,7 @@ public class InvoicesMain extends BasePOM{
 	public void searchForString(String searchString) {
 		// TODO Auto-generated method stub
 		logger.trace("looking for " +searchString+" \r\n" );
-		WaitForLoad(waitForElement);
+		waitForElement2BeVisible(waitForElement);
 		typeInSearchBox(searchString);
 		
 		waitForElementToHide(showWhileDataTableIsLoading);

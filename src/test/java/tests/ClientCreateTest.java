@@ -91,8 +91,10 @@ public class ClientCreateTest extends BaseTest {
 			printOut.doMap(resultMap,"Comapre With Page");
 			//Compare with Db, can throw TestFail here
 			resultMap= clientProperties.compareClientParamitersWithDb();
+			
+			checkIsTestPassed(clientProperties.checkIfComparationIsNotOK(resultMap));
 			//Trace result of compare
-			printOut.doMap(resultMap,"Comapre With Db");
+			printOut.doMap(resultMap,"Compare With Db");
 			
 			//Save Set FirstName and SecondName to propfile
 			config.setTestDataProp("clientsTestFirstName",firstName);

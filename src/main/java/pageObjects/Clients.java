@@ -13,12 +13,12 @@ public class Clients extends BasePOM{
 	
 	
 	By createClientButton = By.xpath(".//button[contains(text(),'Create Client')]");
-	By FindBtn=By.xpath(".//input[@placeholder='�����']");
+	By FindBtn=By.xpath(".//input[@placeholder='Поиск']");
 	By RefreshBtn=By.name("refresh");
 	By createClientFirstNameField = By.xpath("//input[@id='firstName']");
 	By createClientLastNameField = By.xpath("//input[@id='lastName']");
 	By saveNewClientName = By.xpath(".//button[@type='submit'][contains(text(),'save')]");
-	By searchInput = By.xpath(".//input[@placeholder='�����']");
+	By searchInput = By.xpath(".//input[@placeholder='Поиск']");
 	By showWhileDataTableIsLoading= By.xpath("//div[@class='fixed-table-loading']");
 	
 	
@@ -35,14 +35,13 @@ public class Clients extends BasePOM{
 	}
 	
 	public Clients createClientButtonClick() {
-		driver.findElement(createClientButton).click();
-		
+		clickOnElement(createClientButton);
 		return this;
 	}
 	
 	public Clients saveNewClientNameClick() {
-		driver.findElement(saveNewClientName).click();
 		
+		clickOnElement(saveNewClientName);
 		return this;
 	}
 	
@@ -77,7 +76,7 @@ public class Clients extends BasePOM{
 	public void searchForClient(String searchString) {
 		// TODO Auto-generated method stub
 		
-		WaitForLoad(createClientButton);
+		waitForElement2BeVisible(createClientButton);
 		typeInSearchBox(searchString);
 		waitForElementToHide(showWhileDataTableIsLoading);
 		

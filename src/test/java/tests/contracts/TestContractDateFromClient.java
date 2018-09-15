@@ -32,7 +32,7 @@ public class TestContractDateFromClient extends ContractsAllTestBase {
 		contractsMain.clickHrefWithLink("/admin/contracts/"+contractToWorkWith);
 		
 		ContractsDetail contractsDetail = new ContractsDetail(driver);
-		contractsDetail.WaitForLoad(contractsDetail.getWaitForElement());
+		contractsDetail.waitForElement2BeVisible(contractsDetail.getWaitForElement());
 		DataTable contractData = new DataTable();
 		contractData.setTableBody(contractsDetail.readContractData());
 		contractData.printTable();

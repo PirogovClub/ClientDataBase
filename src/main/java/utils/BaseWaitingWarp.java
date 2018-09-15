@@ -10,12 +10,13 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class JSWaiter {
+public class BaseWaitingWarp {
 	 
     private static WebDriver jsWaitDriver;
     private static WebDriverWait jsWait;
     private static JavascriptExecutor jsExec;
     protected static Logger logger = LogManager.getLogger();
+    private static Integer timeOutToWaitInSec = 10;
  
     //Get the driver 
     public static void setDriver (WebDriver driver) {
@@ -194,16 +195,73 @@ public class JSWaiter {
 	  return wait.until(jQueryLoad) && wait.until(jsLoad);
 	}
     
-    public static boolean waitForElement(By webElement, WebDriver driver) {
-		logger.debug("Wait For " + webElement);
-		try {
-			(new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(webElement));
+	public static boolean waitForElementToBeHidden(By webElement, WebDriver driver) {
+		logger.debug("Wait For " + webElement + " to be hidden");
+		return waitForElementState("ToBeHidden", webElement, driver);
+	}
 
+	public static boolean waitForElementToBeVisible(By webElement, WebDriver driver) {
+		logger.debug("Wait For " + webElement + " to be hidden");
+		return waitForElementState("ToBeVisibile", webElement, driver);
+	}
+
+	public static boolean waitForElementToBeClickable(By webElement, WebDriver driver) {
+		logger.debug("Wait For " + webElement + " to be elementToBeClickable");
+		return waitForElementState("ToBeClickable", webElement, driver);
+	}
+	
+	public static boolean waitForElementState(String waitFor, By webElement, WebDriver driver) {
+		return waitForElementState(waitFor, webElement, driver, true, "");
+	}
+	
+	public static boolean waitForElementState(String waitFor, By webElement, WebDriver driver, String textToFind) {
+		return waitForElementState(waitFor, webElement, driver, true, textToFind);
+	}
+	
+	public static boolean waitForElementState(String waitFor, WebDriver driver, String textToFind) {
+		By webElement = By.xpath("");
+		return waitForElementState(waitFor, webElement, driver, true, textToFind);
+	}
+	
+	private static boolean waitForElementState(String waitFor, By webElement, WebDriver driver, boolean stateToBe, String textToFind) {
+		try {
+			switch (waitFor) {
+			case "ToBeClickable":
+				new WebDriverWait(driver, timeOutToWaitInSec)
+						.until(ExpectedConditions.elementToBeClickable(webElement));
+				break;
+
+			case "ToBeVisibile":
+				new WebDriverWait(driver, timeOutToWaitInSec)
+						.until(ExpectedConditions.visibilityOfElementLocated(webElement));
+				break;
+			case "ToBeHidden":
+				new WebDriverWait(driver, timeOutToWaitInSec)
+						.until(ExpectedConditions.invisibilityOfElementLocated(webElement));
+				break;
+			case "SelectionStateToBe":
+				new WebDriverWait(driver, timeOutToWaitInSec)
+						.until(ExpectedConditions.elementSelectionStateToBe(webElement,stateToBe));
+				break;
+			case "textToBePresentInElement":
+				new WebDriverWait(driver, timeOutToWaitInSec)
+						.until(ExpectedConditions.textToBePresentInElementLocated(webElement,textToFind));
+				break;
+			case "textToBePresentInElementValue":
+				new WebDriverWait(driver, timeOutToWaitInSec)
+						.until(ExpectedConditions.textToBePresentInElementValue(webElement,textToFind));
+				break;
+			case "titleContains":
+				new WebDriverWait(driver, timeOutToWaitInSec)
+						.until(ExpectedConditions.titleContains(textToFind));
+				break;
+			}
+			logger.info("Find element " + webElement + " in state "+waitFor);
 			return true;
 		} catch (TimeoutException e) {
-			logger.error("Miss element "+e);
+			logger.error("Miss element " + e);
 			return false;
-		} 
-		
+		}
 	}
+    
 }

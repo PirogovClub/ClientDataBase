@@ -49,12 +49,10 @@ public class TestInvocesClientDataDbVsUI extends InvoicesTestBase {
 		
 		prepareInvocesDBTable();
 		
-		boolean isTestPassed = true;
-		isTestPassed = isTestPassed & invoceMain.checkPageTableDbAndUI(getFilteredListOfInvoceFromDB(), filteredListOfInvoceFromPage);
-		AssertWarp.assertToLog(isTestPassed);
-		
-		
+		checkIsTestPassed(invoceMain.checkPageTableDbAndUI(getFilteredListOfInvoceFromDB(), filteredListOfInvoceFromPage));
 	}
+
+	
 
 	
 

@@ -22,7 +22,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utils.AssertWarp;
 import utils.DataTable;
-import utils.JSWaiter;
+import utils.BaseWaitingWarp;
 
 public class BasePOM {
 	protected WebDriver driver;
@@ -56,29 +56,27 @@ public class BasePOM {
 	}
 
 	public void waitModalWindow(By waitForElement) {
-		setToBeVisiablePageElement(waitForElement);
-		logger.trace("Wait for" + waitForElement);
-		waitForModalOpen();
+		//setToBeVisiablePageElement(waitForElement);
+		//logger.trace("Wait for" + waitForElement);
+		//waitForModalOpen();
+		BaseWaitingWarp.waitForElementToBeVisible(waitForElement, driver);
+		
 
 	}
 
 	private boolean findVisiblePageElement() {
-		try {
-			return !driver.findElement(toBeVisiablePageElement).isDisplayed();
-		} catch (ElementNotVisibleException e) {
+			new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOfElementLocated(toBeVisiablePageElement));
 			return true;
-		}
-
 	}
 
-	private void waitForModalOpen() {
-		while (findVisiblePageElement())
-			;
+	private boolean waitForElementHidden() {
+		BaseWaitingWarp.waitForElementToBeHidden(toBeVisiablePageElement, driver);
+		return true;
 	}
-
-	private void waitForElementHidden() {
-		while (!findVisiblePageElement())
-			;
+	
+	protected boolean waitForElementHidden(By element) {
+		BaseWaitingWarp.waitForElementToBeHidden(element, driver);
+		return true;
 	}
 	
 	 public static boolean waitForElement(By webElement, WebDriver driver) {
@@ -107,21 +105,18 @@ public class BasePOM {
 	public void setTextToTestField(By fieldLocator, String textToSet, String fildShortNameToTrace, boolean Overwrite,
 			Integer waitForMiliSecAfterInput) {
 		logger.trace("waitForSecAfterInput:" + waitForMiliSecAfterInput);
-		logger.info("Typing " + textToSet + " into " + fieldLocator.toString() + " Overwrite:"+Overwrite + " wait after input mls: "+waitForMiliSecAfterInput);
-		if (driver.findElement(fieldLocator).isDisplayed()) {
-
-			if (Overwrite) {
-				driver.findElement(fieldLocator).clear();
-			}
-			driver.findElement(fieldLocator).sendKeys(textToSet);
-			JSWaiter.setDriver(driver);
-			JSWaiter.waitJQueryAngular();
-		} else {
-			logger.error(fildShortNameToTrace + " field is not displayed");
+		logger.info("Typing " + textToSet + " into " + fieldLocator.toString() + " Overwrite:" + Overwrite
+				+ " wait after input mls: " + waitForMiliSecAfterInput);
+		waitForElement2BeVisible(fieldLocator);
+		if (Overwrite) {
+			driver.findElement(fieldLocator).clear();
 		}
+		driver.findElement(fieldLocator).sendKeys(textToSet);
+		BaseWaitingWarp.setDriver(driver);
+		BaseWaitingWarp.waitJQueryAngular();
 
 		if (waitForMiliSecAfterInput > 0) {
-			JSWaiter.sleep(waitForMiliSecAfterInput);
+			BaseWaitingWarp.sleep(waitForMiliSecAfterInput);
 		}
 
 	}
@@ -155,7 +150,7 @@ public class BasePOM {
 	public void clickHrefWithLink(String hrefToClink) {
 		By hrefToClinkOn = By.xpath(".//a[@href='" + hrefToClink + "']");
 		logger.info("Wait For " + hrefToClinkOn);
-		WaitForLoad(hrefToClinkOn);
+		waitForElement2BeVisible(hrefToClinkOn);
 		if (driver.findElement(hrefToClinkOn).isDisplayed()) {
 			driver.findElement(hrefToClinkOn).click();
 		} else {
@@ -163,11 +158,8 @@ public class BasePOM {
 		}
 	}
 
-	public void WaitForLoad(By targetExistingPageElement) {
-		logger.debug("Wait For " + targetExistingPageElement);
-		setTargetExistingPageElement(targetExistingPageElement);
-		while (FindPageElement())
-			;
+	public void waitForElement2BeVisible(By targetExistingPageElement) {
+		BaseWaitingWarp.waitForElementToBeVisible(targetExistingPageElement, driver);
 	}
 
 	protected void WaitForLoad() {
@@ -197,7 +189,7 @@ public class BasePOM {
 
 	public boolean clickOnElement(By webElement) {
 		logger.info("Doing click on " + webElement);
-		if (JSWaiter.waitForElement(webElement, driver)) {
+		if (BaseWaitingWarp.waitForElementToBeVisible(webElement, driver)) {
 			try {
 				driver.findElement(webElement).click();
 			} catch (WebDriverException e) {
@@ -213,7 +205,7 @@ public class BasePOM {
 	public boolean scrollToElement(By webElement) {
 		// Add humanism in scroll http://internetka.in.ua/selenium-webdriver-scrolling/
 		logger.info("Doing scroll to " + webElement);
-		if (JSWaiter.waitForElement(webElement, driver)) {
+		if (BaseWaitingWarp.waitForElementToBeVisible(webElement, driver)) {
 			WebElement element = driver.findElement(webElement);
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-50);", element);

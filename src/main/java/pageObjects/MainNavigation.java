@@ -41,7 +41,7 @@ public class MainNavigation extends BasePOM {
 		// ------------- body-----------
 		logger.info("Clicking on to " + contractsMenu);
 		driver.findElement(contractsMenu).click();
-		WaitForLoad(contractsMenuLookForElement);
+		waitForElement2BeVisible(contractsMenuLookForElement);
 
 		// ------------ exit-----------
 		logger.traceExit(methodName);
@@ -57,44 +57,25 @@ public class MainNavigation extends BasePOM {
 
 		clickContractsMenu();
 		driver.findElement(contractsMenuLookForElement).click();
-		WaitForLoad(contractsAllLookForElement);
+		waitForElement2BeVisible(contractsAllLookForElement);
 		
 		// ------------ exit-----------
 		logger.traceExit(methodName);
 	}
 	
 	public void clickInvoicesMenu() {
-		
-		// ------------- body-----------
-		logger.info("Clicking on to " + invoicesMenu);
-		driver.findElement(invoicesMenu).click();
-		WaitForLoad(invoicesAllMenu);
-				// ------------ exit-----------
-		
-	}
-	
-	public void clickInvoicesAllMenu() {
-		
-		// ------------- body-----------
-		logger.info("Clicking on to " + invoicesAllMenu);
-		clickInvoicesMenu();
-		driver.findElement(invoicesAllMenu).click();
+		clickOnElement(invoicesMenu);
 
-		// ------------ exit-----------
-		
 	}
-	
-	
-	
-	
+
+	public void clickInvoicesAllMenu() {
+		clickOnElement(invoicesAllMenu);
+
+	}
+
 	public void clickClient() {
-		
-		logger.info("Clicking on to " + contractsMenu);
-		driver.findElement(clientLink).click();
-		WaitForLoad(clientPageLookForElement);
-		
-		
+		clickOnElement(clientLink);
+		waitForElement2BeVisible(clientPageLookForElement);
 	}
-	
 
 }

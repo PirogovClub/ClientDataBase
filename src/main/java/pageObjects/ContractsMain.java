@@ -22,7 +22,7 @@ public class ContractsMain extends BasePOM {
 	}
 	
 	public HtmlTable readTableWithContracts() {
-		WaitForLoad(waitForElement);
+		waitForElement2BeVisible(waitForElement);
 		logger.info("Reading table from page");
 		this.tableWithContracts = new  HtmlTable(tableWithContractsBy,driver);
 		
@@ -37,7 +37,7 @@ public class ContractsMain extends BasePOM {
 	public void searchForString(String searchString) {
 		// TODO Auto-generated method stub
 		logger.trace("looking for " +searchString+" \r\n" );
-		WaitForLoad(waitForElement);
+		waitForElement2BeVisible(waitForElement);
 		typeInSearchBox(searchString);
 		
 		waitForElementToHide(showWhileDataTableIsLoading);

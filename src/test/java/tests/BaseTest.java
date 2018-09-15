@@ -14,13 +14,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.LoginPage;
+import utils.AssertWarp;
 import utils.ScreenShots;
 import utils.WorkWithMainConfig;
 
 
 
 public class BaseTest {
-
+	protected boolean isTestPassed = true;
 	protected static WebDriver driver;
 	protected static Logger logger = LogManager.getLogger();
 	protected String targetPageUrl;
@@ -92,6 +93,11 @@ public class BaseTest {
 		while (FindPageElement());
 	}
 	
+	protected void checkIsTestPassed(boolean checkPageTableDbAndUI) {
+		// TODO Auto-generated method stub
+		isTestPassed = isTestPassed & checkPageTableDbAndUI;
+		AssertWarp.assertToLog(isTestPassed);
+	}
 
 	@Before
 	//We will open browser and pass login page to be able to switch to any page we need

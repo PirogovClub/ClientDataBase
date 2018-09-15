@@ -52,6 +52,7 @@ public class LoginPage extends BasePOM {
 
 	// Set Password into text Box
 	public LoginPage typePassword(String strUserPassword) {
+		
 		driver.findElement(paswFldLocator).sendKeys(strUserPassword);
 		return this;
 

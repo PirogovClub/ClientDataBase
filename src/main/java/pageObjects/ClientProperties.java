@@ -99,6 +99,18 @@ public class ClientProperties  extends BasePOM{
 		return resultMap;
 	}
 	
+	public boolean checkIfComparationIsNotOK(Map<String, String> mapWithOks) {
+		
+		for (Map.Entry<String,String> mapElement : mapWithOks.entrySet() ) {
+			if (mapElement.getValue()!="OK") {
+				logger.error("Value in '"+mapElement.getKey()+"' is ont equal to DB");
+				return false;
+			}
+		}
+		return true;
+		
+	}
+	
 	
 	
 	public String makeAssertToPage(String paramiter) {
@@ -151,7 +163,7 @@ public class ClientProperties  extends BasePOM{
 	}
 	
 	public  Map<String, String> readClientParamitersFromPage(Boolean withErrors, String stringToAdd) {
-		WaitForLoad(this.getTargetExistingPageElement());
+		waitForElement2BeVisible(this.getTargetExistingPageElement());
 		if (withErrors) {
 			readClientMapFromPage.put("firstName", driver.findElement(clientFirstName).getAttribute("value")+stringToAdd);
 			readClientMapFromPage.put("lastName", driver.findElement(clientLastName).getAttribute("value")+stringToAdd);
@@ -190,7 +202,7 @@ public class ClientProperties  extends BasePOM{
 	}
 	
 	public void setSecondaryFieldsAndSave() {
-		WaitForLoad(this.getTargetExistingPageElement());
+		waitForElement2BeVisible(this.getTargetExistingPageElement());
 		logger.error("Typing fields");
 		setSecondaryFields();
 		clickSaveButton();
