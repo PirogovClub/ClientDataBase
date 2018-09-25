@@ -22,7 +22,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utils.AssertWarp;
 import utils.DataTable;
-import utils.BaseWaitingWarp;
+import utils.BaseWaitingWrapper;
 
 public class BasePOM {
 	protected WebDriver driver;
@@ -59,7 +59,7 @@ public class BasePOM {
 		//setToBeVisiablePageElement(waitForElement);
 		//logger.trace("Wait for" + waitForElement);
 		//waitForModalOpen();
-		BaseWaitingWarp.waitForElementToBeVisible(waitForElement, driver);
+		BaseWaitingWrapper.waitForElementToBeVisible(waitForElement, driver);
 		
 
 	}
@@ -70,12 +70,12 @@ public class BasePOM {
 	}
 
 	private boolean waitForElementHidden() {
-		BaseWaitingWarp.waitForElementToBeHidden(toBeVisiablePageElement, driver);
+		BaseWaitingWrapper.waitForElementToBeHidden(toBeVisiablePageElement, driver);
 		return true;
 	}
 	
 	protected boolean waitForElementHidden(By element) {
-		BaseWaitingWarp.waitForElementToBeHidden(element, driver);
+		BaseWaitingWrapper.waitForElementToBeHidden(element, driver);
 		return true;
 	}
 	
@@ -112,11 +112,11 @@ public class BasePOM {
 			driver.findElement(fieldLocator).clear();
 		}
 		driver.findElement(fieldLocator).sendKeys(textToSet);
-		BaseWaitingWarp.setDriver(driver);
-		BaseWaitingWarp.waitJQueryAngular();
+		BaseWaitingWrapper.setDriver(driver);
+		BaseWaitingWrapper.waitJQueryAngular();
 
 		if (waitForMiliSecAfterInput > 0) {
-			BaseWaitingWarp.sleep(waitForMiliSecAfterInput);
+			BaseWaitingWrapper.sleep(waitForMiliSecAfterInput);
 		}
 
 	}
@@ -159,7 +159,7 @@ public class BasePOM {
 	}
 
 	public void waitForElement2BeVisible(By targetExistingPageElement) {
-		BaseWaitingWarp.waitForElementToBeVisible(targetExistingPageElement, driver);
+		BaseWaitingWrapper.waitForElementToBeVisible(targetExistingPageElement, driver);
 	}
 
 	protected void WaitForLoad() {
@@ -189,7 +189,7 @@ public class BasePOM {
 
 	public boolean clickOnElement(By webElement) {
 		logger.info("Doing click on " + webElement);
-		if (BaseWaitingWarp.waitForElementToBeVisible(webElement, driver)) {
+		if (BaseWaitingWrapper.waitForElementToBeVisible(webElement, driver)) {
 			try {
 				driver.findElement(webElement).click();
 			} catch (WebDriverException e) {
@@ -205,7 +205,7 @@ public class BasePOM {
 	public boolean scrollToElement(By webElement) {
 		// Add humanism in scroll http://internetka.in.ua/selenium-webdriver-scrolling/
 		logger.info("Doing scroll to " + webElement);
-		if (BaseWaitingWarp.waitForElementToBeVisible(webElement, driver)) {
+		if (BaseWaitingWrapper.waitForElementToBeVisible(webElement, driver)) {
 			WebElement element = driver.findElement(webElement);
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-50);", element);

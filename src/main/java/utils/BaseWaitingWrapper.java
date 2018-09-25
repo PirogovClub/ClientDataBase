@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BaseWaitingWarp {
+public class BaseWaitingWrapper {
 	 
     private static WebDriver jsWaitDriver;
     private static WebDriverWait jsWait;

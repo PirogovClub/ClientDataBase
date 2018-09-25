@@ -69,6 +69,7 @@ public class MainNavigation extends BasePOM {
 	}
 
 	public void clickInvoicesAllMenu() {
+		clickInvoicesMenu();
 		clickOnElement(invoicesAllMenu);
 
 	}

@@ -112,7 +112,7 @@ public class BaseTest {
 		logger.info("Starting browser");
 		switch (Browser) {
 		case "Chrome":
-			System.setProperty("webdriver.gecko.driver","src/main/java/resources/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","src/main/java/resources/chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
 		case "Firefox":
@@ -139,7 +139,7 @@ public class BaseTest {
 		ScreenShots screenShot = new ScreenShots();
 		screenShot.makeSimpleShot(driver, getChieldTestModuleName());
 		logger.info("Closing browser");
-		//driver.quit();
+		driver.quit();
 	}
 	
 }
