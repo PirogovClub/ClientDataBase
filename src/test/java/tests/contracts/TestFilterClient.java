@@ -5,7 +5,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import utils.AssertWarp;
+import utils.AssertWrapper;
 
 public class TestFilterClient extends ContractsAllTestBase {
 	
@@ -31,7 +31,7 @@ public class TestFilterClient extends ContractsAllTestBase {
 		
 		boolean isTestPassed = true;
 		isTestPassed = isTestPassed & contractsMain.checkPageTableDbAndUI(getFilteredListOfContractsFromDB(), getFilteredListOfContractsFromPage());
-		AssertWarp.assertToLog(isTestPassed);
+		AssertWrapper.assertToLog(isTestPassed);
 		
 		
 	}

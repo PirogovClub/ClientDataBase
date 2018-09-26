@@ -3,7 +3,7 @@ package tests;
 import org.junit.Test;
 
 import pageObjects.Consultancies;
-import utils.AssertWarp;
+import utils.AssertWrapper;
 import utils.RandomData;
 
 public class TestConsultancyNewNegative extends BaseTest {
@@ -41,9 +41,9 @@ public class TestConsultancyNewNegative extends BaseTest {
 		//размер должен быть между 2 и 50
 		//size must be between 2 and 50
 		isTestPassed = isTestPassed & consultancies.checkErrorTitleMessage("size must be between 2 and 50");
-		AssertWarp.assertToLog(isTestPassed);
+		AssertWrapper.assertToLog(isTestPassed);
 		isTestPassed = isTestPassed & consultancies.checkErrorDescriptionMessage("It is required field");
-		AssertWarp.assertToLog(isTestPassed);
+		AssertWrapper.assertToLog(isTestPassed);
 	}
 
 }

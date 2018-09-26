@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import pageObjects.ClientProperties;
 import tests.invoices.TestInvocesClientDataDbVsUI;
-import utils.AssertWarp;
+import utils.AssertWrapper;
 import utils.DataTable;
 import utils.HtmlTable;
 
@@ -41,7 +41,7 @@ public class DealFromClientPageDbVsUI extends DealsTestBase{
 		
 		boolean isTestPassed = true;
 		isTestPassed = isTestPassed & clientProperties.checkPageTableDbAndUI(filteredListOfDealsFromDB, filteredListOfDealsFromUI);
-		AssertWarp.assertToLog(isTestPassed,"ClientPage");
+		AssertWrapper.assertToLog(isTestPassed,"ClientPage");
 
 		testInvocesClientDataDbVsUI.deInitAllTestBase();
 	}

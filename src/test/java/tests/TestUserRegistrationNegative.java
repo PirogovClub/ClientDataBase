@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.LoginPage;
-import utils.AssertWarp;
+import utils.AssertWrapper;
 
 public class TestUserRegistrationNegative extends BaseTest {
 	
@@ -61,7 +61,7 @@ public class TestUserRegistrationNegative extends BaseTest {
 	
 		boolean isTestPassed = true;
 		isTestPassed = isTestPassed & loginPage.checkErrorEmailValidationMessage("Please include an '@' in the email address");
-		AssertWarp.assertToLog(isTestPassed);
+		AssertWrapper.assertToLog(isTestPassed);
 		
 	}
 

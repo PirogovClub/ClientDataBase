@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.LoginPage;
-import utils.AssertWarp;
+import utils.AssertWrapper;
 import utils.ScreenShots;
 import utils.WorkWithMainConfig;
 
@@ -96,7 +96,7 @@ public class BaseTest {
 	protected void checkIsTestPassed(boolean checkPageTableDbAndUI) {
 		// TODO Auto-generated method stub
 		isTestPassed = isTestPassed & checkPageTableDbAndUI;
-		AssertWarp.assertToLog(isTestPassed);
+		AssertWrapper.assertToLog(isTestPassed);
 	}
 
 	@Before

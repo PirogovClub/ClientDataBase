@@ -6,7 +6,7 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import pageObjects.ClientProperties;
-import utils.AssertWarp;
+import utils.AssertWrapper;
 import utils.DataTable;
 import utils.HtmlTable;
 
