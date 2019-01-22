@@ -1,0 +1,470 @@
+[INFO ] 2018-08-16 14:06:55.441 [main] (BaseTest.java:96) - Starting browser
+[INFO ] 2018-08-16 14:06:59.643 [main] (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-16 14:06:59.643 [main] (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-16 14:06:59.741 [main] (LoginPage.java:61) - pressed Submit
+[INFO ] 2018-08-16 14:07:00.683 [main] (TestFilterClient.java:15) - Run into Testtests.contracts.TestFilterClient
+[INFO ] 2018-08-16 14:07:00.692 [main] (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[INFO ] 2018-08-16 14:07:00.861 [main] (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-16 14:07:01.120 [main] (BasePOM.java:143) - Wait For By.xpath: .//a[@href='/admin/contracts']
+[INFO ] 2018-08-16 14:07:01.938 [main] (BasePOM.java:143) - Wait For By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-08-16 14:07:01.948 [main] (ContractsAllTestBase.java:115) - 
+SQLquery:select 
+        contract.id as "Contract",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        contract.contract_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From 
+        consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id)
+Group by
+contract.id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status
+ Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-08-16 14:07:01.994 [main] (ContractsAllTestBase.java:115) - 
+SQLquery:select 
+        contract.id as "Contract",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        contract.contract_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From 
+        consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id)
+Group by
+contract.id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status
+ HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY contract.id
+[INFO ] 2018-08-16 14:07:02.029 [main] (BasePOM.java:143) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-08-16 14:07:02.038 [main] (ContractsMain.java:32) - Typing Raven Darkhölme
+[DEBUG] 2018-08-16 14:07:02.135 [main] (JSWaiter.java:153) - Going to sleep for :20
+[DEBUG] 2018-08-16 14:07:02.156 [main] (JSWaiter.java:159) - wakeup from sleep for :20
+[DEBUG] 2018-08-16 14:07:02.164 [main] (JSWaiter.java:43) - JQuery is Ready!
+[DEBUG] 2018-08-16 14:07:02.173 [main] (JSWaiter.java:90) - JS is Ready!
+[DEBUG] 2018-08-16 14:07:02.175 [main] (JSWaiter.java:153) - Going to sleep for :20
+[DEBUG] 2018-08-16 14:07:02.195 [main] (JSWaiter.java:159) - wakeup from sleep for :20
+[DEBUG] 2018-08-16 14:07:02.212 [main] (JSWaiter.java:141) - Angular is not defined on this site!
+[DEBUG] 2018-08-16 14:07:02.212 [main] (JSWaiter.java:153) - Going to sleep for :1000
+[DEBUG] 2018-08-16 14:07:03.213 [main] (JSWaiter.java:159) - wakeup from sleep for :1000
+[INFO ] 2018-08-16 14:07:03.238 [main] (BasePOM.java:143) - Wait For By.xpath: //input[@placeholder='Поиск']
+[DEBUG] 2018-08-16 14:07:03.576 [main] (HtmlTable.java:105) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-08-16 14:07:03.576 [main] (PrintOuts.java:41) - For key 1 result is Contract
+[DEBUG] 2018-08-16 14:07:03.576 [main] (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-08-16 14:07:03.577 [main] (PrintOuts.java:41) - For key 3 result is Consultancy
+[DEBUG] 2018-08-16 14:07:03.577 [main] (PrintOuts.java:41) - For key 4 result is Mentor
+[DEBUG] 2018-08-16 14:07:03.577 [main] (PrintOuts.java:41) - For key 5 result is Contract date
+[DEBUG] 2018-08-16 14:07:03.577 [main] (PrintOuts.java:41) - For key 6 result is Type
+[DEBUG] 2018-08-16 14:07:03.577 [main] (PrintOuts.java:41) - For key 7 result is Status
+[DEBUG] 2018-08-16 14:07:03.577 [main] (PrintOuts.java:41) - For key Status result is 7
+[DEBUG] 2018-08-16 14:07:03.577 [main] (PrintOuts.java:41) - For key Type result is 6
+[DEBUG] 2018-08-16 14:07:03.577 [main] (PrintOuts.java:41) - For key Consultancy result is 3
+[DEBUG] 2018-08-16 14:07:03.577 [main] (PrintOuts.java:41) - For key Mentor result is 4
+[DEBUG] 2018-08-16 14:07:03.578 [main] (PrintOuts.java:41) - For key Contract date result is 5
+[DEBUG] 2018-08-16 14:07:03.578 [main] (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-08-16 14:07:03.578 [main] (PrintOuts.java:41) - For key Contract result is 1
+[DEBUG] 2018-08-16 14:07:03.578 [main] (PrintOuts.java:20) - 
+1:1|2:Raven Darkhölme|3:Personal Mentor|4:Charles Xavier|5:26-мар-2018|6:TRIAL|7:ACTIVE|
+1:2|2:Raven Darkhölme|3:Personal Mentor|4:Charles Xavier|5:05-апр-2018|6:POSTPAY|7:ACTIVE|
+
+[DEBUG] 2018-08-16 14:07:03.578 [main] (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-08-16 14:07:03.578 [main] (PrintOuts.java:48) - Enter rename from:Contract date to:ContractDate
+[DEBUG] 2018-08-16 14:07:03.578 [main] (PrintOuts.java:41) - For key 1 result is Contract
+[DEBUG] 2018-08-16 14:07:03.578 [main] (PrintOuts.java:41) - For key 2 result is ClientName
+[DEBUG] 2018-08-16 14:07:03.579 [main] (PrintOuts.java:41) - For key 3 result is Consultancy
+[DEBUG] 2018-08-16 14:07:03.579 [main] (PrintOuts.java:41) - For key 4 result is Mentor
+[DEBUG] 2018-08-16 14:07:03.579 [main] (PrintOuts.java:41) - For key 5 result is ContractDate
+[DEBUG] 2018-08-16 14:07:03.579 [main] (PrintOuts.java:41) - For key 6 result is Type
+[DEBUG] 2018-08-16 14:07:03.579 [main] (PrintOuts.java:41) - For key 7 result is Status
+[DEBUG] 2018-08-16 14:07:03.579 [main] (PrintOuts.java:41) - For key Status result is 7
+[DEBUG] 2018-08-16 14:07:03.579 [main] (PrintOuts.java:41) - For key Type result is 6
+[DEBUG] 2018-08-16 14:07:03.580 [main] (PrintOuts.java:41) - For key ClientName result is 2
+[DEBUG] 2018-08-16 14:07:03.580 [main] (PrintOuts.java:41) - For key Consultancy result is 3
+[DEBUG] 2018-08-16 14:07:03.580 [main] (PrintOuts.java:41) - For key Mentor result is 4
+[DEBUG] 2018-08-16 14:07:03.580 [main] (PrintOuts.java:41) - For key Contract result is 1
+[DEBUG] 2018-08-16 14:07:03.580 [main] (PrintOuts.java:41) - For key ContractDate result is 5
+[DEBUG] 2018-08-16 14:07:03.580 [main] (PrintOuts.java:20) - 
+1:1|2:Raven Darkhölme|3:Personal Mentor|4:Charles Xavier|5:26-мар-2018|6:TRIAL|7:ACTIVE|
+1:2|2:Raven Darkhölme|3:Personal Mentor|4:Charles Xavier|5:05-апр-2018|6:POSTPAY|7:ACTIVE|
+
+[DEBUG] 2018-08-16 14:07:03.580 [main] (PrintOuts.java:48) - Convert date from ContractDate: 26-мар-2018
+[DEBUG] 2018-08-16 14:07:03.592 [main] (ConverDates.java:75) - success: true. input: 26-мар-2018 → localDate: 2018-03-26 → formatted: 26-мар.-2018 → outputImproper: 26-мар-2018
+[DEBUG] 2018-08-16 14:07:03.592 [main] (ConverDates.java:84) - Send converted date 2018-03-26
+[DEBUG] 2018-08-16 14:07:03.592 [main] (PrintOuts.java:48) - Converted date:2018-03-26
+[DEBUG] 2018-08-16 14:07:03.592 [main] (PrintOuts.java:48) - Convert date from ContractDate: 05-апр-2018
+[DEBUG] 2018-08-16 14:07:03.592 [main] (ConverDates.java:75) - success: true. input: 05-апр-2018 → localDate: 2018-04-05 → formatted: 05-апр.-2018 → outputImproper: 05-апр-2018
+[DEBUG] 2018-08-16 14:07:03.593 [main] (ConverDates.java:84) - Send converted date 2018-04-05
+[DEBUG] 2018-08-16 14:07:03.593 [main] (PrintOuts.java:48) - Converted date:2018-04-05
+[DEBUG] 2018-08-16 14:07:03.593 [main] (PrintOuts.java:48) - key:Status
+[DEBUG] 2018-08-16 14:07:03.593 [main] (PrintOuts.java:48) - value:ACTIVE
+[DEBUG] 2018-08-16 14:07:03.593 [main] (PrintOuts.java:48) - ACTIVE
+[DEBUG] 2018-08-16 14:07:03.593 [main] (PrintOuts.java:48) - key:ClientName
+[DEBUG] 2018-08-16 14:07:03.593 [main] (PrintOuts.java:48) - value:Raven Darkhölme
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - Raven Darkhölme
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - key:Type
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - value:TRIAL
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - TRIAL
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - key:Consultancy
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - value:Personal Mentor
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - Personal Mentor
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - key:Mentor
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - value:Charles Xavier
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - Charles Xavier
+[DEBUG] 2018-08-16 14:07:03.594 [main] (PrintOuts.java:48) - key:Contract
+[DEBUG] 2018-08-16 14:07:03.595 [main] (PrintOuts.java:48) - value:1
+[DEBUG] 2018-08-16 14:07:03.595 [main] (PrintOuts.java:48) - 1
+[DEBUG] 2018-08-16 14:07:03.595 [main] (PrintOuts.java:48) - key:ContractDate
+[DEBUG] 2018-08-16 14:07:03.595 [main] (PrintOuts.java:48) - value:2018-03-26
+[DEBUG] 2018-08-16 14:07:03.595 [main] (PrintOuts.java:48) - 2018-03-26
+[DEBUG] 2018-08-16 14:07:03.595 [main] (PrintOuts.java:48) - key:Status
+[DEBUG] 2018-08-16 14:07:03.595 [main] (PrintOuts.java:48) - value:ACTIVE
+[DEBUG] 2018-08-16 14:07:03.595 [main] (PrintOuts.java:48) - ACTIVE
+[DEBUG] 2018-08-16 14:07:03.595 [main] (PrintOuts.java:48) - key:ClientName
+[DEBUG] 2018-08-16 14:07:03.596 [main] (PrintOuts.java:48) - value:Raven Darkhölme
+[DEBUG] 2018-08-16 14:07:03.596 [main] (PrintOuts.java:48) - Raven Darkhölme
+[DEBUG] 2018-08-16 14:07:03.596 [main] (PrintOuts.java:48) - key:Type
+[DEBUG] 2018-08-16 14:07:03.596 [main] (PrintOuts.java:48) - value:POSTPAY
+[DEBUG] 2018-08-16 14:07:03.596 [main] (PrintOuts.java:48) - POSTPAY
+[DEBUG] 2018-08-16 14:07:03.596 [main] (PrintOuts.java:48) - key:Consultancy
+[DEBUG] 2018-08-16 14:07:03.596 [main] (PrintOuts.java:48) - value:Personal Mentor
+[DEBUG] 2018-08-16 14:07:03.596 [main] (PrintOuts.java:48) - Personal Mentor
+[DEBUG] 2018-08-16 14:07:03.597 [main] (PrintOuts.java:48) - key:Mentor
+[DEBUG] 2018-08-16 14:07:03.597 [main] (PrintOuts.java:48) - value:Charles Xavier
+[DEBUG] 2018-08-16 14:07:03.597 [main] (PrintOuts.java:48) - Charles Xavier
+[DEBUG] 2018-08-16 14:07:03.597 [main] (PrintOuts.java:48) - key:Contract
+[DEBUG] 2018-08-16 14:07:03.597 [main] (PrintOuts.java:48) - value:2
+[DEBUG] 2018-08-16 14:07:03.597 [main] (PrintOuts.java:48) - 2
+[DEBUG] 2018-08-16 14:07:03.597 [main] (PrintOuts.java:48) - key:ContractDate
+[DEBUG] 2018-08-16 14:07:03.597 [main] (PrintOuts.java:48) - value:2018-04-05
+[DEBUG] 2018-08-16 14:07:03.597 [main] (PrintOuts.java:48) - 2018-04-05
+[DEBUG] 2018-08-16 14:07:03.597 [main] (ContractsAllTestBase.java:127) - Comparation:true
+[DEBUG] 2018-08-16 14:07:03.597 [main] (ContractsAllTestBase.java:128) - FromDB
+[DEBUG] 2018-08-16 14:07:03.598 [main] (PrintOuts.java:20) - 
+Status:ACTIVE|ClientName:Raven Darkhölme|Type:TRIAL|Consultancy:Personal Mentor|Mentor:Charles Xavier|Contract:1|ContractDate:2018-03-26|
+Status:ACTIVE|ClientName:Raven Darkhölme|Type:POSTPAY|Consultancy:Personal Mentor|Mentor:Charles Xavier|Contract:2|ContractDate:2018-04-05|
+
+[DEBUG] 2018-08-16 14:07:03.598 [main] (ContractsAllTestBase.java:130) - FromPage
+[DEBUG] 2018-08-16 14:07:03.598 [main] (PrintOuts.java:20) - 
+Status:ACTIVE|ClientName:Raven Darkhölme|Type:TRIAL|Consultancy:Personal Mentor|Mentor:Charles Xavier|Contract:1|ContractDate:2018-03-26|
+Status:ACTIVE|ClientName:Raven Darkhölme|Type:POSTPAY|Consultancy:Personal Mentor|Mentor:Charles Xavier|Contract:2|ContractDate:2018-04-05|
+
+[INFO ] 2018-08-16 14:07:03.598 [main] (DataBase.java:74) - DB Connection close
+[INFO ] 2018-08-16 14:07:22.640 [main] (BaseTest.java:96) - Starting browser
+[INFO ] 2018-08-16 14:07:27.612 [main] (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-16 14:07:27.612 [main] (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-16 14:07:27.707 [main] (LoginPage.java:61) - pressed Submit
+[INFO ] 2018-08-16 14:07:28.754 [main] (TestFilterClient.java:15) - Run into Testtests.contracts.TestFilterClient
+[INFO ] 2018-08-16 14:07:28.761 [main] (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[INFO ] 2018-08-16 14:07:28.904 [main] (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-16 14:07:29.152 [main] (BasePOM.java:143) - Wait For By.xpath: .//a[@href='/admin/contracts']
+[INFO ] 2018-08-16 14:07:30.030 [main] (BasePOM.java:143) - Wait For By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-08-16 14:07:30.040 [main] (ContractsAllTestBase.java:115) - 
+SQLquery:select 
+        contract.id as "Contract",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        contract.contract_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From 
+        consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id)
+Group by
+contract.id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status
+ Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-08-16 14:07:30.087 [main] (ContractsAllTestBase.java:115) - 
+SQLquery:select 
+        contract.id as "Contract",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        contract.contract_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From 
+        consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id)
+Group by
+contract.id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status
+ HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'John Allerdyce' ORDER BY contract.id
+[INFO ] 2018-08-16 14:07:30.114 [main] (BasePOM.java:143) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-08-16 14:07:30.123 [main] (ContractsMain.java:32) - Typing John Allerdyce
+[DEBUG] 2018-08-16 14:07:30.218 [main] (JSWaiter.java:153) - Going to sleep for :20
+[DEBUG] 2018-08-16 14:07:30.238 [main] (JSWaiter.java:159) - wakeup from sleep for :20
+[DEBUG] 2018-08-16 14:07:30.246 [main] (JSWaiter.java:43) - JQuery is Ready!
+[DEBUG] 2018-08-16 14:07:30.255 [main] (JSWaiter.java:90) - JS is Ready!
+[DEBUG] 2018-08-16 14:07:30.255 [main] (JSWaiter.java:153) - Going to sleep for :20
+[DEBUG] 2018-08-16 14:07:30.275 [main] (JSWaiter.java:159) - wakeup from sleep for :20
+[DEBUG] 2018-08-16 14:07:30.284 [main] (JSWaiter.java:141) - Angular is not defined on this site!
+[DEBUG] 2018-08-16 14:07:30.284 [main] (JSWaiter.java:153) - Going to sleep for :1000
+[DEBUG] 2018-08-16 14:07:31.284 [main] (JSWaiter.java:159) - wakeup from sleep for :1000
+[INFO ] 2018-08-16 14:07:31.328 [main] (BasePOM.java:143) - Wait For By.xpath: //input[@placeholder='Поиск']
+[DEBUG] 2018-08-16 14:07:31.592 [main] (HtmlTable.java:105) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-08-16 14:07:31.592 [main] (PrintOuts.java:41) - For key 1 result is Contract
+[DEBUG] 2018-08-16 14:07:31.592 [main] (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-08-16 14:07:31.592 [main] (PrintOuts.java:41) - For key 3 result is Consultancy
+[DEBUG] 2018-08-16 14:07:31.592 [main] (PrintOuts.java:41) - For key 4 result is Mentor
+[DEBUG] 2018-08-16 14:07:31.592 [main] (PrintOuts.java:41) - For key 5 result is Contract date
+[DEBUG] 2018-08-16 14:07:31.592 [main] (PrintOuts.java:41) - For key 6 result is Type
+[DEBUG] 2018-08-16 14:07:31.592 [main] (PrintOuts.java:41) - For key 7 result is Status
+[DEBUG] 2018-08-16 14:07:31.592 [main] (PrintOuts.java:41) - For key Status result is 7
+[DEBUG] 2018-08-16 14:07:31.592 [main] (PrintOuts.java:41) - For key Type result is 6
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:41) - For key Consultancy result is 3
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:41) - For key Mentor result is 4
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:41) - For key Contract date result is 5
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:41) - For key Contract result is 1
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:20) - 
+1:10|2:John Allerdyce|3:Personal Mentor|4:James Howlett|5:16-июл-2018|6:PREPAY|7:FROZEN|
+
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:48) - Enter rename from:Contract date to:ContractDate
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:41) - For key 1 result is Contract
+[DEBUG] 2018-08-16 14:07:31.593 [main] (PrintOuts.java:41) - For key 2 result is ClientName
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key 3 result is Consultancy
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key 4 result is Mentor
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key 5 result is ContractDate
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key 6 result is Type
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key 7 result is Status
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key Status result is 7
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key Type result is 6
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key ClientName result is 2
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key Consultancy result is 3
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key Mentor result is 4
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key Contract result is 1
+[DEBUG] 2018-08-16 14:07:31.594 [main] (PrintOuts.java:41) - For key ContractDate result is 5
+[DEBUG] 2018-08-16 14:07:31.595 [main] (PrintOuts.java:20) - 
+1:10|2:John Allerdyce|3:Personal Mentor|4:James Howlett|5:16-июл-2018|6:PREPAY|7:FROZEN|
+
+[DEBUG] 2018-08-16 14:07:31.595 [main] (PrintOuts.java:48) - Convert date from ContractDate: 16-июл-2018
+[DEBUG] 2018-08-16 14:07:31.606 [main] (ConverDates.java:75) - success: true. input: 16-июл-2018 → localDate: 2018-07-16 → formatted: 16-июл.-2018 → outputImproper: 16-июл-2018
+[DEBUG] 2018-08-16 14:07:31.606 [main] (ConverDates.java:84) - Send converted date 2018-07-16
+[DEBUG] 2018-08-16 14:07:31.606 [main] (PrintOuts.java:48) - Converted date:2018-07-16
+[DEBUG] 2018-08-16 14:07:31.606 [main] (PrintOuts.java:48) - key:Status
+[DEBUG] 2018-08-16 14:07:31.607 [main] (PrintOuts.java:48) - value:FROZEN
+[DEBUG] 2018-08-16 14:07:31.607 [main] (PrintOuts.java:48) - FROZEN
+[DEBUG] 2018-08-16 14:07:31.607 [main] (PrintOuts.java:48) - key:ClientName
+[DEBUG] 2018-08-16 14:07:31.621 [main] (PrintOuts.java:48) - value:John Allerdyce
+[DEBUG] 2018-08-16 14:07:31.621 [main] (PrintOuts.java:48) - John Allerdyce
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - key:Type
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - value:PREPAY
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - PREPAY
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - key:Consultancy
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - value:Personal Mentor
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - Personal Mentor
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - key:Mentor
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - value:James Howlett
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - James Howlett
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - key:Contract
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - value:10
+[DEBUG] 2018-08-16 14:07:31.622 [main] (PrintOuts.java:48) - 10
+[DEBUG] 2018-08-16 14:07:31.623 [main] (PrintOuts.java:48) - key:ContractDate
+[DEBUG] 2018-08-16 14:07:31.623 [main] (PrintOuts.java:48) - value:2018-07-16
+[DEBUG] 2018-08-16 14:07:31.623 [main] (PrintOuts.java:48) - 2018-07-16
+[DEBUG] 2018-08-16 14:07:31.623 [main] (ContractsAllTestBase.java:127) - Comparation:true
+[DEBUG] 2018-08-16 14:07:31.623 [main] (ContractsAllTestBase.java:128) - FromDB
+[DEBUG] 2018-08-16 14:07:31.623 [main] (PrintOuts.java:20) - 
+Status:FROZEN|ClientName:John Allerdyce|Type:PREPAY|Consultancy:Personal Mentor|Mentor:James Howlett|Contract:10|ContractDate:2018-07-16|
+
+[DEBUG] 2018-08-16 14:07:31.623 [main] (ContractsAllTestBase.java:130) - FromPage
+[DEBUG] 2018-08-16 14:07:31.623 [main] (PrintOuts.java:20) - 
+Status:FROZEN|ClientName:John Allerdyce|Type:PREPAY|Consultancy:Personal Mentor|Mentor:James Howlett|Contract:10|ContractDate:2018-07-16|
+
+[INFO ] 2018-08-16 14:07:31.623 [main] (DataBase.java:74) - DB Connection close
+[INFO ] 2018-08-16 14:07:37.020 [main] (BaseTest.java:96) - Starting browser
+[INFO ] 2018-08-16 14:07:42.024 [main] (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-16 14:07:42.024 [main] (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-16 14:07:42.125 [main] (LoginPage.java:61) - pressed Submit
+[INFO ] 2018-08-16 14:07:43.016 [main] (TestFilterClient.java:15) - Run into Testtests.contracts.TestFilterClient
+[INFO ] 2018-08-16 14:07:43.022 [main] (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[INFO ] 2018-08-16 14:07:43.188 [main] (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-16 14:07:43.425 [main] (BasePOM.java:143) - Wait For By.xpath: .//a[@href='/admin/contracts']
+[INFO ] 2018-08-16 14:07:44.275 [main] (BasePOM.java:143) - Wait For By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-08-16 14:07:44.288 [main] (ContractsAllTestBase.java:115) - 
+SQLquery:select 
+        contract.id as "Contract",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        contract.contract_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From 
+        consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id)
+Group by
+contract.id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status
+ Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-08-16 14:07:44.335 [main] (ContractsAllTestBase.java:115) - 
+SQLquery:select 
+        contract.id as "Contract",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        contract.contract_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From 
+        consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id)
+Group by
+contract.id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status
+ HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY contract.id
+[INFO ] 2018-08-16 14:07:44.365 [main] (BasePOM.java:143) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-08-16 14:07:44.373 [main] (ContractsMain.java:32) - Typing Piotr Rasputin
+[DEBUG] 2018-08-16 14:07:44.468 [main] (JSWaiter.java:153) - Going to sleep for :20
+[DEBUG] 2018-08-16 14:07:44.488 [main] (JSWaiter.java:159) - wakeup from sleep for :20
+[DEBUG] 2018-08-16 14:07:44.496 [main] (JSWaiter.java:43) - JQuery is Ready!
+[DEBUG] 2018-08-16 14:07:44.505 [main] (JSWaiter.java:90) - JS is Ready!
+[DEBUG] 2018-08-16 14:07:44.505 [main] (JSWaiter.java:153) - Going to sleep for :20
+[DEBUG] 2018-08-16 14:07:44.527 [main] (JSWaiter.java:159) - wakeup from sleep for :20
+[DEBUG] 2018-08-16 14:07:44.534 [main] (JSWaiter.java:141) - Angular is not defined on this site!
+[DEBUG] 2018-08-16 14:07:44.534 [main] (JSWaiter.java:153) - Going to sleep for :1000
+[DEBUG] 2018-08-16 14:07:45.536 [main] (JSWaiter.java:159) - wakeup from sleep for :1000
+[INFO ] 2018-08-16 14:07:45.562 [main] (BasePOM.java:143) - Wait For By.xpath: //input[@placeholder='Поиск']
+[DEBUG] 2018-08-16 14:07:45.819 [main] (HtmlTable.java:105) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-08-16 14:07:45.819 [main] (PrintOuts.java:41) - For key 1 result is Contract
+[DEBUG] 2018-08-16 14:07:45.819 [main] (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-08-16 14:07:45.819 [main] (PrintOuts.java:41) - For key 3 result is Consultancy
+[DEBUG] 2018-08-16 14:07:45.819 [main] (PrintOuts.java:41) - For key 4 result is Mentor
+[DEBUG] 2018-08-16 14:07:45.819 [main] (PrintOuts.java:41) - For key 5 result is Contract date
+[DEBUG] 2018-08-16 14:07:45.820 [main] (PrintOuts.java:41) - For key 6 result is Type
+[DEBUG] 2018-08-16 14:07:45.820 [main] (PrintOuts.java:41) - For key 7 result is Status
+[DEBUG] 2018-08-16 14:07:45.820 [main] (PrintOuts.java:41) - For key Status result is 7
+[DEBUG] 2018-08-16 14:07:45.820 [main] (PrintOuts.java:41) - For key Type result is 6
+[DEBUG] 2018-08-16 14:07:45.820 [main] (PrintOuts.java:41) - For key Consultancy result is 3
+[DEBUG] 2018-08-16 14:07:45.820 [main] (PrintOuts.java:41) - For key Mentor result is 4
+[DEBUG] 2018-08-16 14:07:45.820 [main] (PrintOuts.java:41) - For key Contract date result is 5
+[DEBUG] 2018-08-16 14:07:45.820 [main] (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-08-16 14:07:45.821 [main] (PrintOuts.java:41) - For key Contract result is 1
+[DEBUG] 2018-08-16 14:07:45.821 [main] (PrintOuts.java:20) - 
+1:3|2:Piotr Rasputin|3:Group Development|4:Ororo Munroe|5:25-апр-2018|6:POSTPAY|7:ACTIVE|
+
+[DEBUG] 2018-08-16 14:07:45.821 [main] (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-08-16 14:07:45.821 [main] (PrintOuts.java:48) - Enter rename from:Contract date to:ContractDate
+[DEBUG] 2018-08-16 14:07:45.821 [main] (PrintOuts.java:41) - For key 1 result is Contract
+[DEBUG] 2018-08-16 14:07:45.821 [main] (PrintOuts.java:41) - For key 2 result is ClientName
+[DEBUG] 2018-08-16 14:07:45.821 [main] (PrintOuts.java:41) - For key 3 result is Consultancy
+[DEBUG] 2018-08-16 14:07:45.821 [main] (PrintOuts.java:41) - For key 4 result is Mentor
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key 5 result is ContractDate
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key 6 result is Type
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key 7 result is Status
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key Status result is 7
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key Type result is 6
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key ClientName result is 2
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key Consultancy result is 3
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key Mentor result is 4
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key Contract result is 1
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:41) - For key ContractDate result is 5
+[DEBUG] 2018-08-16 14:07:45.822 [main] (PrintOuts.java:20) - 
+1:3|2:Piotr Rasputin|3:Group Development|4:Ororo Munroe|5:25-апр-2018|6:POSTPAY|7:ACTIVE|
+
+[DEBUG] 2018-08-16 14:07:45.823 [main] (PrintOuts.java:48) - Convert date from ContractDate: 25-апр-2018
+[DEBUG] 2018-08-16 14:07:45.834 [main] (ConverDates.java:75) - success: true. input: 25-апр-2018 → localDate: 2018-04-25 → formatted: 25-апр.-2018 → outputImproper: 25-апр-2018
+[DEBUG] 2018-08-16 14:07:45.834 [main] (ConverDates.java:84) - Send converted date 2018-04-25
+[DEBUG] 2018-08-16 14:07:45.834 [main] (PrintOuts.java:48) - Converted date:2018-04-25
+[DEBUG] 2018-08-16 14:07:45.834 [main] (PrintOuts.java:48) - key:Status
+[DEBUG] 2018-08-16 14:07:45.834 [main] (PrintOuts.java:48) - value:ACTIVE
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - ACTIVE
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - key:ClientName
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - value:Piotr Rasputin
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - Piotr Rasputin
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - key:Type
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - value:POSTPAY
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - POSTPAY
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - key:Consultancy
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - value:Group Development
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - Group Development
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - key:Mentor
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - value:Ororo Munroe
+[DEBUG] 2018-08-16 14:07:45.835 [main] (PrintOuts.java:48) - Ororo Munroe
+[DEBUG] 2018-08-16 14:07:45.836 [main] (PrintOuts.java:48) - key:Contract
+[DEBUG] 2018-08-16 14:07:45.836 [main] (PrintOuts.java:48) - value:3
+[DEBUG] 2018-08-16 14:07:45.836 [main] (PrintOuts.java:48) - 3
+[DEBUG] 2018-08-16 14:07:45.836 [main] (PrintOuts.java:48) - key:ContractDate
+[DEBUG] 2018-08-16 14:07:45.836 [main] (PrintOuts.java:48) - value:2018-04-25
+[DEBUG] 2018-08-16 14:07:45.836 [main] (PrintOuts.java:48) - 2018-04-25
+[DEBUG] 2018-08-16 14:07:45.836 [main] (ContractsAllTestBase.java:127) - Comparation:true
+[DEBUG] 2018-08-16 14:07:45.836 [main] (ContractsAllTestBase.java:128) - FromDB
+[DEBUG] 2018-08-16 14:07:45.836 [main] (PrintOuts.java:20) - 
+Status:ACTIVE|ClientName:Piotr Rasputin|Type:POSTPAY|Consultancy:Group Development|Mentor:Ororo Munroe|Contract:3|ContractDate:2018-04-25|
+
+[DEBUG] 2018-08-16 14:07:45.836 [main] (ContractsAllTestBase.java:130) - FromPage
+[DEBUG] 2018-08-16 14:07:45.836 [main] (PrintOuts.java:20) - 
+Status:ACTIVE|ClientName:Piotr Rasputin|Type:POSTPAY|Consultancy:Group Development|Mentor:Ororo Munroe|Contract:3|ContractDate:2018-04-25|
+
+[INFO ] 2018-08-16 14:07:45.837 [main] (DataBase.java:74) - DB Connection close

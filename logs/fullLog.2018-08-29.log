@@ -1,0 +1,557 @@
+[INFO ] 2018-08-29 10:02:16.154 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-08-29 10:02:20.423 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-29 10:02:20.423 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-29 10:02:20.507 (LoginPage.java:61) - pressed Submit
+[ERROR] 2018-08-29 10:02:21.536 (DataBase.java:76) - Failed to DB Connection close
+[INFO ] 2018-08-29 10:02:21.537 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-08-29 10:02:23.633 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-08-29 10:02:23.731 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-08-29 10:03:54.043 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-08-29 10:03:57.946 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-29 10:03:57.946 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-29 10:03:58.044 (LoginPage.java:61) - pressed Submit
+[INFO ] 2018-08-29 10:03:59.046 (InvoicesAllClientDataDbVsSiteTest.java:10) - Get into Testtests.invoces.InvoicesAllClientDataDbVsSiteTest
+[ERROR] 2018-08-29 10:03:59.047 (DataBase.java:76) - Failed to DB Connection close
+[INFO ] 2018-08-29 10:03:59.048 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-08-29 10:04:01.171 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-08-29 10:04:01.275 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-08-29 10:07:31.904 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-08-29 10:07:35.810 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-29 10:07:35.810 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-29 10:07:35.895 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-08-29 10:07:36.803 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-08-29 10:07:36.955 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-29 10:07:36.955 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 10:07:36.955 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-08-29 10:07:37.190 (BasePOM.java:146) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 10:07:38.043 (InvoicesAllClientDataDbVsSiteTest.java:10) - Get into Testtests.invoces.InvoicesAllClientDataDbVsSiteTest
+[INFO ] 2018-08-29 10:07:38.044 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-08-29 10:07:38.044 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-08-29 10:07:40.135 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-08-29 10:07:40.207 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-08-29 12:12:49.425 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-08-29 12:12:54.299 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-29 12:12:54.299 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-29 12:12:54.383 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-08-29 12:12:55.414 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-08-29 12:12:55.579 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-29 12:12:55.580 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:12:55.581 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-08-29 12:12:55.829 (BasePOM.java:146) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:12:56.903 (InvoicesAllClientDataDbVsSiteTest.java:12) - Get into Testtests.invoces.InvoicesAllClientDataDbVsSiteTest
+[DEBUG] 2018-08-29 12:12:56.904 (InvocesTestBase.java:132) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        invoiceext.PaymentID as "paymentid",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+
+        invoiceext.contract_id as "Contract Id",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        contract.payment_date as "Payment Date",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as Status
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status
+ Order By RANDOM()
+ LIMIT 1
+
+[INFO ] 2018-08-29 12:12:56.949 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-08-29 12:12:56.950 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-08-29 12:12:59.045 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-08-29 12:12:59.118 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-08-29 12:13:39.780 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-08-29 12:13:43.815 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-29 12:13:43.815 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-29 12:13:43.899 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-08-29 12:13:44.879 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-08-29 12:13:45.015 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-29 12:13:45.016 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:13:45.016 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-08-29 12:13:45.254 (BasePOM.java:146) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:13:46.243 (InvoicesAllClientDataDbVsSiteTest.java:12) - Get into Testtests.invoces.InvoicesAllClientDataDbVsSiteTest
+[DEBUG] 2018-08-29 12:13:46.243 (InvocesTestBase.java:134) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        invoiceext.PaymentID as "paymentid",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+
+        invoiceext.contract_id as "Contract Id",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        contract.payment_date as "Payment Date",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as Status
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status
+invoiceext.paymentid
+ Order By RANDOM()
+ LIMIT 1
+
+[INFO ] 2018-08-29 12:13:46.299 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-08-29 12:13:46.301 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-08-29 12:13:48.392 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-08-29 12:13:48.506 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-08-29 12:14:04.129 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-08-29 12:14:07.985 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-29 12:14:07.985 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-29 12:14:08.090 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-08-29 12:14:09.110 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-08-29 12:14:09.248 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-29 12:14:09.249 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:14:09.249 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-08-29 12:14:09.484 (BasePOM.java:146) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:14:10.385 (InvoicesAllClientDataDbVsSiteTest.java:12) - Get into Testtests.invoces.InvoicesAllClientDataDbVsSiteTest
+[DEBUG] 2018-08-29 12:14:10.385 (InvocesTestBase.java:134) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        invoiceext.PaymentID as "paymentid",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+
+        invoiceext.contract_id as "Contract Id",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        contract.payment_date as "Payment Date",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as Status
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid
+ Order By RANDOM()
+ LIMIT 1
+
+[INFO ] 2018-08-29 12:14:10.428 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-08-29 12:14:10.428 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-08-29 12:14:12.523 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-08-29 12:14:12.606 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-08-29 12:14:36.948 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-08-29 12:14:40.860 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-29 12:14:40.860 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-29 12:14:40.951 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-08-29 12:14:41.844 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-08-29 12:14:41.984 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-29 12:14:41.985 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:14:41.985 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-08-29 12:14:42.222 (BasePOM.java:146) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:14:43.125 (InvoicesAllClientDataDbVsSiteTest.java:12) - Get into Testtests.invoces.InvoicesAllClientDataDbVsSiteTest
+[DEBUG] 2018-08-29 12:14:43.125 (InvocesTestBase.java:135) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        invoiceext.PaymentID as "paymentid",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+
+        invoiceext.contract_id as "Contract Id",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        contract.payment_date as "Payment Date",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as Status
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid
+ Order By RANDOM()
+ LIMIT 1
+
+[INFO ] 2018-08-29 12:14:43.170 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-08-29 12:14:43.171 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-08-29 12:14:45.282 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-08-29 12:14:45.359 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-08-29 12:17:08.733 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-08-29 12:17:12.713 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-29 12:17:12.713 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-29 12:17:12.801 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-08-29 12:17:13.827 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-08-29 12:17:13.959 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-29 12:17:13.959 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:17:13.959 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-08-29 12:17:14.199 (BasePOM.java:146) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:17:15.124 (InvoicesAllClientDataDbVsSiteTest.java:12) - Get into Testtests.invoces.InvoicesAllClientDataDbVsSiteTest
+[DEBUG] 2018-08-29 12:17:15.124 (InvocesTestBase.java:141) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        invoiceext.PaymentID as "paymentid",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+
+        invoiceext.contract_id as "Contract Id",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        contract.payment_date as "Payment Date",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as Status
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+contract.payment_date,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-08-29 12:17:15.177 (InvocesTestBase.java:141) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        invoiceext.PaymentID as "paymentid",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+
+        invoiceext.contract_id as "Contract Id",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        contract.payment_date as "Payment Date",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as Status
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+contract.payment_date,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY invoiceext.id
+[DEBUG] 2018-08-29 12:17:15.213 (BasePOM.java:146) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-08-29 12:17:15.241 (BasePOM.java:89) - Typing Piotr Rasputin into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-08-29 12:17:15.331 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-08-29 12:17:15.352 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-08-29 12:17:15.360 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-08-29 12:17:15.368 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-08-29 12:17:15.368 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-08-29 12:17:15.390 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-08-29 12:17:15.397 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-08-29 12:17:15.397 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-08-29 12:17:16.398 (JSWaiter.java:162) - wakeup from sleep for :1000
+[INFO ] 2018-08-29 12:17:16.420 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-08-29 12:17:16.421 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-08-29 12:17:18.547 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-08-29 12:17:18.621 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-08-29 12:17:53.683 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-08-29 12:17:57.488 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-08-29 12:17:57.488 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-08-29 12:17:57.572 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-08-29 12:17:58.493 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-08-29 12:17:58.654 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-08-29 12:17:58.654 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:17:58.655 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-08-29 12:17:58.899 (BasePOM.java:146) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-08-29 12:17:59.782 (InvoicesAllClientDataDbVsSiteTest.java:12) - Get into Testtests.invoces.InvoicesAllClientDataDbVsSiteTest
+[DEBUG] 2018-08-29 12:17:59.782 (InvocesTestBase.java:141) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        invoiceext.PaymentID as "paymentid",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+
+        invoiceext.contract_id as "Contract Id",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        contract.payment_date as "Payment Date",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as Status
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+contract.payment_date,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-08-29 12:17:59.848 (InvocesTestBase.java:141) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        invoiceext.PaymentID as "paymentid",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+
+        invoiceext.contract_id as "Contract Id",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        contract.payment_date as "Payment Date",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as Status
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+contract.payment_date,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Marie Rogue' ORDER BY invoiceext.id
+[DEBUG] 2018-08-29 12:17:59.883 (BasePOM.java:146) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-08-29 12:17:59.891 (BasePOM.java:89) - Typing Marie Rogue into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-08-29 12:17:59.976 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-08-29 12:17:59.996 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-08-29 12:18:00.004 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-08-29 12:18:00.012 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-08-29 12:18:00.013 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-08-29 12:18:00.034 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-08-29 12:18:00.042 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-08-29 12:18:00.042 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-08-29 12:18:01.042 (JSWaiter.java:162) - wakeup from sleep for :1000
+[DEBUG] 2018-08-29 12:18:01.068 (BasePOM.java:146) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-08-29 12:18:01.076 (InvoicesMain.java:24) - Reading table from page
+[DEBUG] 2018-08-29 12:18:01.396 (HtmlTable.java:95) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-08-29 12:18:01.396 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key 3 result is Contact ID
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key 4 result is Payment amount
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key 5 result is Payment date
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key 6 result is Payment status
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key Payment amount result is 4
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key Payment date result is 5
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key Payment status result is 6
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:41) - For key Contact ID result is 3
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:20) - 
+1:9|2:Marie Rogue|3:6|4:UAH 1000|5:2018-06-07|6:YES|
+1:10|2:Marie Rogue|3:6|4:UAH 1000|5:2018-07-07|6:YES|
+1:11|2:Marie Rogue|3:8|4:UAH 3000|5:2018-08-19|6:NO|
+
+[DEBUG] 2018-08-29 12:18:01.398 (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:48) - Enter rename from:Contract date to:ContractDate
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key 2 result is ClientName
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key 3 result is Contact ID
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key 4 result is Payment amount
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key 5 result is Payment date
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key 6 result is Payment status
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key ClientName result is 2
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key Payment amount result is 4
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key Payment date result is 5
+[DEBUG] 2018-08-29 12:18:01.399 (PrintOuts.java:41) - For key Payment status result is 6
+[DEBUG] 2018-08-29 12:18:01.400 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-08-29 12:18:01.400 (PrintOuts.java:41) - For key Contact ID result is 3
+[DEBUG] 2018-08-29 12:18:01.400 (PrintOuts.java:20) - 
+1:9|2:Marie Rogue|3:6|4:UAH 1000|5:2018-06-07|6:YES|
+1:10|2:Marie Rogue|3:6|4:UAH 1000|5:2018-07-07|6:YES|
+1:11|2:Marie Rogue|3:8|4:UAH 3000|5:2018-08-19|6:NO|
+
+[DEBUG] 2018-08-29 12:18:01.400 (PrintOuts.java:48) - Convert date from ContractDate: null
+[INFO ] 2018-08-29 12:18:01.405 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-08-29 12:18:01.406 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-08-29 12:18:03.556 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-08-29 12:18:03.635 (BaseTest.java:135) - Closing browser

@@ -12,6 +12,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 
 import utils.WorkWithMainConfig;
 
@@ -22,7 +27,7 @@ public class OpenFF {
 	private WorkWithMainConfig config = new WorkWithMainConfig();
 	protected static Logger logger = LogManager.getLogger();
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		System.setProperty("webdriver.gecko.driver","src/main/java/resources/geckodriver.exe");
 		driver = new FirefoxDriver();
@@ -39,7 +44,7 @@ public class OpenFF {
 		} 
 	}
 	
-	@After
+	@AfterEach
 	 
 	public void tearDownClass(){
 		driver.quit();

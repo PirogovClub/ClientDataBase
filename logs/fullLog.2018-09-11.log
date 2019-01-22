@@ -1,0 +1,1200 @@
+[INFO ] 2018-09-11 09:07:58.864 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 09:07:58.886 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 09:08:07.284 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-11 09:08:07.285 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-11 09:08:07.480 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-09-11 09:08:09.314 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-11 09:08:09.819 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-11 09:08:09.821 (DealFromClientPageDbVsUI.java:22) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-11 09:08:09.822 (DealFromClientPageDbVsUI.java:23) - Going through invoces
+[DEBUG] 2018-09-11 09:08:09.837 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-11 09:08:10.275 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-11 09:08:10.281 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-11 09:08:10.283 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-11 09:08:10.636 (BasePOM.java:167) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-11 09:08:12.310 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-11 09:08:12.562 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY invoiceext.id
+[DEBUG] 2018-09-11 09:08:12.678 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-11 09:08:12.706 (BasePOM.java:110) - Typing Raven Darkhölme into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-11 09:08:12.905 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 09:08:12.927 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 09:08:12.933 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 09:08:12.945 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 09:08:12.946 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 09:08:12.967 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 09:08:12.976 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-11 09:08:12.977 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-09-11 09:08:13.978 (JSWaiter.java:162) - wakeup from sleep for :1000
+[INFO ] 2018-09-11 09:08:14.071 (BasePOM.java:146) - Wait For By.xpath: .//a[contains(text(),'Raven Darkhölme')]
+[DEBUG] 2018-09-11 09:08:14.072 (BasePOM.java:85) - Wait For By.xpath: .//a[contains(text(),'Raven Darkhölme')]
+[INFO ] 2018-09-11 09:08:15.640 (DealFromClientPageDbVsUI.java:32) - Get into a client page
+[DEBUG] 2018-09-11 09:08:15.645 (BasePOM.java:85) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-11 09:08:15.725 (ClientProperties.java:211) - Reading table with Deals from page
+[INFO ] 2018-09-11 09:08:15.725 (BasePOM.java:215) - Doing scroll to By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-11 09:08:15.726 (JSWaiter.java:198) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-11 09:08:16.788 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-11 09:08:16.788 (ClientProperties.java:214) - Done Reading table with Deals from page
+[DEBUG] 2018-09-11 09:08:16.789 (PrintOuts.java:48) - Convert date from Open date: 05-Apr-2018
+[INFO ] 2018-09-11 09:08:16.812 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-11 09:08:16.815 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 09:08:22.469 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 09:08:22.616 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 09:11:15.139 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 09:11:15.139 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 09:11:22.323 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-11 09:11:22.323 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-11 09:11:22.540 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-09-11 09:11:24.508 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-11 09:11:25.028 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-11 09:11:25.030 (DealFromClientPageDbVsUI.java:22) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-11 09:11:25.032 (DealFromClientPageDbVsUI.java:23) - Going through invoces
+[DEBUG] 2018-09-11 09:11:25.043 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-11 09:11:25.483 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-11 09:11:25.487 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-11 09:11:25.489 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-11 09:11:25.794 (BasePOM.java:167) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-11 09:11:27.519 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-11 09:11:27.847 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY invoiceext.id
+[DEBUG] 2018-09-11 09:11:27.964 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-11 09:11:27.992 (BasePOM.java:110) - Typing Piotr Rasputin into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-11 09:11:28.200 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 09:11:28.221 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 09:11:28.230 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 09:11:28.238 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 09:11:28.238 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 09:11:28.259 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 09:11:28.266 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-11 09:11:28.266 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-09-11 09:11:29.267 (JSWaiter.java:162) - wakeup from sleep for :1000
+[INFO ] 2018-09-11 09:11:29.353 (BasePOM.java:146) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[DEBUG] 2018-09-11 09:11:29.354 (BasePOM.java:85) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[INFO ] 2018-09-11 09:11:31.111 (DealFromClientPageDbVsUI.java:32) - Get into a client page
+[DEBUG] 2018-09-11 09:11:31.114 (BasePOM.java:85) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-11 09:11:31.168 (ClientProperties.java:211) - Reading table with Deals from page
+[INFO ] 2018-09-11 09:11:31.169 (BasePOM.java:215) - Doing scroll to By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-11 09:11:31.170 (JSWaiter.java:198) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-11 09:11:32.286 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-11 09:11:32.286 (ClientProperties.java:214) - Done Reading table with Deals from page
+[DEBUG] 2018-09-11 09:11:32.286 (PrintOuts.java:48) - Convert date from Open date: 16-Aug-2018
+[INFO ] 2018-09-11 09:11:32.296 (ConverDates.java:50) - Get localdate:4
+[INFO ] 2018-09-11 09:11:32.299 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-11 09:11:32.300 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 09:11:37.963 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 09:11:38.217 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 09:12:33.035 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 09:12:33.045 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 09:12:39.723 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-11 09:12:39.723 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-11 09:12:39.863 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-09-11 09:12:41.488 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-11 09:12:41.932 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-11 09:12:41.934 (DealFromClientPageDbVsUI.java:22) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-11 09:12:41.935 (DealFromClientPageDbVsUI.java:23) - Going through invoces
+[DEBUG] 2018-09-11 09:12:41.942 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-11 09:12:42.348 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-11 09:12:42.354 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-11 09:12:42.355 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-11 09:12:42.730 (BasePOM.java:167) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-11 09:12:44.325 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-11 09:12:44.555 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Marie Rogue' ORDER BY invoiceext.id
+[DEBUG] 2018-09-11 09:12:44.668 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-11 09:12:44.705 (BasePOM.java:110) - Typing Marie Rogue into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-11 09:12:44.905 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 09:12:44.926 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 09:12:44.933 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 09:12:44.942 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 09:12:44.942 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 09:12:44.963 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 09:12:44.973 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-11 09:12:44.973 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-09-11 09:12:45.974 (JSWaiter.java:162) - wakeup from sleep for :1000
+[INFO ] 2018-09-11 09:12:46.073 (BasePOM.java:146) - Wait For By.xpath: .//a[contains(text(),'Marie Rogue')]
+[DEBUG] 2018-09-11 09:12:46.074 (BasePOM.java:85) - Wait For By.xpath: .//a[contains(text(),'Marie Rogue')]
+[INFO ] 2018-09-11 09:12:47.753 (DealFromClientPageDbVsUI.java:32) - Get into a client page
+[DEBUG] 2018-09-11 09:12:47.756 (BasePOM.java:85) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-11 09:12:47.804 (ClientProperties.java:211) - Reading table with Deals from page
+[INFO ] 2018-09-11 09:12:47.805 (BasePOM.java:215) - Doing scroll to By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-11 09:12:47.805 (JSWaiter.java:198) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-11 09:12:48.879 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-11 09:12:48.880 (ClientProperties.java:214) - Done Reading table with Deals from page
+[DEBUG] 2018-09-11 09:12:48.880 (PrintOuts.java:48) - Convert date from Open date: 
+[INFO ] 2018-09-11 09:12:48.887 (ConverDates.java:50) - Get localdate:
+[INFO ] 2018-09-11 09:12:48.890 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-11 09:12:48.891 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 09:12:54.545 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 09:12:54.770 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 09:14:11.946 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 09:14:11.946 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 09:14:19.826 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-11 09:14:19.826 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-11 09:14:20.026 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-09-11 09:14:21.890 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-11 09:14:22.396 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-11 09:14:22.398 (DealFromClientPageDbVsUI.java:22) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-11 09:14:22.400 (DealFromClientPageDbVsUI.java:23) - Going through invoces
+[DEBUG] 2018-09-11 09:14:22.412 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-11 09:14:22.819 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-11 09:14:22.825 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-11 09:14:22.827 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-11 09:14:23.254 (BasePOM.java:167) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-11 09:14:25.290 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-11 09:14:25.590 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY invoiceext.id
+[DEBUG] 2018-09-11 09:14:25.751 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-11 09:14:25.782 (BasePOM.java:110) - Typing Raven Darkhölme into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-11 09:14:25.993 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 09:14:26.014 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 09:14:26.022 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 09:14:26.040 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 09:14:26.041 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 09:14:26.061 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 09:14:26.068 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-11 09:14:26.069 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-09-11 09:14:27.069 (JSWaiter.java:162) - wakeup from sleep for :1000
+[INFO ] 2018-09-11 09:14:27.205 (BasePOM.java:146) - Wait For By.xpath: .//a[contains(text(),'Raven Darkhölme')]
+[DEBUG] 2018-09-11 09:14:27.205 (BasePOM.java:85) - Wait For By.xpath: .//a[contains(text(),'Raven Darkhölme')]
+[INFO ] 2018-09-11 09:14:29.028 (DealFromClientPageDbVsUI.java:32) - Get into a client page
+[DEBUG] 2018-09-11 09:14:29.032 (BasePOM.java:85) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-11 09:14:29.104 (ClientProperties.java:211) - Reading table with Deals from page
+[INFO ] 2018-09-11 09:14:29.105 (BasePOM.java:215) - Doing scroll to By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-11 09:14:29.105 (JSWaiter.java:198) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-11 09:14:30.192 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-11 09:14:30.193 (ClientProperties.java:214) - Done Reading table with Deals from page
+[DEBUG] 2018-09-11 09:14:30.193 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-11 09:14:30.194 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-11 09:14:30.194 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-11 09:14:30.194 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-11 09:14:30.194 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-11 09:14:30.195 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-11 09:14:30.195 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-11 09:14:30.195 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-11 09:14:30.195 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-11 09:14:30.196 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-11 09:14:30.196 (PrintOuts.java:20) - 
+1:5|2:Personal Mentor|3:ACTIVE|4:05-Apr-2018|5:Charles Xavier|
+
+[DEBUG] 2018-09-11 09:14:30.197 (PrintOuts.java:48) - Convert date from Open date: 05-Apr-2018
+[INFO ] 2018-09-11 09:14:30.207 (ConverDates.java:50) - Get localdate:05-Apr-2018
+[DEBUG] 2018-09-11 09:14:30.233 (PrintOuts.java:48) - Converted date:2018-04-05
+[DEBUG] 2018-09-11 09:14:30.234 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-11 09:14:30.234 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-11 09:14:30.234 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-11 09:14:30.235 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-11 09:14:30.235 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-11 09:14:30.235 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-11 09:14:30.236 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-11 09:14:30.236 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-11 09:14:30.237 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-11 09:14:30.237 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-11 09:14:30.237 (PrintOuts.java:20) - 
+1:5|2:Personal Mentor|3:ACTIVE|4:2018-04-05|5:Charles Xavier|
+
+[DEBUG] 2018-09-11 09:14:30.238 (PrintOuts.java:48) - Check :Charles Xavier on Stub:----
+[DEBUG] 2018-09-11 09:14:30.238 (PrintOuts.java:48) - After check :Charles Xavier
+[DEBUG] 2018-09-11 09:14:30.239 (DealsTestBase.java:83) - 
+SQLquery:select 
+        deal.id as "Id",
+        consultancy.name as "Consultancy", 
+        deal.status as "Deal status",
+        deal.open_date as "Open date",
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor"
+        
+        
+From    deal inner join client on (client.id = deal.client_id) 
+            inner join consultancy on (consultancy.id = deal.consultancy_id)
+            left join (contract inner join employee  on (employee.id = contract.employee_id))  on (contract.deal_id = deal.id)Group by
+deal.id,
+        consultancy.name,
+        deal.status,
+        deal.open_date,
+        client.first_name,
+        client.last_name,
+        employee.first_name,
+        employee.last_name HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY  CONCAT(employee.first_name, ' ', employee.last_name)
+[INFO ] 2018-09-11 09:14:30.356 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-11 09:14:30.357 (PrintOuts.java:48) - key:Consultancy value:Personal Mentor
+[DEBUG] 2018-09-11 09:14:30.358 (PrintOuts.java:48) - Compare: Personal Mentor
+[DEBUG] 2018-09-11 09:14:30.359 (PrintOuts.java:48) - key:Mentor value:Charles Xavier
+[DEBUG] 2018-09-11 09:14:30.359 (PrintOuts.java:48) - Compare: Charles Xavier
+[DEBUG] 2018-09-11 09:14:30.360 (PrintOuts.java:48) - key:Open date value:2018-04-05
+[DEBUG] 2018-09-11 09:14:30.361 (PrintOuts.java:48) - Compare: 2018-04-05
+[DEBUG] 2018-09-11 09:14:30.362 (PrintOuts.java:48) - key:Id value:5
+[DEBUG] 2018-09-11 09:14:30.362 (PrintOuts.java:48) - Compare: 5
+[DEBUG] 2018-09-11 09:14:30.363 (PrintOuts.java:48) - key:Deal status value:ACTIVE
+[DEBUG] 2018-09-11 09:14:30.363 (PrintOuts.java:48) - Compare: ACTIVE
+[INFO ] 2018-09-11 09:14:30.367 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-11 09:14:30.369 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-11 09:14:30.371 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-11 09:14:30.376 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 09:14:36.037 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 09:14:36.253 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 18:41:13.222 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 18:41:13.233 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 18:41:20.630 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-11 18:41:20.631 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-11 18:41:20.803 (LoginPage.java:61) - pressed Submit
+[INFO ] 2018-09-11 18:41:22.456 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 18:41:28.144 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 18:41:28.400 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 18:54:59.637 (TestLoginNegative.java:18) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 18:54:59.645 (TestLoginNegative.java:25) - Starting browser
+[INFO ] 2018-09-11 18:55:06.214 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-11 18:55:06.216 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 18:55:11.883 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 18:55:12.101 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 19:13:02.819 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 19:13:02.841 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 19:13:10.494 (LoginPage.java:99) - Found login form on the page, need to login
+[INFO ] 2018-09-11 19:13:10.494 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 19:13:10.506 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 19:13:10.506 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 19:13:16.201 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 19:13:16.372 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 19:17:24.921 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 19:17:24.929 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 19:17:32.861 (LoginPage.java:99) - Found login form on the page, need to login
+[INFO ] 2018-09-11 19:17:32.863 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 19:17:38.495 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 19:17:38.611 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 19:21:21.666 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 19:21:21.676 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 19:21:32.704 (LoginPage.java:99) - Found login form on the page, need to login
+[INFO ] 2018-09-11 19:21:32.704 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 19:21:32.723 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 19:21:33.077 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 19:21:33.256 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 19:21:33.278 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 19:21:33.278 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 19:21:33.294 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 19:21:33.294 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 19:21:33.325 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 19:21:33.325 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 19:21:33.325 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 19:21:33.440 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 19:21:33.478 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 19:21:33.478 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 19:21:33.494 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 19:21:33.494 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 19:21:33.525 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 19:21:33.541 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 19:21:33.541 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 19:21:33.694 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 19:21:33.725 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 19:21:33.725 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 19:21:33.725 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 19:21:33.725 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 19:21:33.757 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 19:21:33.779 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 19:21:33.779 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 19:21:33.779 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 19:21:34.079 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 19:21:34.079 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 19:21:39.784 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 19:21:39.971 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:16:04.298 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:16:04.303 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:16:09.782 (LoginPage.java:99) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:16:09.782 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:16:09.786 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:16:10.065 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:16:10.202 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:16:10.224 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:16:10.235 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:16:10.249 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:16:10.249 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:16:10.270 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:16:10.282 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:16:10.282 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:16:10.369 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:16:10.389 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:16:10.401 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:16:10.412 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:16:10.412 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:16:10.433 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:16:10.453 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:16:10.453 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:16:10.560 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:16:10.581 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:16:10.591 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:16:10.639 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:16:10.640 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:16:10.660 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:16:10.669 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:16:10.670 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:16:10.670 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:16:10.769 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:16:10.793 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:16:12.901 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:16:12.966 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:29:32.547 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:29:32.551 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:29:36.787 (LoginPage.java:100) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:29:36.787 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:29:36.788 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:29:37.092 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:29:37.199 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:29:37.220 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:29:37.230 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:29:37.245 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:29:37.246 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:29:37.266 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:29:37.275 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:29:37.276 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:29:37.364 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:29:37.385 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:29:37.395 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:29:37.405 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:29:37.405 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:29:37.425 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:29:37.437 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:29:37.437 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:29:37.537 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:29:37.558 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:29:37.567 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:29:37.617 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:29:37.618 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:29:37.638 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:29:37.651 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:29:37.651 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:29:37.651 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:29:47.763 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:29:47.763 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:29:49.892 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:29:49.955 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:32:41.403 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:32:41.407 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:32:45.158 (LoginPage.java:100) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:32:45.159 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:32:45.160 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:32:45.247 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:32:45.277 (BasePOM.java:120) - UserName field is not displayed
+[INFO ] 2018-09-11 21:32:45.277 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:32:45.312 (BasePOM.java:120) - UserEmail field is not displayed
+[INFO ] 2018-09-11 21:32:45.312 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:32:45.341 (BasePOM.java:120) - UserEmail field is not displayed
+[INFO ] 2018-09-11 21:32:45.341 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:32:45.341 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:32:56.061 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:32:56.062 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:33:02.825 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:33:02.829 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:33:06.586 (LoginPage.java:100) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:33:06.586 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:33:06.588 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:33:06.675 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:33:06.709 (BasePOM.java:120) - UserName field is not displayed
+[INFO ] 2018-09-11 21:33:06.710 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:33:06.744 (BasePOM.java:120) - UserEmail field is not displayed
+[INFO ] 2018-09-11 21:33:06.744 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:33:06.776 (BasePOM.java:120) - UserEmail field is not displayed
+[INFO ] 2018-09-11 21:33:06.776 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:33:06.776 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:33:17.422 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:33:17.422 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:33:18.826 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:33:19.125 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:33:50.505 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:33:50.509 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:33:54.222 (LoginPage.java:100) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:33:54.222 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:33:54.223 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:33:54.311 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:33:54.343 (BasePOM.java:120) - UserName field is not displayed
+[INFO ] 2018-09-11 21:33:54.343 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:33:54.379 (BasePOM.java:120) - UserEmail field is not displayed
+[INFO ] 2018-09-11 21:33:54.379 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:33:54.408 (BasePOM.java:120) - UserEmail field is not displayed
+[INFO ] 2018-09-11 21:33:54.409 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:33:54.409 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:34:05.078 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:34:05.079 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:34:06.470 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:34:06.755 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:34:17.824 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:34:17.827 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:34:21.579 (LoginPage.java:100) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:34:21.579 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:34:21.580 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:34:21.665 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:34:21.697 (BasePOM.java:120) - UserName field is not displayed
+[INFO ] 2018-09-11 21:34:21.697 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:34:21.730 (BasePOM.java:120) - UserEmail field is not displayed
+[INFO ] 2018-09-11 21:34:21.730 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-11 21:34:21.760 (BasePOM.java:120) - UserEmail field is not displayed
+[INFO ] 2018-09-11 21:34:21.761 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:34:21.761 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:34:42.483 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:34:42.483 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:34:43.884 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:34:44.185 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:35:19.981 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:35:19.985 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:36:30.604 (LoginPage.java:100) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:36:30.605 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:36:30.606 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:36:30.893 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:36:31.050 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:36:31.070 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:36:31.084 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:36:31.098 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:36:31.098 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:36:31.119 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:36:31.131 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:36:31.131 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:36:31.236 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:36:31.256 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:36:31.266 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:36:31.280 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:36:31.280 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:36:31.300 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:36:31.311 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:36:31.312 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:36:31.413 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:36:31.433 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:36:31.445 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:36:31.494 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:36:31.494 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:36:31.514 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:36:31.526 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:36:31.527 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:36:31.527 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:36:51.659 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:36:51.660 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:36:53.795 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:36:53.871 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:40:08.883 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:40:08.888 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:40:12.837 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:40:12.837 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:40:12.838 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:40:13.131 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:40:13.275 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:13.297 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:13.307 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:40:13.322 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:40:13.322 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:13.342 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:13.352 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:40:13.352 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:40:13.449 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:13.469 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:13.481 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:40:13.491 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:40:13.491 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:13.511 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:13.528 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:40:13.528 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:40:13.634 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:13.654 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:13.665 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:40:13.706 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:40:13.706 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:13.727 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:13.736 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:40:13.737 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:40:13.737 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:40:33.847 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:40:33.848 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:40:35.997 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:40:36.069 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:40:42.944 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:40:42.948 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:40:46.835 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:40:46.835 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:40:46.836 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:40:47.133 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:40:47.277 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:47.298 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:47.309 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:40:47.324 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:40:47.324 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:47.345 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:47.355 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:40:47.355 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:40:47.446 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:47.467 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:47.477 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:40:47.488 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:40:47.488 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:47.508 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:47.524 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:40:47.524 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:40:47.627 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:47.647 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:47.656 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:40:47.704 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:40:47.704 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:40:47.725 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:40:47.734 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:40:47.734 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:40:47.734 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:41:07.844 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:41:07.844 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:41:10.049 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:41:10.099 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:42:10.104 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:42:10.108 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:42:14.062 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:42:14.062 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:42:14.063 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:42:14.400 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:42:14.515 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:42:14.535 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:42:14.546 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:42:14.569 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:42:14.569 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:42:14.589 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:42:14.600 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:42:14.600 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:42:14.695 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:42:14.715 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:42:14.725 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:42:14.736 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:42:14.736 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:42:14.756 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:42:14.771 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:42:14.771 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:42:14.872 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:42:14.892 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:42:14.903 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:42:14.947 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:42:14.948 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:42:14.968 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:42:14.979 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:42:14.979 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:42:14.979 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:42:35.089 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:42:35.090 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:42:37.283 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:42:37.326 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:43:19.565 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:43:19.570 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:43:23.332 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:43:23.333 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:43:23.334 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:43:23.609 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:43:23.748 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:43:23.769 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:43:23.782 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:43:23.795 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:43:23.795 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:43:23.815 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:43:23.835 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:43:23.836 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:43:23.932 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:43:23.952 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:43:23.963 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:43:23.972 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:43:23.972 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:43:23.992 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:43:24.004 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:43:24.004 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:43:24.106 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:43:24.128 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:43:24.185 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:43:24.201 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:43:24.201 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:43:24.221 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:43:24.231 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:43:24.231 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:43:24.232 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[ERROR] 2018-09-11 21:43:44.351 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 21:43:44.352 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:43:46.573 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:43:46.619 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 21:50:26.523 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 21:50:26.527 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 21:50:30.534 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 21:50:30.535 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 21:50:30.535 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 21:50:30.812 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:50:30.958 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:50:30.979 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:50:30.991 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:50:31.005 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:50:31.005 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:50:31.025 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:50:31.036 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:50:31.036 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:50:31.143 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:50:31.163 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:50:31.199 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:50:31.218 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:50:31.218 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:50:31.238 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:50:31.279 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:50:31.280 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 21:50:31.378 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:50:31.399 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:50:31.408 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 21:50:31.451 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 21:50:31.451 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 21:50:31.472 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 21:50:31.485 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 21:50:31.485 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 21:50:31.486 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[INFO ] 2018-09-11 21:50:31.610 (LoginPage.java:155) - Пожалуйста, введите адрес электронной почты.
+[INFO ] 2018-09-11 21:50:31.611 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-11 21:50:31.612 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 21:50:33.730 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 21:50:33.797 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 22:15:04.924 (TestLoginNegative.java:19) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 22:15:04.928 (TestLoginNegative.java:26) - Starting browser
+[INFO ] 2018-09-11 22:15:08.922 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 22:15:08.923 (BasePOM.java:199) - Doing click on By.xpath: .//a[@id='register-form-link']
+[DEBUG] 2018-09-11 22:15:08.924 (JSWaiter.java:198) - Wait For By.xpath: .//a[@id='register-form-link']
+[INFO ] 2018-09-11 22:15:09.213 (BasePOM.java:110) - Typing username into By.xpath: .//input[@id='register-username'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 22:15:09.345 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 22:15:09.366 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 22:15:09.376 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 22:15:09.394 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 22:15:09.394 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 22:15:09.415 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 22:15:09.427 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 22:15:09.427 (BasePOM.java:110) - Typing admin into By.xpath: .//input[@id='email'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 22:15:09.534 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 22:15:09.554 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 22:15:09.563 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 22:15:09.575 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 22:15:09.575 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 22:15:09.595 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 22:15:09.606 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 22:15:09.606 (BasePOM.java:110) - Typing password into By.xpath: .//input[@id='register-password'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-11 22:15:09.706 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 22:15:09.726 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 22:15:09.737 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-11 22:15:09.779 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-11 22:15:09.779 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-11 22:15:09.799 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-11 22:15:09.809 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-11 22:15:09.809 (BasePOM.java:199) - Doing click on By.xpath: .//input[@id='register-submit']
+[DEBUG] 2018-09-11 22:15:09.810 (JSWaiter.java:198) - Wait For By.xpath: .//input[@id='register-submit']
+[INFO ] 2018-09-11 22:15:09.903 (LoginPage.java:154) - Check if validation message is: Please include an '@' in the email address
+[ERROR] 2018-09-11 22:15:09.928 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 22:15:09.929 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 22:15:12.039 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 22:15:12.102 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 22:25:01.104 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 22:25:01.110 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 22:25:05.184 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 22:25:05.184 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-11 22:25:05.316 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-11 22:25:06.294 (TestConsultancyNewNegative.java:12) - Get into Testtests.TestConsultancyNewNegative
+[INFO ] 2018-09-11 22:25:06.296 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 22:25:08.434 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 22:25:08.516 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 22:48:32.429 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 22:48:32.433 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 22:48:37.426 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 22:48:37.427 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-11 22:48:37.549 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-11 22:48:38.642 (TestConsultancyNewNegative.java:14) - Get into Testtests.TestConsultancyNewNegative
+[INFO ] 2018-09-11 22:48:40.376 (Consultancies.java:50) - Typing into ConsultancyTitle field:consultancyNameAT
+[INFO ] 2018-09-11 22:48:40.436 (Consultancies.java:50) - Typing into ConsultancyDescription field:consultancyDescriptionOL
+[INFO ] 2018-09-11 22:48:40.572 (Consultancies.java:50) - Typing into typePriceUAH field:null99
+[INFO ] 2018-09-11 22:48:40.627 (Consultancies.java:50) - Typing into PriceEUR field:null38
+[INFO ] 2018-09-11 22:48:40.680 (Consultancies.java:50) - Typing into PriceUSD field:null21
+[INFO ] 2018-09-11 22:48:40.745 (Consultancies.java:50) - Typing into EmployeeRate field:null199
+[INFO ] 2018-09-11 22:48:41.354 (Consultancies.java:169) - Looking for Error Message:size must be between 2 and 50 in By.xpath: .//output[contains(text(),'size must be between 2 and 50')][following::input[@id='name']][1]
+[INFO ] 2018-09-11 22:48:51.376 (Consultancies.java:169) - Looking for Error Message:It is required field in By.xpath: .//output[contains(text(),'It is required field')][following::textarea[@id='description']][1]
+[ERROR] 2018-09-11 22:49:01.397 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 22:49:01.398 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 22:49:03.511 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 22:49:03.586 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 22:57:57.018 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 22:57:57.022 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 22:58:02.235 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 22:58:02.236 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-11 22:58:02.360 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-11 22:58:03.332 (TestConsultancyNewNegative.java:14) - Get into Testtests.TestConsultancyNewNegative
+[INFO ] 2018-09-11 22:58:04.941 (Consultancies.java:50) - Typing into ConsultancyTitle field:consultancyNamePM
+[INFO ] 2018-09-11 22:58:05.001 (Consultancies.java:50) - Typing into ConsultancyDescription field:consultancyDescriptionNM
+[INFO ] 2018-09-11 22:58:05.132 (Consultancies.java:50) - Typing into typePriceUAH field:null123
+[INFO ] 2018-09-11 22:58:05.189 (Consultancies.java:50) - Typing into PriceEUR field:null74
+[INFO ] 2018-09-11 22:58:05.235 (Consultancies.java:50) - Typing into PriceUSD field:null80
+[INFO ] 2018-09-11 22:58:05.285 (Consultancies.java:50) - Typing into EmployeeRate field:null131
+[INFO ] 2018-09-11 22:58:05.882 (Consultancies.java:169) - Looking for Error Message:size must be between 2 and 50 in By.xpath: .//output[contains(text(),'size must be between 2 and 50') and preceding::input[@id='name']]
+[INFO ] 2018-09-11 22:58:15.932 (Consultancies.java:169) - Looking for Error Message:It is required field in By.xpath: .//output[contains(text(),'It is required field') and preceding::textarea[@id='description']]
+[ERROR] 2018-09-11 22:58:25.956 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 22:58:25.957 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 22:58:28.091 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 22:58:28.157 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 23:00:17.124 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 23:00:17.130 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 23:00:22.173 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 23:00:22.173 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-11 23:00:22.291 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-11 23:00:23.366 (TestConsultancyNewNegative.java:14) - Get into Testtests.TestConsultancyNewNegative
+[INFO ] 2018-09-11 23:00:25.142 (Consultancies.java:50) - Typing into ConsultancyTitle field:consultancyNameWOSDSGXEBNJXUMTASEFKDMMFUVGIQXLJJAIFESFWMXODBITSBW
+[INFO ] 2018-09-11 23:00:25.234 (Consultancies.java:50) - Typing into ConsultancyDescription field:
+[INFO ] 2018-09-11 23:00:25.346 (Consultancies.java:50) - Typing into typePriceUAH field:null91
+[INFO ] 2018-09-11 23:00:25.396 (Consultancies.java:50) - Typing into PriceEUR field:null117
+[INFO ] 2018-09-11 23:00:25.446 (Consultancies.java:50) - Typing into PriceUSD field:null101
+[INFO ] 2018-09-11 23:00:25.498 (Consultancies.java:50) - Typing into EmployeeRate field:null104
+[INFO ] 2018-09-11 23:00:26.171 (Consultancies.java:169) - Looking for Error Message:размер должен быть между 2 и 50 in By.xpath: .//output[contains(text(),'размер должен быть между 2 и 50') and preceding::input[@id='name']]
+[INFO ] 2018-09-11 23:00:26.185 (Consultancies.java:169) - Looking for Error Message:It is required field in By.xpath: .//output[contains(text(),'It is required field') and preceding::textarea[@id='description']]
+[INFO ] 2018-09-11 23:00:26.195 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-11 23:00:26.196 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 23:00:28.307 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 23:00:28.382 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 23:01:05.205 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 23:01:05.212 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 23:01:10.560 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 23:01:10.560 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-11 23:01:10.669 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-11 23:01:11.750 (TestConsultancyNewNegative.java:14) - Get into Testtests.TestConsultancyNewNegative
+[INFO ] 2018-09-11 23:01:13.676 (Consultancies.java:50) - Typing into ConsultancyTitle field:consultancyNameUIIJWEIQHDVLZSKVKJHDJIHVFMLUUQKUIWBMNBZEQRKHXGHLCJ
+[INFO ] 2018-09-11 23:01:13.765 (Consultancies.java:50) - Typing into ConsultancyDescription field:
+[INFO ] 2018-09-11 23:01:13.879 (Consultancies.java:50) - Typing into typePriceUAH field:null54
+[INFO ] 2018-09-11 23:01:13.930 (Consultancies.java:50) - Typing into PriceEUR field:null188
+[INFO ] 2018-09-11 23:01:13.978 (Consultancies.java:50) - Typing into PriceUSD field:null109
+[INFO ] 2018-09-11 23:01:14.029 (Consultancies.java:50) - Typing into EmployeeRate field:null139
+[INFO ] 2018-09-11 23:01:14.763 (Consultancies.java:169) - Looking for Error Message:size must be between 2 and 50 in By.xpath: .//output[contains(text(),'size must be between 2 and 50') and preceding::input[@id='name']]
+[INFO ] 2018-09-11 23:01:24.788 (Consultancies.java:169) - Looking for Error Message:It is required field in By.xpath: .//output[contains(text(),'It is required field') and preceding::textarea[@id='description']]
+[ERROR] 2018-09-11 23:01:24.800 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 23:01:24.801 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 23:01:26.981 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 23:01:27.048 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 23:01:57.336 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 23:01:57.341 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 23:02:02.338 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 23:02:02.338 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-11 23:02:02.453 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-11 23:02:03.474 (TestConsultancyNewNegative.java:14) - Get into Testtests.TestConsultancyNewNegative
+[INFO ] 2018-09-11 23:02:04.980 (Consultancies.java:50) - Typing into ConsultancyTitle field:consultancyNameLZAQPPNKZHQYSHWXUVYEYHJVFHQDMSEGPPMTQDSNZDTFMIMZUT
+[INFO ] 2018-09-11 23:02:05.074 (Consultancies.java:50) - Typing into ConsultancyDescription field:
+[INFO ] 2018-09-11 23:02:05.203 (Consultancies.java:50) - Typing into typePriceUAH field:null56
+[INFO ] 2018-09-11 23:02:05.255 (Consultancies.java:50) - Typing into PriceEUR field:null155
+[INFO ] 2018-09-11 23:02:05.302 (Consultancies.java:50) - Typing into PriceUSD field:null69
+[INFO ] 2018-09-11 23:02:05.348 (Consultancies.java:50) - Typing into EmployeeRate field:null173
+[INFO ] 2018-09-11 23:02:06.114 (Consultancies.java:169) - Looking for Error Message:size must be between 2 and 50 in By.xpath: .//output[contains(text(),'size must be between 2 and 50') and preceding::input[@id='name']]
+[ERROR] 2018-09-11 23:02:16.141 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-11 23:02:16.142 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 23:02:18.310 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 23:02:18.434 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-11 23:02:34.763 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-11 23:02:34.768 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-11 23:02:39.800 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-11 23:02:39.801 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-11 23:02:39.916 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-11 23:02:41.007 (TestConsultancyNewNegative.java:14) - Get into Testtests.TestConsultancyNewNegative
+[INFO ] 2018-09-11 23:02:42.884 (Consultancies.java:50) - Typing into ConsultancyTitle field:consultancyNameEBFWSIJYOOZGJEIFGKMXTSSYAQICIUBICPREEXYNQKPJWANWQC
+[INFO ] 2018-09-11 23:02:42.983 (Consultancies.java:50) - Typing into ConsultancyDescription field:
+[INFO ] 2018-09-11 23:02:43.124 (Consultancies.java:50) - Typing into typePriceUAH field:null119
+[INFO ] 2018-09-11 23:02:43.175 (Consultancies.java:50) - Typing into PriceEUR field:null136
+[INFO ] 2018-09-11 23:02:43.223 (Consultancies.java:50) - Typing into PriceUSD field:null78
+[INFO ] 2018-09-11 23:02:43.271 (Consultancies.java:50) - Typing into EmployeeRate field:null155
+[INFO ] 2018-09-11 23:02:44.016 (Consultancies.java:169) - Looking for Error Message:размер должен быть между 2 и 50 in By.xpath: .//output[contains(text(),'размер должен быть между 2 и 50') and preceding::input[@id='name']]
+[INFO ] 2018-09-11 23:02:44.029 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-11 23:02:44.030 (Consultancies.java:169) - Looking for Error Message:It is required field in By.xpath: .//output[contains(text(),'It is required field') and preceding::textarea[@id='description']]
+[INFO ] 2018-09-11 23:02:44.041 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-11 23:02:44.042 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-11 23:02:46.158 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-11 23:02:46.239 (BaseTest.java:135) - Closing browser

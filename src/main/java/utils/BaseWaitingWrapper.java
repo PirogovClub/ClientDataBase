@@ -255,6 +255,10 @@ public class BaseWaitingWrapper {
 				new WebDriverWait(driver, timeOutToWaitInSec)
 						.until(ExpectedConditions.titleContains(textToFind));
 				break;
+			case "titleIs":
+				new WebDriverWait(driver, timeOutToWaitInSec)
+						.until(ExpectedConditions.titleIs(textToFind));
+				break;
 			}
 			logger.info("Find element " + webElement + " in state "+waitFor);
 			return true;

@@ -1,0 +1,2341 @@
+[INFO ] 2018-09-15 10:15:36.692 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 10:15:36.700 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 10:15:42.648 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-15 10:15:42.648 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-15 10:15:42.785 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-15 10:15:44.292 (ClientCreateTest.java:52) - Get into Testtests.ClientCreateTest
+[INFO ] 2018-09-15 10:15:44.295 (BasePOM.java:189) - Doing click on By.xpath: .//a[@href='/admin/clients']
+[DEBUG] 2018-09-15 10:15:44.297 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//a[@href='/admin/clients'] to be hidden
+[DEBUG] 2018-09-15 10:15:47.097 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 10:15:47.134 (BasePOM.java:189) - Doing click on By.xpath: .//button[contains(text(),'Create Client')]
+[DEBUG] 2018-09-15 10:15:47.134 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[DEBUG] 2018-09-15 10:15:47.424 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[INFO ] 2018-09-15 10:15:47.576 (BasePOM.java:103) - Typing Jonhq0132 into By.xpath: //input[@id='firstName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:47.714 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:47.734 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:47.750 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:47.765 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:47.765 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:47.786 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:47.800 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:15:47.800 (BasePOM.java:103) - Typing Smithq0937 into By.xpath: //input[@id='lastName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:47.916 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:47.937 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:47.949 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:47.963 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:47.964 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:47.984 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:47.998 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:15:47.999 (BasePOM.java:189) - Doing click on By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[DEBUG] 2018-09-15 10:15:47.999 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[DEBUG] 2018-09-15 10:15:49.136 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')] to be hidden
+[ERROR] 2018-09-15 10:15:49.180 (ClientProperties.java:206) - Typing fields
+[INFO ] 2018-09-15 10:15:49.180 (BasePOM.java:103) - Typing Jonhq0132 into By.id: firstName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:49.312 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:49.333 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:49.375 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:49.384 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:49.385 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:49.405 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:49.416 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:15:49.416 (BasePOM.java:103) - Typing Smithq0937 into By.id: lastName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:49.547 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:49.567 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:49.707 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:49.729 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:49.729 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:49.749 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:49.762 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:15:49.762 (BasePOM.java:103) - Typing JXCkg@MUxFk.com into By.id: email Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:49.877 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:49.897 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:49.909 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:49.922 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:49.922 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:49.942 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:49.952 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:15:49.952 (BasePOM.java:103) - Typing Bvttzwdxoyivekfxr into By.id: country Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:50.066 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:50.086 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:50.098 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:50.110 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:50.111 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:50.131 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:50.148 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:15:50.149 (BasePOM.java:103) - Typing Txlbxyjwuvajszzvagewyiswgphrykuaavrmape into By.id: city Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:50.276 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:50.296 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:50.309 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:50.324 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:50.324 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:50.344 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:50.355 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:15:50.355 (BasePOM.java:103) - Typing 4299918454 into By.id: phoneNumber Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:50.457 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:50.477 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:50.489 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:50.508 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:50.508 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:50.528 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:50.541 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:15:50.541 (BasePOM.java:103) - Typing Qa9s3LqA9kY9AcpQlsFY7wbGxSovn6gNToqsXMvLFn into By.id: skype Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:50.666 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:50.686 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:50.699 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:50.713 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:50.713 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:50.733 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:50.746 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:15:50.746 (ClientProperties.java:199) - Clicking Save
+[DEBUG] 2018-09-15 10:15:53.582 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 10:15:53.635 (BasePOM.java:103) - Typing Jonhq0132 Smithq0937 into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:15:53.760 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:53.781 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:53.794 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:15:53.808 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:15:53.808 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:15:53.828 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:15:53.839 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 10:15:53.840 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 10:15:53.869 (BasePOM.java:139) - Wait For By.xpath: .//a[contains(text(),'Jonhq0132 Smithq0937')]
+[DEBUG] 2018-09-15 10:15:53.869 (BasePOM.java:78) - Wait For By.xpath: .//a[contains(text(),'Jonhq0132 Smithq0937')]
+[DEBUG] 2018-09-15 10:15:55.082 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')] to be hidden
+[DEBUG] 2018-09-15 10:15:55.301 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 10:15:55.452 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 10:15:55.511 (DataBase.java:74) - DB Connection close
+[DEBUG] 2018-09-15 10:15:55.511 (PrintOuts.java:13) - Printing Map with comment:Comapre With Page
+[DEBUG] 2018-09-15 10:15:55.512 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-15 10:15:55.512 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-15 10:15:55.512 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-15 10:15:55.512 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-15 10:15:55.512 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-15 10:15:55.512 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-15 10:15:55.512 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-15 10:15:55.512 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[DEBUG] 2018-09-15 10:15:55.512 (PrintOuts.java:13) - Printing Map with comment:Compare With Db
+[DEBUG] 2018-09-15 10:15:55.513 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-15 10:15:55.513 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-15 10:15:55.513 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-15 10:15:55.513 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-15 10:15:55.513 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-15 10:15:55.513 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-15 10:15:55.513 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-15 10:15:55.519 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 10:15:57.729 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 10:15:57.827 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 10:30:07.193 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 10:30:07.197 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 10:30:11.233 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 10:30:11.233 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 10:30:11.404 (LoginPage.java:64) - pressed Submit
+[INFO ] 2018-09-15 10:30:12.433 (ClientCreateTest.java:52) - Get into Testtests.ClientCreateTest
+[INFO ] 2018-09-15 10:30:12.436 (BasePOM.java:190) - Doing click on By.xpath: .//a[@href='/admin/clients']
+[DEBUG] 2018-09-15 10:30:12.437 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//a[@href='/admin/clients'] to be hidden
+[DEBUG] 2018-09-15 10:30:15.425 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 10:30:15.465 (BasePOM.java:190) - Doing click on By.xpath: .//button[contains(text(),'Create Client')]
+[DEBUG] 2018-09-15 10:30:15.465 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[DEBUG] 2018-09-15 10:30:15.754 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[INFO ] 2018-09-15 10:30:15.788 (BasePOM.java:103) - Typing Jonhq01324 into By.xpath: //input[@id='firstName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:15.788 (BaseWaitingWarp.java:205) - Wait For By.xpath: //input[@id='firstName'] to be hidden
+[DEBUG] 2018-09-15 10:30:16.020 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:16.040 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:16.052 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:16.065 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:16.065 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:16.086 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:16.098 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:30:16.098 (BasePOM.java:103) - Typing Smithq09375 into By.xpath: //input[@id='lastName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:16.098 (BaseWaitingWarp.java:205) - Wait For By.xpath: //input[@id='lastName'] to be hidden
+[DEBUG] 2018-09-15 10:30:16.245 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:16.266 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:16.276 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:16.289 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:16.289 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:16.309 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:16.322 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:30:16.322 (BasePOM.java:190) - Doing click on By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[DEBUG] 2018-09-15 10:30:16.322 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[DEBUG] 2018-09-15 10:30:17.205 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')] to be hidden
+[ERROR] 2018-09-15 10:30:17.245 (ClientProperties.java:206) - Typing fields
+[INFO ] 2018-09-15 10:30:17.246 (BasePOM.java:103) - Typing Jonhq01324 into By.id: firstName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:17.246 (BaseWaitingWarp.java:205) - Wait For By.id: firstName to be hidden
+[DEBUG] 2018-09-15 10:30:17.416 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:17.437 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:17.449 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:17.486 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:17.487 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:17.507 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:17.520 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:30:17.520 (BasePOM.java:103) - Typing Smithq09375 into By.id: lastName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:17.520 (BaseWaitingWarp.java:205) - Wait For By.id: lastName to be hidden
+[DEBUG] 2018-09-15 10:30:17.802 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:17.822 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:17.835 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:17.861 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:17.861 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:17.882 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:17.894 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:30:17.894 (BasePOM.java:103) - Typing aDNCn@legUc.com into By.id: email Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:17.895 (BaseWaitingWarp.java:205) - Wait For By.id: email to be hidden
+[DEBUG] 2018-09-15 10:30:18.051 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:18.072 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:18.089 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:18.102 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:18.102 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:18.122 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:18.135 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:30:18.135 (BasePOM.java:103) - Typing Amkmssvskhuztydfookqkhivpnoselekyvws into By.id: country Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:18.135 (BaseWaitingWarp.java:205) - Wait For By.id: country to be hidden
+[DEBUG] 2018-09-15 10:30:18.335 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:18.355 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:18.368 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:18.380 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:18.380 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:18.401 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:18.411 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:30:18.411 (BasePOM.java:103) - Typing Ekyxywpvkryejvvhoxrhzqjinvcesodowuxfrq into By.id: city Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:18.411 (BaseWaitingWarp.java:205) - Wait For By.id: city to be hidden
+[DEBUG] 2018-09-15 10:30:18.570 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:18.590 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:18.603 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:18.615 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:18.615 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:18.636 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:18.645 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:30:18.645 (BasePOM.java:103) - Typing 7528597934 into By.id: phoneNumber Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:18.645 (BaseWaitingWarp.java:205) - Wait For By.id: phoneNumber to be hidden
+[DEBUG] 2018-09-15 10:30:18.776 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:18.796 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:18.809 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:18.823 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:18.823 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:18.844 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:18.856 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:30:18.856 (BasePOM.java:103) - Typing NpayXlly4Kf3ElyrQZqwOTwCqSu8qHjF into By.id: skype Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:18.856 (BaseWaitingWarp.java:205) - Wait For By.id: skype to be hidden
+[DEBUG] 2018-09-15 10:30:18.995 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:19.016 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:19.029 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:19.044 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:19.044 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:19.064 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:19.076 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:30:19.077 (ClientProperties.java:199) - Clicking Save
+[DEBUG] 2018-09-15 10:30:21.679 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 10:30:21.714 (BasePOM.java:103) - Typing Jonhq01324 Smithq09375 into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:30:21.714 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[DEBUG] 2018-09-15 10:30:21.861 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:21.881 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:21.894 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:30:21.908 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:30:21.908 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:30:21.928 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:30:21.941 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 10:30:21.941 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 10:30:21.972 (BasePOM.java:140) - Wait For By.xpath: .//a[contains(text(),'Jonhq01324 Smithq09375')]
+[DEBUG] 2018-09-15 10:30:21.973 (BasePOM.java:78) - Wait For By.xpath: .//a[contains(text(),'Jonhq01324 Smithq09375')]
+[DEBUG] 2018-09-15 10:30:23.162 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')] to be hidden
+[DEBUG] 2018-09-15 10:30:23.415 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 10:30:23.558 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 10:30:23.620 (DataBase.java:74) - DB Connection close
+[DEBUG] 2018-09-15 10:30:23.620 (PrintOuts.java:13) - Printing Map with comment:Comapre With Page
+[DEBUG] 2018-09-15 10:30:23.621 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-15 10:30:23.621 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-15 10:30:23.621 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-15 10:30:23.621 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-15 10:30:23.621 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-15 10:30:23.621 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-15 10:30:23.621 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-15 10:30:23.621 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[DEBUG] 2018-09-15 10:30:23.622 (PrintOuts.java:13) - Printing Map with comment:Compare With Db
+[DEBUG] 2018-09-15 10:30:23.622 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-15 10:30:23.622 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-15 10:30:23.622 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-15 10:30:23.622 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-15 10:30:23.622 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-15 10:30:23.622 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-15 10:30:23.622 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-15 10:30:23.626 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 10:30:25.828 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 10:30:25.916 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 10:50:29.684 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 10:50:29.689 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 10:50:35.051 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 10:50:35.051 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 10:50:35.261 (LoginPage.java:64) - pressed Submit
+[INFO ] 2018-09-15 10:50:36.337 (ClientCreateTest.java:52) - Get into Testtests.ClientCreateTest
+[INFO ] 2018-09-15 10:50:36.353 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/clients']
+[DEBUG] 2018-09-15 10:50:36.354 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/clients'] to be hidden
+[INFO ] 2018-09-15 10:50:36.443 (BaseWaitingWarp.java:230) - Find element By.xpath: .//a[@href='/admin/clients'] in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:39.091 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 10:50:39.127 (BaseWaitingWarp.java:230) - Find element By.xpath: .//button[contains(text(),'Create Client')] in state ToBeVisibile
+[INFO ] 2018-09-15 10:50:39.128 (BasePOM.java:191) - Doing click on By.xpath: .//button[contains(text(),'Create Client')]
+[DEBUG] 2018-09-15 10:50:39.128 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 10:50:39.170 (BaseWaitingWarp.java:230) - Find element By.xpath: .//button[contains(text(),'Create Client')] in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:39.413 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[INFO ] 2018-09-15 10:50:39.452 (BaseWaitingWarp.java:230) - Find element By.xpath: .//button[@type='submit'][contains(text(),'save')] in state ToBeVisibile
+[INFO ] 2018-09-15 10:50:39.452 (BasePOM.java:108) - Typing Jonhq013244 into By.xpath: //input[@id='firstName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:39.453 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@id='firstName'] to be hidden
+[INFO ] 2018-09-15 10:50:39.562 (BaseWaitingWarp.java:230) - Find element By.xpath: //input[@id='firstName'] in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:39.649 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:39.670 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:39.682 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:39.695 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:39.695 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:39.716 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:39.769 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:50:39.769 (BasePOM.java:108) - Typing Smithq093757 into By.xpath: //input[@id='lastName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:39.770 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@id='lastName'] to be hidden
+[INFO ] 2018-09-15 10:50:39.806 (BaseWaitingWarp.java:230) - Find element By.xpath: //input[@id='lastName'] in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:39.889 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:39.909 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:39.921 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:39.932 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:39.932 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:39.953 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:39.967 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:50:39.967 (BasePOM.java:191) - Doing click on By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[DEBUG] 2018-09-15 10:50:39.967 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[INFO ] 2018-09-15 10:50:40.001 (BaseWaitingWarp.java:230) - Find element By.xpath: .//button[@type='submit'][contains(text(),'save')] in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:40.882 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')] to be hidden
+[INFO ] 2018-09-15 10:50:40.924 (BaseWaitingWarp.java:230) - Find element By.xpath: .//button[@type='button'][contains(text(),'Go back')] in state ToBeVisibile
+[ERROR] 2018-09-15 10:50:40.925 (ClientProperties.java:206) - Typing fields
+[INFO ] 2018-09-15 10:50:40.925 (BasePOM.java:108) - Typing Jonhq013244 into By.id: firstName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:40.925 (BaseWaitingWarp.java:204) - Wait For By.id: firstName to be hidden
+[INFO ] 2018-09-15 10:50:40.958 (BaseWaitingWarp.java:230) - Find element By.id: firstName in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:41.036 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:41.056 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:41.069 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:41.095 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:41.095 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:41.115 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:41.126 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:50:41.126 (BasePOM.java:108) - Typing Smithq093757 into By.id: lastName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:41.126 (BaseWaitingWarp.java:204) - Wait For By.id: lastName to be hidden
+[INFO ] 2018-09-15 10:50:41.168 (BaseWaitingWarp.java:230) - Find element By.id: lastName in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:41.255 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:41.276 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:41.290 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:41.313 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:41.314 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:41.334 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:41.461 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:50:41.461 (BasePOM.java:108) - Typing fXLcI@ncnMO.com into By.id: email Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:41.461 (BaseWaitingWarp.java:204) - Wait For By.id: email to be hidden
+[INFO ] 2018-09-15 10:50:41.495 (BaseWaitingWarp.java:230) - Find element By.id: email in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:41.577 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:41.598 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:41.614 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:41.632 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:41.633 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:41.653 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:41.663 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:50:41.663 (BasePOM.java:108) - Typing Cprgrttcqhlolpcxttec into By.id: country Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:41.663 (BaseWaitingWarp.java:204) - Wait For By.id: country to be hidden
+[INFO ] 2018-09-15 10:50:41.697 (BaseWaitingWarp.java:230) - Find element By.id: country in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:41.776 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:41.796 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:41.809 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:41.821 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:41.821 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:41.842 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:41.853 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:50:41.854 (BasePOM.java:108) - Typing Rnvzieftwqxpp into By.id: city Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:41.854 (BaseWaitingWarp.java:204) - Wait For By.id: city to be hidden
+[INFO ] 2018-09-15 10:50:41.889 (BaseWaitingWarp.java:230) - Find element By.id: city in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:41.960 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:41.981 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:41.993 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:42.004 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:42.004 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:42.025 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:42.037 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:50:42.037 (BasePOM.java:108) - Typing 2361578874 into By.id: phoneNumber Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:42.038 (BaseWaitingWarp.java:204) - Wait For By.id: phoneNumber to be hidden
+[INFO ] 2018-09-15 10:50:42.070 (BaseWaitingWarp.java:230) - Find element By.id: phoneNumber in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:42.136 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:42.156 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:42.167 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:42.183 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:42.183 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:42.204 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:42.213 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:50:42.214 (BasePOM.java:108) - Typing kb5KPlWTG into By.id: skype Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:42.214 (BaseWaitingWarp.java:204) - Wait For By.id: skype to be hidden
+[INFO ] 2018-09-15 10:50:42.250 (BaseWaitingWarp.java:230) - Find element By.id: skype in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:42.325 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:42.346 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:42.359 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:42.374 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:42.374 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:42.394 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:42.407 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 10:50:42.407 (ClientProperties.java:199) - Clicking Save
+[DEBUG] 2018-09-15 10:50:45.238 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 10:50:45.272 (BaseWaitingWarp.java:230) - Find element By.xpath: .//button[contains(text(),'Create Client')] in state ToBeVisibile
+[INFO ] 2018-09-15 10:50:45.272 (BasePOM.java:108) - Typing Jonhq013244 Smithq093757 into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 10:50:45.272 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 10:50:45.306 (BaseWaitingWarp.java:230) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:45.393 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:45.414 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:45.428 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 10:50:45.444 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 10:50:45.444 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 10:50:45.465 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 10:50:45.477 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 10:50:45.477 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 10:50:45.534 (BaseWaitingWarp.java:230) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[INFO ] 2018-09-15 10:50:45.535 (BasePOM.java:141) - Wait For By.xpath: .//a[contains(text(),'Jonhq013244 Smithq093757')]
+[DEBUG] 2018-09-15 10:50:45.535 (BasePOM.java:83) - Wait For By.xpath: .//a[contains(text(),'Jonhq013244 Smithq093757')]
+[DEBUG] 2018-09-15 10:50:46.694 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')] to be hidden
+[INFO ] 2018-09-15 10:50:46.729 (BaseWaitingWarp.java:230) - Find element By.xpath: .//button[@type='button'][contains(text(),'Go back')] in state ToBeVisibile
+[DEBUG] 2018-09-15 10:50:46.914 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 10:50:47.053 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 10:50:47.107 (DataBase.java:74) - DB Connection close
+[DEBUG] 2018-09-15 10:50:47.108 (PrintOuts.java:13) - Printing Map with comment:Comapre With Page
+[DEBUG] 2018-09-15 10:50:47.108 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-15 10:50:47.108 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-15 10:50:47.108 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-15 10:50:47.108 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-15 10:50:47.108 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-15 10:50:47.109 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-15 10:50:47.109 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-15 10:50:47.109 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[DEBUG] 2018-09-15 10:50:47.109 (PrintOuts.java:13) - Printing Map with comment:Compare With Db
+[DEBUG] 2018-09-15 10:50:47.109 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-15 10:50:47.109 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-15 10:50:47.109 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-15 10:50:47.109 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-15 10:50:47.109 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-15 10:50:47.110 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-15 10:50:47.110 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-15 10:50:47.115 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 10:50:49.344 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 10:50:49.421 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 12:09:16.598 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 12:09:16.603 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 12:09:21.080 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 12:09:21.080 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 12:09:21.220 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 12:09:22.234 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 12:09:22.381 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 12:09:22.382 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 12:09:22.383 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[ERROR] 2018-09-15 12:09:32.583 (BaseWaitingWarp.java:262) - Miss element org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: .//a[@href='/admin/invoices'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'NEW-PC', ip: '192.168.1.56', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '9.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 19252, moz:profile: C:\Users\pirog\AppData\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 8c6cdcd1-2e3f-4c19-a5ba-120b47380f16
+[INFO ] 2018-09-15 12:09:32.583 (TestInvocesClientDataDbVsUI.java:31) - Get into Testtests.invoices.TestInvocesClientDataDbVsUI
+[DEBUG] 2018-09-15 12:09:32.583 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 12:09:32.657 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 12:09:32.698 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[ERROR] 2018-09-15 12:09:42.715 (BaseWaitingWarp.java:262) - Miss element org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Поиск'] (tried for 10 second(s) with 500 milliseconds interval)
+[INFO ] 2018-09-15 12:09:42.716 (BasePOM.java:108) - Typing Piotr Rasputin into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 12:09:42.716 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[ERROR] 2018-09-15 12:09:52.735 (BaseWaitingWarp.java:262) - Miss element org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: .//input[@placeholder='Поиск'] (tried for 10 second(s) with 500 milliseconds interval)
+[INFO ] 2018-09-15 12:10:02.769 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 12:10:02.770 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 12:10:04.957 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 12:10:05.060 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 12:10:05.067 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 12:10:05.067 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 12:10:08.595 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 12:10:08.595 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 12:10:08.787 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 12:10:09.937 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 12:10:10.064 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 12:10:10.064 (DealFromClientPageDbVsUI.java:22) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-15 12:10:10.065 (DealFromClientPageDbVsUI.java:23) - Going through invoces
+[DEBUG] 2018-09-15 12:10:10.066 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 12:10:10.182 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 12:10:10.182 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 12:10:10.182 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[ERROR] 2018-09-15 12:10:20.317 (BaseWaitingWarp.java:262) - Miss element org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: .//a[@href='/admin/invoices'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'NEW-PC', ip: '192.168.1.56', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '9.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 29028, moz:profile: C:\Users\pirog\AppData\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: eaa797ec-b0b7-4ec3-949e-e222ea493dcd
+[DEBUG] 2018-09-15 12:10:20.317 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 12:10:20.370 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 12:10:20.404 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[ERROR] 2018-09-15 12:10:30.421 (BaseWaitingWarp.java:262) - Miss element org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder='Поиск'] (tried for 10 second(s) with 500 milliseconds interval)
+[INFO ] 2018-09-15 12:10:30.422 (BasePOM.java:108) - Typing Raven Darkhölme into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 12:10:30.422 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[ERROR] 2018-09-15 12:10:40.440 (BaseWaitingWarp.java:262) - Miss element org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: .//input[@placeholder='Поиск'] (tried for 10 second(s) with 500 milliseconds interval)
+[INFO ] 2018-09-15 12:10:50.472 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 12:10:50.472 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 12:10:52.664 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 12:10:52.728 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 12:13:58.760 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 12:13:58.766 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 12:14:04.017 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 12:14:04.017 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 12:14:04.148 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 12:14:05.405 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 12:14:05.551 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 12:14:05.552 (BasePOM.java:191) - Doing click on By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-15 12:14:05.553 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//span[contains(text(),'Счета')] to be hidden
+[INFO ] 2018-09-15 12:14:05.607 (BaseWaitingWarp.java:259) - Find element By.xpath: .//span[contains(text(),'Счета')] in state ToBeVisibile
+[INFO ] 2018-09-15 12:14:05.854 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 12:14:05.854 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[INFO ] 2018-09-15 12:14:05.896 (BaseWaitingWarp.java:259) - Find element By.xpath: .//a[@href='/admin/invoices'] in state ToBeVisibile
+[INFO ] 2018-09-15 12:14:06.941 (TestInvocesClientDataDbVsUI.java:31) - Get into Testtests.invoices.TestInvocesClientDataDbVsUI
+[DEBUG] 2018-09-15 12:14:06.941 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 12:14:07.004 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Marie Rogue' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 12:14:07.036 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:14:07.079 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 12:14:07.080 (BasePOM.java:108) - Typing Marie Rogue into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 12:14:07.080 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:14:07.125 (BaseWaitingWarp.java:259) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 12:14:07.208 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 12:14:07.229 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 12:14:07.244 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 12:14:07.262 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 12:14:07.262 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 12:14:07.283 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 12:14:07.298 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 12:14:07.298 (BaseWaitingWarp.java:157) - Going to sleep for :1000
+[DEBUG] 2018-09-15 12:14:08.298 (BaseWaitingWarp.java:163) - wakeup from sleep for :1000
+[DEBUG] 2018-09-15 12:14:08.298 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 12:14:08.336 (BaseWaitingWarp.java:259) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[DEBUG] 2018-09-15 12:14:08.336 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:14:08.368 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 12:14:08.369 (InvoicesMain.java:25) - Reading table from page
+[DEBUG] 2018-09-15 12:14:08.952 (HtmlTable.java:95) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-09-15 12:14:08.953 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-15 12:14:08.953 (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-09-15 12:14:08.953 (PrintOuts.java:41) - For key 3 result is Contact ID
+[DEBUG] 2018-09-15 12:14:08.953 (PrintOuts.java:41) - For key 4 result is Payment amount
+[DEBUG] 2018-09-15 12:14:08.953 (PrintOuts.java:41) - For key 5 result is Payment date
+[DEBUG] 2018-09-15 12:14:08.953 (PrintOuts.java:41) - For key 6 result is Payment status
+[DEBUG] 2018-09-15 12:14:08.955 (PrintOuts.java:41) - For key Payment amount result is 4
+[DEBUG] 2018-09-15 12:14:08.955 (PrintOuts.java:41) - For key Payment date result is 5
+[DEBUG] 2018-09-15 12:14:08.955 (PrintOuts.java:41) - For key Payment status result is 6
+[DEBUG] 2018-09-15 12:14:08.955 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-15 12:14:08.956 (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-09-15 12:14:08.956 (PrintOuts.java:41) - For key Contact ID result is 3
+[DEBUG] 2018-09-15 12:14:08.956 (PrintOuts.java:20) - 
+1:9|2:Marie Rogue|3:6|4:UAH 1000|5:2018-06-07|6:YES|
+1:10|2:Marie Rogue|3:6|4:UAH 1000|5:2018-07-07|6:YES|
+1:11|2:Marie Rogue|3:8|4:UAH 3000|5:2018-08-19|6:NO|
+
+[DEBUG] 2018-09-15 12:14:08.956 (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-09-15 12:14:08.956 (PrintOuts.java:48) - Enter rename from:Id to:Invoice Id
+[DEBUG] 2018-09-15 12:14:08.956 (PrintOuts.java:48) - Enter convertInt2Bool: 
+[DEBUG] 2018-09-15 12:14:08.956 (PrintOuts.java:48) - Convert Int from Payment status: 8
+[DEBUG] 2018-09-15 12:14:08.957 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 12:14:08.957 (PrintOuts.java:48) - Convert Int from Payment status: 9
+[DEBUG] 2018-09-15 12:14:08.957 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 12:14:08.957 (PrintOuts.java:48) - Convert Int from Payment status: 0
+[DEBUG] 2018-09-15 12:14:08.957 (PrintOuts.java:48) - Converted Bool:NO
+[DEBUG] 2018-09-15 12:14:08.957 (PrintOuts.java:20) - 
+Employee Currency:UAH|Status:FROZEN|Employee Rate:500|Payment amount:UAH 1000|Payment date:2018-07-06|Payment status:YES|Mentor:James Howlett|Invoice Id:9|ContractDate:2017-07-11 00:00:00|Payment date From:2018-06-07|Payment date To:2018-07-06|ClientName:Marie Rogue|Payment Type:PREPAY|Type:PREPAY| Price Currency:UAH|Consultancy:Mentoring|Contract Date:2018-06-04|Contact ID:6| Price:1000|
+Employee Currency:UAH|Status:FROZEN|Employee Rate:500|Payment amount:UAH 1000|Payment date:2018-08-06|Payment status:YES|Mentor:James Howlett|Invoice Id:10|ContractDate:2017-07-11 00:00:00|Payment date From:2018-07-07|Payment date To:2018-08-06|ClientName:Marie Rogue|Payment Type:PREPAY|Type:PREPAY| Price Currency:UAH|Consultancy:Mentoring|Contract Date:2018-06-04|Contact ID:6| Price:1000|
+Employee Currency:UAH|Status:COMPLETED|Employee Rate:1500|Payment amount:UAH 3000|Payment date:2018-09-18|Payment status:NO|Mentor:Charles Xavier|Invoice Id:11|ContractDate:2017-07-11 00:00:00|Payment date From:2018-08-19|Payment date To:2018-09-18|ClientName:Marie Rogue|Payment Type:PREPAY|Type:PREPAY| Price Currency:UAH|Consultancy:Group Development|Contract Date:2018-08-16|Contact ID:8| Price:3000|
+
+[INFO ] 2018-09-15 12:14:08.957 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-15 12:14:08.958 (PrintOuts.java:48) - key:Payment amount value:UAH 1000
+[DEBUG] 2018-09-15 12:14:08.958 (PrintOuts.java:48) - Compare: UAH 1000
+[DEBUG] 2018-09-15 12:14:08.958 (PrintOuts.java:48) - key:Payment date value:2018-07-06
+[DEBUG] 2018-09-15 12:14:08.958 (PrintOuts.java:48) - Compare: 2018-06-07
+[DEBUG] 2018-09-15 12:14:08.958 (DataTable.java:58) - Original
+[DEBUG] 2018-09-15 12:14:08.958 (DataTable.java:59) - For key Payment date result is 2018-07-06
+[DEBUG] 2018-09-15 12:14:08.958 (DataTable.java:60) - Not Equal to
+[DEBUG] 2018-09-15 12:14:08.958 (DataTable.java:61) - For key Payment date result is 2018-06-07
+[ERROR] 2018-09-15 12:14:08.959 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-15 12:14:08.959 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 12:14:08.960 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 12:14:11.072 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 12:14:11.142 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 12:14:11.146 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 12:14:11.146 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 12:14:15.689 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 12:14:15.689 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 12:14:15.809 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 12:14:16.904 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 12:14:17.025 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 12:14:17.025 (DealFromClientPageDbVsUI.java:22) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-15 12:14:17.025 (DealFromClientPageDbVsUI.java:23) - Going through invoces
+[DEBUG] 2018-09-15 12:14:17.026 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 12:14:17.141 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 12:14:17.142 (BasePOM.java:191) - Doing click on By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-15 12:14:17.142 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//span[contains(text(),'Счета')] to be hidden
+[INFO ] 2018-09-15 12:14:17.177 (BaseWaitingWarp.java:259) - Find element By.xpath: .//span[contains(text(),'Счета')] in state ToBeVisibile
+[INFO ] 2018-09-15 12:14:17.425 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 12:14:17.425 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[INFO ] 2018-09-15 12:14:17.542 (BaseWaitingWarp.java:259) - Find element By.xpath: .//a[@href='/admin/invoices'] in state ToBeVisibile
+[DEBUG] 2018-09-15 12:14:18.509 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 12:14:18.551 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 12:14:18.584 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:14:18.618 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 12:14:18.619 (BasePOM.java:108) - Typing Raven Darkhölme into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 12:14:18.619 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:14:18.652 (BaseWaitingWarp.java:259) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 12:14:18.730 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 12:14:18.751 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 12:14:18.760 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 12:14:18.776 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 12:14:18.777 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 12:14:18.797 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 12:14:18.810 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 12:14:18.810 (BaseWaitingWarp.java:157) - Going to sleep for :1000
+[DEBUG] 2018-09-15 12:14:19.810 (BaseWaitingWarp.java:163) - wakeup from sleep for :1000
+[DEBUG] 2018-09-15 12:14:19.810 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 12:14:19.855 (BaseWaitingWarp.java:259) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[INFO ] 2018-09-15 12:14:19.855 (BasePOM.java:141) - Wait For By.xpath: .//a[contains(text(),'Raven Darkhölme')]
+[DEBUG] 2018-09-15 12:14:19.855 (BasePOM.java:83) - Wait For By.xpath: .//a[contains(text(),'Raven Darkhölme')]
+[INFO ] 2018-09-15 12:14:20.647 (DealFromClientPageDbVsUI.java:32) - Get into a client page
+[DEBUG] 2018-09-15 12:14:20.649 (BasePOM.java:83) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-15 12:14:20.688 (ClientProperties.java:223) - Reading table with Deals from page
+[INFO ] 2018-09-15 12:14:20.688 (BasePOM.java:207) - Doing scroll to By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-15 12:14:20.688 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover'] to be hidden
+[INFO ] 2018-09-15 12:14:20.734 (BaseWaitingWarp.java:259) - Find element By.xpath: .//div[@class='display-grid']//table[@class='table table-hover'] in state ToBeVisibile
+[DEBUG] 2018-09-15 12:14:21.560 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-15 12:14:21.561 (ClientProperties.java:226) - Done Reading table with Deals from page
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-15 12:14:21.561 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-15 12:14:21.562 (PrintOuts.java:20) - 
+1:5|2:Personal Mentor|3:ACTIVE|4:05-апр-2018|5:Charles Xavier|
+
+[DEBUG] 2018-09-15 12:14:21.562 (PrintOuts.java:48) - Convert date from Open date: 05-апр-2018
+[INFO ] 2018-09-15 12:14:21.568 (ConverDates.java:50) - Get localdate:05-апр-2018
+[INFO ] 2018-09-15 12:14:21.579 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 12:14:21.579 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 12:14:23.712 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 12:14:23.794 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 12:48:22.338 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 12:48:22.344 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 12:48:26.281 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 12:48:26.281 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 12:48:26.397 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 12:48:27.428 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 12:48:27.571 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 12:48:27.571 (BasePOM.java:191) - Doing click on By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-15 12:48:27.573 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//span[contains(text(),'Счета')] to be hidden
+[INFO ] 2018-09-15 12:48:27.617 (BaseWaitingWarp.java:259) - Find element By.xpath: .//span[contains(text(),'Счета')] in state ToBeVisibile
+[INFO ] 2018-09-15 12:48:27.867 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 12:48:27.867 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[INFO ] 2018-09-15 12:48:27.999 (BaseWaitingWarp.java:259) - Find element By.xpath: .//a[@href='/admin/invoices'] in state ToBeVisibile
+[INFO ] 2018-09-15 12:48:28.862 (TestInvocesClientDataDbVsUI.java:31) - Get into Testtests.invoices.TestInvocesClientDataDbVsUI
+[DEBUG] 2018-09-15 12:48:28.862 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 12:48:28.917 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 12:48:28.951 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:48:28.981 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 12:48:28.981 (BasePOM.java:108) - Typing Piotr Rasputin into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 12:48:28.981 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:48:29.015 (BaseWaitingWarp.java:259) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 12:48:29.093 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 12:48:29.113 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 12:48:29.123 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 12:48:29.134 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 12:48:29.134 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 12:48:29.155 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 12:48:29.168 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 12:48:29.168 (BaseWaitingWarp.java:157) - Going to sleep for :1000
+[DEBUG] 2018-09-15 12:48:30.169 (BaseWaitingWarp.java:163) - wakeup from sleep for :1000
+[DEBUG] 2018-09-15 12:48:30.169 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 12:48:30.198 (BaseWaitingWarp.java:259) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[DEBUG] 2018-09-15 12:48:30.198 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:48:30.228 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 12:48:30.229 (InvoicesMain.java:25) - Reading table from page
+[DEBUG] 2018-09-15 12:48:30.704 (HtmlTable.java:95) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-09-15 12:48:30.704 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-15 12:48:30.704 (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-09-15 12:48:30.704 (PrintOuts.java:41) - For key 3 result is Contact ID
+[DEBUG] 2018-09-15 12:48:30.705 (PrintOuts.java:41) - For key 4 result is Payment amount
+[DEBUG] 2018-09-15 12:48:30.705 (PrintOuts.java:41) - For key 5 result is Payment date
+[DEBUG] 2018-09-15 12:48:30.705 (PrintOuts.java:41) - For key 6 result is Payment status
+[DEBUG] 2018-09-15 12:48:30.705 (PrintOuts.java:41) - For key Payment amount result is 4
+[DEBUG] 2018-09-15 12:48:30.705 (PrintOuts.java:41) - For key Payment date result is 5
+[DEBUG] 2018-09-15 12:48:30.705 (PrintOuts.java:41) - For key Payment status result is 6
+[DEBUG] 2018-09-15 12:48:30.705 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-15 12:48:30.706 (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-09-15 12:48:30.706 (PrintOuts.java:41) - For key Contact ID result is 3
+[DEBUG] 2018-09-15 12:48:30.706 (PrintOuts.java:20) - 
+1:5|2:Piotr Rasputin|3:3|4:USD 120|5:2018-06-06|6:YES|
+1:6|2:Piotr Rasputin|3:3|4:USD 120|5:2018-07-06|6:YES|
+1:7|2:Piotr Rasputin|3:3|4:USD 120|5:2018-08-06|6:YES|
+
+[DEBUG] 2018-09-15 12:48:30.706 (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-09-15 12:48:30.706 (PrintOuts.java:48) - Enter rename from:Id to:Invoice Id
+[DEBUG] 2018-09-15 12:48:30.706 (PrintOuts.java:48) - Enter convertInt2Bool: 
+[DEBUG] 2018-09-15 12:48:30.706 (PrintOuts.java:48) - Convert Int from Payment status: 4
+[DEBUG] 2018-09-15 12:48:30.707 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 12:48:30.707 (PrintOuts.java:48) - Convert Int from Payment status: 5
+[DEBUG] 2018-09-15 12:48:30.707 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 12:48:30.707 (PrintOuts.java:48) - Convert Int from Payment status: 6
+[DEBUG] 2018-09-15 12:48:30.707 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 12:48:30.707 (PrintOuts.java:20) - 
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:1500|Payment amount:USD 120|Payment date:2018-06-06|Payment status:YES|Mentor:Ororo Munroe|Invoice Id:5|ContractDate:2017-07-11 00:00:00|Payment date From:2018-05-07|Payment date To:2018-06-06|ClientName:Piotr Rasputin|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:USD|Consultancy:Group Development|Contract Date:2018-05-07|Contact ID:3| Price:120|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:1500|Payment amount:USD 120|Payment date:2018-07-06|Payment status:YES|Mentor:Ororo Munroe|Invoice Id:6|ContractDate:2017-07-11 00:00:00|Payment date From:2018-06-07|Payment date To:2018-07-06|ClientName:Piotr Rasputin|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:USD|Consultancy:Group Development|Contract Date:2018-05-07|Contact ID:3| Price:120|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:1500|Payment amount:USD 120|Payment date:2018-08-06|Payment status:YES|Mentor:Ororo Munroe|Invoice Id:7|ContractDate:2017-07-11 00:00:00|Payment date From:2018-07-07|Payment date To:2018-08-06|ClientName:Piotr Rasputin|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:USD|Consultancy:Group Development|Contract Date:2018-05-07|Contact ID:3| Price:120|
+
+[INFO ] 2018-09-15 12:48:30.707 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-15 12:48:30.707 (PrintOuts.java:48) - key:Payment amount value:USD 120
+[DEBUG] 2018-09-15 12:48:30.707 (PrintOuts.java:48) - Compare: USD 120
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - key:Payment date value:2018-06-06
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - Compare: 2018-06-06
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - key:Invoice Id value:5
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - Compare: 5
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - key:ClientName value:Piotr Rasputin
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - Compare: Piotr Rasputin
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - key:Contact ID value:3
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - key:Payment amount value:USD 120
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - Compare: USD 120
+[DEBUG] 2018-09-15 12:48:30.708 (PrintOuts.java:48) - key:Payment date value:2018-07-06
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - Compare: 2018-07-06
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - key:Invoice Id value:6
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - Compare: 6
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - key:ClientName value:Piotr Rasputin
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - Compare: Piotr Rasputin
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - key:Contact ID value:3
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - key:Payment amount value:USD 120
+[DEBUG] 2018-09-15 12:48:30.709 (PrintOuts.java:48) - Compare: USD 120
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - key:Payment date value:2018-08-06
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - Compare: 2018-08-06
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - key:Invoice Id value:7
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - Compare: 7
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - key:ClientName value:Piotr Rasputin
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - Compare: Piotr Rasputin
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - key:Contact ID value:3
+[DEBUG] 2018-09-15 12:48:30.710 (PrintOuts.java:48) - Compare: 3
+[INFO ] 2018-09-15 12:48:30.711 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-15 12:48:30.711 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 12:48:30.711 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 12:48:32.830 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 12:48:32.901 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 12:48:32.902 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 12:48:32.903 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 12:48:36.302 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 12:48:36.302 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 12:48:36.421 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 12:48:37.396 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 12:48:37.521 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 12:48:37.522 (DealFromClientPageDbVsUI.java:22) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-15 12:48:37.522 (DealFromClientPageDbVsUI.java:23) - Going through invoces
+[DEBUG] 2018-09-15 12:48:37.522 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 12:48:37.635 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 12:48:37.636 (BasePOM.java:191) - Doing click on By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-15 12:48:37.636 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//span[contains(text(),'Счета')] to be hidden
+[INFO ] 2018-09-15 12:48:37.670 (BaseWaitingWarp.java:259) - Find element By.xpath: .//span[contains(text(),'Счета')] in state ToBeVisibile
+[INFO ] 2018-09-15 12:48:37.952 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 12:48:37.952 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[INFO ] 2018-09-15 12:48:37.987 (BaseWaitingWarp.java:259) - Find element By.xpath: .//a[@href='/admin/invoices'] in state ToBeVisibile
+[DEBUG] 2018-09-15 12:48:38.769 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 12:48:38.811 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 12:48:38.843 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:48:38.875 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 12:48:38.875 (BasePOM.java:108) - Typing Raven Darkhölme into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 12:48:38.875 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 12:48:38.906 (BaseWaitingWarp.java:259) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 12:48:38.976 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 12:48:38.996 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 12:48:39.006 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 12:48:39.017 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 12:48:39.017 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 12:48:39.037 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 12:48:39.050 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 12:48:39.050 (BaseWaitingWarp.java:157) - Going to sleep for :1000
+[DEBUG] 2018-09-15 12:48:40.051 (BaseWaitingWarp.java:163) - wakeup from sleep for :1000
+[DEBUG] 2018-09-15 12:48:40.051 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 12:48:40.092 (BaseWaitingWarp.java:259) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[INFO ] 2018-09-15 12:48:40.093 (BasePOM.java:141) - Wait For By.xpath: .//a[contains(text(),'Raven Darkhölme')]
+[DEBUG] 2018-09-15 12:48:40.093 (BasePOM.java:83) - Wait For By.xpath: .//a[contains(text(),'Raven Darkhölme')]
+[INFO ] 2018-09-15 12:48:40.928 (DealFromClientPageDbVsUI.java:32) - Get into a client page
+[DEBUG] 2018-09-15 12:48:40.929 (BasePOM.java:83) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-15 12:48:40.969 (ClientProperties.java:223) - Reading table with Deals from page
+[INFO ] 2018-09-15 12:48:40.969 (BasePOM.java:207) - Doing scroll to By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-15 12:48:40.969 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover'] to be hidden
+[INFO ] 2018-09-15 12:48:41.000 (BaseWaitingWarp.java:259) - Find element By.xpath: .//div[@class='display-grid']//table[@class='table table-hover'] in state ToBeVisibile
+[DEBUG] 2018-09-15 12:48:41.789 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-15 12:48:41.789 (ClientProperties.java:226) - Done Reading table with Deals from page
+[DEBUG] 2018-09-15 12:48:41.789 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-15 12:48:41.789 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:20) - 
+1:5|2:Personal Mentor|3:ACTIVE|4:05-апр-2018|5:Charles Xavier|
+
+[DEBUG] 2018-09-15 12:48:41.790 (PrintOuts.java:48) - Convert date from Open date: 05-апр-2018
+[INFO ] 2018-09-15 12:48:41.791 (ConverDates.java:50) - Get localdate:05-апр-2018
+[INFO ] 2018-09-15 12:48:41.800 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 12:48:41.800 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 12:48:43.949 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 12:48:44.011 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 13:04:28.949 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 13:04:28.954 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 13:04:32.769 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 13:04:32.769 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 13:04:32.892 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 13:04:33.843 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 13:04:34.000 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 13:04:34.001 (BasePOM.java:191) - Doing click on By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-15 13:04:34.002 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//span[contains(text(),'Счета')] to be hidden
+[INFO ] 2018-09-15 13:04:34.047 (BaseWaitingWarp.java:259) - Find element By.xpath: .//span[contains(text(),'Счета')] in state ToBeVisibile
+[INFO ] 2018-09-15 13:04:34.289 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 13:04:34.289 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[INFO ] 2018-09-15 13:04:34.325 (BaseWaitingWarp.java:259) - Find element By.xpath: .//a[@href='/admin/invoices'] in state ToBeVisibile
+[INFO ] 2018-09-15 13:04:35.290 (TestInvocesClientDataDbVsUI.java:31) - Get into Testtests.invoices.TestInvocesClientDataDbVsUI
+[DEBUG] 2018-09-15 13:04:35.290 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 13:04:35.351 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 13:04:35.387 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:04:35.420 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 13:04:35.422 (BasePOM.java:108) - Typing Raven Darkhölme into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 13:04:35.422 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:04:35.456 (BaseWaitingWarp.java:259) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:04:35.528 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:04:35.548 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:04:35.560 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:04:35.570 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:04:35.570 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:04:35.591 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:04:35.601 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 13:04:35.601 (BaseWaitingWarp.java:157) - Going to sleep for :1000
+[DEBUG] 2018-09-15 13:04:36.602 (BaseWaitingWarp.java:163) - wakeup from sleep for :1000
+[DEBUG] 2018-09-15 13:04:36.602 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 13:04:36.631 (BaseWaitingWarp.java:259) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[DEBUG] 2018-09-15 13:04:36.631 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:04:36.658 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 13:04:36.658 (InvoicesMain.java:25) - Reading table from page
+[DEBUG] 2018-09-15 13:04:37.161 (HtmlTable.java:95) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-09-15 13:04:37.162 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-15 13:04:37.162 (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-09-15 13:04:37.162 (PrintOuts.java:41) - For key 3 result is Contact ID
+[DEBUG] 2018-09-15 13:04:37.162 (PrintOuts.java:41) - For key 4 result is Payment amount
+[DEBUG] 2018-09-15 13:04:37.162 (PrintOuts.java:41) - For key 5 result is Payment date
+[DEBUG] 2018-09-15 13:04:37.162 (PrintOuts.java:41) - For key 6 result is Payment status
+[DEBUG] 2018-09-15 13:04:37.162 (PrintOuts.java:41) - For key Payment amount result is 4
+[DEBUG] 2018-09-15 13:04:37.162 (PrintOuts.java:41) - For key Payment date result is 5
+[DEBUG] 2018-09-15 13:04:37.162 (PrintOuts.java:41) - For key Payment status result is 6
+[DEBUG] 2018-09-15 13:04:37.163 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-15 13:04:37.163 (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-09-15 13:04:37.163 (PrintOuts.java:41) - For key Contact ID result is 3
+[DEBUG] 2018-09-15 13:04:37.163 (PrintOuts.java:20) - 
+1:1|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-05-16|6:YES|
+1:2|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-06-16|6:YES|
+1:3|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-07-16|6:YES|
+1:4|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-08-16|6:NO|
+
+[DEBUG] 2018-09-15 13:04:37.163 (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-09-15 13:04:37.163 (PrintOuts.java:48) - Enter rename from:Id to:Invoice Id
+[DEBUG] 2018-09-15 13:04:37.163 (PrintOuts.java:48) - Enter convertInt2Bool: 
+[DEBUG] 2018-09-15 13:04:37.163 (PrintOuts.java:48) - Convert Int from Payment status: 1
+[DEBUG] 2018-09-15 13:04:37.163 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 13:04:37.164 (PrintOuts.java:48) - Convert Int from Payment status: 2
+[DEBUG] 2018-09-15 13:04:37.164 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 13:04:37.164 (PrintOuts.java:48) - Convert Int from Payment status: 3
+[DEBUG] 2018-09-15 13:04:37.164 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 13:04:37.164 (PrintOuts.java:48) - Convert Int from Payment status: 0
+[DEBUG] 2018-09-15 13:04:37.164 (PrintOuts.java:48) - Converted Bool:NO
+[DEBUG] 2018-09-15 13:04:37.164 (PrintOuts.java:20) - 
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-05-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:1|ContractDate:2017-07-11 00:00:00|Payment date From:2018-04-17|Payment date To:2018-05-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-06-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:2|ContractDate:2017-07-11 00:00:00|Payment date From:2018-05-17|Payment date To:2018-06-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-07-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:3|ContractDate:2017-07-11 00:00:00|Payment date From:2018-06-17|Payment date To:2018-07-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-08-16|Payment status:NO|Mentor:Charles Xavier|Invoice Id:4|ContractDate:2017-07-11 00:00:00|Payment date From:2018-07-17|Payment date To:2018-08-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+
+[INFO ] 2018-09-15 13:04:37.164 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - key:Payment date value:2018-05-16
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - Compare: 2018-05-16
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - key:Invoice Id value:1
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - Compare: 1
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-15 13:04:37.165 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - key:Payment date value:2018-06-16
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - Compare: 2018-06-16
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - key:Invoice Id value:2
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-15 13:04:37.166 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - key:Payment date value:2018-07-16
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - Compare: 2018-07-16
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - key:Invoice Id value:3
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-15 13:04:37.167 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - key:Payment date value:2018-08-16
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - Compare: 2018-08-16
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - key:Payment status value:NO
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - Compare: NO
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - key:Invoice Id value:4
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - Compare: 4
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-15 13:04:37.168 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-15 13:04:37.169 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-15 13:04:37.169 (PrintOuts.java:48) - Compare: 2
+[INFO ] 2018-09-15 13:04:37.169 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-15 13:04:37.170 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 13:04:37.170 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 13:04:39.308 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 13:04:39.379 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 13:04:39.381 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 13:04:39.381 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 13:04:42.761 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 13:04:42.761 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 13:04:42.866 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 13:04:43.815 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 13:04:43.930 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 13:04:43.931 (DealFromClientPageDbVsUI.java:22) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-15 13:04:43.931 (DealFromClientPageDbVsUI.java:23) - Going through invoces
+[DEBUG] 2018-09-15 13:04:43.932 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 13:04:44.055 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 13:04:44.056 (BasePOM.java:191) - Doing click on By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-15 13:04:44.056 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//span[contains(text(),'Счета')] to be hidden
+[INFO ] 2018-09-15 13:04:44.087 (BaseWaitingWarp.java:259) - Find element By.xpath: .//span[contains(text(),'Счета')] in state ToBeVisibile
+[INFO ] 2018-09-15 13:04:44.372 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 13:04:44.372 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[INFO ] 2018-09-15 13:04:44.404 (BaseWaitingWarp.java:259) - Find element By.xpath: .//a[@href='/admin/invoices'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:04:45.275 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 13:04:45.316 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 13:04:45.351 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:04:45.384 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 13:04:45.384 (BasePOM.java:108) - Typing Piotr Rasputin into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 13:04:45.384 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:04:45.412 (BaseWaitingWarp.java:259) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:04:45.487 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:04:45.507 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:04:45.517 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:04:45.530 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:04:45.530 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:04:45.551 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:04:45.562 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 13:04:45.563 (BaseWaitingWarp.java:157) - Going to sleep for :1000
+[DEBUG] 2018-09-15 13:04:46.563 (BaseWaitingWarp.java:163) - wakeup from sleep for :1000
+[DEBUG] 2018-09-15 13:04:46.563 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 13:04:46.589 (BaseWaitingWarp.java:259) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[INFO ] 2018-09-15 13:04:46.590 (BasePOM.java:141) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[DEBUG] 2018-09-15 13:04:46.590 (BasePOM.java:83) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[INFO ] 2018-09-15 13:04:47.581 (DealFromClientPageDbVsUI.java:32) - Get into a client page
+[DEBUG] 2018-09-15 13:04:47.582 (BasePOM.java:83) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-15 13:04:47.612 (ClientProperties.java:223) - Reading table with Deals from page
+[INFO ] 2018-09-15 13:04:47.613 (BasePOM.java:207) - Doing scroll to By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-15 13:04:47.613 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover'] to be hidden
+[INFO ] 2018-09-15 13:04:47.644 (BaseWaitingWarp.java:259) - Find element By.xpath: .//div[@class='display-grid']//table[@class='table table-hover'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:04:48.488 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-15 13:04:48.488 (ClientProperties.java:226) - Done Reading table with Deals from page
+[DEBUG] 2018-09-15 13:04:48.488 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-15 13:04:48.488 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-15 13:04:48.488 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-15 13:04:48.488 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-15 13:04:48.489 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-15 13:04:48.489 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-15 13:04:48.489 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-15 13:04:48.489 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-15 13:04:48.489 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-15 13:04:48.489 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-15 13:04:48.489 (PrintOuts.java:20) - 
+1:1|2:Mentoring|3:NEW|4:16-авг-2018|5:----|
+1:6|2:Group Development|3:ACTIVE|4:07-мая-2018|5:Ororo Munroe|
+
+[DEBUG] 2018-09-15 13:04:48.489 (PrintOuts.java:48) - Convert date from Open date: 16-авг-2018
+[INFO ] 2018-09-15 13:04:48.490 (ConverDates.java:50) - Get localdate:16-авг-2018
+[INFO ] 2018-09-15 13:04:48.498 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 13:04:48.498 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 13:05:18.039 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 13:05:18.044 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 13:05:21.845 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 13:05:21.845 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 13:05:21.953 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 13:05:22.911 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 13:05:23.061 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 13:05:23.061 (BasePOM.java:191) - Doing click on By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-15 13:05:23.062 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//span[contains(text(),'Счета')] to be hidden
+[INFO ] 2018-09-15 13:05:23.107 (BaseWaitingWarp.java:259) - Find element By.xpath: .//span[contains(text(),'Счета')] in state ToBeVisibile
+[INFO ] 2018-09-15 13:05:23.347 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 13:05:23.347 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[INFO ] 2018-09-15 13:05:23.462 (BaseWaitingWarp.java:259) - Find element By.xpath: .//a[@href='/admin/invoices'] in state ToBeVisibile
+[INFO ] 2018-09-15 13:05:24.334 (TestInvocesClientDataDbVsUI.java:31) - Get into Testtests.invoices.TestInvocesClientDataDbVsUI
+[DEBUG] 2018-09-15 13:05:24.334 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 13:05:24.390 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 13:05:24.427 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:05:24.456 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 13:05:24.457 (BasePOM.java:108) - Typing Raven Darkhölme into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 13:05:24.457 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:05:24.489 (BaseWaitingWarp.java:259) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:05:24.559 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:05:24.579 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:05:24.589 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:05:24.599 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:05:24.599 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:05:24.620 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:05:24.633 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 13:05:24.634 (BaseWaitingWarp.java:157) - Going to sleep for :1000
+[DEBUG] 2018-09-15 13:05:25.634 (BaseWaitingWarp.java:163) - wakeup from sleep for :1000
+[DEBUG] 2018-09-15 13:05:25.634 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 13:05:25.665 (BaseWaitingWarp.java:259) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[DEBUG] 2018-09-15 13:05:25.665 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:05:25.692 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 13:05:25.692 (InvoicesMain.java:25) - Reading table from page
+[DEBUG] 2018-09-15 13:05:26.184 (HtmlTable.java:95) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-09-15 13:05:26.184 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-15 13:05:26.184 (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-09-15 13:05:26.184 (PrintOuts.java:41) - For key 3 result is Contact ID
+[DEBUG] 2018-09-15 13:05:26.184 (PrintOuts.java:41) - For key 4 result is Payment amount
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:41) - For key 5 result is Payment date
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:41) - For key 6 result is Payment status
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:41) - For key Payment amount result is 4
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:41) - For key Payment date result is 5
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:41) - For key Payment status result is 6
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:41) - For key Contact ID result is 3
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:20) - 
+1:1|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-05-16|6:YES|
+1:2|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-06-16|6:YES|
+1:3|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-07-16|6:YES|
+1:4|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-08-16|6:NO|
+
+[DEBUG] 2018-09-15 13:05:26.185 (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Enter rename from:Id to:Invoice Id
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Enter convertInt2Bool: 
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Convert Int from Payment status: 1
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Convert Int from Payment status: 2
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Convert Int from Payment status: 3
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Convert Int from Payment status: 0
+[DEBUG] 2018-09-15 13:05:26.186 (PrintOuts.java:48) - Converted Bool:NO
+[DEBUG] 2018-09-15 13:05:26.187 (PrintOuts.java:20) - 
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-05-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:1|ContractDate:2017-07-11 00:00:00|Payment date From:2018-04-17|Payment date To:2018-05-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-06-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:2|ContractDate:2017-07-11 00:00:00|Payment date From:2018-05-17|Payment date To:2018-06-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-07-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:3|ContractDate:2017-07-11 00:00:00|Payment date From:2018-06-17|Payment date To:2018-07-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-08-16|Payment status:NO|Mentor:Charles Xavier|Invoice Id:4|ContractDate:2017-07-11 00:00:00|Payment date From:2018-07-17|Payment date To:2018-08-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+
+[INFO ] 2018-09-15 13:05:26.187 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-15 13:05:26.187 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-15 13:05:26.187 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-15 13:05:26.187 (PrintOuts.java:48) - key:Payment date value:2018-05-16
+[DEBUG] 2018-09-15 13:05:26.187 (PrintOuts.java:48) - Compare: 2018-05-16
+[DEBUG] 2018-09-15 13:05:26.187 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-15 13:05:26.187 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-15 13:05:26.187 (PrintOuts.java:48) - key:Invoice Id value:1
+[DEBUG] 2018-09-15 13:05:26.187 (PrintOuts.java:48) - Compare: 1
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - key:Payment date value:2018-06-16
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - Compare: 2018-06-16
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - key:Invoice Id value:2
+[DEBUG] 2018-09-15 13:05:26.188 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - key:Payment date value:2018-07-16
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - Compare: 2018-07-16
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-15 13:05:26.189 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - key:Invoice Id value:3
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - key:Payment date value:2018-08-16
+[DEBUG] 2018-09-15 13:05:26.190 (PrintOuts.java:48) - Compare: 2018-08-16
+[DEBUG] 2018-09-15 13:05:26.191 (PrintOuts.java:48) - key:Payment status value:NO
+[DEBUG] 2018-09-15 13:05:26.191 (PrintOuts.java:48) - Compare: NO
+[DEBUG] 2018-09-15 13:05:26.191 (PrintOuts.java:48) - key:Invoice Id value:4
+[DEBUG] 2018-09-15 13:05:26.191 (PrintOuts.java:48) - Compare: 4
+[DEBUG] 2018-09-15 13:05:26.191 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-15 13:05:26.191 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-15 13:05:26.191 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-15 13:05:26.191 (PrintOuts.java:48) - Compare: 2
+[INFO ] 2018-09-15 13:05:26.192 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-15 13:05:26.192 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 13:05:26.193 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 13:05:28.323 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 13:05:28.418 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 13:05:28.420 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 13:05:28.420 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 13:05:31.903 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 13:05:31.903 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 13:05:32.035 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-09-15 13:05:32.969 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 13:05:33.098 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 13:05:33.098 (DealFromClientPageDbVsUI.java:22) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-15 13:05:33.098 (DealFromClientPageDbVsUI.java:23) - Going through invoces
+[DEBUG] 2018-09-15 13:05:33.099 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 13:05:33.211 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 13:05:33.211 (BasePOM.java:191) - Doing click on By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-15 13:05:33.212 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//span[contains(text(),'Счета')] to be hidden
+[INFO ] 2018-09-15 13:05:33.249 (BaseWaitingWarp.java:259) - Find element By.xpath: .//span[contains(text(),'Счета')] in state ToBeVisibile
+[INFO ] 2018-09-15 13:05:33.521 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-15 13:05:33.522 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/invoices'] to be hidden
+[INFO ] 2018-09-15 13:05:33.551 (BaseWaitingWarp.java:259) - Find element By.xpath: .//a[@href='/admin/invoices'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:05:34.430 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-15 13:05:34.476 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY invoiceext.id
+[DEBUG] 2018-09-15 13:05:34.510 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:05:34.538 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@placeholder='Поиск'] in state ToBeVisibile
+[INFO ] 2018-09-15 13:05:34.539 (BasePOM.java:108) - Typing Piotr Rasputin into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-15 13:05:34.539 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:05:34.569 (BaseWaitingWarp.java:259) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:05:34.633 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:05:34.654 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:05:34.664 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:05:34.675 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:05:34.675 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:05:34.695 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:05:34.705 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 13:05:34.705 (BaseWaitingWarp.java:157) - Going to sleep for :1000
+[DEBUG] 2018-09-15 13:05:35.706 (BaseWaitingWarp.java:163) - wakeup from sleep for :1000
+[DEBUG] 2018-09-15 13:05:35.706 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 13:05:35.743 (BaseWaitingWarp.java:259) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[INFO ] 2018-09-15 13:05:35.743 (BasePOM.java:141) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[DEBUG] 2018-09-15 13:05:35.743 (BasePOM.java:83) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[INFO ] 2018-09-15 13:05:36.544 (DealFromClientPageDbVsUI.java:32) - Get into a client page
+[DEBUG] 2018-09-15 13:05:36.544 (BasePOM.java:83) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-15 13:05:36.575 (ClientProperties.java:223) - Reading table with Deals from page
+[INFO ] 2018-09-15 13:05:36.575 (BasePOM.java:207) - Doing scroll to By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-15 13:05:36.575 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover'] to be hidden
+[INFO ] 2018-09-15 13:05:36.605 (BaseWaitingWarp.java:259) - Find element By.xpath: .//div[@class='display-grid']//table[@class='table table-hover'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:05:37.441 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-15 13:05:37.441 (ClientProperties.java:226) - Done Reading table with Deals from page
+[DEBUG] 2018-09-15 13:05:37.441 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-15 13:05:37.441 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-15 13:05:37.441 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-15 13:05:37.441 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-15 13:05:37.442 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-15 13:05:37.442 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-15 13:05:37.442 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-15 13:05:37.442 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-15 13:05:37.442 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-15 13:05:37.442 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-15 13:05:37.442 (PrintOuts.java:20) - 
+1:1|2:Mentoring|3:NEW|4:16-авг-2018|5:----|
+1:6|2:Group Development|3:ACTIVE|4:07-мая-2018|5:Ororo Munroe|
+
+[DEBUG] 2018-09-15 13:05:37.442 (PrintOuts.java:48) - Convert date from Open date: 16-авг-2018
+[INFO ] 2018-09-15 13:05:37.443 (ConverDates.java:50) - Get localdate:16-авг-2018
+[INFO ] 2018-09-15 13:05:37.450 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-15 13:05:37.451 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 13:05:39.610 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 13:05:39.675 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-15 13:35:07.016 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-15 13:35:07.019 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-15 13:35:12.937 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-09-15 13:35:12.937 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-09-15 13:35:13.069 (LoginPage.java:64) - pressed Submit
+[INFO ] 2018-09-15 13:35:14.113 (ClientCreateTest.java:52) - Get into Testtests.ClientCreateTest
+[INFO ] 2018-09-15 13:35:14.116 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/clients']
+[DEBUG] 2018-09-15 13:35:14.117 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//a[@href='/admin/clients'] to be hidden
+[INFO ] 2018-09-15 13:35:14.197 (BaseWaitingWarp.java:259) - Find element By.xpath: .//a[@href='/admin/clients'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:16.852 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 13:35:16.888 (BaseWaitingWarp.java:259) - Find element By.xpath: .//button[contains(text(),'Create Client')] in state ToBeVisibile
+[INFO ] 2018-09-15 13:35:16.888 (BasePOM.java:191) - Doing click on By.xpath: .//button[contains(text(),'Create Client')]
+[DEBUG] 2018-09-15 13:35:16.888 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 13:35:16.921 (BaseWaitingWarp.java:259) - Find element By.xpath: .//button[contains(text(),'Create Client')] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:17.167 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[INFO ] 2018-09-15 13:35:17.200 (BaseWaitingWarp.java:259) - Find element By.xpath: .//button[@type='submit'][contains(text(),'save')] in state ToBeVisibile
+[INFO ] 2018-09-15 13:35:17.200 (BasePOM.java:108) - Typing Jonhq01324410 into By.xpath: //input[@id='firstName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:17.200 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@id='firstName'] to be hidden
+[INFO ] 2018-09-15 13:35:17.230 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@id='firstName'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:17.419 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:17.440 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:17.454 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:17.465 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:17.465 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:17.486 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:17.497 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 13:35:17.497 (BasePOM.java:108) - Typing Smithq0937577 into By.xpath: //input[@id='lastName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:17.497 (BaseWaitingWarp.java:204) - Wait For By.xpath: //input[@id='lastName'] to be hidden
+[INFO ] 2018-09-15 13:35:17.533 (BaseWaitingWarp.java:259) - Find element By.xpath: //input[@id='lastName'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:17.606 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:17.627 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:17.637 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:17.650 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:17.650 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:17.671 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:17.698 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 13:35:17.698 (BasePOM.java:191) - Doing click on By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[DEBUG] 2018-09-15 13:35:17.698 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[INFO ] 2018-09-15 13:35:17.729 (BaseWaitingWarp.java:259) - Find element By.xpath: .//button[@type='submit'][contains(text(),'save')] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:18.572 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')] to be hidden
+[INFO ] 2018-09-15 13:35:18.614 (BaseWaitingWarp.java:259) - Find element By.xpath: .//button[@type='button'][contains(text(),'Go back')] in state ToBeVisibile
+[ERROR] 2018-09-15 13:35:18.614 (ClientProperties.java:206) - Typing fields
+[INFO ] 2018-09-15 13:35:18.614 (BasePOM.java:108) - Typing Jonhq01324410 into By.id: firstName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:18.614 (BaseWaitingWarp.java:204) - Wait For By.id: firstName to be hidden
+[INFO ] 2018-09-15 13:35:18.645 (BaseWaitingWarp.java:259) - Find element By.id: firstName in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:18.719 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:18.739 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:18.752 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:18.783 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:18.783 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:18.803 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:18.818 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 13:35:18.818 (BasePOM.java:108) - Typing Smithq0937577 into By.id: lastName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:18.818 (BaseWaitingWarp.java:204) - Wait For By.id: lastName to be hidden
+[INFO ] 2018-09-15 13:35:18.850 (BaseWaitingWarp.java:259) - Find element By.id: lastName in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:18.924 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:18.944 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:18.955 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:18.965 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:18.966 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:18.986 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:18.998 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 13:35:18.999 (BasePOM.java:108) - Typing sZXUk@AoVaI.com into By.id: email Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:18.999 (BaseWaitingWarp.java:204) - Wait For By.id: email to be hidden
+[INFO ] 2018-09-15 13:35:19.161 (BaseWaitingWarp.java:259) - Find element By.id: email in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:19.241 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:19.261 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:19.273 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:19.285 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:19.285 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:19.306 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:19.317 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 13:35:19.317 (BasePOM.java:108) - Typing Zguigrpqxrkcagywzmuplydflj into By.id: country Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:19.317 (BaseWaitingWarp.java:204) - Wait For By.id: country to be hidden
+[INFO ] 2018-09-15 13:35:19.348 (BaseWaitingWarp.java:259) - Find element By.id: country in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:19.418 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:19.438 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:19.449 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:19.458 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:19.458 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:19.480 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:19.490 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 13:35:19.490 (BasePOM.java:108) - Typing Ehrkxpckoqcvxdqmpltkgbihxjqfzsdifkyazhyanbqoeucwf into By.id: city Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:19.490 (BaseWaitingWarp.java:204) - Wait For By.id: city to be hidden
+[INFO ] 2018-09-15 13:35:19.523 (BaseWaitingWarp.java:259) - Find element By.id: city in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:19.604 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:19.625 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:19.636 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:19.646 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:19.646 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:19.666 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:19.675 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 13:35:19.676 (BasePOM.java:108) - Typing 1149949488 into By.id: phoneNumber Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:19.676 (BaseWaitingWarp.java:204) - Wait For By.id: phoneNumber to be hidden
+[INFO ] 2018-09-15 13:35:19.709 (BaseWaitingWarp.java:259) - Find element By.id: phoneNumber in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:19.771 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:19.791 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:19.803 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:19.813 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:19.813 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:19.833 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:19.842 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 13:35:19.843 (BasePOM.java:108) - Typing oLZFTFl5o into By.id: skype Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:19.843 (BaseWaitingWarp.java:204) - Wait For By.id: skype to be hidden
+[INFO ] 2018-09-15 13:35:19.875 (BaseWaitingWarp.java:259) - Find element By.id: skype in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:19.941 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:19.963 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:19.972 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:19.984 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:19.984 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:20.006 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:20.018 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-15 13:35:20.018 (ClientProperties.java:199) - Clicking Save
+[DEBUG] 2018-09-15 13:35:22.553 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[INFO ] 2018-09-15 13:35:22.595 (BaseWaitingWarp.java:259) - Find element By.xpath: .//button[contains(text(),'Create Client')] in state ToBeVisibile
+[INFO ] 2018-09-15 13:35:22.595 (BasePOM.java:108) - Typing Jonhq01324410 Smithq0937577 into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-15 13:35:22.595 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//input[@placeholder='Поиск'] to be hidden
+[INFO ] 2018-09-15 13:35:22.628 (BaseWaitingWarp.java:259) - Find element By.xpath: .//input[@placeholder='Поиск'] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:22.705 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:22.726 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:22.738 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-15 13:35:22.750 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-15 13:35:22.750 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-15 13:35:22.770 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-15 13:35:22.780 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-15 13:35:22.780 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-15 13:35:22.811 (BaseWaitingWarp.java:259) - Find element By.xpath: //div[@class='fixed-table-loading'] in state ToBeHidden
+[INFO ] 2018-09-15 13:35:22.811 (BasePOM.java:141) - Wait For By.xpath: .//a[contains(text(),'Jonhq01324410 Smithq0937577')]
+[DEBUG] 2018-09-15 13:35:22.811 (BasePOM.java:83) - Wait For By.xpath: .//a[contains(text(),'Jonhq01324410 Smithq0937577')]
+[DEBUG] 2018-09-15 13:35:23.933 (BaseWaitingWarp.java:204) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')] to be hidden
+[INFO ] 2018-09-15 13:35:23.966 (BaseWaitingWarp.java:259) - Find element By.xpath: .//button[@type='button'][contains(text(),'Go back')] in state ToBeVisibile
+[DEBUG] 2018-09-15 13:35:24.134 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-15 13:35:24.281 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-15 13:35:24.333 (DataBase.java:74) - DB Connection close
+[DEBUG] 2018-09-15 13:35:24.333 (PrintOuts.java:13) - Printing Map with comment:Comapre With Page
+[DEBUG] 2018-09-15 13:35:24.333 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-15 13:35:24.334 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:13) - Printing Map with comment:Compare With Db
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-15 13:35:24.334 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-15 13:35:24.335 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-15 13:35:24.335 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-15 13:35:24.335 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-15 13:35:24.335 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-15 13:35:24.339 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-15 13:35:26.570 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-15 13:35:26.640 (BaseTest.java:141) - Closing browser

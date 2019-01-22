@@ -1,10 +1,11 @@
 package tests;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
 
 import utils.Log4J2PropertiesConf;
 
-import static org.junit.Assert.*;
 
 public class Log4J2PropertiesConfTest {
     @Test

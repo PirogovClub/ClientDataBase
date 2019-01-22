@@ -1,12 +1,12 @@
 package tests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+
+
 
 import java.io.IOException;
 import java.util.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import pageObjects.ClientProperties;
@@ -15,7 +15,7 @@ import pageObjects.MainNavigation;
 import utils.PrintOuts;
 import utils.RandomData;
 import utils.WorkWithMainConfig;
-
+import static org.junit.jupiter.api.Assertions.fail;
 import java.util.concurrent.ThreadLocalRandom;
 
 

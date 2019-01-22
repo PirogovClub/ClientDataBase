@@ -1,0 +1,18 @@
+[INFO ] 2018-10-12 19:50:23.241 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-10-12 19:50:23.260 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-10-12 19:50:28.816 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-10-12 19:50:28.816 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-10-12 19:50:31.657 (LoginPage.java:64) - pressed Submit
+[DEBUG] 2018-10-12 19:50:31.693 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-10-12 19:50:32.219 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-10-12 19:50:32.223 (BasePOM.java:191) - Doing click on By.xpath: .//a[@href='/admin/queues']
+[DEBUG] 2018-10-12 19:50:32.257 (BaseWaitingWrapper.java:204) - Wait For By.xpath: .//a[@href='/admin/queues'] to be hidden
+[INFO ] 2018-10-12 19:50:32.393 (BaseWaitingWrapper.java:263) - Find element By.xpath: .//a[@href='/admin/queues'] in state ToBeVisibile
+[INFO ] 2018-10-12 19:50:34.163 (MentoringUpdateContactTest.java:33) - Get into Testtests.queues.mentoring.MentoringUpdateContactTest
+[INFO ] 2018-10-12 19:50:34.165 (BasePOM.java:191) - Doing click on By.xpath: //p[contains(text(),'Mentoring')]
+[DEBUG] 2018-10-12 19:50:34.166 (BaseWaitingWrapper.java:204) - Wait For By.xpath: //p[contains(text(),'Mentoring')] to be hidden
+[INFO ] 2018-10-12 19:50:34.236 (BaseWaitingWrapper.java:263) - Find element By.xpath: //p[contains(text(),'Mentoring')] in state ToBeVisibile
+[INFO ] 2018-10-12 19:50:34.378 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-10-12 19:50:34.382 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-10-12 19:50:35.785 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-10-12 19:50:36.103 (BaseTest.java:141) - Closing browser

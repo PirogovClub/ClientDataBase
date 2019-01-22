@@ -5,13 +5,19 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import pageObjects.LoginPage;
 import utils.AssertWrapper;
@@ -21,6 +27,7 @@ import utils.WorkWithMainConfig;
 
 
 public class BaseTest {
+	
 	protected boolean isTestPassed = true;
 	protected static WebDriver driver;
 	protected static Logger logger = LogManager.getLogger();
@@ -99,7 +106,7 @@ public class BaseTest {
 		AssertWrapper.assertToLog(isTestPassed);
 	}
 
-	@Before
+	@BeforeEach
 	//We will open browser and pass login page to be able to switch to any page we need
 	public void startBrowser() throws Exception{
 		logger.info("--------------------Strarting Test------------");
@@ -134,7 +141,7 @@ public class BaseTest {
 	
 	
 	
-	@After
+	@AfterEach
 	public void quitBrowser(){
 		ScreenShots screenShot = new ScreenShots();
 		screenShot.makeSimpleShot(driver, getChieldTestModuleName());

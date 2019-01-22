@@ -2,8 +2,10 @@ package tests;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -13,7 +15,7 @@ import utils.AssertWrapper;
 public class TestUserRegistrationNegative extends BaseTest {
 	
 	@Override
-	@Before
+	@BeforeEach
 	
 	public void startBrowser() throws Exception{
 		logger.info("--------------------Strarting Test------------");
@@ -26,7 +28,7 @@ public class TestUserRegistrationNegative extends BaseTest {
 		logger.info("Starting browser");
 		switch (Browser) {
 		case "Chrome":
-			System.setProperty("webdriver.gecko.driver","src/main/java/resources/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","src/main/java/resources/chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
 		case "Firefox":

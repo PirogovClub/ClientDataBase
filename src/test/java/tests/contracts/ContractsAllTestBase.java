@@ -5,8 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.After;
-import org.junit.Before;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 
 import pageObjects.ContractsMain;
 import pageObjects.MainNavigation;
@@ -25,7 +28,7 @@ public class ContractsAllTestBase extends BaseTest {
 	protected DataTable filteredListOfContractsFromDB = new DataTable();
 	protected DataTable filteredListOfContractsFromPage = new DataTable();
 	public DataTable getFilteredListOfContractsFromDB() {
-		return filteredListOfContractsFromDB;
+		return filteredListOfContractsFromDB; 
 	}
 
 	public void setFilteredListOfContractsFromDB(DataTable filteredListOfContractsFromDB) {
@@ -213,7 +216,7 @@ public class ContractsAllTestBase extends BaseTest {
 		
 	}
 	
-	@After
+	@AfterEach
 	
 	public void deInitAllTestBase() {
 		testListOfMap.clear();

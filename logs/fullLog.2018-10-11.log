@@ -1,0 +1,8 @@
+[INFO ] 2018-10-11 19:06:00.958 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-10-11 19:06:00.979 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-10-11 19:06:06.580 (LoginPage.java:102) - Found login form on the page, need to login
+[INFO ] 2018-10-11 19:06:06.581 (LoginPage.java:72) - logining as admin
+[INFO ] 2018-10-11 19:06:08.794 (LoginPage.java:64) - pressed Submit
+[INFO ] 2018-10-11 19:06:08.843 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-10-11 19:06:10.318 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-10-11 19:06:10.759 (BaseTest.java:141) - Closing browser

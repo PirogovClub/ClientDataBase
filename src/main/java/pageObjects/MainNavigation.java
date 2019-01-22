@@ -14,6 +14,7 @@ public class MainNavigation extends BasePOM {
 	By clientPageLookForElement;
 	
 	By clientLink = By.xpath(".//a[@href='/admin/clients']");
+	By queuesLink = By.xpath(".//a[@href='/admin/queues']");
 	By contractsMenu = By.xpath(".//span[contains(text(),'Договора')]");
 	By invoicesMenu = By.xpath(".//span[contains(text(),'Счета')]");
 	By invoicesAllMenu = By.xpath(".//a[@href='/admin/invoices']");
@@ -67,6 +68,12 @@ public class MainNavigation extends BasePOM {
 		clickOnElement(invoicesMenu);
 
 	}
+	
+	public void clickQueuesMenu() {
+		clickOnElement(queuesLink);
+
+	}
+	
 
 	public void clickInvoicesAllMenu() {
 		clickInvoicesMenu();

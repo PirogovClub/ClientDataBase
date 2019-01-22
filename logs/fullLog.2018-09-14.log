@@ -1,0 +1,569 @@
+[INFO ] 2018-09-14 18:27:30.057 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-14 18:27:30.075 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-14 18:27:36.880 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-14 18:27:36.880 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-14 18:27:37.135 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-14 18:27:39.089 (ClientCreateTest.java:52) - Get into Testtests.ClientCreateTest
+[INFO ] 2018-09-14 18:27:39.107 (MainNavigation.java:92) - Clicking on to By.xpath: .//span[contains(text(),'Договора')]
+[DEBUG] 2018-09-14 18:27:42.897 (BasePOM.java:167) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 18:27:43.415 (BasePOM.java:110) - Typing Jonhq8 into By.xpath: //input[@id='firstName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:27:43.601 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:43.623 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:43.633 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:27:43.643 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:27:43.643 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:43.665 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:43.671 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:27:43.672 (BasePOM.java:110) - Typing Smithq8 into By.xpath: //input[@id='lastName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:27:43.848 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:43.869 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:43.875 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:27:43.882 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:27:43.882 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:43.903 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:43.912 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-14 18:27:45.695 (BasePOM.java:167) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')]
+[ERROR] 2018-09-14 18:27:45.728 (ClientProperties.java:206) - Typing fields
+[INFO ] 2018-09-14 18:27:45.729 (BasePOM.java:110) - Typing Jonhq8 into By.id: firstName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:27:45.863 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:45.884 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:45.890 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:27:45.895 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:27:45.896 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:45.917 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:45.939 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:27:45.939 (BasePOM.java:110) - Typing Smithq8 into By.id: lastName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:27:46.042 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.064 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.070 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:27:46.078 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:27:46.078 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.100 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.108 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:27:46.109 (BasePOM.java:110) - Typing Xrcen@WmyBR.com into By.id: email Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:27:46.205 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.225 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.231 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:27:46.237 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:27:46.237 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.257 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.265 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:27:46.266 (BasePOM.java:110) - Typing Cdqynzpwyejljitusnpe into By.id: country Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:27:46.464 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.486 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.492 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:27:46.498 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:27:46.499 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.520 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.528 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:27:46.528 (BasePOM.java:110) - Typing Lfaicrzuwvxopyo into By.id: city Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:27:46.623 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.643 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.649 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:27:46.656 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:27:46.656 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.677 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.684 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:27:46.685 (BasePOM.java:110) - Typing 9788943454 into By.id: phoneNumber Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:27:46.785 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.806 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.812 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:27:46.818 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:27:46.818 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.840 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.846 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:27:46.847 (BasePOM.java:110) - Typing 9kuPDYKhtAJN22ZY into By.id: skype Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:27:46.940 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.961 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:46.966 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:27:46.972 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:27:46.972 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:27:46.992 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:27:47.002 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:27:47.003 (ClientProperties.java:199) - Clicking Save
+[DEBUG] 2018-09-14 18:27:51.074 (BasePOM.java:167) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 18:27:51.113 (BasePOM.java:110) - Typing Jonhq8 Smithq8 into By.xpath: .//input[@placeholder='�����'] Overwrite:true wait after input mls: 0
+[ERROR] 2018-09-14 18:28:01.173 (ClientCreateTest.java:107) - in tests.ClientCreateTest caught:
+org.openqa.selenium.NoSuchElementException: Unable to locate element: .//input[@placeholder='�����']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UVRI864', ip: '192.168.43.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '9.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 60.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 12416, moz:profile: C:\Users\pirog\AppData\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 701307d2-25a9-4272-aa95-87d0a45d2747
+*** Element info: {Using=xpath, value=.//input[@placeholder='�����']}
+[INFO ] 2018-09-14 18:28:01.181 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-14 18:28:06.840 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-14 18:28:07.146 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-14 18:29:55.200 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-14 18:29:55.208 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-14 18:30:01.999 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-14 18:30:01.999 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-14 18:30:02.239 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-14 18:30:04.111 (ClientCreateTest.java:52) - Get into Testtests.ClientCreateTest
+[INFO ] 2018-09-14 18:30:04.128 (MainNavigation.java:92) - Clicking on to By.xpath: .//span[contains(text(),'Договора')]
+[DEBUG] 2018-09-14 18:30:07.789 (BasePOM.java:167) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 18:30:08.286 (BasePOM.java:110) - Typing Jonhq0 into By.xpath: //input[@id='firstName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:08.447 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:08.467 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:08.473 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:08.482 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:08.483 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:08.504 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:08.510 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:30:08.511 (BasePOM.java:110) - Typing Smithq0 into By.xpath: //input[@id='lastName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:08.658 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:08.679 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:08.687 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:08.694 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:08.694 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:08.716 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:08.723 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-14 18:30:10.449 (BasePOM.java:167) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')]
+[ERROR] 2018-09-14 18:30:10.482 (ClientProperties.java:206) - Typing fields
+[INFO ] 2018-09-14 18:30:10.483 (BasePOM.java:110) - Typing Jonhq0 into By.id: firstName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:10.626 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:10.647 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:10.653 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:10.661 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:10.661 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:10.682 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:10.694 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:30:10.694 (BasePOM.java:110) - Typing Smithq0 into By.id: lastName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:10.797 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:10.818 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:10.824 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:10.831 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:10.831 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:10.853 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:10.860 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:30:10.860 (BasePOM.java:110) - Typing PtgbB@tFupS.com into By.id: email Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:10.958 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:10.980 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:10.987 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:10.992 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:10.992 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:11.014 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:11.021 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:30:11.021 (BasePOM.java:110) - Typing Iumfcmoowcjcme into By.id: country Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:11.133 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:11.154 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:11.162 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:11.168 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:11.168 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:11.189 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:11.194 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:30:11.195 (BasePOM.java:110) - Typing Pxq into By.id: city Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:11.273 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:11.294 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:11.300 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:11.306 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:11.307 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:11.327 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:11.334 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:30:11.334 (BasePOM.java:110) - Typing 9335757715 into By.id: phoneNumber Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:11.494 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:11.515 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:11.522 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:11.528 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:11.529 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:11.550 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:11.557 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:30:11.558 (BasePOM.java:110) - Typing H6MvBSKarN8i51u5NQ5S into By.id: skype Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:11.660 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:11.681 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:11.687 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:11.693 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:11.693 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:11.713 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:11.718 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:30:11.719 (ClientProperties.java:199) - Clicking Save
+[DEBUG] 2018-09-14 18:30:15.123 (BasePOM.java:167) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 18:30:15.143 (BasePOM.java:110) - Typing Jonhq0 Smithq0 into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:30:15.246 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:15.267 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:15.273 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:30:15.280 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:30:15.280 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:30:15.301 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:30:15.309 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:30:15.342 (BasePOM.java:146) - Wait For By.xpath: .//a[contains(text(),'Jonhq0 Smithq0')]
+[DEBUG] 2018-09-14 18:30:15.342 (BasePOM.java:85) - Wait For By.xpath: .//a[contains(text(),'Jonhq0 Smithq0')]
+[DEBUG] 2018-09-14 18:30:17.617 (BasePOM.java:167) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')]
+[DEBUG] 2018-09-14 18:30:17.885 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-14 18:30:18.652 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-14 18:30:18.967 (DataBase.java:74) - DB Connection close
+[DEBUG] 2018-09-14 18:30:18.972 (PrintOuts.java:13) - Printing Map with comment:Comapre With Page
+[DEBUG] 2018-09-14 18:30:18.972 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-14 18:30:18.973 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-14 18:30:18.973 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-14 18:30:18.973 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-14 18:30:18.974 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-14 18:30:18.974 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-14 18:30:18.974 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-14 18:30:18.976 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[DEBUG] 2018-09-14 18:30:18.977 (PrintOuts.java:13) - Printing Map with comment:Compare With Db
+[DEBUG] 2018-09-14 18:30:18.977 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-14 18:30:18.978 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-14 18:30:18.978 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-14 18:30:18.979 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-14 18:30:18.979 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-14 18:30:18.980 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-14 18:30:18.980 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-14 18:30:19.014 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-14 18:30:24.685 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-14 18:30:24.970 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-14 18:46:46.525 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-14 18:46:46.534 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-14 18:46:53.294 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-14 18:46:53.294 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-14 18:46:53.436 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-14 18:46:54.905 (ClientCreateTest.java:52) - Get into Testtests.ClientCreateTest
+[INFO ] 2018-09-14 18:46:54.913 (MainNavigation.java:92) - Clicking on to By.xpath: .//span[contains(text(),'Договора')]
+[DEBUG] 2018-09-14 18:46:58.609 (BasePOM.java:170) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 18:46:58.652 (BasePOM.java:202) - Doing click on By.xpath: .//button[contains(text(),'Create Client')]
+[DEBUG] 2018-09-14 18:46:58.657 (JSWaiter.java:198) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[DEBUG] 2018-09-14 18:46:59.060 (JSWaiter.java:198) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[INFO ] 2018-09-14 18:46:59.147 (BasePOM.java:113) - Typing Jonhq06 into By.xpath: //input[@id='firstName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:46:59.301 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:46:59.322 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:46:59.329 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:46:59.339 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:46:59.339 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:46:59.360 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:46:59.367 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:46:59.368 (BasePOM.java:113) - Typing Smithq02 into By.xpath: //input[@id='lastName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:46:59.485 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:46:59.507 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:46:59.515 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:46:59.523 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:46:59.524 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:46:59.545 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:46:59.551 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:46:59.551 (BasePOM.java:202) - Doing click on By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[DEBUG] 2018-09-14 18:46:59.551 (JSWaiter.java:198) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[DEBUG] 2018-09-14 18:47:01.029 (BasePOM.java:170) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')]
+[ERROR] 2018-09-14 18:47:01.053 (ClientProperties.java:206) - Typing fields
+[INFO ] 2018-09-14 18:47:01.054 (BasePOM.java:113) - Typing Jonhq06 into By.id: firstName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:47:01.184 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.206 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:01.213 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:47:01.222 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:47:01.222 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.244 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:01.264 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:47:01.264 (BasePOM.java:113) - Typing Smithq02 into By.id: lastName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:47:01.408 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.430 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:01.441 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:47:01.449 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:47:01.450 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.471 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:01.476 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:47:01.477 (BasePOM.java:113) - Typing XZPjO@pGcVN.com into By.id: email Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:47:01.600 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.621 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:01.626 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:47:01.635 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:47:01.635 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.656 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:01.661 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:47:01.662 (BasePOM.java:113) - Typing Aqkfkmxxfue into By.id: country Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:47:01.753 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.774 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:01.779 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:47:01.787 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:47:01.787 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.808 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:01.814 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:47:01.814 (BasePOM.java:113) - Typing Puvfyontqpbdoepwelokxzktekoozfxcencrjrcpsuorqa into By.id: city Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:47:01.940 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.961 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:01.967 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:47:01.972 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:47:01.973 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:01.994 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:02.000 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:47:02.001 (BasePOM.java:113) - Typing 7685364234 into By.id: phoneNumber Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:47:02.102 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:02.123 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:02.129 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:47:02.135 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:47:02.136 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:02.157 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:02.163 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:47:02.163 (BasePOM.java:113) - Typing n3v3GBl6ehn06NyPpj4aluMvHe5aL into By.id: skype Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:47:02.258 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:02.278 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:02.286 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:47:02.292 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:47:02.292 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:02.314 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:02.366 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:47:02.367 (ClientProperties.java:199) - Clicking Save
+[DEBUG] 2018-09-14 18:47:05.911 (BasePOM.java:170) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 18:47:05.935 (BasePOM.java:113) - Typing Jonhq06 Smithq02 into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:47:06.063 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:06.084 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:06.091 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:47:06.101 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:47:06.102 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:47:06.122 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:47:06.131 (JSWaiter.java:144) - Angular is not defined on this site!
+[ERROR] 2018-09-14 18:47:16.314 (ClientCreateTest.java:107) - in tests.ClientCreateTest caught:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='fixed-table-loading'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-UVRI864', ip: '192.168.43.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '9.0.4'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 60.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13780, moz:profile: C:\Users\pirog\AppData\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 4891c4ac-d373-4a44-b460-f9b696707872
+[INFO ] 2018-09-14 18:47:16.322 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-14 18:47:21.980 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-14 18:47:22.097 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-14 18:55:52.470 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-14 18:55:52.483 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-14 18:55:58.998 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-14 18:55:59.002 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-14 18:55:59.165 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-14 18:56:00.667 (ClientCreateTest.java:52) - Get into Testtests.ClientCreateTest
+[INFO ] 2018-09-14 18:56:00.673 (MainNavigation.java:92) - Clicking on to By.xpath: .//span[contains(text(),'Договора')]
+[DEBUG] 2018-09-14 18:56:04.272 (BasePOM.java:165) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 18:56:04.318 (BasePOM.java:197) - Doing click on By.xpath: .//button[contains(text(),'Create Client')]
+[DEBUG] 2018-09-14 18:56:04.323 (JSWaiter.java:198) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[DEBUG] 2018-09-14 18:56:04.704 (JSWaiter.java:198) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[INFO ] 2018-09-14 18:56:04.815 (BasePOM.java:108) - Typing Jonhq01 into By.xpath: //input[@id='firstName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:04.946 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:04.968 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:04.977 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:04.985 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:04.985 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:05.006 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:05.011 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:05.012 (BasePOM.java:108) - Typing Smithq09 into By.xpath: //input[@id='lastName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:05.169 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:05.191 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:05.198 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:05.206 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:05.207 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:05.228 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:05.234 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:05.234 (BasePOM.java:197) - Doing click on By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[DEBUG] 2018-09-14 18:56:05.235 (JSWaiter.java:198) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[DEBUG] 2018-09-14 18:56:06.778 (BasePOM.java:165) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')]
+[ERROR] 2018-09-14 18:56:06.809 (ClientProperties.java:206) - Typing fields
+[INFO ] 2018-09-14 18:56:06.810 (BasePOM.java:108) - Typing Jonhq01 into By.id: firstName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:06.931 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:06.952 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:06.958 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:06.963 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:06.964 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:06.985 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.005 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:07.005 (BasePOM.java:108) - Typing Smithq09 into By.id: lastName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:07.109 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.131 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.138 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:07.145 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:07.146 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.167 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.172 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:07.173 (BasePOM.java:108) - Typing OGmql@CqBeD.com into By.id: email Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:07.269 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.291 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.298 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:07.304 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:07.304 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.325 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.332 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:07.332 (BasePOM.java:108) - Typing Wsrvkngypzofvvgxrcfnmxvjn into By.id: country Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:07.455 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.477 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.482 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:07.488 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:07.488 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.509 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.514 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:07.515 (BasePOM.java:108) - Typing Uyoikcutpppczyrxuxvbzzluboxbzsejyiucsylrx into By.id: city Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:07.704 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.725 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.734 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:07.742 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:07.742 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.763 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.771 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:07.771 (BasePOM.java:108) - Typing 0697897999 into By.id: phoneNumber Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:07.876 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.897 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.903 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:07.909 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:07.909 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:07.930 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:07.935 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:07.936 (BasePOM.java:108) - Typing rft7aJO into By.id: skype Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:08.012 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:08.033 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:08.038 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:08.045 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:08.046 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:08.066 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:08.073 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:08.074 (ClientProperties.java:199) - Clicking Save
+[DEBUG] 2018-09-14 18:56:11.314 (BasePOM.java:165) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 18:56:11.349 (BasePOM.java:108) - Typing Jonhq01 Smithq09 into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 18:56:11.468 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:11.489 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:11.497 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-14 18:56:11.505 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-14 18:56:11.506 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-14 18:56:11.527 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 18:56:11.535 (JSWaiter.java:144) - Angular is not defined on this site!
+[INFO ] 2018-09-14 18:56:11.566 (BasePOM.java:144) - Wait For By.xpath: .//a[contains(text(),'Jonhq01 Smithq09')]
+[DEBUG] 2018-09-14 18:56:11.567 (BasePOM.java:83) - Wait For By.xpath: .//a[contains(text(),'Jonhq01 Smithq09')]
+[DEBUG] 2018-09-14 18:56:13.458 (BasePOM.java:165) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')]
+[DEBUG] 2018-09-14 18:56:13.670 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-14 18:56:14.094 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-14 18:56:14.273 (DataBase.java:74) - DB Connection close
+[DEBUG] 2018-09-14 18:56:14.276 (PrintOuts.java:13) - Printing Map with comment:Comapre With Page
+[DEBUG] 2018-09-14 18:56:14.277 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-14 18:56:14.277 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-14 18:56:14.278 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-14 18:56:14.278 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-14 18:56:14.278 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-14 18:56:14.279 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-14 18:56:14.279 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-14 18:56:14.281 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[DEBUG] 2018-09-14 18:56:14.281 (PrintOuts.java:13) - Printing Map with comment:Compare With Db
+[DEBUG] 2018-09-14 18:56:14.281 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-14 18:56:14.282 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-14 18:56:14.282 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-14 18:56:14.282 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-14 18:56:14.283 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-14 18:56:14.283 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-14 18:56:14.283 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-14 18:56:14.300 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-14 18:56:19.947 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-14 18:56:20.221 (BaseTest.java:141) - Closing browser
+[INFO ] 2018-09-14 19:04:57.901 (BaseTest.java:105) - --------------------Strarting Test------------
+[INFO ] 2018-09-14 19:04:57.909 (BaseTest.java:112) - Starting browser
+[INFO ] 2018-09-14 19:05:04.933 (LoginPage.java:101) - Found login form on the page, need to login
+[INFO ] 2018-09-14 19:05:04.934 (LoginPage.java:71) - logining as admin
+[INFO ] 2018-09-14 19:05:05.093 (LoginPage.java:63) - pressed Submit
+[INFO ] 2018-09-14 19:05:06.696 (ClientCreateTest.java:52) - Get into Testtests.ClientCreateTest
+[INFO ] 2018-09-14 19:05:06.709 (MainNavigation.java:92) - Clicking on to By.xpath: .//span[contains(text(),'Договора')]
+[DEBUG] 2018-09-14 19:05:10.898 (BasePOM.java:160) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 19:05:10.949 (BasePOM.java:192) - Doing click on By.xpath: .//button[contains(text(),'Create Client')]
+[DEBUG] 2018-09-14 19:05:10.953 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[contains(text(),'Create Client')] to be hidden
+[DEBUG] 2018-09-14 19:05:11.340 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[INFO ] 2018-09-14 19:05:11.456 (BasePOM.java:103) - Typing Jonhq013 into By.xpath: //input[@id='firstName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:11.612 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:11.633 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:11.641 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:11.648 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:11.649 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:11.669 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:11.675 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-14 19:05:11.675 (BasePOM.java:103) - Typing Smithq093 into By.xpath: //input[@id='lastName'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:11.796 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:11.818 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:11.824 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:11.831 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:11.831 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:11.852 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:11.858 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-14 19:05:11.858 (BasePOM.java:192) - Doing click on By.xpath: .//button[@type='submit'][contains(text(),'save')]
+[DEBUG] 2018-09-14 19:05:11.859 (BaseWaitingWarp.java:205) - Wait For By.xpath: .//button[@type='submit'][contains(text(),'save')] to be hidden
+[DEBUG] 2018-09-14 19:05:13.907 (BasePOM.java:160) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')]
+[ERROR] 2018-09-14 19:05:13.941 (ClientProperties.java:206) - Typing fields
+[INFO ] 2018-09-14 19:05:13.942 (BasePOM.java:103) - Typing Jonhq013 into By.id: firstName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:14.075 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.097 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.103 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:14.113 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:14.113 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.134 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.146 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-14 19:05:14.146 (BasePOM.java:103) - Typing Smithq093 into By.id: lastName Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:14.257 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.278 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.288 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:14.295 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:14.295 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.316 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.321 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-14 19:05:14.322 (BasePOM.java:103) - Typing DEspQ@Vvdwx.com into By.id: email Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:14.423 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.444 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.449 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:14.455 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:14.456 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.477 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.483 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-14 19:05:14.483 (BasePOM.java:103) - Typing Hbwnartvocyckrqec into By.id: country Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:14.626 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.648 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.661 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:14.671 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:14.672 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.693 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.699 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-14 19:05:14.700 (BasePOM.java:103) - Typing Rwhsbcyzwvqfrmtjrkhajciasazcyvst into By.id: city Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:14.807 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.827 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.838 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:14.844 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:14.844 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.864 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.870 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-14 19:05:14.870 (BasePOM.java:103) - Typing 8976880911 into By.id: phoneNumber Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:14.964 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:14.986 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:14.993 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:14.998 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:14.999 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:15.019 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:15.025 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-14 19:05:15.025 (BasePOM.java:103) - Typing t8FCyV8cmC into By.id: skype Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:15.106 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:15.128 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:15.136 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:15.162 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:15.162 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:15.183 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:15.189 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[INFO ] 2018-09-14 19:05:15.189 (ClientProperties.java:199) - Clicking Save
+[DEBUG] 2018-09-14 19:05:18.895 (BasePOM.java:160) - Wait For By.xpath: .//button[contains(text(),'Create Client')]
+[INFO ] 2018-09-14 19:05:18.938 (BasePOM.java:103) - Typing Jonhq013 Smithq093 into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 0
+[DEBUG] 2018-09-14 19:05:19.082 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:19.103 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:19.110 (BaseWaitingWarp.java:47) - JQuery is Ready!
+[DEBUG] 2018-09-14 19:05:19.120 (BaseWaitingWarp.java:94) - JS is Ready!
+[DEBUG] 2018-09-14 19:05:19.121 (BaseWaitingWarp.java:157) - Going to sleep for :20
+[DEBUG] 2018-09-14 19:05:19.141 (BaseWaitingWarp.java:163) - wakeup from sleep for :20
+[DEBUG] 2018-09-14 19:05:19.148 (BaseWaitingWarp.java:145) - Angular is not defined on this site!
+[DEBUG] 2018-09-14 19:05:19.148 (BaseWaitingWarp.java:199) - Wait For By.xpath: //div[@class='fixed-table-loading'] to be hidden
+[INFO ] 2018-09-14 19:05:19.187 (BasePOM.java:139) - Wait For By.xpath: .//a[contains(text(),'Jonhq013 Smithq093')]
+[DEBUG] 2018-09-14 19:05:19.187 (BasePOM.java:78) - Wait For By.xpath: .//a[contains(text(),'Jonhq013 Smithq093')]
+[DEBUG] 2018-09-14 19:05:21.381 (BasePOM.java:160) - Wait For By.xpath: .//button[@type='button'][contains(text(),'Go back')]
+[DEBUG] 2018-09-14 19:05:21.552 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-14 19:05:22.009 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-14 19:05:22.222 (DataBase.java:74) - DB Connection close
+[DEBUG] 2018-09-14 19:05:22.224 (PrintOuts.java:13) - Printing Map with comment:Comapre With Page
+[DEBUG] 2018-09-14 19:05:22.225 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-14 19:05:22.226 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-14 19:05:22.226 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-14 19:05:22.227 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-14 19:05:22.227 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-14 19:05:22.227 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-14 19:05:22.228 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-14 19:05:22.230 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[DEBUG] 2018-09-14 19:05:22.230 (PrintOuts.java:13) - Printing Map with comment:Compare With Db
+[DEBUG] 2018-09-14 19:05:22.231 (PrintOuts.java:41) - For key firstName result is OK
+[DEBUG] 2018-09-14 19:05:22.231 (PrintOuts.java:41) - For key lastName result is OK
+[DEBUG] 2018-09-14 19:05:22.231 (PrintOuts.java:41) - For key country result is OK
+[DEBUG] 2018-09-14 19:05:22.232 (PrintOuts.java:41) - For key skype result is OK
+[DEBUG] 2018-09-14 19:05:22.232 (PrintOuts.java:41) - For key city result is OK
+[DEBUG] 2018-09-14 19:05:22.232 (PrintOuts.java:41) - For key phone result is OK
+[DEBUG] 2018-09-14 19:05:22.233 (PrintOuts.java:41) - For key email result is OK
+[INFO ] 2018-09-14 19:05:22.251 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-14 19:05:27.904 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-14 19:05:28.235 (BaseTest.java:141) - Closing browser

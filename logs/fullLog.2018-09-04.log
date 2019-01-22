@@ -1,0 +1,1195 @@
+[INFO ] 2018-09-04 13:40:45.956 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-04 13:40:45.980 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-04 13:40:52.556 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-04 13:40:52.556 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-04 13:40:52.719 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-09-04 13:40:53.823 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-04 13:40:54.199 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-04 13:40:54.200 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-04 13:40:54.200 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-04 13:40:54.472 (BasePOM.java:167) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-04 13:40:55.595 (TestInvocesClientDataDbVsUI.java:31) - Get into Testtests.invoices.TestInvocesClientDataDbVsUI
+[DEBUG] 2018-09-04 13:40:55.596 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-04 13:40:55.676 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY invoiceext.id
+[DEBUG] 2018-09-04 13:40:55.717 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-04 13:40:55.737 (BasePOM.java:110) - Typing Piotr Rasputin into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-04 13:40:55.941 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 13:40:55.962 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 13:40:55.969 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-04 13:40:55.978 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-04 13:40:55.978 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 13:40:56.000 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 13:40:56.006 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-04 13:40:56.006 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-09-04 13:40:57.007 (JSWaiter.java:162) - wakeup from sleep for :1000
+[DEBUG] 2018-09-04 13:40:57.121 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-04 13:40:57.132 (InvoicesMain.java:25) - Reading table from page
+[DEBUG] 2018-09-04 13:40:57.552 (HtmlTable.java:95) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-09-04 13:40:57.552 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-04 13:40:57.553 (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-09-04 13:40:57.553 (PrintOuts.java:41) - For key 3 result is Contact ID
+[DEBUG] 2018-09-04 13:40:57.553 (PrintOuts.java:41) - For key 4 result is Payment amount
+[DEBUG] 2018-09-04 13:40:57.553 (PrintOuts.java:41) - For key 5 result is Payment date
+[DEBUG] 2018-09-04 13:40:57.553 (PrintOuts.java:41) - For key 6 result is Payment status
+[DEBUG] 2018-09-04 13:40:57.553 (PrintOuts.java:41) - For key Payment amount result is 4
+[DEBUG] 2018-09-04 13:40:57.554 (PrintOuts.java:41) - For key Payment date result is 5
+[DEBUG] 2018-09-04 13:40:57.554 (PrintOuts.java:41) - For key Payment status result is 6
+[DEBUG] 2018-09-04 13:40:57.554 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-04 13:40:57.554 (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-09-04 13:40:57.554 (PrintOuts.java:41) - For key Contact ID result is 3
+[DEBUG] 2018-09-04 13:40:57.555 (PrintOuts.java:20) - 
+1:5|2:Piotr Rasputin|3:3|4:USD 120|5:2018-06-06|6:YES|
+1:6|2:Piotr Rasputin|3:3|4:USD 120|5:2018-07-06|6:YES|
+1:7|2:Piotr Rasputin|3:3|4:USD 120|5:2018-08-06|6:YES|
+
+[DEBUG] 2018-09-04 13:40:57.555 (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-09-04 13:40:57.555 (PrintOuts.java:48) - Enter rename from:Id to:Invoice Id
+[DEBUG] 2018-09-04 13:40:57.556 (PrintOuts.java:48) - Enter convertInt2Bool: 
+[DEBUG] 2018-09-04 13:40:57.556 (PrintOuts.java:48) - Convert Int from Payment status: 4
+[DEBUG] 2018-09-04 13:40:57.556 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-04 13:40:57.556 (PrintOuts.java:48) - Convert Int from Payment status: 5
+[DEBUG] 2018-09-04 13:40:57.557 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-04 13:40:57.557 (PrintOuts.java:48) - Convert Int from Payment status: 6
+[DEBUG] 2018-09-04 13:40:57.557 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-04 13:40:57.557 (PrintOuts.java:20) - 
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:1500|Payment amount:USD 120|Payment date:2018-06-06|Payment status:YES|Mentor:Ororo Munroe|Invoice Id:5|ContractDate:2017-07-11 00:00:00|Payment date From:2018-05-07|Payment date To:2018-06-06|ClientName:Piotr Rasputin|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:USD|Consultancy:Group Development|Contract Date:2018-05-07|Contact ID:3| Price:120|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:1500|Payment amount:USD 120|Payment date:2018-07-06|Payment status:YES|Mentor:Ororo Munroe|Invoice Id:6|ContractDate:2017-07-11 00:00:00|Payment date From:2018-06-07|Payment date To:2018-07-06|ClientName:Piotr Rasputin|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:USD|Consultancy:Group Development|Contract Date:2018-05-07|Contact ID:3| Price:120|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:1500|Payment amount:USD 120|Payment date:2018-08-06|Payment status:YES|Mentor:Ororo Munroe|Invoice Id:7|ContractDate:2017-07-11 00:00:00|Payment date From:2018-07-07|Payment date To:2018-08-06|ClientName:Piotr Rasputin|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:USD|Consultancy:Group Development|Contract Date:2018-05-07|Contact ID:3| Price:120|
+
+[INFO ] 2018-09-04 13:40:57.558 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-04 13:40:57.558 (PrintOuts.java:48) - key:Payment amount value:USD 120
+[DEBUG] 2018-09-04 13:40:57.558 (PrintOuts.java:48) - Compare: USD 120
+[DEBUG] 2018-09-04 13:40:57.559 (PrintOuts.java:48) - key:Payment date value:2018-06-06
+[DEBUG] 2018-09-04 13:40:57.559 (PrintOuts.java:48) - Compare: 2018-06-06
+[DEBUG] 2018-09-04 13:40:57.559 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:40:57.559 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:40:57.560 (PrintOuts.java:48) - key:Invoice Id value:5
+[DEBUG] 2018-09-04 13:40:57.560 (PrintOuts.java:48) - Compare: 5
+[DEBUG] 2018-09-04 13:40:57.560 (PrintOuts.java:48) - key:ClientName value:Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.560 (PrintOuts.java:48) - Compare: Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.560 (PrintOuts.java:48) - key:Contact ID value:3
+[DEBUG] 2018-09-04 13:40:57.560 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-04 13:40:57.560 (PrintOuts.java:48) - key:Payment amount value:USD 120
+[DEBUG] 2018-09-04 13:40:57.561 (PrintOuts.java:48) - Compare: USD 120
+[DEBUG] 2018-09-04 13:40:57.561 (PrintOuts.java:48) - key:Payment date value:2018-07-06
+[DEBUG] 2018-09-04 13:40:57.561 (PrintOuts.java:48) - Compare: 2018-07-06
+[DEBUG] 2018-09-04 13:40:57.561 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:40:57.561 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:40:57.561 (PrintOuts.java:48) - key:Invoice Id value:6
+[DEBUG] 2018-09-04 13:40:57.561 (PrintOuts.java:48) - Compare: 6
+[DEBUG] 2018-09-04 13:40:57.562 (PrintOuts.java:48) - key:ClientName value:Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.562 (PrintOuts.java:48) - Compare: Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.562 (PrintOuts.java:48) - key:Contact ID value:3
+[DEBUG] 2018-09-04 13:40:57.562 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-04 13:40:57.562 (PrintOuts.java:48) - key:Payment amount value:USD 120
+[DEBUG] 2018-09-04 13:40:57.562 (PrintOuts.java:48) - Compare: USD 120
+[DEBUG] 2018-09-04 13:40:57.562 (PrintOuts.java:48) - key:Payment date value:2018-08-06
+[DEBUG] 2018-09-04 13:40:57.563 (PrintOuts.java:48) - Compare: 2018-08-06
+[DEBUG] 2018-09-04 13:40:57.563 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:40:57.563 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:40:57.563 (PrintOuts.java:48) - key:Invoice Id value:7
+[DEBUG] 2018-09-04 13:40:57.563 (PrintOuts.java:48) - Compare: 7
+[DEBUG] 2018-09-04 13:40:57.563 (PrintOuts.java:48) - key:ClientName value:Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.564 (PrintOuts.java:48) - Compare: Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.564 (PrintOuts.java:48) - key:Contact ID value:3
+[DEBUG] 2018-09-04 13:40:57.564 (PrintOuts.java:48) - Compare: 3
+[INFO ] 2018-09-04 13:40:57.564 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-04 13:40:57.564 (PrintOuts.java:48) - key:Payment amount value:USD 120
+[DEBUG] 2018-09-04 13:40:57.565 (PrintOuts.java:48) - Compare: USD 120
+[DEBUG] 2018-09-04 13:40:57.565 (PrintOuts.java:48) - key:Payment date value:2018-06-06
+[DEBUG] 2018-09-04 13:40:57.565 (PrintOuts.java:48) - Compare: 2018-06-06
+[DEBUG] 2018-09-04 13:40:57.565 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:40:57.566 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:40:57.566 (PrintOuts.java:48) - key:Invoice Id value:5
+[DEBUG] 2018-09-04 13:40:57.566 (PrintOuts.java:48) - Compare: 5
+[DEBUG] 2018-09-04 13:40:57.566 (PrintOuts.java:48) - key:ClientName value:Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.566 (PrintOuts.java:48) - Compare: Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.567 (PrintOuts.java:48) - key:Contact ID value:3
+[DEBUG] 2018-09-04 13:40:57.567 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-04 13:40:57.567 (PrintOuts.java:48) - key:Payment amount value:USD 120
+[DEBUG] 2018-09-04 13:40:57.568 (PrintOuts.java:48) - Compare: USD 120
+[DEBUG] 2018-09-04 13:40:57.568 (PrintOuts.java:48) - key:Payment date value:2018-07-06
+[DEBUG] 2018-09-04 13:40:57.568 (PrintOuts.java:48) - Compare: 2018-07-06
+[DEBUG] 2018-09-04 13:40:57.568 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:40:57.569 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:40:57.569 (PrintOuts.java:48) - key:Invoice Id value:6
+[DEBUG] 2018-09-04 13:40:57.569 (PrintOuts.java:48) - Compare: 6
+[DEBUG] 2018-09-04 13:40:57.569 (PrintOuts.java:48) - key:ClientName value:Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.569 (PrintOuts.java:48) - Compare: Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.570 (PrintOuts.java:48) - key:Contact ID value:3
+[DEBUG] 2018-09-04 13:40:57.570 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-04 13:40:57.570 (PrintOuts.java:48) - key:Payment amount value:USD 120
+[DEBUG] 2018-09-04 13:40:57.570 (PrintOuts.java:48) - Compare: USD 120
+[DEBUG] 2018-09-04 13:40:57.571 (PrintOuts.java:48) - key:Payment date value:2018-08-06
+[DEBUG] 2018-09-04 13:40:57.571 (PrintOuts.java:48) - Compare: 2018-08-06
+[DEBUG] 2018-09-04 13:40:57.571 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:40:57.571 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:40:57.571 (PrintOuts.java:48) - key:Invoice Id value:7
+[DEBUG] 2018-09-04 13:40:57.572 (PrintOuts.java:48) - Compare: 7
+[DEBUG] 2018-09-04 13:40:57.572 (PrintOuts.java:48) - key:ClientName value:Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.572 (PrintOuts.java:48) - Compare: Piotr Rasputin
+[DEBUG] 2018-09-04 13:40:57.573 (PrintOuts.java:48) - key:Contact ID value:3
+[DEBUG] 2018-09-04 13:40:57.573 (PrintOuts.java:48) - Compare: 3
+[INFO ] 2018-09-04 13:40:57.574 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-04 13:40:57.575 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-04 13:40:57.578 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-04 13:41:03.220 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-04 13:41:03.458 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-04 13:41:55.103 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-04 13:41:55.118 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-04 13:42:04.398 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-04 13:42:04.398 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-04 13:42:04.560 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-09-04 13:42:05.665 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-04 13:42:05.876 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-04 13:42:05.879 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-04 13:42:05.881 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-04 13:42:06.197 (BasePOM.java:167) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-04 13:42:07.462 (TestInvocesClientDataDbVsUI.java:31) - Get into Testtests.invoices.TestInvocesClientDataDbVsUI
+[DEBUG] 2018-09-04 13:42:07.464 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-04 13:42:07.581 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY invoiceext.id
+[DEBUG] 2018-09-04 13:42:07.631 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-04 13:42:07.675 (BasePOM.java:110) - Typing Raven Darkhölme into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-04 13:42:07.865 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 13:42:07.887 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 13:42:07.894 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-04 13:42:07.904 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-04 13:42:07.904 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 13:42:07.925 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 13:42:07.934 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-04 13:42:07.934 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-09-04 13:42:08.935 (JSWaiter.java:162) - wakeup from sleep for :1000
+[DEBUG] 2018-09-04 13:42:09.027 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-04 13:42:09.036 (InvoicesMain.java:25) - Reading table from page
+[DEBUG] 2018-09-04 13:42:09.514 (HtmlTable.java:95) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-09-04 13:42:09.514 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-04 13:42:09.514 (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-09-04 13:42:09.514 (PrintOuts.java:41) - For key 3 result is Contact ID
+[DEBUG] 2018-09-04 13:42:09.514 (PrintOuts.java:41) - For key 4 result is Payment amount
+[DEBUG] 2018-09-04 13:42:09.515 (PrintOuts.java:41) - For key 5 result is Payment date
+[DEBUG] 2018-09-04 13:42:09.515 (PrintOuts.java:41) - For key 6 result is Payment status
+[DEBUG] 2018-09-04 13:42:09.515 (PrintOuts.java:41) - For key Payment amount result is 4
+[DEBUG] 2018-09-04 13:42:09.515 (PrintOuts.java:41) - For key Payment date result is 5
+[DEBUG] 2018-09-04 13:42:09.515 (PrintOuts.java:41) - For key Payment status result is 6
+[DEBUG] 2018-09-04 13:42:09.516 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-04 13:42:09.516 (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-09-04 13:42:09.516 (PrintOuts.java:41) - For key Contact ID result is 3
+[DEBUG] 2018-09-04 13:42:09.516 (PrintOuts.java:20) - 
+1:1|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-05-16|6:YES|
+1:2|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-06-16|6:YES|
+1:3|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-07-16|6:YES|
+1:4|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-08-16|6:NO|
+
+[DEBUG] 2018-09-04 13:42:09.517 (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-09-04 13:42:09.517 (PrintOuts.java:48) - Enter rename from:Id to:Invoice Id
+[DEBUG] 2018-09-04 13:42:09.518 (PrintOuts.java:48) - Enter convertInt2Bool: 
+[DEBUG] 2018-09-04 13:42:09.518 (PrintOuts.java:48) - Convert Int from Payment status: 1
+[DEBUG] 2018-09-04 13:42:09.518 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-04 13:42:09.519 (PrintOuts.java:48) - Convert Int from Payment status: 2
+[DEBUG] 2018-09-04 13:42:09.519 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-04 13:42:09.519 (PrintOuts.java:48) - Convert Int from Payment status: 3
+[DEBUG] 2018-09-04 13:42:09.519 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-04 13:42:09.519 (PrintOuts.java:48) - Convert Int from Payment status: 0
+[DEBUG] 2018-09-04 13:42:09.520 (PrintOuts.java:48) - Converted Bool:NO
+[DEBUG] 2018-09-04 13:42:09.520 (PrintOuts.java:20) - 
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-05-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:1|ContractDate:2017-07-11 00:00:00|Payment date From:2018-04-17|Payment date To:2018-05-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-06-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:2|ContractDate:2017-07-11 00:00:00|Payment date From:2018-05-17|Payment date To:2018-06-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-07-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:3|ContractDate:2017-07-11 00:00:00|Payment date From:2018-06-17|Payment date To:2018-07-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-08-16|Payment status:NO|Mentor:Charles Xavier|Invoice Id:4|ContractDate:2017-07-11 00:00:00|Payment date From:2018-07-17|Payment date To:2018-08-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+
+[INFO ] 2018-09-04 13:42:09.521 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-04 13:42:09.521 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:09.522 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:09.522 (PrintOuts.java:48) - key:Payment date value:2018-05-16
+[DEBUG] 2018-09-04 13:42:09.522 (PrintOuts.java:48) - Compare: 2018-05-16
+[DEBUG] 2018-09-04 13:42:09.522 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:09.523 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:09.523 (PrintOuts.java:48) - key:Invoice Id value:1
+[DEBUG] 2018-09-04 13:42:09.523 (PrintOuts.java:48) - Compare: 1
+[DEBUG] 2018-09-04 13:42:09.523 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.523 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.524 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:09.524 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:09.524 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:09.524 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:09.525 (PrintOuts.java:48) - key:Payment date value:2018-06-16
+[DEBUG] 2018-09-04 13:42:09.525 (PrintOuts.java:48) - Compare: 2018-06-16
+[DEBUG] 2018-09-04 13:42:09.525 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:09.525 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:09.525 (PrintOuts.java:48) - key:Invoice Id value:2
+[DEBUG] 2018-09-04 13:42:09.526 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:09.526 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.526 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.526 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:09.526 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:09.526 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:09.527 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:09.527 (PrintOuts.java:48) - key:Payment date value:2018-07-16
+[DEBUG] 2018-09-04 13:42:09.527 (PrintOuts.java:48) - Compare: 2018-07-16
+[DEBUG] 2018-09-04 13:42:09.527 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:09.527 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:09.528 (PrintOuts.java:48) - key:Invoice Id value:3
+[DEBUG] 2018-09-04 13:42:09.528 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-04 13:42:09.528 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.528 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.529 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:09.529 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:09.529 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:09.529 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:09.529 (PrintOuts.java:48) - key:Payment date value:2018-08-16
+[DEBUG] 2018-09-04 13:42:09.530 (PrintOuts.java:48) - Compare: 2018-08-16
+[DEBUG] 2018-09-04 13:42:09.530 (PrintOuts.java:48) - key:Payment status value:NO
+[DEBUG] 2018-09-04 13:42:09.530 (PrintOuts.java:48) - Compare: NO
+[DEBUG] 2018-09-04 13:42:09.531 (PrintOuts.java:48) - key:Invoice Id value:4
+[DEBUG] 2018-09-04 13:42:09.531 (PrintOuts.java:48) - Compare: 4
+[DEBUG] 2018-09-04 13:42:09.531 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.531 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.532 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:09.532 (PrintOuts.java:48) - Compare: 2
+[INFO ] 2018-09-04 13:42:09.532 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-04 13:42:09.533 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:09.533 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:09.533 (PrintOuts.java:48) - key:Payment date value:2018-05-16
+[DEBUG] 2018-09-04 13:42:09.533 (PrintOuts.java:48) - Compare: 2018-05-16
+[DEBUG] 2018-09-04 13:42:09.533 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:09.533 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:09.534 (PrintOuts.java:48) - key:Invoice Id value:1
+[DEBUG] 2018-09-04 13:42:09.534 (PrintOuts.java:48) - Compare: 1
+[DEBUG] 2018-09-04 13:42:09.534 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.534 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.535 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:09.535 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:09.535 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:09.536 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:09.536 (PrintOuts.java:48) - key:Payment date value:2018-06-16
+[DEBUG] 2018-09-04 13:42:09.536 (PrintOuts.java:48) - Compare: 2018-06-16
+[DEBUG] 2018-09-04 13:42:09.536 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:09.537 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:09.537 (PrintOuts.java:48) - key:Invoice Id value:2
+[DEBUG] 2018-09-04 13:42:09.537 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:09.538 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.538 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.538 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:09.539 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:09.539 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:09.539 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:09.540 (PrintOuts.java:48) - key:Payment date value:2018-07-16
+[DEBUG] 2018-09-04 13:42:09.540 (PrintOuts.java:48) - Compare: 2018-07-16
+[DEBUG] 2018-09-04 13:42:09.540 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:09.540 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:09.541 (PrintOuts.java:48) - key:Invoice Id value:3
+[DEBUG] 2018-09-04 13:42:09.541 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-04 13:42:09.541 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.541 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.542 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:09.542 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:09.542 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:09.542 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:09.543 (PrintOuts.java:48) - key:Payment date value:2018-08-16
+[DEBUG] 2018-09-04 13:42:09.543 (PrintOuts.java:48) - Compare: 2018-08-16
+[DEBUG] 2018-09-04 13:42:09.543 (PrintOuts.java:48) - key:Payment status value:NO
+[DEBUG] 2018-09-04 13:42:09.543 (PrintOuts.java:48) - Compare: NO
+[DEBUG] 2018-09-04 13:42:09.543 (PrintOuts.java:48) - key:Invoice Id value:4
+[DEBUG] 2018-09-04 13:42:09.543 (PrintOuts.java:48) - Compare: 4
+[DEBUG] 2018-09-04 13:42:09.544 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.544 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:09.544 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:09.544 (PrintOuts.java:48) - Compare: 2
+[INFO ] 2018-09-04 13:42:09.546 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-04 13:42:09.547 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-04 13:42:09.548 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-04 13:42:15.172 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-04 13:42:15.410 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-04 13:42:22.218 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-04 13:42:22.233 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-04 13:42:28.576 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-04 13:42:28.576 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-04 13:42:28.738 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-09-04 13:42:29.937 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-04 13:42:30.147 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-04 13:42:30.149 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-04 13:42:30.152 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-04 13:42:30.506 (BasePOM.java:167) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-04 13:42:33.520 (TestInvocesClientDataDbVsUI.java:31) - Get into Testtests.invoices.TestInvocesClientDataDbVsUI
+[DEBUG] 2018-09-04 13:42:33.522 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-04 13:42:33.645 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Raven Darkhölme' ORDER BY invoiceext.id
+[DEBUG] 2018-09-04 13:42:33.690 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-04 13:42:33.730 (BasePOM.java:110) - Typing Raven Darkhölme into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-04 13:42:33.940 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 13:42:33.961 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 13:42:33.968 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-04 13:42:33.984 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-04 13:42:33.984 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 13:42:34.006 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 13:42:34.016 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-04 13:42:34.017 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-09-04 13:42:35.017 (JSWaiter.java:162) - wakeup from sleep for :1000
+[DEBUG] 2018-09-04 13:42:35.111 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-04 13:42:35.120 (InvoicesMain.java:25) - Reading table from page
+[DEBUG] 2018-09-04 13:42:35.588 (HtmlTable.java:95) - Read table By.xpath: .//table[@class='table table-hover']
+[DEBUG] 2018-09-04 13:42:35.588 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-04 13:42:35.588 (PrintOuts.java:41) - For key 2 result is Client
+[DEBUG] 2018-09-04 13:42:35.589 (PrintOuts.java:41) - For key 3 result is Contact ID
+[DEBUG] 2018-09-04 13:42:35.589 (PrintOuts.java:41) - For key 4 result is Payment amount
+[DEBUG] 2018-09-04 13:42:35.589 (PrintOuts.java:41) - For key 5 result is Payment date
+[DEBUG] 2018-09-04 13:42:35.589 (PrintOuts.java:41) - For key 6 result is Payment status
+[DEBUG] 2018-09-04 13:42:35.589 (PrintOuts.java:41) - For key Payment amount result is 4
+[DEBUG] 2018-09-04 13:42:35.589 (PrintOuts.java:41) - For key Payment date result is 5
+[DEBUG] 2018-09-04 13:42:35.590 (PrintOuts.java:41) - For key Payment status result is 6
+[DEBUG] 2018-09-04 13:42:35.590 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-04 13:42:35.590 (PrintOuts.java:41) - For key Client result is 2
+[DEBUG] 2018-09-04 13:42:35.590 (PrintOuts.java:41) - For key Contact ID result is 3
+[DEBUG] 2018-09-04 13:42:35.590 (PrintOuts.java:20) - 
+1:1|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-05-16|6:YES|
+1:2|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-06-16|6:YES|
+1:3|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-07-16|6:YES|
+1:4|2:Raven Darkhölme|3:2|4:UAH 6000|5:2018-08-16|6:NO|
+
+[DEBUG] 2018-09-04 13:42:35.591 (PrintOuts.java:48) - Enter rename from:Client to:ClientName
+[DEBUG] 2018-09-04 13:42:35.591 (PrintOuts.java:48) - Enter rename from:Id to:Invoice Id
+[DEBUG] 2018-09-04 13:42:35.592 (PrintOuts.java:48) - Enter convertInt2Bool: 
+[DEBUG] 2018-09-04 13:42:35.592 (PrintOuts.java:48) - Convert Int from Payment status: 1
+[DEBUG] 2018-09-04 13:42:35.592 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-04 13:42:35.593 (PrintOuts.java:48) - Convert Int from Payment status: 2
+[DEBUG] 2018-09-04 13:42:35.593 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-04 13:42:35.593 (PrintOuts.java:48) - Convert Int from Payment status: 3
+[DEBUG] 2018-09-04 13:42:35.594 (PrintOuts.java:48) - Converted Bool:YES
+[DEBUG] 2018-09-04 13:42:35.594 (PrintOuts.java:48) - Convert Int from Payment status: 0
+[DEBUG] 2018-09-04 13:42:35.594 (PrintOuts.java:48) - Converted Bool:NO
+[DEBUG] 2018-09-04 13:42:35.595 (PrintOuts.java:20) - 
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-05-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:1|ContractDate:2017-07-11 00:00:00|Payment date From:2018-04-17|Payment date To:2018-05-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-06-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:2|ContractDate:2017-07-11 00:00:00|Payment date From:2018-05-17|Payment date To:2018-06-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-07-16|Payment status:YES|Mentor:Charles Xavier|Invoice Id:3|ContractDate:2017-07-11 00:00:00|Payment date From:2018-06-17|Payment date To:2018-07-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+Employee Currency:UAH|Status:ACTIVE|Employee Rate:3000|Payment amount:UAH 6000|Payment date:2018-08-16|Payment status:NO|Mentor:Charles Xavier|Invoice Id:4|ContractDate:2017-07-11 00:00:00|Payment date From:2018-07-17|Payment date To:2018-08-16|ClientName:Raven Darkhölme|Payment Type:POSTPAY|Type:POSTPAY| Price Currency:UAH|Consultancy:Personal Mentor|Contract Date:2018-04-17|Contact ID:2| Price:6000|
+
+[INFO ] 2018-09-04 13:42:35.595 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-04 13:42:35.596 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:35.596 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:35.596 (PrintOuts.java:48) - key:Payment date value:2018-05-16
+[DEBUG] 2018-09-04 13:42:35.596 (PrintOuts.java:48) - Compare: 2018-05-16
+[DEBUG] 2018-09-04 13:42:35.596 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:35.596 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:35.597 (PrintOuts.java:48) - key:Invoice Id value:1
+[DEBUG] 2018-09-04 13:42:35.597 (PrintOuts.java:48) - Compare: 1
+[DEBUG] 2018-09-04 13:42:35.597 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.597 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.597 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:35.597 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:35.597 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:35.598 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:35.598 (PrintOuts.java:48) - key:Payment date value:2018-06-16
+[DEBUG] 2018-09-04 13:42:35.598 (PrintOuts.java:48) - Compare: 2018-06-16
+[DEBUG] 2018-09-04 13:42:35.598 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:35.598 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:35.598 (PrintOuts.java:48) - key:Invoice Id value:2
+[DEBUG] 2018-09-04 13:42:35.598 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:35.599 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.599 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.599 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:35.599 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:35.599 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:35.599 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:35.599 (PrintOuts.java:48) - key:Payment date value:2018-07-16
+[DEBUG] 2018-09-04 13:42:35.600 (PrintOuts.java:48) - Compare: 2018-07-16
+[DEBUG] 2018-09-04 13:42:35.600 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:35.600 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:35.600 (PrintOuts.java:48) - key:Invoice Id value:3
+[DEBUG] 2018-09-04 13:42:35.600 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-04 13:42:35.601 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.601 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.601 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:35.601 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:35.601 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:35.602 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:35.602 (PrintOuts.java:48) - key:Payment date value:2018-08-16
+[DEBUG] 2018-09-04 13:42:35.602 (PrintOuts.java:48) - Compare: 2018-08-16
+[DEBUG] 2018-09-04 13:42:35.602 (PrintOuts.java:48) - key:Payment status value:NO
+[DEBUG] 2018-09-04 13:42:35.603 (PrintOuts.java:48) - Compare: NO
+[DEBUG] 2018-09-04 13:42:35.603 (PrintOuts.java:48) - key:Invoice Id value:4
+[DEBUG] 2018-09-04 13:42:35.603 (PrintOuts.java:48) - Compare: 4
+[DEBUG] 2018-09-04 13:42:35.603 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.604 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.604 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:35.604 (PrintOuts.java:48) - Compare: 2
+[INFO ] 2018-09-04 13:42:35.604 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-04 13:42:35.605 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:35.605 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:35.605 (PrintOuts.java:48) - key:Payment date value:2018-05-16
+[DEBUG] 2018-09-04 13:42:35.605 (PrintOuts.java:48) - Compare: 2018-05-16
+[DEBUG] 2018-09-04 13:42:35.606 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:35.606 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:35.606 (PrintOuts.java:48) - key:Invoice Id value:1
+[DEBUG] 2018-09-04 13:42:35.606 (PrintOuts.java:48) - Compare: 1
+[DEBUG] 2018-09-04 13:42:35.607 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.607 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.607 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:35.607 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:35.608 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:35.608 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:35.608 (PrintOuts.java:48) - key:Payment date value:2018-06-16
+[DEBUG] 2018-09-04 13:42:35.608 (PrintOuts.java:48) - Compare: 2018-06-16
+[DEBUG] 2018-09-04 13:42:35.608 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:35.609 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:35.609 (PrintOuts.java:48) - key:Invoice Id value:2
+[DEBUG] 2018-09-04 13:42:35.609 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:35.610 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.610 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.610 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:35.610 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:35.611 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:35.611 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:35.611 (PrintOuts.java:48) - key:Payment date value:2018-07-16
+[DEBUG] 2018-09-04 13:42:35.611 (PrintOuts.java:48) - Compare: 2018-07-16
+[DEBUG] 2018-09-04 13:42:35.611 (PrintOuts.java:48) - key:Payment status value:YES
+[DEBUG] 2018-09-04 13:42:35.612 (PrintOuts.java:48) - Compare: YES
+[DEBUG] 2018-09-04 13:42:35.612 (PrintOuts.java:48) - key:Invoice Id value:3
+[DEBUG] 2018-09-04 13:42:35.612 (PrintOuts.java:48) - Compare: 3
+[DEBUG] 2018-09-04 13:42:35.612 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.612 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.612 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:35.613 (PrintOuts.java:48) - Compare: 2
+[DEBUG] 2018-09-04 13:42:35.613 (PrintOuts.java:48) - key:Payment amount value:UAH 6000
+[DEBUG] 2018-09-04 13:42:35.613 (PrintOuts.java:48) - Compare: UAH 6000
+[DEBUG] 2018-09-04 13:42:35.613 (PrintOuts.java:48) - key:Payment date value:2018-08-16
+[DEBUG] 2018-09-04 13:42:35.613 (PrintOuts.java:48) - Compare: 2018-08-16
+[DEBUG] 2018-09-04 13:42:35.614 (PrintOuts.java:48) - key:Payment status value:NO
+[DEBUG] 2018-09-04 13:42:35.614 (PrintOuts.java:48) - Compare: NO
+[DEBUG] 2018-09-04 13:42:35.614 (PrintOuts.java:48) - key:Invoice Id value:4
+[DEBUG] 2018-09-04 13:42:35.614 (PrintOuts.java:48) - Compare: 4
+[DEBUG] 2018-09-04 13:42:35.614 (PrintOuts.java:48) - key:ClientName value:Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.614 (PrintOuts.java:48) - Compare: Raven Darkhölme
+[DEBUG] 2018-09-04 13:42:35.615 (PrintOuts.java:48) - key:Contact ID value:2
+[DEBUG] 2018-09-04 13:42:35.615 (PrintOuts.java:48) - Compare: 2
+[INFO ] 2018-09-04 13:42:35.616 (AssertWarp.java:15) - TEST SUCCESSFULLY COMPLETED
+[INFO ] 2018-09-04 13:42:35.617 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-04 13:42:35.619 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-04 13:42:41.258 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-04 13:42:41.443 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-04 19:20:57.828 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-04 19:20:57.838 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-04 19:21:05.433 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-04 19:21:05.434 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-04 19:21:05.615 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-09-04 19:21:07.305 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-04 19:21:07.913 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-04 19:21:07.914 (DealFromClientPageDbVsUI.java:20) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-04 19:21:07.915 (DealFromClientPageDbVsUI.java:21) - Going through invoces
+[DEBUG] 2018-09-04 19:21:07.923 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-04 19:21:08.259 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-04 19:21:08.265 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-04 19:21:08.267 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-04 19:21:08.692 (BasePOM.java:167) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-04 19:21:10.243 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-04 19:21:10.394 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY invoiceext.id
+[DEBUG] 2018-09-04 19:21:10.502 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-04 19:21:10.517 (BasePOM.java:110) - Typing Piotr Rasputin into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-04 19:21:10.680 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 19:21:10.701 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 19:21:10.710 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-04 19:21:10.728 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-04 19:21:10.728 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 19:21:10.750 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 19:21:10.762 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-04 19:21:10.763 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-09-04 19:21:11.763 (JSWaiter.java:162) - wakeup from sleep for :1000
+[INFO ] 2018-09-04 19:21:11.801 (BasePOM.java:146) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[DEBUG] 2018-09-04 19:21:11.801 (BasePOM.java:85) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[INFO ] 2018-09-04 19:21:13.491 (DealFromClientPageDbVsUI.java:30) - Get into a client page
+[DEBUG] 2018-09-04 19:21:13.494 (BasePOM.java:85) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-04 19:21:13.547 (ClientProperties.java:211) - Reading table with Deals from page
+[DEBUG] 2018-09-04 19:21:13.964 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-04 19:21:13.964 (ClientProperties.java:213) - Done Reading table with Deals from page
+[DEBUG] 2018-09-04 19:21:13.965 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-04 19:21:13.965 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-04 19:21:13.966 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-04 19:21:13.966 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-04 19:21:13.966 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-04 19:21:13.966 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-04 19:21:13.967 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-04 19:21:13.967 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-04 19:21:13.967 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-04 19:21:13.968 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-04 19:21:13.968 (PrintOuts.java:20) - 
+1:1|2:Mentoring|3:NEW|4:16-Aug-2018|5:----|
+1:6|2:Group Development|3:ACTIVE|4:07-May-2018|5:Ororo Munroe|
+
+[DEBUG] 2018-09-04 19:21:13.968 (PrintOuts.java:48) - Convert date from Open date: 16-Aug-2018
+[DEBUG] 2018-09-04 19:21:13.997 (ConverDates.java:75) - success: false. input: 16-Aug-2018 → localDate: -999999999-01-01 → formatted: 01-янв.-+1000000000 → outputImproper: 01-янв-+1000000000
+[DEBUG] 2018-09-04 19:21:13.998 (ConverDates.java:84) - Send converted date +1000000000-01-01
+[DEBUG] 2018-09-04 19:21:13.998 (PrintOuts.java:48) - Converted date:+1000000000-01-01
+[DEBUG] 2018-09-04 19:21:13.998 (PrintOuts.java:48) - Convert date from Open date: 07-May-2018
+[DEBUG] 2018-09-04 19:21:14.000 (ConverDates.java:75) - success: false. input: 07-May-2018 → localDate: -999999999-01-01 → formatted: 01-янв.-+1000000000 → outputImproper: 01-янв-+1000000000
+[DEBUG] 2018-09-04 19:21:14.000 (ConverDates.java:84) - Send converted date +1000000000-01-01
+[DEBUG] 2018-09-04 19:21:14.000 (PrintOuts.java:48) - Converted date:+1000000000-01-01
+[DEBUG] 2018-09-04 19:21:14.001 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-04 19:21:14.001 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-04 19:21:14.001 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-04 19:21:14.001 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-04 19:21:14.001 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-04 19:21:14.002 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-04 19:21:14.002 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-04 19:21:14.002 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-04 19:21:14.002 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-04 19:21:14.003 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-04 19:21:14.003 (PrintOuts.java:20) - 
+1:1|2:Mentoring|3:NEW|4:+1000000000-01-01|5:----|
+1:6|2:Group Development|3:ACTIVE|4:+1000000000-01-01|5:Ororo Munroe|
+
+[DEBUG] 2018-09-04 19:21:14.003 (PrintOuts.java:48) - Check :---- on Stub:----
+[DEBUG] 2018-09-04 19:21:14.003 (PrintOuts.java:48) - After check :
+[DEBUG] 2018-09-04 19:21:14.004 (PrintOuts.java:48) - Check :Ororo Munroe on Stub:----
+[DEBUG] 2018-09-04 19:21:14.004 (PrintOuts.java:48) - After check :Ororo Munroe
+[DEBUG] 2018-09-04 19:21:14.004 (DealsTestBase.java:83) - 
+SQLquery:select 
+        deal.id as "Id",
+        consultancy.name as "Consultancy", 
+        deal.status as "Deal status",
+        deal.open_date as "Open date",
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor"
+        
+        
+From    deal inner join client on (client.id = deal.client_id) 
+            inner join consultancy on (consultancy.id = deal.consultancy_id)
+            left join (contract inner join employee  on (employee.id = contract.employee_id))  on (contract.deal_id = deal.id)Group by
+deal.id,
+        consultancy.name,
+        deal.status,
+        deal.open_date,
+        client.first_name,
+        client.last_name,
+        employee.first_name,
+        employee.last_name HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY  CONCAT(employee.first_name, ' ', employee.last_name)
+[INFO ] 2018-09-04 19:21:14.138 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-04 19:21:14.139 (PrintOuts.java:48) - key:Consultancy value:Mentoring
+[DEBUG] 2018-09-04 19:21:14.140 (PrintOuts.java:48) - Compare: Mentoring
+[DEBUG] 2018-09-04 19:21:14.141 (PrintOuts.java:48) - key:Mentor value: 
+[DEBUG] 2018-09-04 19:21:14.142 (PrintOuts.java:48) - Compare: 
+[DEBUG] 2018-09-04 19:21:14.142 (DataTable.java:58) - Original
+[DEBUG] 2018-09-04 19:21:14.143 (DataTable.java:59) - For key Mentor result is  
+[DEBUG] 2018-09-04 19:21:14.143 (DataTable.java:60) - Not Equal to
+[DEBUG] 2018-09-04 19:21:14.144 (DataTable.java:61) - For key Mentor result is 
+[ERROR] 2018-09-04 19:21:14.155 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-04 19:21:14.157 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-04 19:21:14.162 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-04 19:21:19.791 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-04 19:21:19.992 (BaseTest.java:135) - Closing browser
+[INFO ] 2018-09-04 19:24:43.248 (BaseTest.java:99) - --------------------Strarting Test------------
+[INFO ] 2018-09-04 19:24:43.256 (BaseTest.java:106) - Starting browser
+[INFO ] 2018-09-04 19:24:50.431 (LoginPage.java:98) - Found login form on the page, need to login
+[INFO ] 2018-09-04 19:24:50.433 (LoginPage.java:69) - logining as admin
+[INFO ] 2018-09-04 19:24:50.638 (LoginPage.java:61) - pressed Submit
+[DEBUG] 2018-09-04 19:24:53.108 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-04 19:24:53.747 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-04 19:24:53.747 (DealFromClientPageDbVsUI.java:20) - Get into Testtests.deals.DealFromClientPageDbVsUI
+[INFO ] 2018-09-04 19:24:53.748 (DealFromClientPageDbVsUI.java:21) - Going through invoces
+[DEBUG] 2018-09-04 19:24:53.751 (DataBase.java:39) - PostgreSQL JDBC Driver successfully connected
+[DEBUG] 2018-09-04 19:24:54.154 (DataBase.java:60) - You successfully connected to database now
+[INFO ] 2018-09-04 19:24:54.161 (MainNavigation.java:79) - Clicking on to By.xpath: .//a[@href='/admin/invoices']
+[INFO ] 2018-09-04 19:24:54.163 (MainNavigation.java:69) - Clicking on to By.xpath: .//span[contains(text(),'Счета')]
+[DEBUG] 2018-09-04 19:24:54.524 (BasePOM.java:167) - Wait For By.xpath: .//a[@href='/admin/invoices']
+[DEBUG] 2018-09-04 19:24:56.399 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency Order By RANDOM()
+ LIMIT 1
+
+[DEBUG] 2018-09-04 19:24:56.644 (InvoicesTestBase.java:151) - 
+SQLquery:select 
+        invoiceext.id as "Invoice Id",
+        CONCAT(client.first_name, ' ', client.last_name ) as "ClientName",
+        invoiceext.contract_id as "Contact ID",
+        CONCAT(money_client.currency,' ',money_client.amount) as "Payment amount",
+        invoiceext.period_to as "Payment date",
+        invoiceext.period_from as "Payment date From",
+        invoiceext.period_to as "Payment date To",
+        invoiceext.PaymentID as "Payment status",
+        contract.contract_date as "Contract Date",
+        contract.payment_type as "Payment Type",
+        money_client.amount as " Price",
+        money_client.currency as " Price Currency",
+        consultancy.name as "Consultancy", 
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor",
+        money_employee.amount "Employee Rate",
+        money_employee.currency "Employee Currency",
+        contract.created_date as "ContractDate",
+        contract.payment_type as "Type",
+        deal.status as "Status"
+From    
+        (select invoice.*, COALESCE(payment.id, 0) as "paymentid" FROM invoice left join  payment on  invoice.id=payment.invoice_id)
+ as invoiceext
+inner join (money as money_client inner join ( money as money_employee inner join (consultancy inner join (client inner join (employee inner join (Contract inner join deal 
+        on (contract.deal_id = deal.id))
+        on (employee.id = contract.employee_id))
+        on (client.id = deal.client_id))
+        on (consultancy.id = deal.consultancy_id))
+        on (money_employee.id = contract.employee_rate_id))
+        on (money_client.id = contract.price_id))
+        on (invoiceext.contract_id = contract.id)
+Group by
+invoiceext.id,
+invoiceext.contract_id,
+client.first_name,
+client.last_name,
+consultancy.name,
+employee.first_name,
+employee.last_name,
+contract.created_date,
+contract.payment_type,
+deal.status,
+invoiceext.paymentid,
+contract.contract_date,
+invoiceext.period_from,
+invoiceext.period_to,
+money_client.amount,
+ money_client.currency,
+ money_employee.amount,
+ money_employee.currency HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY invoiceext.id
+[DEBUG] 2018-09-04 19:24:56.799 (BasePOM.java:167) - Wait For By.xpath: //input[@placeholder='Поиск']
+[INFO ] 2018-09-04 19:24:56.830 (BasePOM.java:110) - Typing Piotr Rasputin into By.xpath: .//input[@placeholder='Поиск'] Overwrite:true wait after input mls: 1000
+[DEBUG] 2018-09-04 19:24:57.069 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 19:24:57.091 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 19:24:57.098 (JSWaiter.java:46) - JQuery is Ready!
+[DEBUG] 2018-09-04 19:24:57.109 (JSWaiter.java:93) - JS is Ready!
+[DEBUG] 2018-09-04 19:24:57.110 (JSWaiter.java:156) - Going to sleep for :20
+[DEBUG] 2018-09-04 19:24:57.130 (JSWaiter.java:162) - wakeup from sleep for :20
+[DEBUG] 2018-09-04 19:24:57.136 (JSWaiter.java:144) - Angular is not defined on this site!
+[DEBUG] 2018-09-04 19:24:57.136 (JSWaiter.java:156) - Going to sleep for :1000
+[DEBUG] 2018-09-04 19:24:58.137 (JSWaiter.java:162) - wakeup from sleep for :1000
+[INFO ] 2018-09-04 19:24:58.227 (BasePOM.java:146) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[DEBUG] 2018-09-04 19:24:58.227 (BasePOM.java:85) - Wait For By.xpath: .//a[contains(text(),'Piotr Rasputin')]
+[INFO ] 2018-09-04 19:25:00.064 (DealFromClientPageDbVsUI.java:30) - Get into a client page
+[DEBUG] 2018-09-04 19:25:00.068 (BasePOM.java:85) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-04 19:25:00.140 (ClientProperties.java:211) - Reading table with Deals from page
+[INFO ] 2018-09-04 19:25:00.140 (BasePOM.java:215) - Doing scroll to By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-04 19:25:00.141 (JSWaiter.java:198) - Wait For By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[DEBUG] 2018-09-04 19:25:01.260 (HtmlTable.java:95) - Read table By.xpath: .//div[@class='display-grid']//table[@class='table table-hover']
+[INFO ] 2018-09-04 19:25:01.260 (ClientProperties.java:214) - Done Reading table with Deals from page
+[DEBUG] 2018-09-04 19:25:01.260 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-04 19:25:01.261 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-04 19:25:01.261 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-04 19:25:01.261 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-04 19:25:01.261 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-04 19:25:01.262 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-04 19:25:01.262 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-04 19:25:01.263 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-04 19:25:01.263 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-04 19:25:01.263 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-04 19:25:01.263 (PrintOuts.java:20) - 
+1:1|2:Mentoring|3:NEW|4:16-Aug-2018|5:----|
+1:6|2:Group Development|3:ACTIVE|4:07-May-2018|5:Ororo Munroe|
+
+[DEBUG] 2018-09-04 19:25:01.264 (PrintOuts.java:48) - Convert date from Open date: 16-Aug-2018
+[DEBUG] 2018-09-04 19:25:01.288 (ConverDates.java:75) - success: false. input: 16-Aug-2018 → localDate: -999999999-01-01 → formatted: 01-янв.-+1000000000 → outputImproper: 01-янв-+1000000000
+[DEBUG] 2018-09-04 19:25:01.288 (ConverDates.java:84) - Send converted date +1000000000-01-01
+[DEBUG] 2018-09-04 19:25:01.288 (PrintOuts.java:48) - Converted date:+1000000000-01-01
+[DEBUG] 2018-09-04 19:25:01.289 (PrintOuts.java:48) - Convert date from Open date: 07-May-2018
+[DEBUG] 2018-09-04 19:25:01.290 (ConverDates.java:75) - success: false. input: 07-May-2018 → localDate: -999999999-01-01 → formatted: 01-янв.-+1000000000 → outputImproper: 01-янв-+1000000000
+[DEBUG] 2018-09-04 19:25:01.290 (ConverDates.java:84) - Send converted date +1000000000-01-01
+[DEBUG] 2018-09-04 19:25:01.290 (PrintOuts.java:48) - Converted date:+1000000000-01-01
+[DEBUG] 2018-09-04 19:25:01.291 (PrintOuts.java:41) - For key 1 result is Id
+[DEBUG] 2018-09-04 19:25:01.291 (PrintOuts.java:41) - For key 2 result is Consultancy
+[DEBUG] 2018-09-04 19:25:01.291 (PrintOuts.java:41) - For key 3 result is Deal status
+[DEBUG] 2018-09-04 19:25:01.291 (PrintOuts.java:41) - For key 4 result is Open date
+[DEBUG] 2018-09-04 19:25:01.291 (PrintOuts.java:41) - For key 5 result is Mentor
+[DEBUG] 2018-09-04 19:25:01.291 (PrintOuts.java:41) - For key Consultancy result is 2
+[DEBUG] 2018-09-04 19:25:01.292 (PrintOuts.java:41) - For key Mentor result is 5
+[DEBUG] 2018-09-04 19:25:01.292 (PrintOuts.java:41) - For key Open date result is 4
+[DEBUG] 2018-09-04 19:25:01.292 (PrintOuts.java:41) - For key Id result is 1
+[DEBUG] 2018-09-04 19:25:01.292 (PrintOuts.java:41) - For key Deal status result is 3
+[DEBUG] 2018-09-04 19:25:01.292 (PrintOuts.java:20) - 
+1:1|2:Mentoring|3:NEW|4:+1000000000-01-01|5:----|
+1:6|2:Group Development|3:ACTIVE|4:+1000000000-01-01|5:Ororo Munroe|
+
+[DEBUG] 2018-09-04 19:25:01.292 (PrintOuts.java:48) - Check :---- on Stub:----
+[DEBUG] 2018-09-04 19:25:01.293 (PrintOuts.java:48) - After check :
+[DEBUG] 2018-09-04 19:25:01.293 (PrintOuts.java:48) - Check :Ororo Munroe on Stub:----
+[DEBUG] 2018-09-04 19:25:01.293 (PrintOuts.java:48) - After check :Ororo Munroe
+[DEBUG] 2018-09-04 19:25:01.293 (DealsTestBase.java:83) - 
+SQLquery:select 
+        deal.id as "Id",
+        consultancy.name as "Consultancy", 
+        deal.status as "Deal status",
+        deal.open_date as "Open date",
+        CONCAT(employee.first_name, ' ', employee.last_name) as "Mentor"
+        
+        
+From    deal inner join client on (client.id = deal.client_id) 
+            inner join consultancy on (consultancy.id = deal.consultancy_id)
+            left join (contract inner join employee  on (employee.id = contract.employee_id))  on (contract.deal_id = deal.id)Group by
+deal.id,
+        consultancy.name,
+        deal.status,
+        deal.open_date,
+        client.first_name,
+        client.last_name,
+        employee.first_name,
+        employee.last_name HAVING CONCAT(client.first_name, ' ', client.last_name ) = 'Piotr Rasputin' ORDER BY  CONCAT(employee.first_name, ' ', employee.last_name)
+[INFO ] 2018-09-04 19:25:01.436 (DataTable.java:26) - Checking tables for equality
+[DEBUG] 2018-09-04 19:25:01.437 (PrintOuts.java:48) - key:Consultancy value:Mentoring
+[DEBUG] 2018-09-04 19:25:01.437 (PrintOuts.java:48) - Compare: Mentoring
+[DEBUG] 2018-09-04 19:25:01.438 (PrintOuts.java:48) - key:Mentor value: 
+[DEBUG] 2018-09-04 19:25:01.438 (PrintOuts.java:48) - Compare: 
+[DEBUG] 2018-09-04 19:25:01.439 (DataTable.java:58) - Original
+[DEBUG] 2018-09-04 19:25:01.439 (DataTable.java:59) - For key Mentor result is  
+[DEBUG] 2018-09-04 19:25:01.440 (DataTable.java:60) - Not Equal to
+[DEBUG] 2018-09-04 19:25:01.440 (DataTable.java:61) - For key Mentor result is 
+[ERROR] 2018-09-04 19:25:01.447 (AssertWarp.java:12) - TEST FAILED 
+[INFO ] 2018-09-04 19:25:01.449 (DataBase.java:74) - DB Connection close
+[INFO ] 2018-09-04 19:25:01.452 (ScreenShots.java:22) - Resizing Page
+[INFO ] 2018-09-04 19:25:07.130 (ScreenShots.java:35) - Making screenshot
+[INFO ] 2018-09-04 19:25:07.324 (BaseTest.java:135) - Closing browser
